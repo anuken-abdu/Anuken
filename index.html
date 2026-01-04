@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Anukenn | Разработка сайтов и Google реклама</title>
+    <title>Anukenn | Разработка сайтов и Google реклама в Алматы</title>
     <meta name="description" content="Создание продающих сайтов и настройка контекстной рекламы. Комплексный маркетинг для бизнеса.">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
                     },
                     animation: {
                         'blob': 'blob 7s infinite',
+                        'scroll': 'scroll 20s linear infinite',
                     },
                     keyframes: {
                         blob: {
@@ -36,6 +37,10 @@
                             '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
                             '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
                             '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' },
                         }
                     }
                 }
@@ -81,13 +86,6 @@
 </head>
 <body class="bg-brand-dark text-slate-300 relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
 
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"></div>
-        <div class="absolute inset-0 grid-bg opacity-20"></div>
-    </div>
-
     <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="font-tech text-2xl font-bold text-white tracking-tighter flex items-center gap-2 group">
@@ -99,8 +97,8 @@
             
             <nav class="hidden md:flex gap-8 text-sm font-medium">
                 <a href="#services" class="hover:text-white transition hover:scale-105">Услуги</a>
-                <a href="#process" class="hover:text-white transition hover:scale-105">Процесс</a>
-                <a href="#faq" class="hover:text-white transition hover:scale-105">FAQ</a>
+                <a href="#portfolio" class="hover:text-white transition hover:scale-105">Портфолио</a>
+                <a href="#testimonials" class="hover:text-white transition hover:scale-105">Отзывы</a>
             </nav>
 
             <a href="https://t.me/Anukenn" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
@@ -110,7 +108,18 @@
         </div>
     </header>
 
-    <section class="relative min-h-screen flex items-center pt-20">
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero-bg.jpg" alt="Background" class="w-full h-full object-cover opacity-40 md:opacity-30 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-brand-dark/60"></div>
+             <div class="absolute inset-0 grid-bg opacity-30 mix-blend-overlay"></div>
+        </div>
+
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-screen filter blur-[150px] opacity-40 animate-blob"></div>
+             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-[150px] opacity-30 animate-blob animation-delay-2000"></div>
+        </div>
+
         <div class="container mx-auto px-6 z-10 grid md:grid-cols-2 gap-12 items-center">
             
             <div data-aos="fade-right">
@@ -127,7 +136,7 @@
                     <span class="text-gradient">Продающие Сайты</span>
                 </h1>
                 
-                <p class="text-lg text-slate-400 mb-8 max-w-lg leading-relaxed">
+                <p class="text-lg text-slate-300 mb-8 max-w-lg leading-relaxed text-shadow">
                     Комплексный подход к вашему бизнесу в интернете. Создаю современные сайты и настраиваю поток клиентов из Google. 
                     <span class="text-white font-medium border-b border-indigo-500/50">Без посредников.</span>
                 </p>
@@ -136,27 +145,27 @@
                     <a href="https://wa.me/77074534518" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
                         <i class="fab fa-whatsapp text-xl"></i> Обсудить проект
                     </a>
-                    <a href="#services" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold border border-slate-600 transition text-center">
-                        Услуги
+                    <a href="#portfolio" class="px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 backdrop-blur text-white font-bold border border-slate-600 transition text-center">
+                        Мои работы
                     </a>
                 </div>
 
-                <div class="mt-12 flex items-center gap-8 border-t border-white/5 pt-8">
+                <div class="mt-12 flex items-center gap-8 border-t border-white/10 pt-8 lg:backdrop-blur-sm rounded-xl lg:p-4 lg:-ml-4">
                     <div>
                         <div class="text-2xl font-bold text-white font-tech">30+</div>
-                        <div class="text-xs text-slate-500 uppercase">Проектов</div>
+                        <div class="text-xs text-slate-400 uppercase">Проектов</div>
                     </div>
                     <div class="w-px h-8 bg-white/10"></div>
                     <div>
                         <div class="text-2xl font-bold text-white font-tech">TOP-3</div>
-                        <div class="text-xs text-slate-500 uppercase">Google Поиск</div>
+                        <div class="text-xs text-slate-400 uppercase">Google Поиск</div>
                     </div>
                 </div>
             </div>
 
             <div class="relative hidden md:block" data-aos="fade-left">
                 <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
-                <div class="relative bg-brand-card border border-white/10 rounded-2xl p-6 shadow-2xl">
+                <div class="relative bg-brand-card/90 backdrop-blur border border-white/10 rounded-2xl p-6 shadow-2xl">
                     <div class="flex items-center gap-2 mb-4 border-b border-white/5 pb-4">
                         <div class="w-3 h-3 rounded-full bg-red-500"></div>
                         <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -166,14 +175,30 @@
                         <div class="text-slate-400"><span class="text-purple-400">const</span> <span class="text-blue-400">Project</span> = {</div>
                         <div class="pl-4 text-slate-300">dev: <span class="text-green-400">'Anukenn'</span>,</div>
                         <div class="pl-4 text-slate-300">skills: [<span class="text-orange-400">'Web'</span>, <span class="text-orange-400">'Ads'</span>],</div>
-                        <div class="pl-4 text-slate-300">status: <span class="text-green-400">'Ready to Start 🚀'</span>,</div>
+                        <div class="pl-4 text-slate-300">result: <span class="text-green-400">'Profit 📈'</span>,</div>
                         <div class="pl-4">}</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-      <section id="services" class="py-24 relative z-10">
+
+    <section class="py-8 bg-brand-dark border-y border-white/5 overflow-hidden relative z-20">
+         <div class="flex animate-scroll whitespace-nowrap gap-16 items-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500">
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-html5 text-orange-500 text-3xl"></i> HTML5</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-css3-alt text-blue-500 text-3xl"></i> CSS3</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-js text-yellow-400 text-3xl"></i> JavaScript</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-google text-red-500 text-3xl"></i> Google Ads</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fas fa-chart-line text-orange-400 text-3xl"></i> Analytics</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fas fa-mobile-alt text-purple-500 text-3xl"></i> Responsive</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-html5 text-orange-500 text-3xl"></i> HTML5</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-css3-alt text-blue-500 text-3xl"></i> CSS3</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-js text-yellow-400 text-3xl"></i> JavaScript</div>
+            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-google text-red-500 text-3xl"></i> Google Ads</div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Что я предлагаю</h2>
@@ -229,63 +254,128 @@
             </div>
         </div>
     </section>
-
-    <section id="process" class="py-24 bg-brand-dark/50 border-y border-white/5 relative">
+    <section id="testimonials" class="py-24 relative z-10 bg-brand-dark/50 border-t border-white/5">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-bold text-white font-tech text-center mb-16">Как мы работаем</h2>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center relative group" data-aos="fade-up">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-xl font-bold text-white mb-4 border border-white/10 group-hover:border-indigo-500 group-hover:text-indigo-500 transition shadow-lg relative z-10">01</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Обсуждение</h4>
-                    <p class="text-sm text-slate-400">Созваниваемся, определяем задачу.</p>
+             <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-purple-500 font-bold tracking-widest text-sm uppercase mb-3">Доверие клиентов</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Отзывы о работе</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex text-orange-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6 leading-relaxed">"Заказали сайт для спецтехники. Анукен сделал все быстро, настроил рекламу. Звонки пошли уже на следующий день. Очень довольны результатом!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center text-indigo-400 font-bold">А.К.</div>
+                        <div>
+                            <h4 class="text-white font-bold">Азамат К.</h4>
+                            <p class="text-xs text-slate-500">Владелец автопарка</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center relative group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-xl font-bold text-white mb-4 border border-white/10 group-hover:border-indigo-500 group-hover:text-indigo-500 transition shadow-lg relative z-10">02</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Разработка</h4>
-                    <p class="text-sm text-slate-400">Я пишу код и настраиваю дизайн.</p>
+                 <div class="glass-card p-8 rounded-2xl border-purple-500/30" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-orange-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6 leading-relaxed">"Нужен был простой и понятный лендинг для услуг ремонта. Все сделали четко по ТЗ, без лишних вопросов. Сайт работает отлично с телефона."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 font-bold">Д.С.</div>
+                        <div>
+                            <h4 class="text-white font-bold">Дмитрий С.</h4>
+                            <p class="text-xs text-slate-500">Предприниматель</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center relative group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-xl font-bold text-white mb-4 border border-white/10 group-hover:border-indigo-500 group-hover:text-indigo-500 transition shadow-lg relative z-10">03</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Запуск</h4>
-                    <p class="text-sm text-slate-400">Покупаем домен, выгружаем сайт.</p>
-                </div>
-                <div class="text-center relative group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-xl font-bold text-white mb-4 border border-white/10 group-hover:border-green-500 group-hover:text-green-500 transition shadow-lg relative z-10">04</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Реклама</h4>
-                    <p class="text-sm text-slate-400">Запускаем Google Ads.</p>
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex text-orange-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6 leading-relaxed">"Обратился за настройкой Google рекламы, так как старая не приносила заявок. Анукен пересобрал кампанию, цена клика упала, клиентов стало больше."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-400 font-bold">Е.Н.</div>
+                        <div>
+                            <h4 class="text-white font-bold">Ерлан Н.</h4>
+                            <p class="text-xs text-slate-500">Менеджер по продажам</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-24 z-10 relative">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl md:text-5xl font-bold text-white font-tech text-center mb-12">Вопросы</h2>
+    <section id="portfolio" class="py-24 bg-brand-dark/50 border-y border-white/5 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-white font-tech text-center mb-16">Примеры работ</h2>
             
-            <div class="space-y-4">
-                <div class="glass-card rounded-xl overflow-hidden" data-aos="fade-up">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white">
-                            <span>Сколько стоит сайт?</span>
-                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-indigo-500"></i></span>
-                        </summary>
-                        <div class="text-slate-400 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
-                            Цена зависит от сложности. Напишите мне в WhatsApp, я задам пару вопросов и назову точную цену.
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up">
+                    <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="text-6xl text-orange-500 group-hover:scale-110 transition duration-500"><i class="fas fa-truck-pickup"></i></div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Спецтехника Алматы</h4>
+                                <p class="text-sm text-indigo-400 font-mono mt-1">Landing Page + Google Ads</p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-500/10 text-green-500 text-xs font-bold rounded-full border border-green-500/20">LIVE</span>
                         </div>
-                    </details>
-                </div>
-                <div class="glass-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white">
-                            <span>Как быстро будет готово?</span>
-                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-indigo-500"></i></span>
-                        </summary>
-                        <div class="text-slate-400 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
-                            Обычно разработка занимает от 2 до 5 дней.
+                        <p class="text-slate-400 text-sm mb-6">
+                            Разработка сайта для аренды манипуляторов и эвакуаторов. Сайт адаптирован под мобильные устройства. Запущена реклама в Google Поиск.
+                        </p>
+                        <div class="flex gap-4 border-t border-white/5 pt-4">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-white font-tech">TOP-3</div>
+                                <div class="text-[10px] text-slate-500 uppercase">Позиция</div>
+                            </div>
+                            <div class="w-px bg-white/10"></div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-white font-tech">25%</div>
+                                <div class="text-[10px] text-slate-500 uppercase">Конверсия</div>
+                            </div>
                         </div>
-                    </details>
+                    </div>
                 </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="text-6xl text-blue-500 group-hover:scale-110 transition duration-500"><i class="fas fa-hard-hat"></i></div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Строительные услуги</h4>
+                                <p class="text-sm text-indigo-400 font-mono mt-1">Многостраничный сайт</p>
+                            </div>
+                            <span class="px-3 py-1 bg-slate-700 text-slate-300 text-xs font-bold rounded-full border border-slate-600">DEMO</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6">
+                            Современный сайт для строительной компании. Каталог услуг, форма расчета стоимости, галерея выполненных работ и отзывы клиентов.
+                        </p>
+                        <div class="flex gap-4 border-t border-white/5 pt-4">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-white font-tech">0.8s</div>
+                                <div class="text-[10px] text-slate-500 uppercase">Загрузка</div>
+                            </div>
+                            <div class="w-px bg-white/10"></div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-white font-tech">100%</div>
+                                <div class="text-[10px] text-slate-500 uppercase">Mobile</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-slate-500 text-sm mb-6">Хотите такой же результат?</p>
+                <a href="https://wa.me/77074534518" class="inline-flex items-center gap-2 text-indigo-400 hover:text-white transition border-b border-indigo-400 hover:border-white pb-1">
+                    Обсудить ваш проект <i class="fas fa-arrow-right text-xs"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -305,7 +395,10 @@
                     <div class="text-left"><div class="text-xs opacity-70">Позвонить</div><div class="font-bold">+7 707 453 4518</div></div>
                 </a>
             </div>
-            <p class="text-xs text-slate-600 font-mono">&copy; 2025 Anukenn Development. Астана.</p>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
+                <p>&copy; 2025 Anukenn Development.</p>
+                <p>Алматы, Казахстан.</p>
+            </div>
         </div>
     </footer>
 
@@ -313,4 +406,3 @@
     <script>AOS.init({ once: true, duration: 1000, offset: 50 });</script>
 </body>
 </html>
-
