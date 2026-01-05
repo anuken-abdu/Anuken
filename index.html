@@ -38,10 +38,16 @@
         .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
         ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #020617; } ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         
-        /* Стили для мобильного меню */
+        /* Мобильное меню */
         #mobile-menu { transition: transform 0.3s ease-in-out; }
         #mobile-menu.open { transform: translateX(0); }
         #mobile-menu.closed { transform: translateX(100%); }
+
+        /* Анимация FAQ */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep { 0%    {opacity: 0; transform: translateY(-10px)} 100%  {opacity: 1; transform: translateY(0)} }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-300 relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
@@ -62,6 +68,7 @@
             <nav class="hidden md:flex gap-8 text-sm font-medium">
                 <a href="#services" class="hover:text-white transition hover:scale-105">Услуги</a>
                 <a href="#results" class="hover:text-white transition hover:scale-105">Портфолио</a>
+                <a href="#faq" class="hover:text-white transition hover:scale-105">Вопросы</a>
                 <a href="https://wa.me/77074534518" class="hover:text-white transition hover:scale-105">Контакты</a>
             </nav>
 
@@ -78,6 +85,7 @@
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark flex flex-col items-center justify-center gap-8 closed md:hidden">
         <a href="#services" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Услуги</a>
         <a href="#results" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Портфолио</a>
+        <a href="#faq" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Вопросы</a>
         <a href="https://wa.me/77074534518" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Контакты</a>
         <a href="https://t.me/Anukenn" class="px-8 py-3 rounded-full bg-indigo-600 text-white font-bold">Telegram</a>
     </div>
@@ -184,6 +192,33 @@
         </div>
     </section>
 
+    <section class="py-12 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass p-6 rounded-xl text-center hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-3xl text-indigo-400 mb-3"><i class="fas fa-code"></i></div>
+                    <h4 class="text-white font-bold mb-1">Чистый Код</h4>
+                    <p class="text-xs text-slate-400">Никаких конструкторов. Сайт летает.</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl text-purple-400 mb-3"><i class="fab fa-google"></i></div>
+                    <h4 class="text-white font-bold mb-1">Google Ads</h4>
+                    <p class="text-xs text-slate-400">Настройка рекламы без слива бюджета.</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-3xl text-green-400 mb-3"><i class="fas fa-headset"></i></div>
+                    <h4 class="text-white font-bold mb-1">24/7 Связь</h4>
+                    <p class="text-xs text-slate-400">Всегда на связи в WhatsApp/Telegram.</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl text-cyan-400 mb-3"><i class="fas fa-shield-alt"></i></div>
+                    <h4 class="text-white font-bold mb-1">Гарантия</h4>
+                    <p class="text-xs text-slate-400">Бесплатная техподдержка 1 месяц.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="results" class="py-24 bg-brand-dark/50 border-t border-white/5 relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -192,7 +227,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
                 <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
                     <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
                         <img src="images/manipulator.jpg" class="w-full h-full object-cover" alt="Сайт Манипулятора">
@@ -201,15 +235,12 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-white mb-2">Аренда Манипулятора</h4>
-                        <p class="text-sm text-slate-400 mb-6">Современный Landing Page для спецтехники. Адаптивный дизайн, интеграция с WhatsApp и Google Tag Manager.</p>
+                        <p class="text-sm text-slate-400 mb-6">Современный Landing Page для спецтехники. Адаптивный дизайн, интеграция с WhatsApp.</p>
                         <div class="mt-auto">
-                            <a href="https://manipulator-evakuator.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition shadow-lg shadow-indigo-500/20">
-                                Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
+                            <a href="https://manipulator-evakuator.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition shadow-lg shadow-indigo-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
                         </div>
                     </div>
                 </div>
-
                 <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
                          <img src="images/elegance.jpg" class="w-full h-full object-cover" alt="Сайт Салона">
@@ -218,15 +249,12 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-white mb-2">Салон красоты ELEGANCE</h4>
-                        <p class="text-sm text-slate-400 mb-6">Премиальный сайт для салона. Анимации, прайс-лист, галерея и темная тема "Black & Gold".</p>
+                        <p class="text-sm text-slate-400 mb-6">Премиальный сайт для салона. Анимации, прайс-лист, галерея и темная тема.</p>
                         <div class="mt-auto">
-                            <a href="https://elegance-almaty.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-pink-700 hover:bg-pink-600 text-white text-center font-bold transition shadow-lg shadow-pink-500/20">
-                                Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
+                            <a href="https://elegance-almaty.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-pink-700 hover:bg-pink-600 text-white text-center font-bold transition shadow-lg shadow-pink-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
                         </div>
                     </div>
                 </div>
-
                 <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
                         <img src="images/maverick.jpg" class="w-full h-full object-cover" alt="Сайт Барбершопа">
@@ -235,15 +263,12 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-white mb-2">Maverick Barbershop</h4>
-                        <p class="text-sm text-slate-400 mb-6">Брутальный сайт для барбершопа. Темная тема, "шум" на фоне, прайс-лист и анимации.</p>
+                        <p class="text-sm text-slate-400 mb-6">Брутальный сайт для барбершопа. Темная тема, "шум" на фоне, прайс-лист.</p>
                         <div class="mt-auto">
-                             <a href="https://maver1ck.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-orange-700 hover:bg-orange-600 text-white text-center font-bold transition shadow-lg shadow-orange-500/20">
-                                Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
+                             <a href="https://maver1ck.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-orange-700 hover:bg-orange-600 text-white text-center font-bold transition shadow-lg shadow-orange-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
                         </div>
                     </div>
                 </div>
-
             </div>
             
             <div class="mt-16 text-center">
@@ -251,6 +276,57 @@
                 <a href="https://wa.me/77074534518" class="inline-flex items-center gap-2 text-indigo-400 hover:text-white transition border-b border-indigo-400 hover:border-white pb-1 text-lg">
                     Обсудить ваш проект <i class="fas fa-arrow-right text-sm"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 relative z-10">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">FAQ</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white font-tech">Частые вопросы</h3>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        Сколько времени занимает разработка?
+                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        Обычно разработка Landing Page занимает от 3 до 5 дней. Более сложные проекты (многостраничные сайты) могут занять 7-10 дней. Я всегда называю точные сроки перед началом работы.
+                    </p>
+                </details>
+
+                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        Нужно ли платить ежемесячно?
+                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        Мне вы платите один раз за разработку. Далее вы оплачиваете только хостинг (место в интернете) — это копейки, примерно 3 000 - 5 000 тенге в ГОД. Никаких скрытых платежей.
+                    </p>
+                </details>
+
+                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        Смогу ли я сам менять текст/цены?
+                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        Да! Если это требуется, я подключаю удобную админ-панель, через которую вы сможете менять цены, фото и тексты за пару кликов, даже с телефона.
+                    </p>
+                </details>
+
+                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        Что нужно для старта?
+                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        Только ваше желание! Напишите мне в WhatsApp, мы обсудим вашу нишу. Если у вас нет текста или фото — не проблема, я помогу их подобрать или написать продающие заголовки.
+                    </p>
+                </details>
             </div>
         </div>
     </section>
@@ -281,7 +357,7 @@
     <script>
         AOS.init({ once: true, duration: 1000, offset: 50 });
 
-        // Мобильное меню (Скрипт)
+        // Мобильное меню
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -292,15 +368,14 @@
             if (isMenuOpen) {
                 mobileMenu.classList.remove('closed');
                 mobileMenu.classList.add('open');
-                menuBtn.innerHTML = '<i class="fas fa-times"></i>'; // Меняем иконку на крестик
+                menuBtn.innerHTML = '<i class="fas fa-times"></i>';
             } else {
                 mobileMenu.classList.remove('open');
                 mobileMenu.classList.add('closed');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>'; // Возвращаем бургер
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
 
-        // Закрываем меню при клике на ссылку
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
