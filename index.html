@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Anuken | Разработчик сайтов</title>
-    <meta name="description" content="Создание продающих сайтов и настройка контекстной рекламы. Комплексный маркетинг для бизнеса.">
+    <meta name="description" content="Создание продающих сайтов и настройка контекстной рекламы.">
     <link rel="icon" href="images/favicon.png" type="image/png">
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
@@ -54,7 +54,7 @@
     <header class="fixed top-0 w-full z-50 glass">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="font-tech text-2xl font-bold text-white tracking-tighter flex items-center gap-2 group z-50 relative">
-                <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm group-hover:rotate-12 transition"><i class="fas fa-code"></i></span>
+                <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm"><i class="fas fa-code"></i></span>
                 ANUKEN
             </a>
             <nav class="hidden md:flex gap-8 text-sm font-medium">
@@ -171,17 +171,47 @@
             </div>
 
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="col-span-1 md:col-span-3 text-center py-10">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-500"></div>
-                    <p class="text-slate-500 mt-4 text-sm">Загрузка проектов...</p>
+                
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
+                    <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/manipulator.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">LIVE</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-white mb-2">Аренда Манипулятора</h4>
+                        <p class="text-sm text-slate-400 mb-6">Landing Page для спецтехники.</p>
+                        <div class="mt-auto"><a href="https://manipulator-evakuator.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold">Смотреть</a></div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="mt-16 text-center">
-                <a href="https://wa.me/77074534518" class="inline-flex items-center gap-2 text-indigo-400 hover:text-white transition border-b border-indigo-400 hover:border-white pb-1 text-lg">
-                    Обсудить ваш проект <i class="fas fa-arrow-right text-sm"></i>
-                </a>
-            </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/elegance.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">LIVE</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-white mb-2">Салон красоты ELEGANCE</h4>
+                        <p class="text-sm text-slate-400 mb-6">Премиальный сайт для салона.</p>
+                        <div class="mt-auto"><a href="https://elegance-almaty.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-pink-700 hover:bg-pink-600 text-white text-center font-bold">Смотреть</a></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/maverick.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">LIVE</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-white mb-2">Maverick Barbershop</h4>
+                        <p class="text-sm text-slate-400 mb-6">Брутальный сайт для барбершопа.</p>
+                        <div class="mt-auto"><a href="https://maver1ck.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-orange-700 hover:bg-orange-600 text-white text-center font-bold">Смотреть</a></div>
+                    </div>
+                </div>
+
+                </div>
         </div>
     </section>
 
@@ -192,7 +222,7 @@
                 <h3 class="text-3xl md:text-4xl font-bold text-white font-tech">Частые вопросы</h3>
             </div>
             <div class="space-y-4">
-                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300"><summary class="flex justify-between items-center font-bold text-white">Сколько времени занимает разработка?<span class="text-indigo-400"><i class="fas fa-plus"></i></span></summary><p class="text-slate-400 mt-4 text-sm pt-4 border-t border-white/5">Обычно 3-5 дней.</p></details>
+                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300"><summary class="flex justify-between items-center font-bold text-white">Сроки разработки?<span class="text-indigo-400"><i class="fas fa-plus"></i></span></summary><p class="text-slate-400 mt-4 text-sm pt-4 border-t border-white/5">Обычно 3-5 дней.</p></details>
                 <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300"><summary class="flex justify-between items-center font-bold text-white">Нужно ли платить ежемесячно?<span class="text-indigo-400"><i class="fas fa-plus"></i></span></summary><p class="text-slate-400 mt-4 text-sm pt-4 border-t border-white/5">Нет, только за хостинг раз в год.</p></details>
             </div>
         </div>
@@ -203,9 +233,13 @@
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-tech">Готовы начать?</h2>
             <div class="flex justify-center gap-6 mb-12">
                 <a href="https://t.me/Anukenn" class="px-8 py-4 bg-[#2AABEE]/10 text-[#2AABEE] rounded-xl hover:bg-[#2AABEE] hover:text-white transition"><i class="fab fa-telegram text-2xl"></i> Telegram</a>
-                <a href="tel:+77074534518" class="px-8 py-4 bg-green-500/10 text-green-500 rounded-xl hover:bg-green-500 hover:text-white transition"><i class="fas fa-phone-alt"></i> Позвонить</a>
+                <a href="tel:+77074534518" class="px-8 py-4 bg-green-500/10 text-green-500 rounded-xl hover:bg-green-500 hover:text-white transition"><i class="fas fa-phone-alt text-2xl"></i> Позвонить</a>
             </div>
-            <p class="text-xs text-slate-600 font-mono">&copy; 2026 Anuken Development.</p>
+            
+            <div class="flex justify-between items-end border-t border-white/5 pt-8">
+                <p class="text-xs text-slate-600 font-mono">&copy; 2026 Anuken Development.</p>
+                <a href="admin.html" class="text-xs text-slate-800 hover:text-indigo-500 transition px-4"><i class="fas fa-lock"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -225,68 +259,43 @@
         });
         document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => menuBtn.click()));
 
-        // --- SUPABASE ИНТЕГРАЦИЯ ---
-        // 👇 Я ВПИСАЛ URL, ВСТАВЬ ТОЛЬКО КЛЮЧ 👇
-        const SUPABASE_URL = 'https://nstotcrjlolxrkvaipdj.supabase.co';
+        // --- SUPABASE: Догрузка новых проектов ---
+        const SUPABASE_URL = 'https://nstotcrjlolxrkvaipdj.supabase.co'; // Вписал с твоего скрина!
         
-        // ВСТАВЬ СЮДА ТОТ ЖЕ САМЫЙ ДЛИННЫЙ КЛЮЧ "anon public"
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5zdG90Y3JqbG9seHJrdmFpcGRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1OTM1NzgsImV4cCI6MjA4MzE2OTU3OH0.jOIA74QDDq-RIhJgfLSGzlFcTKRoyECoHFYQnpiPeS4';
+        // ВСТАВЬ СЮДА ДЛИННЫЙ КЛЮЧ
+        const SUPABASE_KEY = 'ВСТАВЬ_СЮДА_СВОЙ_ДЛИННЫЙ_КЛЮЧ_ANON_PUBLIC';
 
         const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         async function loadProjects() {
             const container = document.getElementById('portfolio-grid');
             
-            // 1. Запрос к базе данных
             let { data: projects, error } = await supabase
                 .from('projects')
                 .select('*')
                 .order('created_at', { ascending: false }); 
 
-            // 2. Обработка ошибок
-            if (error) {
-                console.error(error);
-                container.innerHTML = '<p class="text-red-500 text-center col-span-3">Ошибка загрузки проектов</p>';
-                return;
-            }
-
-            // 3. Если проектов нет
-            if (!projects || projects.length === 0) {
-                container.innerHTML = `
-                    <div class="col-span-3 text-center py-12 glass p-8 rounded-2xl">
-                        <i class="fas fa-folder-open text-4xl text-slate-600 mb-4"></i>
-                        <p class="text-slate-400">Портфолио пока пусто.</p>
-                        <a href="admin.html" class="text-indigo-400 text-sm hover:underline mt-2 inline-block">Добавить первый проект</a>
-                    </div>`;
-                return;
-            }
-
-            // 4. Очистка и отрисовка
-            container.innerHTML = '';
-
-            projects.forEach((proj, index) => {
-                const card = `
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="${index * 100}">
-                    <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
-                        <img src="${proj.image_url}" class="w-full h-full object-cover" alt="${proj.title}" onerror="this.src='https://via.placeholder.com/400x300?text=No+Image'">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
-                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">LIVE</div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-white mb-2">${proj.title}</h4>
-                        <p class="text-sm text-slate-400 mb-6 line-clamp-2">${proj.description}</p>
-                        <div class="mt-auto">
-                            <a href="${proj.project_link}" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition shadow-lg shadow-indigo-500/20">
-                                Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
+            if (projects && projects.length > 0) {
+                projects.forEach((proj, index) => {
+                    const card = `
+                    <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
+                        <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                            <img src="${proj.image_url}" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                            <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">NEW</div>
                         </div>
-                    </div>
-                </div>`;
-                container.innerHTML += card;
-            });
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-xl font-bold text-white mb-2">${proj.title}</h4>
+                            <p class="text-sm text-slate-400 mb-6 line-clamp-2">${proj.description}</p>
+                            <div class="mt-auto">
+                                <a href="${proj.project_link}" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>`;
+                    container.innerHTML += card;
+                });
+            }
         }
-
-        // Запускаем
         loadProjects();
     </script>
 </body>
