@@ -2,109 +2,252 @@
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Anuken | Разработчик сайтов</title>
+    <meta name="description" content="Создание продающих сайтов и настройка контекстной рекламы.">
     <link rel="icon" href="images/favicon.png" type="image/png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Outfit', 'sans-serif'], tech: ['Space Grotesk', 'sans-serif'] }, colors: { brand: { dark: '#020617' } } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], tech: ['Space Grotesk', 'sans-serif'] },
+                    colors: { brand: { dark: '#020617', card: '#0f172a', accent: '#6366f1' } },
+                    animation: { 'blob': 'blob 7s infinite', 'scroll': 'scroll 20s linear infinite' },
+                    keyframes: {
+                        blob: { '0%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(30px, -50px) scale(1.1)' }, '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }, '100%': { transform: 'translate(0px, 0px) scale(1)' } },
+                        scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-100%)' } }
+                    }
+                }
+            }
+        }
     </script>
     <style>
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease; }
-        .glass-card:hover { transform: translateY(-5px); border-color: #6366f1; }
-        #mobile-menu { transition: transform 0.3s; }
-        .closed { transform: translateX(100%); } .open { transform: translateX(0); }
+        .glass-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3); }
+        .text-gradient { background: linear-gradient(to right, #818cf8, #c084fc, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        #mobile-menu.closed { transform: translateX(100%); }
+        #mobile-menu.open { transform: translateX(0); }
     </style>
 </head>
-<body class="bg-[#020617] text-slate-300">
+<body class="bg-brand-dark text-slate-300 relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
 
-    <header class="fixed top-0 w-full z-50 bg-[#020617]/90 backdrop-blur border-b border-white/5">
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+    </div>
+
+    <header class="fixed top-0 w-full z-50 glass">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-tech text-2xl font-bold text-white">ANUKEN</span>
-            <nav class="hidden md:flex gap-8 text-sm">
-                <a href="#services" class="hover:text-white">Услуги</a>
-                <a href="#results" class="hover:text-white">Портфолио</a>
-                <a href="https://wa.me/77074534518" class="hover:text-white">Контакты</a>
+            <a href="#" class="font-tech text-2xl font-bold text-white tracking-tighter flex items-center gap-2 group z-50 relative">
+                <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm"><i class="fas fa-code"></i></span>
+                ANUKEN
+            </a>
+            <nav class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#services" class="hover:text-white transition hover:scale-105">Услуги</a>
+                <a href="#workflow" class="hover:text-white transition hover:scale-105">Процесс</a>
+                <a href="#results" class="hover:text-white transition hover:scale-105">Портфолио</a>
+                <a href="#faq" class="hover:text-white transition hover:scale-105">Вопросы</a>
+                <a href="https://wa.me/77074534518" class="hover:text-white transition hover:scale-105">Контакты</a>
             </nav>
-            <button id="menu-btn" class="md:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
+            <a href="https://t.me/Anukenn" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
+                Telegram <i class="fab fa-telegram-plane group-hover:translate-x-1 transition"></i>
+            </a>
+            <button id="menu-btn" class="md:hidden text-2xl text-white z-50 relative"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#020617] flex flex-col items-center justify-center gap-8 closed md:hidden">
-        <a href="#services" class="text-2xl text-white mobile-link">Услуги</a>
-        <a href="#results" class="text-2xl text-white mobile-link">Портфолио</a>
-        <a href="https://wa.me/77074534518" class="text-2xl text-white mobile-link">Контакты</a>
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark flex flex-col items-center justify-center gap-8 closed md:hidden">
+        <a href="#services" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500">Услуги</a>
+        <a href="#results" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500">Портфолио</a>
+        <a href="#faq" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500">Вопросы</a>
+        <a href="https://wa.me/77074534518" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500">Контакты</a>
     </div>
 
-    <section class="pt-32 pb-20 container mx-auto px-6">
-        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 font-tech">Разрабатываю <br> <span class="text-indigo-500">Продающие Сайты</span></h1>
-        <p class="text-lg text-slate-400 mb-8 max-w-lg">Создаю сайты и настраиваю рекламу. Комплексный подход.</p>
-        <div class="flex gap-4">
-            <a href="https://wa.me/77074534518" class="px-8 py-4 rounded-xl bg-indigo-600 text-white font-bold">WhatsApp</a>
-            <a href="#results" class="px-8 py-4 rounded-xl border border-slate-600 text-white font-bold">Портфолио</a>
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/image.png" alt="Background" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/70 to-brand-dark/40"></div>
+        </div>
+        <div class="container mx-auto px-6 z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold mb-6 backdrop-blur-sm">
+                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
+                    AVAILABLE FOR PROJECTS
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 font-tech">
+                    Разрабатываю <br> <span class="text-gradient">Продающие Сайты</span>
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 max-w-lg leading-relaxed">
+                    Комплексный подход. Создаю сайты и настраиваю поток клиентов из Google. Без посредников.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/77074534518" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition text-center flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i> Обсудить проект
+                    </a>
+                    <a href="#results" class="px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-bold border border-slate-600 transition text-center">
+                        Мои работы
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block" data-aos="fade-left">
+                <div class="relative bg-brand-card/90 backdrop-blur border border-white/10 rounded-2xl p-6 shadow-2xl">
+                    <div class="flex items-center gap-2 mb-4 border-b border-white/5 pb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div><div class="w-3 h-3 rounded-full bg-yellow-500"></div><div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="font-mono text-sm leading-relaxed text-slate-400">
+                        <div><span class="text-purple-400">const</span> <span class="text-blue-400">Result</span> = {</div>
+                        <div class="pl-4">dev: <span class="text-green-400">'Anuken'</span>,</div>
+                        <div class="pl-4">status: <span class="text-orange-400">'Ready to work'</span>,</div>
+                        <div class="pl-4">profit: <span class="text-green-400">'High 📈'</span></div>
+                        <div>}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 bg-[#0f172a]">
+    <section id="services" class="py-24 relative z-10">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center font-tech">Мои услуги</h2>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Что я предлагаю</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Услуги под ключ</h3>
+            </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl"><h4 class="text-xl font-bold text-white mb-2">Landing Page</h4><p class="text-sm">Одностраничный сайт с высокой конверсией.</p></div>
-                <div class="glass-card p-8 rounded-2xl border-indigo-500"><h4 class="text-xl font-bold text-white mb-2">Сайт + Реклама</h4><p class="text-sm">Создание сайта и настройка Google Ads.</p></div>
-                <div class="glass-card p-8 rounded-2xl"><h4 class="text-xl font-bold text-white mb-2">Тех. Поддержка</h4><p class="text-sm">Исправление ошибок и обновление контента.</p></div>
+                <div class="glass-card p-8 rounded-2xl group" data-aos="fade-up">
+                    <div class="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center text-2xl text-indigo-400 mb-6"><i class="fas fa-laptop-code"></i></div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Landing Page</h4>
+                    <p class="text-slate-400 text-sm">Продающий одностраничный сайт. Высокая конверсия и уникальный дизайн.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl group border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center text-2xl text-purple-400 mb-6"><i class="fab fa-google"></i></div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Сайт + Реклама</h4>
+                    <p class="text-slate-400 text-sm">Комплекс: создание сайта и настройка потока клиентов из Google Ads.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center text-2xl text-cyan-400 mb-6"><i class="fas fa-tools"></i></div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Тех. Поддержка</h4>
+                    <p class="text-slate-400 text-sm">Исправление ошибок, ускорение сайта, замена контента.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="results" class="py-20 container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center font-tech">Мои работы</h2>
-        
-        <div id="portfolio-grid" class="grid md:grid-cols-3 gap-8">
-            
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-aos="fade-up">
-                <div class="h-56 relative overflow-hidden"><img src="images/manipulator.jpg" class="w-full h-full object-cover"></div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h4 class="text-xl font-bold text-white mb-2">Спецтехника</h4>
-                    <p class="text-sm text-slate-400 mb-4">Сайт аренды манипулятора.</p>
-                    <a href="https://manipulator-evakuator.vercel.app/" target="_blank" class="mt-auto block py-2 text-center bg-indigo-600/20 text-indigo-400 rounded hover:bg-indigo-600 hover:text-white transition">Смотреть</a>
-                </div>
+    <section id="workflow" class="py-24 bg-brand-dark relative z-10 overflow-hidden">
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-white/10 -translate-y-1/2 z-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Workflow</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Этапы работы</h3>
             </div>
-
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-aos="fade-up">
-                <div class="h-56 relative overflow-hidden"><img src="images/elegance.jpg" class="w-full h-full object-cover"></div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h4 class="text-xl font-bold text-white mb-2">Салон Elegance</h4>
-                    <p class="text-sm text-slate-400 mb-4">Премиум сайт салона красоты.</p>
-                    <a href="https://elegance-almaty.vercel.app/" target="_blank" class="mt-auto block py-2 text-center bg-indigo-600/20 text-indigo-400 rounded hover:bg-indigo-600 hover:text-white transition">Смотреть</a>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="glass-card p-6 rounded-2xl relative" data-aos="fade-up"><div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4">01</div><h4 class="text-xl font-bold text-white mb-3 mt-8">Анализ</h4><p class="text-slate-400 text-sm">Изучение ниши и конкурентов.</p></div>
+                <div class="glass-card p-6 rounded-2xl relative" data-aos="fade-up" data-aos-delay="100"><div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4">02</div><h4 class="text-xl font-bold text-white mb-3 mt-8">Дизайн</h4><p class="text-slate-400 text-sm">Проработка структуры и внешнего вида.</p></div>
+                <div class="glass-card p-6 rounded-2xl relative" data-aos="fade-up" data-aos-delay="200"><div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4">03</div><h4 class="text-xl font-bold text-white mb-3 mt-8">Код</h4><p class="text-slate-400 text-sm">Чистая верстка и адаптация.</p></div>
+                <div class="glass-card p-6 rounded-2xl relative" data-aos="fade-up" data-aos-delay="300"><div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4">04</div><h4 class="text-xl font-bold text-white mb-3 mt-8">Запуск</h4><p class="text-slate-400 text-sm">Выгрузка на хостинг и реклама.</p></div>
             </div>
-
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-aos="fade-up">
-                <div class="h-56 relative overflow-hidden"><img src="images/maverick.jpg" class="w-full h-full object-cover"></div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h4 class="text-xl font-bold text-white mb-2">Barbershop</h4>
-                    <p class="text-sm text-slate-400 mb-4">Брутальный сайт для барбершопа.</p>
-                    <a href="https://maver1ck.vercel.app/" target="_blank" class="mt-auto block py-2 text-center bg-indigo-600/20 text-indigo-400 rounded hover:bg-indigo-600 hover:text-white transition">Смотреть</a>
-                </div>
-            </div>
-
-            </div>
+        </div>
     </section>
 
-    <footer class="py-10 bg-[#020617] border-t border-white/5 text-center">
-        <p class="text-xs text-slate-600">© 2026 Anuken Development.</p>
-        <a href="admin.html" class="inline-block mt-4 text-slate-800 hover:text-indigo-500 p-2"><i class="fas fa-lock"></i></a>
+    <section id="results" class="py-24 bg-brand-dark/50 border-t border-white/5 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-purple-500 font-bold tracking-widest text-sm uppercase mb-3">Портфолио</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Мои проекты</h3>
+            </div>
+
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
+                    <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/manipulator.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">LIVE</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-white mb-2">Аренда Манипулятора</h4>
+                        <p class="text-sm text-slate-400 mb-6">Landing Page для спецтехники.</p>
+                        <div class="mt-auto"><a href="https://manipulator-evakuator.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold">Смотреть</a></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/elegance.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">LIVE</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-white mb-2">Салон красоты ELEGANCE</h4>
+                        <p class="text-sm text-slate-400 mb-6">Премиальный сайт для салона.</p>
+                        <div class="mt-auto"><a href="https://elegance-almaty.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-pink-700 hover:bg-pink-600 text-white text-center font-bold">Смотреть</a></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/maverick.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">LIVE</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-white mb-2">Maverick Barbershop</h4>
+                        <p class="text-sm text-slate-400 mb-6">Брутальный сайт для барбершопа.</p>
+                        <div class="mt-auto"><a href="https://maver1ck.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-orange-700 hover:bg-orange-600 text-white text-center font-bold">Смотреть</a></div>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 relative z-10">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">FAQ</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white font-tech">Частые вопросы</h3>
+            </div>
+            <div class="space-y-4">
+                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300"><summary class="flex justify-between items-center font-bold text-white">Сроки разработки?<span class="text-indigo-400"><i class="fas fa-plus"></i></span></summary><p class="text-slate-400 mt-4 text-sm pt-4 border-t border-white/5">Обычно 3-5 дней.</p></details>
+                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300"><summary class="flex justify-between items-center font-bold text-white">Нужно ли платить ежемесячно?<span class="text-indigo-400"><i class="fas fa-plus"></i></span></summary><p class="text-slate-400 mt-4 text-sm pt-4 border-t border-white/5">Нет, только за хостинг раз в год.</p></details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 bg-[#020617] border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-tech">Готовы начать?</h2>
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://t.me/Anukenn" class="px-8 py-4 bg-[#2AABEE]/10 text-[#2AABEE] rounded-xl hover:bg-[#2AABEE] hover:text-white transition"><i class="fab fa-telegram text-2xl"></i> Telegram</a>
+                <a href="tel:+77074534518" class="px-8 py-4 bg-green-500/10 text-green-500 rounded-xl hover:bg-green-500 hover:text-white transition"><i class="fas fa-phone-alt text-2xl"></i> Позвонить</a>
+            </div>
+            
+            <div class="flex justify-between items-end border-t border-white/5 pt-8">
+                <p class="text-xs text-slate-600 font-mono">&copy; 2026 Anuken Development.</p>
+                <a href="admin.html" class="text-xs text-slate-800 hover:text-indigo-500 transition px-4"><i class="fas fa-lock"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true });
+        AOS.init({ once: true, duration: 1000, offset: 50 });
 
+        // Мобильное меню
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         let isMenuOpen = false;
@@ -116,35 +259,44 @@
         });
         document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => menuBtn.click()));
 
-        // --- SUPABASE ---
-        const PROJECT_URL = 'https://nstotcrjlolxrkvaipdj.supabase.co';
-        const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5zdG90Y3JqbG9seHJrdmFpcGRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1OTM1NzgsImV4cCI6MjA4MzE2OTU3OH0.jOIA74QDDq-RIhJgfLSGzlFcTKRoyECoHFYQnpiPeS4';
+        // --- SUPABASE: Догрузка новых проектов ---
+        const SUPABASE_URL = 'https://nstotcrjlolxrkvaipdj.supabase.co'; // Вписал с твоего скрина!
+        
+        // ВСТАВЬ СЮДА ДЛИННЫЙ КЛЮЧ
+        const SUPABASE_KEY = 'ВСТАВЬ_СЮДА_СВОЙ_ДЛИННЫЙ_КЛЮЧ_ANON_PUBLIC';
 
-        const supabase = supabase.createClient(PROJECT_URL, ANON_KEY);
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-        async function loadMore() {
-            let { data: projects } = await supabase.from('projects').select('*').order('created_at', { ascending: false });
+        async function loadProjects() {
+            const container = document.getElementById('portfolio-grid');
+            
+            let { data: projects, error } = await supabase
+                .from('projects')
+                .select('*')
+                .order('created_at', { ascending: false }); 
 
             if (projects && projects.length > 0) {
-                const container = document.getElementById('portfolio-grid');
-                projects.forEach(proj => {
-                    const html = `
-                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-aos="fade-up">
-                        <div class="h-56 relative overflow-hidden">
-                            <img src="${proj.image_url}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400?text=No+Image'">
-                            <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full">NEW</div>
+                projects.forEach((proj, index) => {
+                    const card = `
+                    <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
+                        <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                            <img src="${proj.image_url}" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                            <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">NEW</div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
                             <h4 class="text-xl font-bold text-white mb-2">${proj.title}</h4>
-                            <p class="text-sm text-slate-400 mb-4">${proj.description}</p>
-                            <a href="${proj.project_link}" target="_blank" class="mt-auto block py-2 text-center bg-indigo-600 text-white rounded font-bold hover:bg-indigo-500 transition">Смотреть</a>
+                            <p class="text-sm text-slate-400 mb-6 line-clamp-2">${proj.description}</p>
+                            <div class="mt-auto">
+                                <a href="${proj.project_link}" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold">Смотреть</a>
+                            </div>
                         </div>
                     </div>`;
-                    container.innerHTML += html;
+                    container.innerHTML += card;
                 });
             }
         }
-        loadMore();
+        loadProjects();
     </script>
 </body>
 </html>
