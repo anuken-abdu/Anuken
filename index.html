@@ -238,7 +238,7 @@
             
             <div class="flex justify-between items-end border-t border-white/5 pt-8">
                 <p class="text-xs text-slate-600 font-mono">&copy; 2026 Anuken Development.</p>
-                <a href="admin.html" class="text-xs text-slate-800 hover:text-indigo-500 transition px-4"><i class="fas fa-lock"></i></a>
+                <a href="admin.html" class="text-xs text-slate-800 hover:text-indigo-500 transition px-4 py-2"><i class="fas fa-lock"></i></a>
             </div>
         </div>
     </footer>
@@ -262,25 +262,27 @@
         // --- SUPABASE: Догрузка новых проектов ---
         const SUPABASE_URL = 'https://nstotcrjlolxrkvaipdj.supabase.co'; // Вписал с твоего скрина!
         
-        // ВСТАВЬ СЮДА ДЛИННЫЙ КЛЮЧ
-        const SUPABASE_KEY = 'ВСТАВЬ_СЮДА_СВОЙ_ДЛИННЫЙ_КЛЮЧ_ANON_PUBLIC';
+        // ⚠️ ВСТАВЬ СЮДА ДЛИННЫЙ КЛЮЧ ANON PUBLIC СО СКРИНШОТА
+        const SUPABASE_KEY = 'ВСТАВЬ_СВОЙ_ДЛИННЫЙ_КЛЮЧ_ЗДЕСЬ';
 
         const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         async function loadProjects() {
             const container = document.getElementById('portfolio-grid');
             
+            // Запрашиваем только НОВЫЕ проекты из базы
             let { data: projects, error } = await supabase
                 .from('projects')
                 .select('*')
                 .order('created_at', { ascending: false }); 
 
+            // Если есть проекты, добавляем их ПОСЛЕ старых
             if (projects && projects.length > 0) {
                 projects.forEach((proj, index) => {
                     const card = `
                     <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
                         <div class="h-56 relative overflow-hidden group-hover:scale-105 transition duration-500">
-                            <img src="${proj.image_url}" class="w-full h-full object-cover">
+                            <img src="${proj.image_url}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x300?text=No+Image'">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
                             <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">NEW</div>
                         </div>
@@ -288,15 +290,19 @@
                             <h4 class="text-xl font-bold text-white mb-2">${proj.title}</h4>
                             <p class="text-sm text-slate-400 mb-6 line-clamp-2">${proj.description}</p>
                             <div class="mt-auto">
-                                <a href="${proj.project_link}" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold">Смотреть</a>
+                                <a href="${proj.project_link}" target="_blank" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold shadow-lg shadow-indigo-500/20">Смотреть</a>
                             </div>
                         </div>
                     </div>`;
-                    container.innerHTML += card;
+                    container.innerHTML += card; // ВАЖНО: += добавляет, а не стирает!
                 });
             }
         }
-        loadProjects();
+        
+        // Запускаем загрузку (если ключ введен верно)
+        if (SUPABASE_KEY !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5zdG90Y3JqbG9seHJrdmFpcGRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1OTM1NzgsImV4cCI6MjA4MzE2OTU3OH0.jOIA74QDDq-RIhJgfLSGzlFcTKRoyECoHFYQnpiPeS4') {
+            loadProjects();
+        }
     </script>
 </body>
 </html>
