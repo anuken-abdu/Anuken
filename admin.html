@@ -3,205 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuken Admin | Dashboard Demo</title>
+    <title>Admin Panel | Добавить проект</title>
     <link rel="icon" href="images/favicon.png" type="image/png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg-[#020617] text-slate-300 font-sans min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-lg bg-[#0f172a] p-8 rounded-2xl border border-white/10 shadow-2xl">
+        <h1 class="text-2xl font-bold text-white mb-6 text-center">Добавить проект 🚀</h1>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Название</label>
+                <input type="text" id="title" class="w-full bg-[#020617] border border-white/10 rounded-lg p-3 text-white focus:border-indigo-500 outline-none transition" placeholder="Например: Барбершоп">
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Описание</label>
+                <textarea id="description" rows="3" class="w-full bg-[#020617] border border-white/10 rounded-lg p-3 text-white focus:border-indigo-500 outline-none transition" placeholder="Что было сделано..."></textarea>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Картинка (URL)</label>
+                <input type="text" id="image" class="w-full bg-[#020617] border border-white/10 rounded-lg p-3 text-white focus:border-indigo-500 outline-none transition" placeholder="images/maverick.jpg">
+                <p class="text-[10px] text-slate-500 mt-1">Имя файла из папки images или ссылка из интернета</p>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Ссылка на сайт</label>
+                <input type="text" id="link" class="w-full bg-[#020617] border border-white/10 rounded-lg p-3 text-white focus:border-indigo-500 outline-none transition" placeholder="https://...">
+            </div>
+
+            <button onclick="addProject()" id="btn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition mt-4">
+                Опубликовать
+            </button>
+            
+            <p id="status" class="text-center text-sm font-bold mt-4 hidden"></p>
+        </div>
+        
+        <div class="mt-6 text-center">
+            <a href="index.html" class="text-sm text-indigo-400 hover:text-white transition">← Вернуться на сайт</a>
+        </div>
+    </div>
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'], tech: ['Space Grotesk', 'sans-serif'] },
-                    colors: { brand: { dark: '#020617', card: '#0f172a', accent: '#6366f1' } }
-                }
+        // 👇 Я ВПИСАЛ ТВОЙ URL, ТЕБЕ НУЖНО ВСТАВИТЬ ТОЛЬКО КЛЮЧ 👇
+        const SUPABASE_URL = 'https://nstotcrjlolxrkvaipdj.supabase.co';
+        
+        // ВСТАВЬ СЮДА ДЛИННЫЙ КЛЮЧ "anon public" СО СКРИНШОТА
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5zdG90Y3JqbG9seHJrdmFpcGRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1OTM1NzgsImV4cCI6MjA4MzE2OTU3OH0.jOIA74QDDq-RIhJgfLSGzlFcTKRoyECoHFYQnpiPeS4'; 
+
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        async function addProject() {
+            const btn = document.getElementById('btn');
+            const status = document.getElementById('status');
+            
+            // Данные из полей
+            const title = document.getElementById('title').value;
+            const desc = document.getElementById('description').value;
+            const img = document.getElementById('image').value;
+            const link = document.getElementById('link').value;
+
+            // Проверка
+            if (!title || !img) {
+                alert("Заполни хотя бы название и картинку!");
+                return;
             }
+
+            btn.disabled = true;
+            btn.innerText = "Отправка...";
+
+            // Отправляем в базу
+            const { data, error } = await supabase
+                .from('projects')
+                .insert([{ 
+                    title: title, 
+                    description: desc, 
+                    image_url: img, 
+                    project_link: link 
+                }]);
+
+            // Результат
+            if (error) {
+                console.error(error);
+                status.innerText = "Ошибка: " + error.message;
+                status.className = "text-center text-sm font-bold mt-4 text-red-500 block";
+                btn.innerText = "Попробовать снова";
+            } else {
+                status.innerText = "✅ Проект успешно добавлен!";
+                status.className = "text-center text-sm font-bold mt-4 text-green-500 block";
+                btn.innerText = "Опубликовать еще";
+                
+                // Очистка формы
+                document.getElementById('title').value = '';
+                document.getElementById('description').value = '';
+                document.getElementById('link').value = '';
+            }
+            btn.disabled = false;
         }
     </script>
-    <style>
-        .glass-panel { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #020617; } ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    </style>
-</head>
-<body class="bg-brand-dark text-slate-300 font-sans h-screen flex overflow-hidden">
-
-    <aside class="w-64 bg-[#0f172a] border-r border-white/5 flex-col hidden md:flex">
-        <div class="p-6 border-b border-white/5">
-            <a href="index.html" class="font-tech text-2xl text-white font-bold tracking-tighter flex items-center gap-2">
-                <span class="w-8 h-8 rounded bg-indigo-600 flex items-center justify-center text-sm"><i class="fas fa-user-shield"></i></span>
-                ANUKEN<span class="text-xs text-indigo-400 mt-1">.ADMIN</span>
-            </a>
-        </div>
-        <nav class="flex-1 p-4 space-y-2">
-            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-indigo-600/10 text-indigo-400 rounded-xl border border-indigo-600/20 font-medium transition">
-                <i class="fas fa-chart-pie w-5"></i> Главная
-            </a>
-            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-xl transition group">
-                <i class="fas fa-users w-5 group-hover:text-white"></i> Заявки <span class="ml-auto bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full">3</span>
-            </a>
-            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-xl transition group">
-                <i class="fas fa-briefcase w-5 group-hover:text-white"></i> Проекты
-            </a>
-            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-xl transition group">
-                <i class="fas fa-wallet w-5 group-hover:text-white"></i> Финансы
-            </a>
-            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-xl transition group">
-                <i class="fas fa-cog w-5 group-hover:text-white"></i> Настройки
-            </a>
-        </nav>
-        <div class="p-4 border-t border-white/5">
-            <a href="index.html" class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-white transition text-sm">
-                <i class="fas fa-sign-out-alt"></i> Выйти на сайт
-            </a>
-        </div>
-    </aside>
-
-    <main class="flex-1 overflow-y-auto relative">
-        <header class="h-16 border-b border-white/5 flex items-center justify-between px-6 bg-brand-dark/90 backdrop-blur sticky top-0 z-20">
-            <div class="flex items-center gap-4">
-                <button class="md:hidden text-white text-xl"><i class="fas fa-bars"></i></button>
-                <h2 class="text-lg font-bold text-white">Обзор статистики</h2>
-            </div>
-            <div class="flex items-center gap-4">
-                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 relative transition">
-                    <i class="fas fa-bell"></i>
-                    <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                </button>
-                <div class="flex items-center gap-3">
-                    <div class="text-right hidden sm:block">
-                        <div class="text-sm text-white font-bold">Admin</div>
-                        <div class="text-[10px] text-slate-400">Super User</div>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 border border-white/10"></div>
-                </div>
-            </div>
-        </header>
-
-        <div class="p-6 md:p-10 space-y-8">
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
-                    <div class="text-slate-400 text-xs uppercase tracking-widest mb-2">Просмотры</div>
-                    <div class="text-3xl font-bold text-white mb-2">12,450</div>
-                    <div class="text-green-400 text-xs flex items-center gap-1"><i class="fas fa-arrow-up"></i> +15% за неделю</div>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl border-indigo-500/30 bg-indigo-500/5 relative overflow-hidden group hover:border-indigo-500/50 transition duration-300">
-                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-indigo-500/20 rounded-full blur-xl group-hover:bg-indigo-500/30 transition"></div>
-                    <div class="text-indigo-300 text-xs uppercase tracking-widest mb-2">Новые Заявки</div>
-                    <div class="text-3xl font-bold text-white mb-2">8</div>
-                    <div class="text-indigo-400 text-xs">Требуют ответа</div>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
-                    <div class="text-slate-400 text-xs uppercase tracking-widest mb-2">Доход (Январь)</div>
-                    <div class="text-3xl font-bold text-white mb-2">₸ 850k</div>
-                    <div class="text-green-400 text-xs flex items-center gap-1"><i class="fas fa-check-circle"></i> Выполнено</div>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
-                    <div class="text-slate-400 text-xs uppercase tracking-widest mb-2">Сервер</div>
-                    <div class="text-3xl font-bold text-white mb-2">Ok</div>
-                    <div class="text-green-400 text-xs flex items-center gap-1"><i class="fas fa-server"></i> Uptime 99.9%</div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-2 glass-panel rounded-2xl overflow-hidden">
-                    <div class="p-6 border-b border-white/5 flex justify-between items-center">
-                        <h3 class="font-bold text-white">Последние заявки</h3>
-                        <button class="text-xs text-indigo-400 hover:text-white transition">Показать все</button>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-sm">
-                            <thead class="bg-white/5 text-slate-400">
-                                <tr>
-                                    <th class="p-4 font-medium">Клиент</th>
-                                    <th class="p-4 font-medium">Услуга</th>
-                                    <th class="p-4 font-medium hidden sm:table-cell">Дата</th>
-                                    <th class="p-4 font-medium">Статус</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-white/5">
-                                <tr class="hover:bg-white/5 transition cursor-pointer">
-                                    <td class="p-4 flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold">A</div>
-                                        <span class="text-white font-medium">Айдос К.</span>
-                                    </td>
-                                    <td class="p-4">Сайт для салона</td>
-                                    <td class="p-4 text-slate-500 hidden sm:table-cell">Сегодня, 10:30</td>
-                                    <td class="p-4"><span class="bg-yellow-500/10 text-yellow-500 px-2 py-1 rounded text-xs border border-yellow-500/20">Ожидает</span></td>
-                                </tr>
-                                <tr class="hover:bg-white/5 transition cursor-pointer">
-                                    <td class="p-4 flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold">M</div>
-                                        <span class="text-white font-medium">Мария В.</span>
-                                    </td>
-                                    <td class="p-4">Таргет Google</td>
-                                    <td class="p-4 text-slate-500 hidden sm:table-cell">Вчера, 18:45</td>
-                                    <td class="p-4"><span class="bg-green-500/10 text-green-500 px-2 py-1 rounded text-xs border border-green-500/20">Оплачено</span></td>
-                                </tr>
-                                <tr class="hover:bg-white/5 transition cursor-pointer">
-                                    <td class="p-4 flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">Б</div>
-                                        <span class="text-white font-medium">Болат С.</span>
-                                    </td>
-                                    <td class="p-4">Landing Page</td>
-                                    <td class="p-4 text-slate-500 hidden sm:table-cell">02 Янв, 14:20</td>
-                                    <td class="p-4"><span class="bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded text-xs border border-indigo-500/20">В работе</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-bold text-white mb-6">Ресурсы системы</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <div class="flex justify-between text-xs mb-2 text-slate-300">
-                                    <span>Проекты в работе</span>
-                                    <span class="text-indigo-400 font-bold">75%</span>
-                                </div>
-                                <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
-                                    <div class="h-full bg-indigo-500 w-3/4 rounded-full animate-pulse"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-xs mb-2 text-slate-300">
-                                    <span>Место на диске</span>
-                                    <span class="text-green-400 font-bold">40%</span>
-                                </div>
-                                <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
-                                    <div class="h-full bg-green-500 w-2/5 rounded-full"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-xs mb-2 text-slate-300">
-                                    <span>Рекламный бюджет</span>
-                                    <span class="text-yellow-400 font-bold">90%</span>
-                                </div>
-                                <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
-                                    <div class="h-full bg-yellow-500 w-[90%] rounded-full"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 p-4 bg-indigo-600/10 rounded-xl border border-indigo-600/20 flex gap-3 items-start">
-                        <i class="fas fa-info-circle text-indigo-400 mt-0.5"></i>
-                        <div>
-                            <h4 class="text-white text-sm font-bold">Статус системы</h4>
-                            <p class="text-xs text-indigo-300 mt-1 leading-relaxed">
-                                Все системы работают стабильно. Следующее резервное копирование запланировано на 03:00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
 </body>
 </html>
