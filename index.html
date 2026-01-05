@@ -6,7 +6,7 @@
     <title>Anuken | Разработчик сайтов</title>
     <meta name="description" content="Создание продающих сайтов и настройка контекстной рекламы. Комплексный маркетинг для бизнеса.">
 
-   <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon.png" type="image/png">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,6 +37,11 @@
         @keyframes gradient { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
         .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
         ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #020617; } ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        
+        /* Стили для мобильного меню */
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        #mobile-menu.open { transform: translateX(0); }
+        #mobile-menu.closed { transform: translateX(100%); }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-300 relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
@@ -49,21 +54,33 @@
 
     <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-tech text-2xl font-bold text-white tracking-tighter flex items-center gap-2 group">
+            <a href="#" class="font-tech text-2xl font-bold text-white tracking-tighter flex items-center gap-2 group z-50 relative">
                 <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm group-hover:rotate-12 transition duration-300"><i class="fas fa-code"></i></span>
                 ANUKEN
             </a>
+            
             <nav class="hidden md:flex gap-8 text-sm font-medium">
                 <a href="#services" class="hover:text-white transition hover:scale-105">Услуги</a>
                 <a href="#results" class="hover:text-white transition hover:scale-105">Портфолио</a>
                 <a href="https://wa.me/77074534518" class="hover:text-white transition hover:scale-105">Контакты</a>
             </nav>
+
             <a href="https://t.me/Anukenn" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
                 Telegram <i class="fab fa-telegram-plane group-hover:translate-x-1 transition"></i>
             </a>
-            <button class="md:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
+            
+            <button id="menu-btn" class="md:hidden text-2xl text-white z-50 relative">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark flex flex-col items-center justify-center gap-8 closed md:hidden">
+        <a href="#services" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Услуги</a>
+        <a href="#results" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Портфолио</a>
+        <a href="https://wa.me/77074534518" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Контакты</a>
+        <a href="https://t.me/Anukenn" class="px-8 py-3 rounded-full bg-indigo-600 text-white font-bold">Telegram</a>
+    </div>
 
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -261,6 +278,37 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 1000, offset: 50 });</script>
+    <script>
+        AOS.init({ once: true, duration: 1000, offset: 50 });
+
+        // Мобильное меню (Скрипт)
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('closed');
+                mobileMenu.classList.add('open');
+                menuBtn.innerHTML = '<i class="fas fa-times"></i>'; // Меняем иконку на крестик
+            } else {
+                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('closed');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>'; // Возвращаем бургер
+            }
+        });
+
+        // Закрываем меню при клике на ссылку
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('closed');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                isMenuOpen = false;
+            });
+        });
+    </script>
 </body>
 </html>
