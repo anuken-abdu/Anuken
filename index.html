@@ -12,6 +12,22 @@
 
       gtag('config', 'AW-17829892914');
     </script>
+    
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17829892914/bFDICJ6f4d0bELKm-rVC',
+          'transaction_id': '',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <title>Anuken | Разработчик сайтов</title>
     <meta name="description" content="Создание продающих сайтов и настройка контекстной рекламы. Комплексный маркетинг для бизнеса.">
 
@@ -79,10 +95,10 @@
                 <a href="#workflow" class="hover:text-white transition hover:scale-105">Процесс</a>
                 <a href="#results" class="hover:text-white transition hover:scale-105">Портфолио</a>
                 <a href="#faq" class="hover:text-white transition hover:scale-105">Вопросы</a>
-                <a href="https://wa.me/77074534518" class="hover:text-white transition hover:scale-105">Контакты</a>
+                <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="hover:text-white transition hover:scale-105">Контакты</a>
             </nav>
 
-            <a href="https://t.me/Anukenn" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
+            <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
                 Telegram <i class="fab fa-telegram-plane group-hover:translate-x-1 transition"></i>
             </a>
             
@@ -97,8 +113,8 @@
         <a href="#workflow" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Процесс</a>
         <a href="#results" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Портфолио</a>
         <a href="#faq" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Вопросы</a>
-        <a href="https://wa.me/77074534518" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Контакты</a>
-        <a href="https://t.me/Anukenn" class="px-8 py-3 rounded-full bg-indigo-600 text-white font-bold">Telegram</a>
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Контакты</a>
+        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="px-8 py-3 rounded-full bg-indigo-600 text-white font-bold">Telegram</a>
     </div>
 
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -121,7 +137,7 @@
                     <span class="text-white font-medium border-b border-indigo-500/50">Без посредников.</span>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/77074534518" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-[0_0_20px_rgba(79,70,229,0.4)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
+                    <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-[0_0_20px_rgba(79,70,229,0.4)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
                         <i class="fab fa-whatsapp text-xl"></i> Обсудить проект
                     </a>
                     <a href="#results" class="px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 backdrop-blur text-white font-bold border border-slate-600 transition text-center">
@@ -325,7 +341,7 @@
             
             <div class="mt-16 text-center">
                 <p class="text-slate-500 text-sm mb-6">Хотите такой же мощный результат?</p>
-                <a href="https://wa.me/77074534518" class="inline-flex items-center gap-2 text-indigo-400 hover:text-white transition border-b border-indigo-400 hover:border-white pb-1 text-lg">
+                <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="inline-flex items-center gap-2 text-indigo-400 hover:text-white transition border-b border-indigo-400 hover:border-white pb-1 text-lg">
                     Обсудить ваш проект <i class="fas fa-arrow-right text-sm"></i>
                 </a>
             </div>
@@ -389,11 +405,11 @@
         <div class="container mx-auto px-6 text-center relative z-10">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-tech">Готовы начать?</h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
-                <a href="https://t.me/Anukenn" target="_blank" class="w-full md:w-auto flex items-center justify-center gap-4 bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white px-8 py-4 rounded-xl transition duration-300">
+                <a href="https://t.me/Anukenn" target="_blank" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto flex items-center justify-center gap-4 bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white px-8 py-4 rounded-xl transition duration-300">
                     <i class="fab fa-telegram text-2xl"></i>
                     <div class="text-left"><div class="text-xs opacity-70">Написать в</div><div class="font-bold">Telegram</div></div>
                 </a>
-                <a href="tel:+77074534518" class="w-full md:w-auto flex items-center justify-center gap-4 bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500 hover:text-white px-8 py-4 rounded-xl transition duration-300">
+                <a href="tel:+77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto flex items-center justify-center gap-4 bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500 hover:text-white px-8 py-4 rounded-xl transition duration-300">
                     <i class="fas fa-phone-alt text-2xl"></i>
                     <div class="text-left"><div class="text-xs opacity-70">Позвонить</div><div class="font-bold">+7 707 453 4518</div></div>
                 </a>
