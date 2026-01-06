@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в управление</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px; /* Чуть скруглил углы */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 { margin-top: 0; color: #333; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 20px; font-size: 14px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0070f3; /* Цвет Vercel (синий) */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #0051a2; }
+        #error-msg { color: #e00; display: none; margin-bottom: 15px; font-size: 14px; font-weight: bold;}
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Админка</h2>
+    <p>Введите пароль для редактирования</p>
+    
+    <div id="error-msg">Неверный пароль!</div>
+    
+    <form id="loginForm">
+        <input type="password" id="passInput" placeholder="Пароль" required>
+        <button type="submit">Войти</button>
+    </form>
+</div>
+
+<script>
+    // ================= НАСТРОЙКИ =================
+    
+    // 1. ПРИДУМАЙТЕ ПАРОЛЬ (можете поменять на свой)
+    const MY_PASSWORD = "123"; 
+    
+    // 2. ССЫЛКА НА РЕДАКТОР GITHUB
+    // Вам нужно вставить сюда ссылку на редактирование главного файла.
+    // См. инструкцию ниже, как её получить.
+    const GITHUB_EDIT_LINK = "https://github.com/whoiam-777/Anuken/new/main";
+
+    // =============================================
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        var inputPass = document.getElementById('passInput').value;
+        
+        if (inputPass === MY_PASSWORD) {
+            // Если пароль верный - открываем редактор
+            window.location.href = GITHUB_EDIT_LINK;
+        } else {
+            // Если нет - ошибка
+            document.getElementById('error-msg').style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
