@@ -3,208 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuken | Портфолио</title>
+    <title>Anuken | Мои Работы</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        mono: ['"JetBrains Mono"', 'monospace'], // Для кода и заголовков
-                        sans: ['"Inter"', 'sans-serif'], // Для текста
-                    },
-                    colors: {
-                        dark: '#050505',
-                        card: '#0f0f0f',
-                        neon: '#00f3ff', // Твой фирменный цвет (можно поменять)
-                        purple: '#bd00ff'
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], tech: ['Space Grotesk', 'sans-serif'] },
+                    colors: { brand: { dark: '#020617', card: '#0f172a', accent: '#6366f1' } },
+                    animation: { 'blob': 'blob 7s infinite' },
+                    keyframes: {
+                        blob: { '0%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(30px, -50px) scale(1.1)' }, '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }, '100%': { transform: 'translate(0px, 0px) scale(1)' } }
                     }
                 }
             }
         }
     </script>
-
     <style>
-        body { background-color: #050505; color: white; }
-        
-        /* Эффект свечения для карточек */
-        .tech-card {
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
-        }
-        .tech-card:hover {
-            border-color: #00f3ff;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        /* Кнопка */
-        .btn-glow {
-            transition: all 0.3s ease;
-        }
-        .btn-glow:hover {
-            box-shadow: 0 0 15px currentColor;
-        }
+        .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease; }
+        .glass-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3); }
+        .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
     </style>
 </head>
-<body class="font-sans antialiased overflow-x-hidden">
+<body class="bg-brand-dark text-slate-300 relative overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/5">
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+    </div>
+
+    <header class="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur border-b border-white/5">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="font-mono text-xl font-bold tracking-tighter text-white">
-                <span class="text-neon">&lt;</span>Anuken<span class="text-neon">/&gt;</span>
+            <a href="index.html" class="font-tech text-2xl font-bold text-white flex items-center gap-2">
+                <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm"><i class="fas fa-code"></i></span>
+                ANUKEN
             </a>
-            <a href="index.html" class="text-sm font-mono text-gray-400 hover:text-white transition">
-                <i class="fas fa-arrow-left mr-2"></i>На Главную
+            <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white transition">
+                <i class="fas fa-arrow-left"></i> На главную
             </a>
         </div>
-    </nav>
+    </header>
 
-    <section class="pt-32 pb-12 relative">
-        <div class="absolute top-20 right-0 w-96 h-96 bg-purple/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute top-40 left-0 w-64 h-64 bg-neon/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="font-mono text-4xl md:text-6xl font-bold mb-4" data-aos="fade-down">
-                Мои <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon to-purple">Проекты</span>
-            </h1>
-            <p class="text-gray-400 max-w-xl mx-auto font-mono text-sm">
-                Избранные работы: от одностраничных лендингов до сложных e-commerce платформ.
-            </p>
+    <section class="pt-32 pb-12 relative z-10 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold text-white font-tech mb-4" data-aos="fade-down">Мои Работы</h1>
+            <p class="text-slate-400 max-w-xl mx-auto">Избранные проекты: от одностраничных лендингов до сложных магазинов.</p>
         </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 relative z-10">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8">
 
-                <article class="tech-card bg-card rounded-2xl overflow-hidden group" data-aos="fade-up">
-                    <div class="h-64 bg-gray-800 relative overflow-hidden group-hover:opacity-90 transition">
-                        <div class="absolute inset-0 flex items-center justify-center text-gray-600 font-mono">
-                            Preview Image
-                        </div>
-                        <div class="absolute top-4 right-4 bg-neon text-dark text-xs font-bold px-3 py-1 rounded-full font-mono">E-COMMERCE</div>
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col border-indigo-500/50" data-aos="fade-up">
+                    <div class="h-64 relative overflow-hidden group-hover:opacity-90 transition bg-slate-800">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-600 font-tech">📸 Скриншот Kassenova</div>
+                        <div class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">E-COMMERCE</div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">NEW</div>
                     </div>
-                    
-                    <div class="p-8">
-                        <h2 class="text-2xl font-bold mb-2 font-mono group-hover:text-neon transition">Kassenova Store</h2>
-                        
-                        <a href="#" class="inline-flex items-center text-sm text-neon hover:text-white mb-6 transition border-b border-neon/30 pb-0.5 hover:border-white">
-                            kassenova.kz <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                        </a>
-
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Полноценный интернет-магазин бытовой техники премиум-класса. 
-                            Разработан уникальный функционал для оптовых клиентов: умная корзина с калькулятором, 
-                            горизонтальный скролл товаров и интеграция заказов напрямую в WhatsApp.
-                            Дизайн в стиле "Clean Luxury".
-                        </p>
-
-                        <div class="flex gap-3 text-xs font-mono text-gray-500">
-                            <span class="bg-white/5 px-2 py-1 rounded">HTML5</span>
-                            <span class="bg-white/5 px-2 py-1 rounded">Tailwind</span>
-                            <span class="bg-white/5 px-2 py-1 rounded">JS Logic</span>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Kassenova Store</h2>
+                        <div class="flex gap-2 mb-4 text-xs text-indigo-400 font-mono">
+                            <span class="bg-indigo-500/10 px-2 py-1 rounded">HTML5</span>
+                            <span class="bg-indigo-500/10 px-2 py-1 rounded">JS Logic</span>
+                            <span class="bg-indigo-500/10 px-2 py-1 rounded">Opt</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Полноценный интернет-магазин техники. Разработана умная корзина для оптовиков, калькулятор стоимости и отправка заказа в WhatsApp.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="w-full block py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition shadow-lg shadow-indigo-500/20">Смотреть демо <i class="fas fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
-                </article>
+                </div>
 
-                <article class="tech-card bg-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-64 bg-gray-800 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-gray-600 font-mono">Preview Image</div>
-                        <div class="absolute top-4 right-4 bg-purple text-white text-xs font-bold px-3 py-1 rounded-full font-mono">УСЛУГИ</div>
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/manipulator.jpg" class="w-full h-full object-cover" alt="Сайт Манипулятора">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">LANDING PAGE</div>
                     </div>
-                    
-                    <div class="p-8">
-                        <h2 class="text-2xl font-bold mb-2 font-mono group-hover:text-purple transition">Служба Эвакуации</h2>
-                        
-                        <a href="#" class="inline-flex items-center text-sm text-purple hover:text-white mb-6 transition border-b border-purple/30 pb-0.5 hover:border-white">
-                            evacuator-city.kz <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                        </a>
-
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Быстрый и адаптивный Landing Page для службы эвакуации. 
-                            Главная задача — максимальная конверсия. Кнопки быстрого вызова, 
-                            расчет стоимости и карта покрытия. Сайт загружается за 0.5 секунды.
-                        </p>
-
-                        <div class="flex gap-3 text-xs font-mono text-gray-500">
-                            <span class="bg-white/5 px-2 py-1 rounded">Landing Page</span>
-                            <span class="bg-white/5 px-2 py-1 rounded">CSS Animations</span>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Аренда Манипулятора</h2>
+                        <div class="flex gap-2 mb-4 text-xs text-purple-400 font-mono">
+                            <span class="bg-purple-500/10 px-2 py-1 rounded">Адаптив</span>
+                            <span class="bg-purple-500/10 px-2 py-1 rounded">Speed</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Быстрый сайт для услуг спецтехники. Акцент на конверсию: кнопки вызова, галерея работ и карта.</p>
+                        <div class="mt-auto">
+                            <a href="https://manipulator-evakuator.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-center font-bold transition shadow-lg shadow-purple-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
                         </div>
                     </div>
-                </article>
+                </div>
 
-                <article class="tech-card bg-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-64 bg-gray-800 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-gray-600 font-mono">Preview Image</div>
-                        <div class="absolute top-4 right-4 bg-purple text-white text-xs font-bold px-3 py-1 rounded-full font-mono">СПЕЦТЕХНИКА</div>
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/elegance.jpg" class="w-full h-full object-cover" alt="Сайт Салона">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">BEAUTY</div>
                     </div>
-                    
-                    <div class="p-8">
-                        <h2 class="text-2xl font-bold mb-2 font-mono group-hover:text-purple transition">Аренда Манипулятора</h2>
-                        
-                        <a href="#" class="inline-flex items-center text-sm text-purple hover:text-white mb-6 transition border-b border-purple/30 pb-0.5 hover:border-white">
-                            manipulator-pro.kz <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                        </a>
-
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Сайт для аренды спецтехники. Реализована удобная галерея выполненных работ, 
-                            таблица технических характеристик и форма обратной связи. 
-                            Темная тема для выделения фотографий техники.
-                        </p>
-
-                        <div class="flex gap-3 text-xs font-mono text-gray-500">
-                            <span class="bg-white/5 px-2 py-1 rounded">HTML/CSS</span>
-                            <span class="bg-white/5 px-2 py-1 rounded">Gallery JS</span>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Салон ELEGANCE</h2>
+                        <div class="flex gap-2 mb-4 text-xs text-pink-400 font-mono">
+                            <span class="bg-pink-500/10 px-2 py-1 rounded">Design</span>
+                            <span class="bg-pink-500/10 px-2 py-1 rounded">Animation</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Премиальный сайт с прайс-листом и анимациями. Темная тема подчеркивает стиль салона.</p>
+                        <div class="mt-auto">
+                            <a href="https://elegance-almaty.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-pink-600 hover:bg-pink-500 text-white text-center font-bold transition shadow-lg shadow-pink-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
                         </div>
                     </div>
-                </article>
+                </div>
 
-                <article class="tech-card bg-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-64 bg-gray-800 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-gray-600 font-mono">Preview Image</div>
-                        <div class="absolute top-4 right-4 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-full font-mono">BEAUTY</div>
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/maverick.jpg" class="w-full h-full object-cover" alt="Сайт Барбершопа">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <div class="absolute top-4 left-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">SERVICE</div>
                     </div>
-                    
-                    <div class="p-8">
-                        <h2 class="text-2xl font-bold mb-2 font-mono group-hover:text-white transition">Barbershop "Maverick"</h2>
-                        
-                        <a href="#" class="inline-flex items-center text-sm text-gray-400 hover:text-white mb-6 transition border-b border-gray-600 pb-0.5 hover:border-white">
-                            barber-maverick.kz <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                        </a>
-
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Брутальный многостраничный сайт. Интеграция с сервисом онлайн-записи (Yclients). 
-                            Раздел "Мастера", прайс-лист и атмосферное видео на фоне первого экрана.
-                        </p>
-
-                        <div class="flex gap-3 text-xs font-mono text-gray-500">
-                            <span class="bg-white/5 px-2 py-1 rounded">Video BG</span>
-                            <span class="bg-white/5 px-2 py-1 rounded">Integration</span>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Maverick Barbershop</h2>
+                        <div class="flex gap-2 mb-4 text-xs text-orange-400 font-mono">
+                            <span class="bg-orange-500/10 px-2 py-1 rounded">Video BG</span>
+                            <span class="bg-orange-500/10 px-2 py-1 rounded">Booking</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Брутальный сайт с видео-фоном. Интеграция онлайн-записи и раздел "Наши мастера".</p>
+                        <div class="mt-auto">
+                            <a href="https://maver1ck.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-orange-600 hover:bg-orange-500 text-white text-center font-bold transition shadow-lg shadow-orange-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
                         </div>
                     </div>
-                </article>
+                </div>
 
             </div>
         </div>
     </section>
 
-    <footer class="bg-black py-8 border-t border-white/10 text-center">
-        <p class="text-gray-500 font-mono text-xs">&copy; 2026 Anuken Development.</p>
+    <footer class="py-8 bg-[#020617] border-t border-white/5 text-center text-xs text-slate-600 font-mono">
+        <p>&copy; 2026 Anuken Development.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script>AOS.init({ once: true, duration: 1000, offset: 50 });</script>
 </body>
 </html>
-
