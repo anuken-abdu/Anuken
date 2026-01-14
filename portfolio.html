@@ -27,6 +27,12 @@
     <style>
         .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease; }
         .glass-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3); }
+        /* Индивидуальные ховеры для разных цветов */
+        .glass-card.hover-sky:hover { border-color: #0ea5e9; box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.3); }
+        .glass-card.hover-purple:hover { border-color: #9333ea; box-shadow: 0 20px 40px -15px rgba(147, 51, 234, 0.3); }
+        .glass-card.hover-pink:hover { border-color: #db2777; box-shadow: 0 20px 40px -15px rgba(219, 39, 119, 0.3); }
+        .glass-card.hover-orange:hover { border-color: #ea580c; box-shadow: 0 20px 40px -15px rgba(234, 88, 12, 0.3); }
+        
         .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
     </style>
 </head>
@@ -61,12 +67,34 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8">
 
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col border-indigo-500/50" data-aos="fade-up">
+                <div class="glass-card hover-sky rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
+                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <img src="images/avia-drones.jpg" class="w-full h-full object-cover" alt="Avia Drones">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <div class="absolute top-4 left-4 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">AVIATION</div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">NEW</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Avia-Drones</h2>
+                        <div class="flex gap-2 mb-4 text-xs text-sky-400 font-mono">
+                            <span class="bg-sky-500/10 px-2 py-1 rounded">Interactive</span>
+                            <span class="bg-sky-500/10 px-2 py-1 rounded">Catalog</span>
+                            <span class="bg-sky-500/10 px-2 py-1 rounded">HUD UI</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Технологичный лендинг по продаже дронов. Реализован "живой" интерфейс, модальные окна с характеристиками, анимации полета и прямая интеграция с WhatsApp.</p>
+                        <div class="mt-auto">
+                            <a href="#" target="_blank" class="w-full block py-3 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-center font-bold transition shadow-lg shadow-sky-500/20">
+                                Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col border-indigo-500/50" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
                         <img src="images/kassenova.jpg" class="w-full h-full object-cover" alt="Kassenova Store">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
                         <div class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">E-COMMERCE</div>
-                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">NEW</div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h2 class="text-2xl font-bold text-white mb-2 font-tech">Kassenova Store</h2>
@@ -84,7 +112,7 @@
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card hover-purple rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
                         <img src="images/manipulator.jpg" class="w-full h-full object-cover" alt="Сайт Манипулятора">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
@@ -103,7 +131,7 @@
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-card hover-pink rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
                         <img src="images/elegance.jpg" class="w-full h-full object-cover" alt="Сайт Салона">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
@@ -122,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                <div class="glass-card hover-orange rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="400">
                     <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
                         <img src="images/maverick.jpg" class="w-full h-full object-cover" alt="Сайт Барбершопа">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
