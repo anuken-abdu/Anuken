@@ -90,6 +90,9 @@
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: sweep .5s ease-in-out; }
         @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+
+        /* Hero background fade */
+        #hero-bg { opacity: .6; transition: opacity .55s ease; }
     </style>
 </head>
 
@@ -144,7 +147,8 @@
     <!-- Hero -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="images/image.png" alt="Background" class="w-full h-full object-cover opacity-60" fetchpriority="high">
+            <!-- ВАЖНО: добавлен id="hero-bg" для смены фона -->
+            <img id="hero-bg" src="images/image.png" alt="Background" class="w-full h-full object-cover" fetchpriority="high">
             <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/70 to-brand-dark/35"></div>
         </div>
 
@@ -636,7 +640,6 @@
                 <a href="https://wa.me/77074534518" target="_blank" class="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-green-400 hover:bg-slate-700 transition transform hover:scale-110 border border-white/5">
                     <i class="fab fa-whatsapp text-xl"></i>
                 </a>
-                <!-- Если Instagram нет — лучше убрать или поставить реальную ссылку -->
             </div>
 
             <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
@@ -662,6 +665,63 @@
     <script>
         // Reduce animations for users who prefer it
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Hero background randomizer (меняется при каждом заходе)
+        (function () {
+            const imgEl = document.getElementById('hero-bg');
+            if (!imgEl) return;
+
+            // Добавьте свои файлы в папку /images и при необходимости поменяйте список
+            const heroImages = [
+                'images/image.png',     // текущий фон (fallback)
+                'images/hero-1.jpg',
+                'images/hero-2.jpg',
+                'images/hero-3.jpg',
+                'images/hero-4.jpg'
+            ];
+
+            // Убираем дубликаты, если случайно добавите одинаковые пути
+            const unique = Array.from(new Set(heroImages)).filter(Boolean);
+
+            const last = localStorage.getItem('heroBgLast') || '';
+            // Перемешаем, но постараемся не брать тот же самый, что был прошлый раз
+            const candidates = unique.filter(s => s !== last);
+            const pool = (candidates.length ? candidates : unique).slice();
+
+            // Fisher–Yates shuffle
+            for (let i = pool.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [pool[i], pool[j]] = [pool[j], pool[i]];
+            }
+
+            function apply(src) {
+                try { localStorage.setItem('heroBgLast', src); } catch (_) {}
+
+                if (reduceMotion) {
+                    imgEl.src = src;
+                    return;
+                }
+
+                imgEl.style.opacity = '0';
+                setTimeout(() => {
+                    imgEl.src = src;
+                    requestAnimationFrame(() => { imgEl.style.opacity = '0.6'; });
+                }, 220);
+            }
+
+            // Попытка загрузить первый доступный (если файла нет — пробуем следующий)
+            let idx = 0;
+            function tryNext() {
+                if (idx >= pool.length) return; // оставляем текущий src
+                const src = pool[idx++];
+                const test = new Image();
+                test.onload = () => apply(src);
+                test.onerror = () => tryNext();
+                test.src = src;
+            }
+
+            tryNext();
+        })();
 
         AOS.init({
             once: true,
