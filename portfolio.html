@@ -546,11 +546,11 @@
   </footer>
 
   <!-- Modal -->
-  <div id="projectModal" class="modal-hidden fixed inset-0 z-[999] items-center justify-center p-4">
+  <div id="projectModal" class="modal-hidden fixed inset-0 z-[999] items-start justify-center p-4 overflow-y-auto">
     <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-modal-close></div>
 
-    <div class="relative w-full max-w-5xl glass rounded-2xl border border-white/10 overflow-hidden">
-      <div class="flex items-center justify-between px-5 md:px-6 py-4 border-b border-white/5">
+    <div class="relative w-full max-w-5xl glass rounded-2xl border border-white/10 overflow-x-hidden max-h-[calc(100vh-2rem)] overflow-y-auto">
+      <div class="sticky top-0 z-10 flex items-center justify-between px-5 md:px-6 py-4 border-b border-white/5 bg-brand-dark/80 backdrop-blur">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/20 flex items-center justify-center text-indigo-300">
             <i class="fas fa-file-alt"></i>
