@@ -1,183 +1,1343 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuken | Мои Работы</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Anuken | Портфолио / Кейсы</title>
+  <meta name="description" content="Портфолио и кейсы: лендинги, магазины, сервисы. Фильтры, цены, подробности по каждому проекту." />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'], tech: ['Space Grotesk', 'sans-serif'] },
-                    colors: { brand: { dark: '#020617', card: '#0f172a', accent: '#6366f1' } },
-                    animation: { 'blob': 'blob 7s infinite' },
-                    keyframes: {
-                        blob: { '0%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(30px, -50px) scale(1.1)' }, '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }, '100%': { transform: 'translate(0px, 0px) scale(1)' } }
-                    }
-                }
+  <!-- (Опционально) Google Ads Conversion: если хочешь трекать клики с портфолио -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17829892914"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17829892914');
+  </script>
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') window.location = url;
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17829892914/bFDICJ6f4d0bELKm-rVC',
+        'transaction_id': '',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            tech: ['Space Grotesk', 'sans-serif']
+          },
+          colors: {
+            brand: { dark: '#020617', card: '#0f172a', accent: '#6366f1' }
+          },
+          animation: {
+            blob: 'blob 7s infinite',
+            scroll: 'scroll 18s linear infinite'
+          },
+          keyframes: {
+            blob: {
+              '0%':   { transform: 'translate(0px, 0px) scale(1)' },
+              '33%':  { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%':  { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' }
+            },
+            scroll: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' }
             }
+          }
         }
-    </script>
-    <style>
-        .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease; }
-        .glass-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3); }
-        /* Индивидуальные ховеры для разных цветов */
-        .glass-card.hover-sky:hover { border-color: #0ea5e9; box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.3); }
-        .glass-card.hover-purple:hover { border-color: #9333ea; box-shadow: 0 20px 40px -15px rgba(147, 51, 234, 0.3); }
-        .glass-card.hover-pink:hover { border-color: #db2777; box-shadow: 0 20px 40px -15px rgba(219, 39, 119, 0.3); }
-        .glass-card.hover-orange:hover { border-color: #ea580c; box-shadow: 0 20px 40px -15px rgba(234, 88, 12, 0.3); }
-        
-        .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
-    </style>
-</head>
-<body class="bg-brand-dark text-slate-300 relative overflow-x-hidden">
+      }
+    }
+  </script>
 
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute inset-0 grid-bg opacity-20"></div>
+  <style>
+    /* Base */
+    .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.70) 0%, rgba(15, 23, 42, 0.92) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.35s ease; }
+    .glass-card:hover { transform: translateY(-4px); border-color: rgba(99, 102, 241, 0.9); box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.28); }
+    .text-gradient { background: linear-gradient(to right, #818cf8, #c084fc, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: gradient 6s linear infinite; }
+    @keyframes gradient { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
+
+    .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
+
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animation-delay-4000 { animation-delay: 4s; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+    /* Modal */
+    .modal-hidden { display: none; }
+    .modal-show { display: flex; }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-brand-dark text-slate-300 relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
+
+  <!-- Background FX -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-20 left-1/4 w-[28rem] h-[28rem] bg-indigo-600 rounded-full mix-blend-multiply filter blur-[140px] opacity-20 animate-blob"></div>
+    <div class="absolute top-10 right-1/4 w-[30rem] h-[30rem] bg-purple-600 rounded-full mix-blend-multiply filter blur-[140px] opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-0 left-1/3 w-[26rem] h-[26rem] bg-cyan-600 rounded-full mix-blend-multiply filter blur-[140px] opacity-15 animate-blob animation-delay-4000"></div>
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="font-tech text-2xl font-bold text-white tracking-tighter flex items-center gap-2">
+        <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm"><i class="fas fa-code"></i></span>
+        ANUKEN
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="#cases" class="hover:text-white transition">Кейсы</a>
+        <a href="#packages" class="hover:text-white transition">Пакеты</a>
+        <a href="#niches" class="hover:text-white transition">Ниши</a>
+        <a href="#catalog" class="hover:text-white transition">Каталог</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white">
+          WhatsApp <i class="fab fa-whatsapp ml-1"></i>
+        </a>
+        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="px-4 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 transition text-sm font-bold text-white">
+          Telegram <i class="fab fa-telegram-plane ml-1"></i>
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" class="md:hidden text-2xl text-white">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
 
-    <header class="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur border-b border-white/5">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="font-tech text-2xl font-bold text-white flex items-center gap-2">
-                <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm"><i class="fas fa-code"></i></span>
-                ANUKEN
-            </a>
-            <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white transition">
-                <i class="fas fa-arrow-left"></i> На главную
-            </a>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-brand-dark/95 backdrop-blur">
+      <div class="container mx-auto px-6 py-5 flex flex-col gap-4 text-base">
+        <a href="#cases" class="mobile-link hover:text-white transition">Кейсы</a>
+        <a href="#packages" class="mobile-link hover:text-white transition">Пакеты</a>
+        <a href="#niches" class="mobile-link hover:text-white transition">Ниши</a>
+        <a href="#catalog" class="mobile-link hover:text-white transition">Каталог</a>
+        <a href="#faq" class="mobile-link hover:text-white transition">FAQ</a>
+
+        <div class="flex gap-3 pt-2">
+          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="flex-1 text-center px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white">
+            WhatsApp <i class="fab fa-whatsapp ml-1"></i>
+          </a>
+          <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="flex-1 text-center px-4 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-sm font-bold text-white">
+            Telegram <i class="fab fa-telegram-plane ml-1"></i>
+          </a>
         </div>
-    </header>
 
-    <section class="pt-32 pb-12 relative z-10 text-center">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-6xl font-bold text-white font-tech mb-4" data-aos="fade-down">Мои Работы</h1>
-            <p class="text-slate-400 max-w-xl mx-auto">Избранные проекты: от одностраничных лендингов до сложных магазинов.</p>
-        </div>
-    </section>
+        <a href="index.html" class="text-sm text-slate-400 hover:text-white transition pt-2">
+          <i class="fas fa-arrow-left mr-2"></i> На главную
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <section class="pb-24 relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-8">
+  <!-- Hero -->
+  <section class="relative pt-28 pb-10 z-10">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold mb-6 backdrop-blur-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            ПОРТФОЛИО / КЕЙСЫ / ЦЕНЫ
+          </div>
 
-                <div class="glass-card hover-sky rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
-                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
-                        <img src="images/avia-drones.jpg" class="w-full h-full object-cover" alt="Avia Drones">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
-                        <div class="absolute top-4 left-4 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">AVIATION</div>
-                        <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full z-20">NEW</div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Avia-Drones</h2>
-                        <div class="flex gap-2 mb-4 text-xs text-sky-400 font-mono">
-                            <span class="bg-sky-500/10 px-2 py-1 rounded">Interactive</span>
-                            <span class="bg-sky-500/10 px-2 py-1 rounded">Catalog</span>
-                            <span class="bg-sky-500/10 px-2 py-1 rounded">HUD UI</span>
-                        </div>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Технологичный лендинг по продаже дронов. Реализован "живой" интерфейс, модальные окна с характеристиками, анимации полета и прямая интеграция с WhatsApp.</p>
-                        <div class="mt-auto">
-                            <a href="https://avia-drones.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-center font-bold transition shadow-lg shadow-sky-500/20">
-                                Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-5 font-tech">
+            Проекты, которые <span class="text-gradient">продают</span>
+          </h1>
+          <p class="text-slate-300 leading-relaxed max-w-xl mb-8">
+            Ниже — кейсы с деталями, каталог работ с фильтрами, цены по каждому проекту (ты можешь легко менять их в коде),
+            и быстрый способ выбрать подходящий формат: лендинг, магазин или сайт + реклама.
+          </p>
 
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col border-indigo-500/50" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
-                        <img src="images/kassenova.jpg" class="w-full h-full object-cover" alt="Kassenova Store">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
-                        <div class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">E-COMMERCE</div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Kassenova Store</h2>
-                        <div class="flex gap-2 mb-4 text-xs text-indigo-400 font-mono">
-                            <span class="bg-indigo-500/10 px-2 py-1 rounded">HTML5</span>
-                            <span class="bg-indigo-500/10 px-2 py-1 rounded">JS Logic</span>
-                            <span class="bg-indigo-500/10 px-2 py-1 rounded">Opt</span>
-                        </div>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Полноценный интернет-магазин техники. Разработана умная корзина для оптовиков, калькулятор стоимости и отправка заказа в WhatsApp.</p>
-                        <div class="mt-auto">
-                            <a href="https://kassenova-market.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-center font-bold transition shadow-lg shadow-purple-500/20">
-                                Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#catalog" class="px-7 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition transform hover:-translate-y-1 text-center">
+              Смотреть каталог <i class="fas fa-layer-group ml-2"></i>
+            </a>
+            <a href="index.html" class="px-7 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 transition text-center text-white font-bold">
+              На главную <i class="fas fa-arrow-left ml-2"></i>
+            </a>
+          </div>
 
-                <div class="glass-card hover-purple rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
-                        <img src="images/manipulator.jpg" class="w-full h-full object-cover" alt="Сайт Манипулятора">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
-                        <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">LANDING PAGE</div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Аренда Манипулятора</h2>
-                        <div class="flex gap-2 mb-4 text-xs text-purple-400 font-mono">
-                            <span class="bg-purple-500/10 px-2 py-1 rounded">Адаптив</span>
-                            <span class="bg-purple-500/10 px-2 py-1 rounded">Speed</span>
-                        </div>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Быстрый сайт для услуг спецтехники. Акцент на конверсию: кнопки вызова, галерея работ и карта.</p>
-                        <div class="mt-auto">
-                            <a href="https://manipulator-evakuator.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-center font-bold transition shadow-lg shadow-purple-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card hover-pink rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
-                        <img src="images/elegance.jpg" class="w-full h-full object-cover" alt="Сайт Салона">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
-                        <div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">BEAUTY</div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Салон ELEGANCE</h2>
-                        <div class="flex gap-2 mb-4 text-xs text-pink-400 font-mono">
-                            <span class="bg-pink-500/10 px-2 py-1 rounded">Design</span>
-                            <span class="bg-pink-500/10 px-2 py-1 rounded">Animation</span>
-                        </div>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Премиальный сайт с прайс-листом и анимациями. Темная тема подчеркивает стиль салона.</p>
-                        <div class="mt-auto">
-                            <a href="https://elegance-almaty.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-pink-600 hover:bg-pink-500 text-white text-center font-bold transition shadow-lg shadow-pink-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card hover-orange rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="400">
-                    <div class="h-64 relative overflow-hidden group-hover:scale-105 transition duration-500">
-                        <img src="images/maverick.jpg" class="w-full h-full object-cover" alt="Сайт Барбершопа">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
-                        <div class="absolute top-4 left-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20">SERVICE</div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h2 class="text-2xl font-bold text-white mb-2 font-tech">Maverick Barbershop</h2>
-                        <div class="flex gap-2 mb-4 text-xs text-orange-400 font-mono">
-                            <span class="bg-orange-500/10 px-2 py-1 rounded">Video BG</span>
-                            <span class="bg-orange-500/10 px-2 py-1 rounded">Booking</span>
-                        </div>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Брутальный сайт с видео-фоном. Интеграция онлайн-записи и раздел "Наши мастера".</p>
-                        <div class="mt-auto">
-                            <a href="https://maver1ck.vercel.app/" target="_blank" class="w-full block py-3 rounded-lg bg-orange-600 hover:bg-orange-500 text-white text-center font-bold transition shadow-lg shadow-orange-500/20">Перейти на сайт <i class="fas fa-external-link-alt ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+          <div class="grid grid-cols-3 gap-3 mt-8 max-w-xl">
+            <div class="glass p-4 rounded-xl">
+              <div class="text-white font-bold font-tech text-lg" id="statProjects">—</div>
+              <div class="text-xs text-slate-400">Проектов</div>
             </div>
+            <div class="glass p-4 rounded-xl">
+              <div class="text-white font-bold font-tech text-lg" id="statNiches">—</div>
+              <div class="text-xs text-slate-400">Ниш</div>
+            </div>
+            <div class="glass p-4 rounded-xl">
+              <div class="text-white font-bold font-tech text-lg">HTML/JS</div>
+              <div class="text-xs text-slate-400">Чистый код</div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <footer class="py-8 bg-[#020617] border-t border-white/5 text-center text-xs text-slate-600 font-mono">
+        <!-- Right hero panel -->
+        <div class="relative hidden lg:block" data-aos="fade-left">
+          <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
+          <div class="relative bg-brand-card/90 backdrop-blur border border-white/10 rounded-2xl p-7 shadow-2xl">
+            <div class="flex items-center justify-between mb-5">
+              <div class="font-tech text-white font-bold">Функции портфолио</div>
+              <div class="text-xs text-slate-400 font-mono">v2</div>
+            </div>
+
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center gap-3">
+                <span class="w-9 h-9 rounded-lg bg-indigo-500/15 border border-indigo-500/20 flex items-center justify-center text-indigo-300">
+                  <i class="fas fa-filter"></i>
+                </span>
+                <div>
+                  <div class="text-white font-semibold">Фильтры / поиск / сортировка</div>
+                  <div class="text-slate-400 text-xs">Быстро находят “похожий проект”</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="w-9 h-9 rounded-lg bg-purple-500/15 border border-purple-500/20 flex items-center justify-center text-purple-300">
+                  <i class="fas fa-file-alt"></i>
+                </span>
+                <div>
+                  <div class="text-white font-semibold">Кейсы с задачей и решением</div>
+                  <div class="text-slate-400 text-xs">Показывает опыт, а не “картинки”</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="w-9 h-9 rounded-lg bg-cyan-500/15 border border-cyan-500/20 flex items-center justify-center text-cyan-300">
+                  <i class="fas fa-window-restore"></i>
+                </span>
+                <div>
+                  <div class="text-white font-semibold">Модалки “Подробнее”</div>
+                  <div class="text-slate-400 text-xs">Без лишних переходов, UX лучше</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="w-9 h-9 rounded-lg bg-green-500/15 border border-green-500/20 flex items-center justify-center text-green-300">
+                  <i class="fas fa-tags"></i>
+                </span>
+                <div>
+                  <div class="text-white font-semibold">Цена на каждом проекте</div>
+                  <div class="text-slate-400 text-xs">Ты правишь цифры прямо в массиве</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+              <div>Подходит: телефон / ПК</div>
+              <div>Lazy-load изображений</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech marquee -->
+  <section class="py-6 border-y border-white/5 relative z-10 overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="glass rounded-2xl overflow-hidden">
+        <div class="flex animate-scroll whitespace-nowrap gap-14 items-center opacity-70 hover:opacity-100 transition duration-300 px-6 py-4">
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-html5 text-orange-500 text-2xl"></i> HTML5</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-css3-alt text-blue-500 text-2xl"></i> CSS3</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-js text-yellow-400 text-2xl"></i> JavaScript</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-google text-red-500 text-2xl"></i> Google Ads</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fas fa-chart-line text-orange-400 text-2xl"></i> Analytics</div>
+
+          <!-- repeat for seamless -->
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-html5 text-orange-500 text-2xl"></i> HTML5</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-css3-alt text-blue-500 text-2xl"></i> CSS3</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-js text-yellow-400 text-2xl"></i> JavaScript</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fab fa-google text-red-500 text-2xl"></i> Google Ads</div>
+          <div class="flex items-center gap-2 text-lg font-tech"><i class="fas fa-chart-line text-orange-400 text-2xl"></i> Analytics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Cases (Slider + Case format) -->
+  <section id="cases" class="py-20 relative z-10">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Featured</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Топ кейсы (слайдер)</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+          Здесь формат “кейс-стади”: задача → решение → что сделано. Внутри — кнопка “Подробнее” (модалка) и цена.
+        </p>
+      </div>
+
+      <div class="glass rounded-2xl p-4 md:p-6" data-aos="fade-up">
+        <div class="flex items-center justify-between gap-3 mb-4">
+          <div class="text-sm text-slate-400 font-mono">
+            <span class="text-white font-bold" id="featuredIndex">01</span>/<span id="featuredTotal">03</span>
+            <span class="ml-3">featured projects</span>
+          </div>
+          <div class="flex gap-2">
+            <button id="featuredPrev" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <button id="featuredNext" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="featuredTrack" class="relative overflow-hidden rounded-2xl">
+          <!-- Slides injected by JS -->
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-5">
+          <div class="text-xs text-slate-500">
+            Совет: кликни “Подробнее”, чтобы открыть модалку без ухода на внешний сайт.
+          </div>
+          <div class="flex gap-2">
+            <a href="#catalog" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold">
+              Открыть каталог <i class="fas fa-th-large ml-2"></i>
+            </a>
+            <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold">
+              Заказать похожее <i class="fab fa-whatsapp ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case list (mini “Case Studies” block) -->
+      <div class="grid lg:grid-cols-3 gap-6 mt-10">
+        <div class="glass-card p-7 rounded-2xl" data-aos="fade-up">
+          <div class="text-indigo-300 text-xs font-bold tracking-widest uppercase mb-3">Как это читают</div>
+          <h4 class="text-white font-tech text-xl font-bold mb-3">Формат “Кейс”</h4>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-400 mt-1"></i><span><b class="text-white">Задача</b>: что хотел клиент</span></li>
+            <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-400 mt-1"></i><span><b class="text-white">Решение</b>: как построен сайт</span></li>
+            <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-400 mt-1"></i><span><b class="text-white">Функции</b>: формы/корзина/калькулятор</span></li>
+            <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-400 mt-1"></i><span><b class="text-white">Цена</b>: ориентир для клиента</span></li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-7 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-purple-300 text-xs font-bold tracking-widest uppercase mb-3">Почему это продаёт</div>
+          <h4 class="text-white font-tech text-xl font-bold mb-3">Не “картинки”, а опыт</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Когда проект описан как кейс — клиент видит логику, системность и пользу. Это повышает доверие и сокращает вопросы
+            “а что вы конкретно сделаете?”.
+          </p>
+        </div>
+
+        <div class="glass-card p-7 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-cyan-300 text-xs font-bold tracking-widest uppercase mb-3">Скорость</div>
+          <h4 class="text-white font-tech text-xl font-bold mb-3">Быстрый выбор</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Ниже ты получаешь: фильтры по нишам/типам, поиск, сортировку, и “Подробнее” в модалке — чтобы пользователь не
+            терялся по внешним ссылкам.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages (mini-landing inside portfolio) -->
+  <section id="packages" class="py-20 relative z-10">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Предложения</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Пакеты под ключ</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+          Это “мини-лендинг” прямо внутри портфолио: человек увидел работы → понял формат → нажал написать.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-7">
+        <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+          <div class="flex items-center justify-between mb-5">
+            <div class="text-white font-tech font-bold text-xl">Landing Page</div>
+            <div class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/20">Start</div>
+          </div>
+          <div class="text-3xl font-bold text-white mb-3">от <span class="text-gradient">20 000 ₸</span></div>
+          <p class="text-sm text-slate-400 mb-6 leading-relaxed">Одностраничный сайт для продажи услуги/товара. Максимум конверсии и скорости.</p>
+          <ul class="text-sm text-slate-300 space-y-2 mb-7">
+            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span>Уникальный дизайн</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span>Адаптив под телефон</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span>Кнопки WhatsApp/Telegram</span></li>
+          </ul>
+          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full block text-center px-6 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold">
+            Хочу Landing <i class="fab fa-whatsapp ml-2"></i>
+          </a>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)]" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center justify-between mb-5">
+            <div class="text-white font-tech font-bold text-xl">Сайт + Реклама</div>
+            <div class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/20">Top</div>
+          </div>
+          <div class="text-3xl font-bold text-white mb-3">от <span class="text-gradient">80 000 ₸</span></div>
+          <p class="text-sm text-slate-400 mb-6 leading-relaxed">Сайт + Google Ads + аналитика. Цель: заявки и звонки.</p>
+          <ul class="text-sm text-slate-300 space-y-2 mb-7">
+            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span>Сбор ключей + структура</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span>Конверсионные блоки</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span>Аналитика / цели / события</span></li>
+          </ul>
+          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full block text-center px-6 py-4 rounded-xl bg-purple-600 hover:bg-purple-500 transition text-white font-bold">
+            Хочу заявки <i class="fab fa-whatsapp ml-2"></i>
+          </a>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center justify-between mb-5">
+            <div class="text-white font-tech font-bold text-xl">E-commerce / Каталог</div>
+            <div class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/20">Pro</div>
+          </div>
+          <div class="text-3xl font-bold text-white mb-3">от <span class="text-gradient">150 000 ₸</span></div>
+          <p class="text-sm text-slate-400 mb-6 leading-relaxed">Каталог, корзина, калькуляторы, логика заказа, отправка в мессенджеры.</p>
+          <ul class="text-sm text-slate-300 space-y-2 mb-7">
+            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span>Корзина / формы</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span>Оптимизация скорости</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span>Масштабируемость</span></li>
+          </ul>
+          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full block text-center px-6 py-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 transition text-white font-bold">
+            Хочу магазин <i class="fab fa-whatsapp ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Niches (variant: by niches) -->
+  <section id="niches" class="py-20 relative z-10">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Ниши</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Выберите нишу</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+          Это быстрый “фильтр по бизнесу”: кликаешь нишу — каталог ниже сразу показывает релевантные проекты.
+        </p>
+      </div>
+
+      <div id="nicheChips" class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <!-- Chips injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog (Grid + Search + Sort + Filters + View Toggle + Load More + Modals) -->
+  <section id="catalog" class="py-20 relative z-10">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Каталог</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Все проекты</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+          Фильтры, поиск, сортировка. Кнопка “Подробнее” открывает кейс в модалке (без ухода на внешний сайт).
+        </p>
+      </div>
+
+      <!-- Controls -->
+      <div class="glass rounded-2xl p-5 md:p-6 mb-6" data-aos="fade-up">
+        <div class="grid lg:grid-cols-12 gap-4 items-center">
+          <div class="lg:col-span-5">
+            <label class="text-xs text-slate-400 font-mono">Поиск</label>
+            <div class="mt-1 flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+              <i class="fas fa-search text-slate-400"></i>
+              <input id="searchInput" type="text" placeholder="Например: Avia / магазин / салон..." class="w-full bg-transparent outline-none text-white placeholder:text-slate-500" />
+              <button id="clearSearch" class="text-slate-400 hover:text-white transition" title="Очистить">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2">
+            <label class="text-xs text-slate-400 font-mono">Тип</label>
+            <select id="typeFilter" class="mt-1 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
+              <!-- injected -->
+            </select>
+          </div>
+
+          <div class="lg:col-span-3">
+            <label class="text-xs text-slate-400 font-mono">Ниша</label>
+            <select id="nicheFilter" class="mt-1 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
+              <!-- injected -->
+            </select>
+          </div>
+
+          <div class="lg:col-span-2">
+            <label class="text-xs text-slate-400 font-mono">Сортировка</label>
+            <select id="sortSelect" class="mt-1 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
+              <option value="new">Сначала новые</option>
+              <option value="name">По названию</option>
+              <option value="priceAsc">Цена: по возрастанию</option>
+              <option value="priceDesc">Цена: по убыванию</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-5 pt-5 border-t border-white/5">
+          <div class="text-xs text-slate-500">
+            Найдено: <span class="text-white font-bold" id="resultsCount">0</span>
+            <span class="mx-2 text-slate-600">|</span>
+            Активный фильтр: <span class="text-white font-semibold" id="activeBadge">Все</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button id="resetFilters" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white text-sm font-semibold">
+              Сбросить <i class="fas fa-undo ml-2"></i>
+            </button>
+
+            <div class="flex rounded-xl overflow-hidden border border-white/10">
+              <button id="viewGrid" class="px-4 py-2 bg-indigo-600 text-white text-sm font-bold">
+                <i class="fas fa-th-large"></i>
+              </button>
+              <button id="viewList" class="px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold">
+                <i class="fas fa-list"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects container -->
+      <div id="projectsWrap" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- injected -->
+      </div>
+
+      <!-- Empty state -->
+      <div id="emptyState" class="hidden mt-10 text-center">
+        <div class="glass inline-block px-6 py-5 rounded-2xl">
+          <div class="text-white font-tech font-bold text-xl mb-2">Ничего не найдено</div>
+          <div class="text-slate-400 text-sm">Попробуй изменить фильтры или очистить поиск.</div>
+        </div>
+      </div>
+
+      <!-- Load more -->
+      <div class="mt-10 flex justify-center">
+        <button id="loadMoreBtn" class="hidden px-7 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold">
+          Показать ещё <i class="fas fa-plus ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (short) -->
+  <section id="faq" class="py-20 relative z-10">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">FAQ</h2>
+        <h3 class="text-3xl md:text-4xl font-bold text-white font-tech">Вопросы</h3>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up">
+          <summary class="flex justify-between items-center font-bold text-white list-none">
+            Где менять цены на проекты?
+            <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
+          </summary>
+          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+            В этом файле цены находятся в массиве <b class="text-white font-mono">PROJECTS</b> (ниже в JS). Меняешь поле
+            <b class="text-white font-mono">price</b> у нужного проекта — и цифра обновится на карточке и в модалке.
+          </p>
+        </details>
+
+        <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <summary class="flex justify-between items-center font-bold text-white list-none">
+            Можно ли убрать кейсы/слайдер, если не понравится?
+            <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
+          </summary>
+          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+            Да. Всё модульно: секции <b class="text-white font-mono">#cases</b>, <b class="text-white font-mono">#packages</b>,
+            <b class="text-white font-mono">#niches</b>, <b class="text-white font-mono">#catalog</b> можно удалять/переставлять
+            без поломки каталога.
+          </p>
+        </details>
+
+        <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <summary class="flex justify-between items-center font-bold text-white list-none">
+            Как добавить новый проект?
+            <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
+          </summary>
+          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+            Добавь объект в массив <b class="text-white font-mono">PROJECTS</b>: название, ссылка, картинка,
+            ниша/тип, теги, описание, цена и список фич. Карточки, фильтры, модалка и статистика подтянутся автоматически.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <footer class="py-16 bg-[#020617] border-t border-white/5 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-indigo-600/10 rounded-full blur-[110px]"></div>
+
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-tech">Готовы сделать проект?</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto mb-10">
+        Напиши в WhatsApp или Telegram — подберу структуру, покажу похожий кейс из каталога и назову сроки.
+      </p>
+
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto px-8 py-4 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold">
+          <i class="fab fa-whatsapp mr-2"></i> Написать в WhatsApp
+        </a>
+        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto px-8 py-4 rounded-xl bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white transition font-bold">
+          <i class="fab fa-telegram mr-2"></i> Написать в Telegram
+        </a>
+      </div>
+
+      <div class="pt-10 mt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
         <p>&copy; 2026 Anuken Development.</p>
-    </footer>
+        <p>Астана, Казахстан.</p>
+      </div>
+    </div>
+  </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 1000, offset: 50 });</script>
+  <!-- Modal -->
+  <div id="projectModal" class="modal-hidden fixed inset-0 z-[999] items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-modal-close></div>
+
+    <div class="relative w-full max-w-5xl glass rounded-2xl border border-white/10 overflow-hidden">
+      <div class="flex items-center justify-between px-5 md:px-6 py-4 border-b border-white/5">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/20 flex items-center justify-center text-indigo-300">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div>
+            <div class="text-white font-tech font-bold text-lg" id="modalTitle">—</div>
+            <div class="text-xs text-slate-400 font-mono" id="modalMeta">—</div>
+          </div>
+        </div>
+
+        <button id="modalCloseBtn" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-0">
+        <div class="relative bg-black/20">
+          <img id="modalImage" src="" alt="preview" class="w-full h-full object-cover max-h-[420px] lg:max-h-[520px]" />
+          <div class="absolute top-4 left-4 flex flex-wrap gap-2" id="modalBadges"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+            <div class="glass px-4 py-2 rounded-xl text-white font-bold">
+              <span class="text-slate-300 text-xs font-mono mr-2">Цена:</span><span id="modalPrice">—</span>
+            </div>
+            <a id="modalLiveBtn" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold">
+              Live <i class="fas fa-external-link-alt ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="p-5 md:p-6">
+          <div class="grid sm:grid-cols-2 gap-4 mb-6">
+            <div class="glass p-4 rounded-2xl">
+              <div class="text-xs text-slate-400 font-mono mb-1">Задача</div>
+              <div class="text-sm text-slate-200 leading-relaxed" id="modalProblem">—</div>
+            </div>
+            <div class="glass p-4 rounded-2xl">
+              <div class="text-xs text-slate-400 font-mono mb-1">Решение</div>
+              <div class="text-sm text-slate-200 leading-relaxed" id="modalSolution">—</div>
+            </div>
+          </div>
+
+          <div class="glass p-4 rounded-2xl mb-6">
+            <div class="text-xs text-slate-400 font-mono mb-2">Что сделано</div>
+            <ul class="text-sm text-slate-200 space-y-2" id="modalFeatures"></ul>
+          </div>
+
+          <div class="glass p-4 rounded-2xl mb-6">
+            <div class="text-xs text-slate-400 font-mono mb-2">Стек / теги</div>
+            <div class="flex flex-wrap gap-2" id="modalTags"></div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="flex-1 px-6 py-4 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold text-center">
+              Обсудить проект <i class="fab fa-whatsapp ml-2"></i>
+            </a>
+            <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="flex-1 px-6 py-4 rounded-xl bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white transition font-bold text-center">
+              Написать в Telegram <i class="fab fa-telegram-plane ml-2"></i>
+            </a>
+          </div>
+
+          <div class="mt-5 text-xs text-slate-500">
+            Подсказка: нажми <b class="text-white">ESC</b>, чтобы закрыть окно.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 900, offset: 60 });
+
+    /* =========================================
+       1) DATA: ПРОЕКТЫ (ПРАВИШЬ ЦЕНЫ ЗДЕСЬ)
+       ========================================= */
+    const PROJECTS = [
+      {
+        id: "avia-drones",
+        title: "Avia-Drones",
+        url: "https://avia-drones.vercel.app/",
+        image: "images/avia-drones.jpg",
+        niche: "Aviation / Tech",
+        type: "Landing / Catalog",
+        year: 2026,
+        featured: true,
+        price: 120000, // <-- ПРАВЬ ЦЕНУ
+        short: "Технологичный лендинг по продаже дронов: интерактив, модалки, анимации, интеграция WhatsApp.",
+        problem: "Нужен продающий лендинг с эффектным интерфейсом и быстрым выходом на заявки.",
+        solution: "Сделал интерактивный интерфейс + структурную подачу моделей, добавил модальные окна и быстрые CTA.",
+        tags: ["Interactive", "Catalog", "HUD UI", "WhatsApp", "Animation"],
+        features: [
+          "Интерактивные карточки моделей и модальные окна с характеристиками",
+          "Грамотные CTA: WhatsApp/Telegram/формы",
+          "Оптимизация загрузки и адаптив под мобильные",
+          "Анимации и эффектный UI под тех-тематику"
+        ]
+      },
+      {
+        id: "kassenova-store",
+        title: "Kassenova Store",
+        url: "https://kassenova-market.vercel.app/",
+        image: "images/kassenova.jpg",
+        niche: "E-commerce",
+        type: "Online Store",
+        year: 2026,
+        featured: true,
+        price: 250000, // <-- ПРАВЬ ЦЕНУ
+        short: "Интернет-магазин техники: корзина, логика заказа, калькулятор, отправка заявки в WhatsApp.",
+        problem: "Нужен полноценный магазин с логикой опта и удобным оформлением заказа.",
+        solution: "Собрал корзину, расчёты и отправку заказа в мессенджер + оптимизировал UX карточек и каталога.",
+        tags: ["HTML5", "JS Logic", "Cart", "Calculator", "Opt"],
+        features: [
+          "Корзина и управление количеством / суммой",
+          "Калькуляторы/логика для оптовиков",
+          "Отправка сформированного заказа в WhatsApp",
+          "Оптимизация скорости и структуры каталога"
+        ]
+      },
+      {
+        id: "manipulator",
+        title: "Аренда Манипулятора",
+        url: "https://manipulator-evakuator.vercel.app/",
+        image: "images/manipulator.jpg",
+        niche: "Спецтехника / Services",
+        type: "Landing Page",
+        year: 2026,
+        featured: true,
+        price: 90000, // <-- ПРАВЬ ЦЕНУ
+        short: "Быстрый конверсионный сайт: кнопки вызова, блоки доверия, карта, галерея и понятная структура.",
+        problem: "Нужен сайт для заявок: быстрый, понятный, с упором на звонки/WhatsApp.",
+        solution: "Сделал конверсионную структуру и крупные CTA, добавил доверие, карту и ускорил загрузку.",
+        tags: ["Адаптив", "Speed", "CTA", "Service"],
+        features: [
+          "Конверсионные блоки: оффер, выгоды, доверие, контакты",
+          "Липкие кнопки связи (звонок/WhatsApp)",
+          "Адаптив и быстрые загрузки на мобильных",
+          "Галерея/карта (при необходимости)"
+        ]
+      },
+      {
+        id: "elegance",
+        title: "Салон ELEGANCE",
+        url: "https://elegance-almaty.vercel.app/",
+        image: "images/elegance.jpg",
+        niche: "Beauty",
+        type: "Landing Page",
+        year: 2026,
+        featured: false,
+        price: 70000, // <-- ПРАВЬ ЦЕНУ
+        short: "Премиальный лендинг: прайс, анимации, темная эстетика, быстрые кнопки записи.",
+        problem: "Нужен стильный сайт, который соответствует премиум-позиционированию и ведёт к записи.",
+        solution: "Сделал строгий дизайн, понятный прайс и сценарии записи через мессенджеры.",
+        tags: ["Design", "Animation", "Price List", "Booking"],
+        features: [
+          "Блоки: услуги/прайс/мастера/контакты",
+          "Аккуратные анимации и визуальный стиль premium",
+          "Быстрая запись: WhatsApp/Telegram",
+          "Адаптив под телефон"
+        ]
+      },
+      {
+        id: "maverick",
+        title: "Maverick Barbershop",
+        url: "https://maver1ck.vercel.app/",
+        image: "images/maverick.jpg",
+        niche: "Service / Beauty",
+        type: "Landing Page",
+        year: 2026,
+        featured: false,
+        price: 85000, // <-- ПРАВЬ ЦЕНУ
+        short: "Брутальный сайт с видео-фоном, блоком мастеров, CTA и записью.",
+        problem: "Нужен атмосферный сайт, который подчеркивает стиль и приводит записи.",
+        solution: "Сделал выразительный герой-блок, видеоряд, и простую дорожку к записи.",
+        tags: ["Video BG", "Booking", "Team", "Branding"],
+        features: [
+          "Видео-фон и атмосферный hero-блок",
+          "Раздел 'мастера' / портфолио / услуги",
+          "Быстрые CTA и запись",
+          "Адаптив и оптимизация"
+        ]
+      }
+    ];
+
+    /* =========================================
+       2) HELPERS
+       ========================================= */
+    const formatPrice = (num) => {
+      if (typeof num !== 'number') return '—';
+      // 120000 -> "120 000 ₸"
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " ₸";
+    };
+
+    const uniq = (arr) => [...new Set(arr)];
+
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    /* =========================================
+       3) STATS
+       ========================================= */
+    const allNiches = uniq(PROJECTS.map(p => p.niche));
+    $("#statProjects").textContent = PROJECTS.length;
+    $("#statNiches").textContent = allNiches.length;
+
+    /* =========================================
+       4) FEATURED SLIDER
+       ========================================= */
+    const featured = PROJECTS.filter(p => p.featured);
+    $("#featuredTotal").textContent = String(Math.max(featured.length, 1)).padStart(2, '0');
+
+    let featuredIndex = 0;
+
+    function renderFeatured() {
+      const container = $("#featuredTrack");
+      container.innerHTML = "";
+
+      if (!featured.length) {
+        container.innerHTML = `
+          <div class="glass-card rounded-2xl p-8 text-center">
+            <div class="text-white font-tech font-bold text-xl mb-2">Нет featured проектов</div>
+            <div class="text-slate-400 text-sm">Отметь проекты: <span class="font-mono text-white">featured: true</span></div>
+          </div>
+        `;
+        $("#featuredIndex").textContent = "01";
+        return;
+      }
+
+      const p = featured[featuredIndex];
+      $("#featuredIndex").textContent = String(featuredIndex + 1).padStart(2, '0');
+
+      container.innerHTML = `
+        <div class="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl glass-card">
+          <div class="relative">
+            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover min-h-[260px] max-h-[420px]" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/15 to-transparent"></div>
+
+            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>
+            </div>
+
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+              <div class="glass px-4 py-2 rounded-xl text-white font-bold">
+                <span class="text-slate-300 text-xs font-mono mr-2">Цена:</span>${formatPrice(p.price)}
+              </div>
+              <div class="flex gap-2">
+                <a href="${p.url}" target="_blank" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold">
+                  Live <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+                <button data-open-modal="${p.id}" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold">
+                  Подробнее <i class="fas fa-window-restore ml-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 md:p-7">
+            <div class="text-indigo-300 text-xs font-bold tracking-widest uppercase mb-2">Кейс</div>
+            <h4 class="text-white font-tech font-bold text-2xl mb-3">${p.title}</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">${p.short}</p>
+
+            <div class="grid sm:grid-cols-2 gap-4 mb-5">
+              <div class="glass p-4 rounded-2xl">
+                <div class="text-xs text-slate-400 font-mono mb-1">Задача</div>
+                <div class="text-sm text-slate-200 leading-relaxed">${p.problem}</div>
+              </div>
+              <div class="glass p-4 rounded-2xl">
+                <div class="text-xs text-slate-400 font-mono mb-1">Решение</div>
+                <div class="text-sm text-slate-200 leading-relaxed">${p.solution}</div>
+              </div>
+            </div>
+
+            <div class="glass p-4 rounded-2xl">
+              <div class="text-xs text-slate-400 font-mono mb-2">Теги</div>
+              <div class="flex flex-wrap gap-2">
+                ${p.tags.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>`).join("")}
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-col sm:flex-row gap-3">
+              <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="flex-1 px-5 py-3 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold text-center">
+                Заказать похожее <i class="fab fa-whatsapp ml-2"></i>
+              </a>
+              <a href="#catalog" class="flex-1 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
+                В каталог <i class="fas fa-arrow-down ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // bind modal button
+      container.querySelectorAll("[data-open-modal]").forEach(btn => {
+        btn.addEventListener("click", () => openModal(btn.getAttribute("data-open-modal")));
+      });
+    }
+
+    $("#featuredPrev").addEventListener("click", () => {
+      if (!featured.length) return;
+      featuredIndex = (featuredIndex - 1 + featured.length) % featured.length;
+      renderFeatured();
+    });
+    $("#featuredNext").addEventListener("click", () => {
+      if (!featured.length) return;
+      featuredIndex = (featuredIndex + 1) % featured.length;
+      renderFeatured();
+    });
+
+    renderFeatured();
+
+    /* =========================================
+       5) FILTERS (niches/types)
+       ========================================= */
+    const TYPES = uniq(PROJECTS.map(p => p.type)).sort();
+    const NICHES = uniq(PROJECTS.map(p => p.niche)).sort();
+
+    function fillSelect(selectEl, values, placeholder = "Все") {
+      selectEl.innerHTML = `<option value="__all__">${placeholder}</option>` +
+        values.map(v => `<option value="${v}">${v}</option>`).join("");
+    }
+
+    fillSelect($("#typeFilter"), TYPES, "Все типы");
+    fillSelect($("#nicheFilter"), NICHES, "Все ниши");
+
+    // Niche chips
+    function renderNicheChips() {
+      const wrap = $("#nicheChips");
+      const items = ["Все", ...NICHES];
+      wrap.innerHTML = items.map((n, idx) => {
+        const isAll = (n === "Все");
+        return `
+          <button data-niche-chip="${isAll ? "__all__" : n}"
+            class="glass-card rounded-2xl p-5 text-left hover:-translate-y-1 transition ${idx === 0 ? 'border-indigo-500/40' : ''}">
+            <div class="flex items-center justify-between gap-3">
+              <div class="text-white font-tech font-bold">${n}</div>
+              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-200">
+                <i class="fas ${isAll ? 'fa-layer-group' : 'fa-bullseye'}"></i>
+              </div>
+            </div>
+            <div class="mt-3 text-xs text-slate-400">
+              ${isAll ? 'Показать все проекты' : 'Фильтровать каталог по нише'}
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      wrap.querySelectorAll("[data-niche-chip]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const v = btn.getAttribute("data-niche-chip");
+          $("#nicheFilter").value = v;
+          applyAndRender(true);
+          document.getElementById("catalog").scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    }
+    renderNicheChips();
+
+    /* =========================================
+       6) CATALOG RENDER
+       ========================================= */
+    const state = {
+      search: "",
+      type: "__all__",
+      niche: "__all__",
+      sort: "new",
+      view: "grid",
+      pageSize: 6,
+      page: 1
+    };
+
+    function getFiltered() {
+      const q = state.search.trim().toLowerCase();
+      let list = [...PROJECTS];
+
+      if (state.type !== "__all__") list = list.filter(p => p.type === state.type);
+      if (state.niche !== "__all__") list = list.filter(p => p.niche === state.niche);
+
+      if (q) {
+        list = list.filter(p => {
+          const hay = [
+            p.title, p.short, p.problem, p.solution, p.niche, p.type,
+            ...(p.tags || [])
+          ].join(" ").toLowerCase();
+          return hay.includes(q);
+        });
+      }
+
+      // sort
+      switch (state.sort) {
+        case "name":
+          list.sort((a,b) => a.title.localeCompare(b.title, "ru"));
+          break;
+        case "priceAsc":
+          list.sort((a,b) => (a.price || 0) - (b.price || 0));
+          break;
+        case "priceDesc":
+          list.sort((a,b) => (b.price || 0) - (a.price || 0));
+          break;
+        case "new":
+        default:
+          list.sort((a,b) => (b.year || 0) - (a.year || 0));
+          break;
+      }
+
+      return list;
+    }
+
+    function projectCardGrid(p) {
+      const tagTop = (p.tags || []).slice(0, 3);
+      return `
+        <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
+          <div class="relative h-56 overflow-hidden">
+            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+
+            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
+              ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+            </div>
+
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+              <div class="glass px-3 py-2 rounded-xl text-white font-bold text-sm">
+                <span class="text-slate-300 text-[10px] font-mono mr-2">Цена:</span>${formatPrice(p.price)}
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center justify-between gap-3 mb-2">
+              <h4 class="text-white font-tech font-bold text-xl">${p.title}</h4>
+              <div class="text-xs text-slate-500 font-mono">${p.year || ""}</div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              ${tagTop.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>`).join("")}
+              ${(p.tags || []).length > 3 ? `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">+${(p.tags || []).length - 3}</span>` : ``}
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">${p.short}</p>
+
+            <div class="mt-auto grid grid-cols-2 gap-3">
+              <a href="${p.url}" target="_blank"
+                 class="py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
+                Live <i class="fas fa-external-link-alt ml-2"></i>
+              </a>
+              <button data-open-modal="${p.id}"
+                 class="py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold text-center">
+                Подробнее <i class="fas fa-window-restore ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function projectCardList(p) {
+      const tagTop = (p.tags || []).slice(0, 6);
+      return `
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col md:flex-row" data-aos="fade-up">
+          <div class="relative md:w-72 h-56 md:h-auto overflow-hidden">
+            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-black/20"></div>
+
+            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
+              ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+            </div>
+
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="glass inline-flex px-3 py-2 rounded-xl text-white font-bold text-sm">
+                <span class="text-slate-300 text-[10px] font-mono mr-2">Цена:</span>${formatPrice(p.price)}
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 flex-1">
+            <div class="flex items-center justify-between gap-3">
+              <h4 class="text-white font-tech font-bold text-2xl">${p.title}</h4>
+              <div class="text-xs text-slate-500 font-mono">${p.year || ""}</div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-3">
+              ${tagTop.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>`).join("")}
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed mt-4">${p.short}</p>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="${p.url}" target="_blank"
+                 class="px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
+                Live <i class="fas fa-external-link-alt ml-2"></i>
+              </a>
+              <button data-open-modal="${p.id}"
+                 class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold text-center">
+                Подробнее <i class="fas fa-window-restore ml-2"></i>
+              </button>
+              <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);"
+                 class="px-5 py-3 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold text-center">
+                Заказать <i class="fab fa-whatsapp ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProjects(list, resetAOS = false) {
+      const wrap = $("#projectsWrap");
+      const total = list.length;
+
+      $("#resultsCount").textContent = total;
+
+      // Badge
+      const parts = [];
+      if (state.type !== "__all__") parts.push(state.type);
+      if (state.niche !== "__all__") parts.push(state.niche);
+      if (state.search.trim()) parts.push(`поиск: "${state.search.trim()}"`);
+      $("#activeBadge").textContent = parts.length ? parts.join(" • ") : "Все";
+
+      if (!total) {
+        wrap.innerHTML = "";
+        $("#emptyState").classList.remove("hidden");
+        $("#loadMoreBtn").classList.add("hidden");
+        return;
+      }
+      $("#emptyState").classList.add("hidden");
+
+      // paging
+      const maxShown = state.page * state.pageSize;
+      const shown = list.slice(0, maxShown);
+      const hasMore = total > shown.length;
+
+      // view mode
+      if (state.view === "grid") {
+        wrap.className = "grid md:grid-cols-2 lg:grid-cols-3 gap-6";
+        wrap.innerHTML = shown.map(projectCardGrid).join("");
+      } else {
+        wrap.className = "grid grid-cols-1 gap-6";
+        wrap.innerHTML = shown.map(projectCardList).join("");
+      }
+
+      // bind modal buttons
+      wrap.querySelectorAll("[data-open-modal]").forEach(btn => {
+        btn.addEventListener("click", () => openModal(btn.getAttribute("data-open-modal")));
+      });
+
+      // Load more
+      $("#loadMoreBtn").classList.toggle("hidden", !hasMore);
+
+      if (resetAOS) {
+        AOS.refreshHard();
+      } else {
+        AOS.refresh();
+      }
+    }
+
+    function applyAndRender(resetPage = false) {
+      if (resetPage) state.page = 1;
+      const list = getFiltered();
+      renderProjects(list, true);
+    }
+
+    /* =========================================
+       7) CONTROLS BIND
+       ========================================= */
+    $("#searchInput").addEventListener("input", (e) => {
+      state.search = e.target.value;
+      applyAndRender(true);
+    });
+    $("#clearSearch").addEventListener("click", () => {
+      state.search = "";
+      $("#searchInput").value = "";
+      applyAndRender(true);
+    });
+
+    $("#typeFilter").addEventListener("change", (e) => {
+      state.type = e.target.value;
+      applyAndRender(true);
+    });
+
+    $("#nicheFilter").addEventListener("change", (e) => {
+      state.niche = e.target.value;
+      applyAndRender(true);
+    });
+
+    $("#sortSelect").addEventListener("change", (e) => {
+      state.sort = e.target.value;
+      applyAndRender(true);
+    });
+
+    $("#resetFilters").addEventListener("click", () => {
+      state.search = "";
+      state.type = "__all__";
+      state.niche = "__all__";
+      state.sort = "new";
+      $("#searchInput").value = "";
+      $("#typeFilter").value = "__all__";
+      $("#nicheFilter").value = "__all__";
+      $("#sortSelect").value = "new";
+      applyAndRender(true);
+    });
+
+    $("#viewGrid").addEventListener("click", () => {
+      state.view = "grid";
+      $("#viewGrid").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
+      $("#viewList").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
+      applyAndRender(false);
+    });
+    $("#viewList").addEventListener("click", () => {
+      state.view = "list";
+      $("#viewList").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
+      $("#viewGrid").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
+      applyAndRender(false);
+    });
+
+    $("#loadMoreBtn").addEventListener("click", () => {
+      state.page += 1;
+      applyAndRender(false);
+    });
+
+    // initial render
+    applyAndRender(true);
+
+    /* =========================================
+       8) MODAL
+       ========================================= */
+    const modal = $("#projectModal");
+    const modalCloseBtn = $("#modalCloseBtn");
+
+    function openModal(projectId) {
+      const p = PROJECTS.find(x => x.id === projectId);
+      if (!p) return;
+
+      $("#modalTitle").textContent = p.title;
+      $("#modalMeta").textContent = `${p.type} • ${p.niche} • ${p.year || ""}`.trim();
+      $("#modalImage").src = p.image;
+      $("#modalImage").alt = p.title;
+      $("#modalPrice").textContent = formatPrice(p.price);
+
+      $("#modalProblem").textContent = p.problem || "—";
+      $("#modalSolution").textContent = p.solution || "—";
+
+      // Badges
+      $("#modalBadges").innerHTML = `
+        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
+        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
+        ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+      `;
+
+      // Features
+      const fWrap = $("#modalFeatures");
+      fWrap.innerHTML = (p.features || []).map(item => `
+        <li class="flex gap-3">
+          <i class="fas fa-check-circle text-indigo-400 mt-1"></i>
+          <span>${item}</span>
+        </li>
+      `).join("") || `<li class="text-slate-400">—</li>`;
+
+      // Tags
+      $("#modalTags").innerHTML = (p.tags || []).map(t => `
+        <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>
+      `).join("") || `<span class="text-xs text-slate-400">—</span>`;
+
+      // Live button
+      const liveBtn = $("#modalLiveBtn");
+      liveBtn.href = p.url;
+
+      // show
+      modal.classList.remove("modal-hidden");
+      modal.classList.add("modal-show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.add("modal-hidden");
+      modal.classList.remove("modal-show");
+      document.body.style.overflow = "";
+    }
+
+    modalCloseBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target && e.target.hasAttribute("data-modal-close")) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("modal-show")) closeModal();
+    });
+
+    /* =========================================
+       9) MOBILE MENU
+       ========================================= */
+    const mobileMenuBtn = $("#mobileMenuBtn");
+    const mobileMenu = $("#mobileMenu");
+    let mobileOpen = false;
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileOpen = !mobileOpen;
+      mobileMenu.classList.toggle("hidden", !mobileOpen);
+      mobileMenuBtn.innerHTML = mobileOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    $$(".mobile-link").forEach(a => {
+      a.addEventListener("click", () => {
+        mobileOpen = false;
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+  </script>
 </body>
 </html>
