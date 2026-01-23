@@ -70,25 +70,6 @@
   /* iOS плавный скролл внутри модалки */
   #projectModal { -webkit-overflow-scrolling: touch; }
 
-  /* Mobile: горизонтальный свайп кейсов + snap */
-  @media (max-width: 767px){
-    #featuredScroller{
-      overflow-x: auto !important;
-      overflow-y: hidden !important;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      display: flex;
-      gap: 14px;
-      padding: 2px;
-    }
-    #featuredScroller::-webkit-scrollbar{ display:none; }
-    .featured-mobile-card{
-      min-width: 86%;
-      scroll-snap-align: start;
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   }
@@ -307,7 +288,7 @@
             <span class="text-white font-bold" id="featuredIndex">01</span>/<span id="featuredTotal">03</span>
             <span class="ml-3">кейсов</span>
           </div>
-          <div class="hidden md:flex gap-2">
+          <div class="flex gap-2">
             <button id="featuredPrev" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white">
               <i class="fas fa-arrow-left"></i>
             </button>
@@ -318,24 +299,7 @@
         </div>
 
         <div id="featuredTrack" class="relative overflow-hidden rounded-2xl">
-          <div id="featuredScroller" class="relative">
-            <!-- Slides injected by JS -->
-          </div>
-
-          <!-- Mobile fade edges (visual hint) -->
-          <div class="pointer-events-none md:hidden absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#020617] to-transparent z-10"></div>
-          <div class="pointer-events-none md:hidden absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#020617] to-transparent z-10"></div>
-
-          <!-- Mobile arrows -->
-          <button id="featuredSwipePrev"
-                  class="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur flex items-center justify-center text-white transition">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-
-          <button id="featuredSwipeNext"
-                  class="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur flex items-center justify-center text-white transition">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+          <!-- Slides injected by JS -->
         </div>
       </div>
     </div>
@@ -860,23 +824,34 @@
 
     /* =========================================
        FEATURED SLIDER (no overlay on image)
-       Desktop: как есть (Prev/Next + 1 кейс)
-       Mobile: свайп/прокрутка вправо-влево + стрелки
+       Теперь показываем ВЕСЬ список проектов
        ========================================= */
     const featured = [...PROJECTS];
     $("#featuredTotal").textContent = String(Math.max(featured.length, 1)).padStart(2, '0');
     let featuredIndex = 0;
 
-    const desktopMQ = window.matchMedia("(min-width: 768px)");
-    const featuredScroller = $("#featuredScroller");
-    const swipePrevBtn = $("#featuredSwipePrev");
-    const swipeNextBtn = $("#featuredSwipeNext");
+    function renderFeatured() {
+      const container = $("#featuredTrack");
+      container.innerHTML = "";
 
-    function featuredSlideMarkup(p, extraClass = "") {
+      if (!featured.length) {
+        container.innerHTML = `
+          <div class="glass-card rounded-2xl p-8 text-center">
+            <div class="text-white font-tech font-bold text-xl mb-2">Проекты появятся здесь</div>
+            <div class="text-slate-400 text-sm">Скоро добавим новые кейсы.</div>
+          </div>
+        `;
+        $("#featuredIndex").textContent = "01";
+        return;
+      }
+
+      const p = featured[featuredIndex];
+      $("#featuredIndex").textContent = String(featuredIndex + 1).padStart(2, '0');
+
       const multi = (p.urls && p.urls.length > 1) ? ` <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">2 версии</span>` : ``;
 
-      return `
-        <div class="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl glass-card ${extraClass}">
+      container.innerHTML = `
+        <div class="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl glass-card">
           <div class="bg-black/15">
             <div class="relative">
               <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover min-h-[260px] max-h-[420px]" loading="lazy" onerror="__imgFallback(this,'${p.title.replace(/'/g, "\\'")}')">
@@ -940,98 +915,10 @@
           </div>
         </div>
       `;
-    }
 
-    let scrollRaf = null;
-    function updateFeaturedIndexFromScroll() {
-      const cards = featuredScroller.querySelectorAll(".featured-mobile-card");
-      if (!cards.length) return;
-
-      const sl = featuredScroller.scrollLeft;
-      let best = 0;
-      let bestDist = Infinity;
-
-      cards.forEach((card, i) => {
-        const dist = Math.abs(card.offsetLeft - sl);
-        if (dist < bestDist) { bestDist = dist; best = i; }
-      });
-
-      featuredIndex = best;
-      $("#featuredIndex").textContent = String(best + 1).padStart(2, '0');
-    }
-
-    function onFeaturedScroll() {
-      if (scrollRaf) cancelAnimationFrame(scrollRaf);
-      scrollRaf = requestAnimationFrame(updateFeaturedIndexFromScroll);
-    }
-
-    function scrollToFeatured(i, smooth = true) {
-      const cards = featuredScroller.querySelectorAll(".featured-mobile-card");
-      if (!cards.length) return;
-      const clamped = ((i % cards.length) + cards.length) % cards.length;
-      featuredIndex = clamped;
-      $("#featuredIndex").textContent = String(featuredIndex + 1).padStart(2, '0');
-      featuredScroller.scrollTo({ left: cards[clamped].offsetLeft, behavior: smooth ? "smooth" : "auto" });
-    }
-
-    function renderFeaturedDesktop() {
-      featuredScroller.removeEventListener("scroll", onFeaturedScroll);
-      featuredScroller.scrollLeft = 0;
-      featuredScroller.innerHTML = "";
-
-      if (!featured.length) {
-        featuredScroller.innerHTML = `
-          <div class="glass-card rounded-2xl p-8 text-center">
-            <div class="text-white font-tech font-bold text-xl mb-2">Проекты появятся здесь</div>
-            <div class="text-slate-400 text-sm">Скоро добавим новые кейсы.</div>
-          </div>
-        `;
-        $("#featuredIndex").textContent = "01";
-        return;
-      }
-
-      const p = featured[featuredIndex];
-      $("#featuredIndex").textContent = String(featuredIndex + 1).padStart(2, '0');
-
-      featuredScroller.innerHTML = featuredSlideMarkup(p);
-
-      featuredScroller.querySelectorAll("[data-open-modal]").forEach(btn => {
+      container.querySelectorAll("[data-open-modal]").forEach(btn => {
         btn.addEventListener("click", () => openModal(btn.getAttribute("data-open-modal")));
       });
-    }
-
-    function renderFeaturedMobile() {
-      featuredScroller.innerHTML = "";
-
-      if (!featured.length) {
-        featuredScroller.innerHTML = `
-          <div class="glass-card rounded-2xl p-8 text-center featured-mobile-card">
-            <div class="text-white font-tech font-bold text-xl mb-2">Проекты появятся здесь</div>
-            <div class="text-slate-400 text-sm">Скоро добавим новые кейсы.</div>
-          </div>
-        `;
-        $("#featuredIndex").textContent = "01";
-        return;
-      }
-
-      featuredScroller.innerHTML = featured.map(p => featuredSlideMarkup(p, "featured-mobile-card")).join("");
-
-      featuredScroller.querySelectorAll("[data-open-modal]").forEach(btn => {
-        btn.addEventListener("click", () => openModal(btn.getAttribute("data-open-modal")));
-      });
-
-      featuredScroller.removeEventListener("scroll", onFeaturedScroll);
-      featuredScroller.addEventListener("scroll", onFeaturedScroll, { passive: true });
-
-      requestAnimationFrame(() => {
-        scrollToFeatured(featuredIndex, false);
-        updateFeaturedIndexFromScroll();
-      });
-    }
-
-    function renderFeatured() {
-      if (desktopMQ.matches) renderFeaturedDesktop();
-      else renderFeaturedMobile();
     }
 
     $("#featuredPrev").addEventListener("click", () => {
@@ -1044,23 +931,6 @@
       featuredIndex = (featuredIndex + 1) % featured.length;
       renderFeatured();
     });
-
-    swipePrevBtn.addEventListener("click", () => {
-      if (desktopMQ.matches) return;
-      if (!featured.length) return;
-      scrollToFeatured(featuredIndex - 1, true);
-    });
-    swipeNextBtn.addEventListener("click", () => {
-      if (desktopMQ.matches) return;
-      if (!featured.length) return;
-      scrollToFeatured(featuredIndex + 1, true);
-    });
-
-    if (desktopMQ.addEventListener) {
-      desktopMQ.addEventListener("change", renderFeatured);
-    } else {
-      desktopMQ.addListener(renderFeatured);
-    }
 
     renderFeatured();
 
@@ -1251,31 +1121,28 @@
         $("#loadMoreBtn").classList.add("hidden");
         return;
       }
-      $("#emptyState").classList.add
-("hidden");
-      const visible = list.slice(0, state.page * state.pageSize);
+      $("#emptyState").classList.add("hidden");
 
-      // layout classes
+      const maxShown = state.page * state.pageSize;
+      const shown = list.slice(0, maxShown);
+      const hasMore = total > shown.length;
+
       if (state.view === "grid") {
         wrap.className = "grid md:grid-cols-2 lg:grid-cols-3 gap-6";
-        wrap.innerHTML = visible.map(projectCardGrid).join("");
+        wrap.innerHTML = shown.map(projectCardGrid).join("");
       } else {
-        wrap.className = "space-y-4";
-        wrap.innerHTML = visible.map(projectCardList).join("");
+        wrap.className = "grid grid-cols-1 gap-6";
+        wrap.innerHTML = shown.map(projectCardList).join("");
       }
 
-      // bind modal buttons
       wrap.querySelectorAll("[data-open-modal]").forEach(btn => {
         btn.addEventListener("click", () => openModal(btn.getAttribute("data-open-modal")));
       });
 
-      // load more visibility
-      const hasMore = visible.length < total;
       $("#loadMoreBtn").classList.toggle("hidden", !hasMore);
 
-      if (resetAOS) {
-        try { AOS.refreshHard(); } catch (e) { try { AOS.refresh(); } catch (_) {} }
-      }
+      if (resetAOS) AOS.refreshHard();
+      else AOS.refresh();
     }
 
     function applyAndRender(resetPage = false) {
@@ -1284,216 +1151,125 @@
       renderProjects(list, true);
     }
 
-    /* =========================================
-       VIEW TOGGLE
-       ========================================= */
-    function syncViewButtons() {
-      const gridBtn = $("#viewGrid");
-      const listBtn = $("#viewList");
-
-      if (state.view === "grid") {
-        gridBtn.className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
-        listBtn.className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
-      } else {
-        gridBtn.className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
-        listBtn.className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
-      }
-    }
-
-    $("#viewGrid").addEventListener("click", () => {
-      state.view = "grid";
-      syncViewButtons();
-      applyAndRender(true);
-    });
-
-    $("#viewList").addEventListener("click", () => {
-      state.view = "list";
-      syncViewButtons();
-      applyAndRender(true);
-    });
-
-    /* =========================================
-       FILTER EVENTS
-       ========================================= */
-    const searchInput = $("#searchInput");
-    const clearSearch = $("#clearSearch");
-
-    let searchT = null;
-    searchInput.addEventListener("input", () => {
-      if (searchT) clearTimeout(searchT);
-      searchT = setTimeout(() => {
-        state.search = searchInput.value || "";
-        applyAndRender(true);
-      }, 120);
-    });
-
-    clearSearch.addEventListener("click", () => {
-      searchInput.value = "";
-      state.search = "";
-      applyAndRender(true);
-      searchInput.focus();
-    });
-
-    $("#typeFilter").addEventListener("change", (e) => {
-      state.type = e.target.value;
-      applyAndRender(true);
-    });
-
-    $("#nicheFilter").addEventListener("change", (e) => {
-      state.niche = e.target.value;
-      applyAndRender(true);
-    });
-
-    $("#sortSelect").addEventListener("change", (e) => {
-      state.sort = e.target.value;
-      applyAndRender(true);
-    });
+    $("#searchInput").addEventListener("input", (e) => { state.search = e.target.value; applyAndRender(true); });
+    $("#clearSearch").addEventListener("click", () => { state.search = ""; $("#searchInput").value = ""; applyAndRender(true); });
+    $("#typeFilter").addEventListener("change", (e) => { state.type = e.target.value; applyAndRender(true); });
+    $("#nicheFilter").addEventListener("change", (e) => { state.niche = e.target.value; applyAndRender(true); });
+    $("#sortSelect").addEventListener("change", (e) => { state.sort = e.target.value; applyAndRender(true); });
 
     $("#resetFilters").addEventListener("click", () => {
       state.search = "";
       state.type = "__all__";
       state.niche = "__all__";
       state.sort = "new";
-      state.page = 1;
-
-      searchInput.value = "";
+      $("#searchInput").value = "";
       $("#typeFilter").value = "__all__";
       $("#nicheFilter").value = "__all__";
       $("#sortSelect").value = "new";
-
       applyAndRender(true);
     });
 
-    $("#loadMoreBtn").addEventListener("click", () => {
-      state.page += 1;
+    $("#viewGrid").addEventListener("click", () => {
+      state.view = "grid";
+      $("#viewGrid").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
+      $("#viewList").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
       applyAndRender(false);
     });
+    $("#viewList").addEventListener("click", () => {
+      state.view = "list";
+      $("#viewList").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
+      $("#viewGrid").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
+      applyAndRender(false);
+    });
+
+    $("#loadMoreBtn").addEventListener("click", () => { state.page += 1; applyAndRender(false); });
+
+    applyAndRender(true);
 
     /* =========================================
        MODAL
        ========================================= */
     const modal = $("#projectModal");
-    const modalImg = $("#modalImage");
+    const modalCloseBtn = $("#modalCloseBtn");
 
-    function lockScroll() { document.body.style.overflow = "hidden"; }
-    function unlockScroll() { document.body.style.overflow = ""; }
-
-    function buildBadges(p) {
-      const b = [];
-      b.push(`<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>`);
-      b.push(`<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>`);
-      if (p.featured) b.push(`<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>`);
-      if (p.urls && p.urls.length > 1) b.push(`<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">2 версии</span>`);
-      return b.join("");
-    }
-
-    function openModal(id) {
-      const p = PROJECTS.find(x => x.id === id);
+    function openModal(projectId) {
+      const p = PROJECTS.find(x => x.id === projectId);
       if (!p) return;
 
-      $("#modalTitle").textContent = p.title || "—";
-      $("#modalMeta").textContent = [p.niche, p.type, p.year].filter(Boolean).join(" • ") || "—";
-
-      // image
-      modalImg.src = p.image || "";
-      modalImg.alt = p.title || "preview";
-      modalImg.onerror = () => __imgFallback(modalImg, p.title);
-
-      // badges
-      $("#modalBadges").innerHTML = buildBadges(p);
-
-      // price
+      $("#modalTitle").textContent = p.title;
+      $("#modalMeta").textContent = `${p.type} • ${p.niche}${p.year ? " • " + p.year : ""}`;
+      $("#modalImage").src = p.image;
+      $("#modalImage").alt = p.title;
+      $("#modalImage").onerror = function(){ __imgFallback(this, p.title); };
       $("#modalPrice").textContent = formatPrice(p.price);
 
-      // live buttons (single or multi)
-      const liveWrap = $("#modalLiveBtns");
-      if (p.urls && p.urls.length) {
-        liveWrap.innerHTML = p.urls.map(u => `
-          <a href="${u.url}" target="_blank"
-             class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
-            ${u.label || "Live"} <i class="fas fa-external-link-alt ml-2"></i>
-          </a>
-        `).join("");
-      } else if (p.url) {
-        liveWrap.innerHTML = `
-          <a href="${p.url}" target="_blank"
-             class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
-            Live <i class="fas fa-external-link-alt ml-2"></i>
-          </a>
-        `;
-      } else {
-        liveWrap.innerHTML = "";
-      }
-
-      // problem/solution
       $("#modalProblem").textContent = p.problem || "—";
       $("#modalSolution").textContent = p.solution || "—";
 
-      // features
-      const feats = (p.features || []);
-      $("#modalFeatures").innerHTML = feats.length
-        ? feats.map(f => `
-            <li class="flex gap-3">
-              <span class="mt-1 text-indigo-300"><i class="fas fa-check"></i></span>
-              <span>${f}</span>
-            </li>
-          `).join("")
-        : `<li class="text-slate-400">—</li>`;
+      const multi = (p.urls && p.urls.length > 1) ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">2 версии</span>` : ``;
 
-      // tags
-      const tags = (p.tags || []);
-      $("#modalTags").innerHTML = tags.length
-        ? tags.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>`).join("")
-        : `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">—</span>`;
+      $("#modalBadges").innerHTML = `
+        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
+        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
+        ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+        ${multi}
+      `;
+
+      const fWrap = $("#modalFeatures");
+      fWrap.innerHTML = (p.features || []).map(item => `
+        <li class="flex gap-3">
+          <i class="fas fa-check-circle text-indigo-400 mt-1"></i>
+          <span>${item}</span>
+        </li>
+      `).join("") || `<li class="text-slate-400">—</li>`;
+
+      $("#modalTags").innerHTML = (p.tags || []).map(t => `
+        <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>
+      `).join("") || `<span class="text-xs text-slate-400">—</span>`;
+
+      const urls = (p.urls && p.urls.length) ? p.urls : [{ label: "Открыть сайт", url: p.url }];
+      $("#modalLiveBtns").innerHTML = urls.map((u, idx) => `
+        <a href="${u.url}" target="_blank"
+           class="px-4 py-2 rounded-xl ${idx === 0 ? 'bg-indigo-600 hover:bg-indigo-500' : 'bg-white/5 hover:bg-white/10 border border-white/10'} transition text-white font-bold">
+          ${u.label} <i class="fas fa-external-link-alt ml-2"></i>
+        </a>
+      `).join("");
 
       modal.classList.remove("modal-hidden");
       modal.classList.add("modal-show");
-      lockScroll();
+      document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
       modal.classList.add("modal-hidden");
       modal.classList.remove("modal-show");
-      unlockScroll();
+      document.body.style.overflow = "";
     }
 
-    $("#modalCloseBtn").addEventListener("click", closeModal);
-    modal.querySelectorAll("[data-modal-close]").forEach(el => el.addEventListener("click", closeModal));
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("modal-show")) closeModal();
-    });
+    modalCloseBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target && e.target.hasAttribute("data-modal-close")) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("modal-show")) closeModal(); });
 
     /* =========================================
        MOBILE MENU
        ========================================= */
     const mobileMenuBtn = $("#mobileMenuBtn");
     const mobileMenu = $("#mobileMenu");
-
-    function closeMobileMenu() {
-      mobileMenu.classList.add("hidden");
-      mobileMenuBtn.innerHTML = `<i class="fas fa-bars"></i>`;
-    }
-    function openMobileMenu() {
-      mobileMenu.classList.remove("hidden");
-      mobileMenuBtn.innerHTML = `<i class="fas fa-times"></i>`;
-    }
+    let mobileOpen = false;
 
     mobileMenuBtn.addEventListener("click", () => {
-      const isHidden = mobileMenu.classList.contains("hidden");
-      if (isHidden) openMobileMenu();
-      else closeMobileMenu();
+      mobileOpen = !mobileOpen;
+      mobileMenu.classList.toggle("hidden", !mobileOpen);
+      mobileMenuBtn.innerHTML = mobileOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
     $$(".mobile-link").forEach(a => {
-      a.addEventListener("click", () => closeMobileMenu());
+      a.addEventListener("click", () => {
+        mobileOpen = false;
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
     });
-
-    /* =========================================
-       INITIAL RENDER
-       ========================================= */
-    syncViewButtons();
-    applyAndRender(true);
   </script>
 </body>
 </html>
