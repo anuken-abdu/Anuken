@@ -275,8 +275,8 @@
   <section id="cases" class="py-20 relative z-10">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Featured</h2>
-        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Избранные кейсы</h3>
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Кейсы</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Мои кейсы</h3>
         <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
           Коротко: цель проекта, решение и ключевые функции. Стоимость указана как ориентир.
         </p>
@@ -286,7 +286,7 @@
         <div class="flex items-center justify-between gap-3 mb-4">
           <div class="text-sm text-slate-400 font-mono">
             <span class="text-white font-bold" id="featuredIndex">01</span>/<span id="featuredTotal">03</span>
-            <span class="ml-3">projects</span>
+            <span class="ml-3">кейсов</span>
           </div>
           <div class="flex gap-2">
             <button id="featuredPrev" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white">
@@ -824,8 +824,9 @@
 
     /* =========================================
        FEATURED SLIDER (no overlay on image)
+       Теперь показываем ВЕСЬ список проектов
        ========================================= */
-    const featured = PROJECTS.filter(p => p.featured);
+    const featured = [...PROJECTS];
     $("#featuredTotal").textContent = String(Math.max(featured.length, 1)).padStart(2, '0');
     let featuredIndex = 0;
 
@@ -836,7 +837,7 @@
       if (!featured.length) {
         container.innerHTML = `
           <div class="glass-card rounded-2xl p-8 text-center">
-            <div class="text-white font-tech font-bold text-xl mb-2">Избранные проекты появятся здесь</div>
+            <div class="text-white font-tech font-bold text-xl mb-2">Проекты появятся здесь</div>
             <div class="text-slate-400 text-sm">Скоро добавим новые кейсы.</div>
           </div>
         `;
@@ -859,7 +860,7 @@
               <div class="absolute top-4 left-4 flex flex-wrap gap-2">
                 <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
                 <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
-                <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>
+                ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
                 ${multi}
               </div>
             </div>
