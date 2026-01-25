@@ -93,6 +93,13 @@
 
         /* Hero background fade */
         #hero-bg { opacity: .6; transition: opacity .55s ease; }
+
+        /* Language switch */
+        .lang-switch { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); }
+        .lang-btn { padding: 6px 10px; border-radius: 9999px; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: .06em; }
+        .lang-btn.lang-active { background: rgba(255,255,255,0.10); color: #fff; }
+        .lang-btn.lang-inactive { color: #94a3b8; }
+        .lang-btn:hover { color: #fff; }
     </style>
 </head>
 
@@ -114,17 +121,24 @@
             </a>
 
             <nav class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#services" class="hover:text-white transition hover:scale-105">Услуги</a>
-                <a href="#cases" class="hover:text-white transition hover:scale-105">Кейсы</a>
-                <a href="#pricing" class="hover:text-white transition hover:scale-105">Цены</a>
-                <a href="#workflow" class="hover:text-white transition hover:scale-105">Процесс</a>
-                <a href="portfolio.html" class="hover:text-white transition hover:scale-105">Портфолио</a>
-                <a href="#faq" class="hover:text-white transition hover:scale-105">Вопросы</a>
+                <a href="#services" class="hover:text-white transition hover:scale-105" data-i18n="nav_services">Услуги</a>
+                <a href="#cases" class="hover:text-white transition hover:scale-105" data-i18n="nav_cases">Кейсы</a>
+                <a href="#pricing" class="hover:text-white transition hover:scale-105" data-i18n="nav_pricing">Цены</a>
+                <a href="#workflow" class="hover:text-white transition hover:scale-105" data-i18n="nav_workflow">Процесс</a>
+                <a href="portfolio.html" class="hover:text-white transition hover:scale-105" data-i18n="nav_portfolio">Портфолио</a>
+                <a href="#faq" class="hover:text-white transition hover:scale-105" data-i18n="nav_faq">Вопросы</a>
             </nav>
 
-            <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
-                Telegram <i class="fab fa-telegram-plane group-hover:translate-x-1 transition"></i>
-            </a>
+            <div class="hidden md:flex items-center gap-3">
+                <div class="lang-switch rounded-full p-1 flex items-center gap-1">
+                    <button type="button" class="lang-btn lang-active lang-toggle" data-lang="ru">RU</button>
+                    <button type="button" class="lang-btn lang-inactive lang-toggle" data-lang="en">EN</button>
+                </div>
+
+                <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
+                    <span data-i18n="header_cta_telegram">Telegram</span> <i class="fab fa-telegram-plane group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
 
             <button id="menu-btn" class="md:hidden text-2xl text-white z-50 relative" aria-label="Открыть меню">
                 <i class="fas fa-bars"></i>
@@ -134,14 +148,20 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark flex flex-col items-center justify-center gap-8 closed md:hidden">
-        <a href="#services" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Услуги</a>
-        <a href="#cases" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Кейсы</a>
-        <a href="#pricing" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Цены</a>
-        <a href="#workflow" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Процесс</a>
-        <a href="portfolio.html" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Портфолио</a>
-        <a href="#faq" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition">Вопросы</a>
-        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="px-8 py-3 rounded-full bg-indigo-600 text-white font-bold">Написать в Telegram</a>
-        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-8 py-3 rounded-full bg-green-600 text-white font-bold">Написать в WhatsApp</a>
+        <div class="lang-switch rounded-full p-1 flex items-center gap-1">
+            <button type="button" class="lang-btn lang-active lang-toggle" data-lang="ru">RU</button>
+            <button type="button" class="lang-btn lang-inactive lang-toggle" data-lang="en">EN</button>
+        </div>
+
+        <a href="#services" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_services">Услуги</a>
+        <a href="#cases" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_cases">Кейсы</a>
+        <a href="#pricing" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_pricing">Цены</a>
+        <a href="#workflow" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_workflow">Процесс</a>
+        <a href="portfolio.html" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_portfolio">Портфолио</a>
+        <a href="#faq" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_faq">Вопросы</a>
+
+        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="px-8 py-3 rounded-full bg-indigo-600 text-white font-bold" data-i18n="mobile_cta_tg">Написать в Telegram</a>
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-8 py-3 rounded-full bg-green-600 text-white font-bold" data-i18n="mobile_cta_wa">Написать в WhatsApp</a>
     </div>
 
     <!-- Hero -->
@@ -159,14 +179,14 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                     </span>
-                    Доступен для проектов
+                    <span data-i18n="hero_badge">Доступен для проектов</span>
                 </div>
 
-                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 font-tech">
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 font-tech" data-i18n-html="hero_title">
                     Вы получаете <br> <span class="text-gradient">продающий сайт</span>
                 </h1>
 
-                <p class="text-lg text-slate-300 mb-8 max-w-xl leading-relaxed">
+                <p class="text-lg text-slate-300 mb-8 max-w-xl leading-relaxed" data-i18n-html="hero_desc">
                     Вы получаете современный сайт под ключ и понятный путь к заявкам: структура, дизайн, код, аналитика и запуск.
                     <span class="text-white font-medium border-b border-indigo-500/50">Без посредников и лишних переплат.</span>
                 </p>
@@ -176,39 +196,39 @@
                     <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
                         <i class="fas fa-bolt text-indigo-400"></i>
                         <div class="leading-tight">
-                            <div class="text-white font-bold text-xs">Сроки</div>
-                            <div class="text-slate-400 text-xs">2–5 дней</div>
+                            <div class="text-white font-bold text-xs" data-i18n="trust_1_title">Сроки</div>
+                            <div class="text-slate-400 text-xs" data-i18n="trust_1_value">2–5 дней</div>
                         </div>
                     </div>
                     <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
                         <i class="fas fa-chart-line text-purple-400"></i>
                         <div class="leading-tight">
-                            <div class="text-white font-bold text-xs">Аналитика</div>
-                            <div class="text-slate-400 text-xs">GA4 / цели</div>
+                            <div class="text-white font-bold text-xs" data-i18n="trust_2_title">Аналитика</div>
+                            <div class="text-slate-400 text-xs" data-i18n="trust_2_value">GA4 / цели</div>
                         </div>
                     </div>
                     <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
                         <i class="fas fa-shield-alt text-cyan-400"></i>
                         <div class="leading-tight">
-                            <div class="text-white font-bold text-xs">Бесплатное обслуживание</div>
-                            <div class="text-slate-400 text-xs">30 дней</div>
+                            <div class="text-white font-bold text-xs" data-i18n="trust_3_title">Бесплатное обслуживание</div>
+                            <div class="text-slate-400 text-xs" data-i18n="trust_3_value">30 дней</div>
                         </div>
                     </div>
                     <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
                         <i class="fas fa-headset text-green-400"></i>
                         <div class="leading-tight">
-                            <div class="text-white font-bold text-xs">Связь</div>
-                            <div class="text-slate-400 text-xs">WhatsApp/Telegram</div>
+                            <div class="text-white font-bold text-xs" data-i18n="trust_4_title">Связь</div>
+                            <div class="text-slate-400 text-xs" data-i18n="trust_4_value">WhatsApp/Telegram</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-[0_0_20px_rgba(79,70,229,0.4)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
-                        <i class="fab fa-whatsapp text-xl"></i> Получить расчёт
+                        <i class="fab fa-whatsapp text-xl"></i> <span data-i18n="hero_btn_quote">Получить расчёт</span>
                     </a>
                     <a href="#cases" class="px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 backdrop-blur text-white font-bold border border-slate-600 transition text-center">
-                        Посмотреть кейсы
+                        <span data-i18n="hero_btn_cases">Посмотреть кейсы</span>
                     </a>
                 </div>
             </div>
@@ -232,15 +252,15 @@
                     <div class="mt-6 grid grid-cols-3 gap-3">
                         <div class="glass rounded-xl p-4 text-center">
                             <div class="text-white font-bold text-xl">5+</div>
-                            <div class="text-slate-400 text-xs mt-1">кейсов</div>
+                            <div class="text-slate-400 text-xs mt-1" data-i18n="hero_stat_1">кейсов</div>
                         </div>
                         <div class="glass rounded-xl p-4 text-center">
                             <div class="text-white font-bold text-xl">2–5</div>
-                            <div class="text-slate-400 text-xs mt-1">дней</div>
+                            <div class="text-slate-400 text-xs mt-1" data-i18n="hero_stat_2">дней</div>
                         </div>
                         <div class="glass rounded-xl p-4 text-center">
                             <div class="text-white font-bold text-xl">1</div>
-                            <div class="text-slate-400 text-xs mt-1">контакт</div>
+                            <div class="text-slate-400 text-xs mt-1" data-i18n="hero_stat_3">контакт</div>
                         </div>
                     </div>
 
@@ -269,9 +289,9 @@
     <section id="services" class="py-24 relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Что вы получите</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Услуги под ключ</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="services_kicker">Что вы получите</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="services_title">Услуги под ключ</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="services_desc">
                     Вы получаете понятный результат: сайт, который выглядит современно, быстро загружается и ведёт клиента к заявке.
                 </p>
             </div>
@@ -279,35 +299,35 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="glass-card p-8 rounded-2xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="0">
                     <div class="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center text-2xl text-indigo-400 mb-6 border border-indigo-500/20"><i class="fas fa-laptop-code"></i></div>
-                    <h4 class="text-2xl font-bold text-white mb-2">Landing Page</h4>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Вы получаете одностраничный сайт с высокой конверсией для продажи услуг или товара.</p>
+                    <h4 class="text-2xl font-bold text-white mb-2" data-i18n="service_1_title">Landing Page</h4>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-i18n="service_1_desc">Вы получаете одностраничный сайт с высокой конверсией для продажи услуг или товара.</p>
                     <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> Уникальный дизайн</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> Адаптация под телефон</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> Базовая SEO-структура</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="service_1_b1">Уникальный дизайн</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="service_1_b2">Адаптация под телефон</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="service_1_b3">Базовая SEO-структура</span></li>
                     </ul>
                 </div>
 
                 <div class="glass-card p-8 rounded-2xl relative overflow-hidden group border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)]" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-b-lg">РЕКОМЕНДУЮ</div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-b-lg" data-i18n="service_badge_reco">РЕКОМЕНДУЮ</div>
                     <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center text-2xl text-purple-400 mb-6 border border-purple-500/20"><i class="fab fa-google"></i></div>
-                    <h4 class="text-2xl font-bold text-white mb-2">Сайт + Google Ads</h4>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Вы получаете сайт и настроенную рекламу с аналитикой — чтобы заявки можно было измерять.</p>
+                    <h4 class="text-2xl font-bold text-white mb-2" data-i18n="service_2_title">Сайт + Google Ads</h4>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-i18n="service_2_desc">Вы получаете сайт и настроенную рекламу с аналитикой — чтобы заявки можно было измерять.</p>
                     <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> Семантика и структура</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> Настройка целей/конверсий</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> Ведение 1 месяц</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="service_2_b1">Семантика и структура</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="service_2_b2">Настройка целей/конверсий</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="service_2_b3">Ведение 1 месяц</span></li>
                     </ul>
                 </div>
 
                 <div class="glass-card p-8 rounded-2xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center text-2xl text-cyan-400 mb-6 border border-cyan-500/20"><i class="fas fa-tools"></i></div>
-                    <h4 class="text-2xl font-bold text-white mb-2">Техподдержка</h4>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Если сайт уже есть — вы получаете улучшения: скорость, правки, адаптив, обновление контента.</p>
+                    <h4 class="text-2xl font-bold text-white mb-2" data-i18n="service_3_title">Техподдержка</h4>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-i18n="service_3_desc">Если сайт уже есть — вы получаете улучшения: скорость, правки, адаптив, обновление контента.</p>
                     <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> Правка кода</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> Оптимизация загрузки</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> Исправление ошибок</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="service_3_b1">Правка кода</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="service_3_b2">Оптимизация загрузки</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="service_3_b3">Исправление ошибок</span></li>
                     </ul>
                 </div>
             </div>
@@ -318,9 +338,9 @@
     <section id="cases" class="py-24 relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Кейсы</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Примеры работ</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Вы можете посмотреть живые сайты и понять стиль, уровень и подход.</p>
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="cases_kicker">Кейсы</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="cases_title">Примеры работ</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="cases_desc">Вы можете посмотреть живые сайты и понять стиль, уровень и подход.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -332,13 +352,13 @@
                     </div>
                     <div class="p-7 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-white font-tech mb-2">Avia-Drones</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-5">Вы получаете технологичный лендинг с интерактивом, модалками и интеграцией WhatsApp.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-5" data-i18n="case_1_desc">Вы получаете технологичный лендинг с интерактивом, модалками и интеграцией WhatsApp.</p>
                         <div class="mt-auto flex gap-3">
                             <a href="https://avia-drones.vercel.app/" target="_blank" class="flex-1 py-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-white text-center font-bold border border-white/10 transition">
                                 Live <i class="fas fa-external-link-alt ml-2"></i>
                             </a>
                             <a href="portfolio.html" class="flex-1 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition">
-                                Подробнее <i class="fas fa-arrow-right ml-2"></i>
+                                <span data-i18n="btn_details">Подробнее</span> <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -352,13 +372,13 @@
                     </div>
                     <div class="p-7 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-white font-tech mb-2">Kassenova Store</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-5">Вы получаете магазин с логикой корзины, расчетом и отправкой заказа в WhatsApp.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-5" data-i18n="case_2_desc">Вы получаете магазин с логикой корзины, расчетом и отправкой заказа в WhatsApp.</p>
                         <div class="mt-auto flex gap-3">
                             <a href="https://kassenova-market.vercel.app/" target="_blank" class="flex-1 py-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-white text-center font-bold border border-white/10 transition">
                                 Live <i class="fas fa-external-link-alt ml-2"></i>
                             </a>
                             <a href="portfolio.html" class="flex-1 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition">
-                                Подробнее <i class="fas fa-arrow-right ml-2"></i>
+                                <span data-i18n="btn_details">Подробнее</span> <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -372,13 +392,13 @@
                     </div>
                     <div class="p-7 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-white font-tech mb-2">Astana Jas</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-5">Вы получаете многостраничный сайт с навигацией, секциями и современными анимациями.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-5" data-i18n="case_3_desc">Вы получаете многостраничный сайт с навигацией, секциями и современными анимациями.</p>
                         <div class="mt-auto flex gap-3">
                             <a href="https://astanajas.vercel.app/" target="_blank" class="flex-1 py-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-white text-center font-bold border border-white/10 transition">
                                 Live <i class="fas fa-external-link-alt ml-2"></i>
                             </a>
                             <a href="portfolio.html" class="flex-1 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition">
-                                Подробнее <i class="fas fa-arrow-right ml-2"></i>
+                                <span data-i18n="btn_details">Подробнее</span> <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -387,7 +407,7 @@
 
             <div class="text-center mt-10">
                 <a href="portfolio.html" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white">
-                    Смотреть всё портфолио <i class="fas fa-arrow-right"></i>
+                    <span data-i18n="cases_all_portfolio">Смотреть всё портфолио</span> <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -397,9 +417,9 @@
     <section id="pricing" class="py-24 relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Пакеты</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Цены и комплектация</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="pricing_kicker">Пакеты</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="pricing_title">Цены и комплектация</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="pricing_desc">
                     Ниже — ориентиры. Вы сможете заменить цены и состав пакетов под свой оффер.
                 </p>
             </div>
@@ -413,40 +433,40 @@
                         </div>
                         <div class="text-right">
                             <div class="text-white font-bold text-3xl">30 000 ₸</div>
-                            <div class="text-slate-400 text-xs mt-1">от</div>
+                            <div class="text-slate-400 text-xs mt-1" data-i18n="price_from">от</div>
                         </div>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> Дизайн + верстка</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> Адаптив под телефон</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> Базовая SEO-структура</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> Подключение домена</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b1">Дизайн + верстка</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b2">Адаптив под телефон</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b3">Базовая SEO-структура</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b4">Подключение домена</span></li>
                     </ul>
                     <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="block text-center px-6 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-white/10 font-bold text-white transition">
-                        Обсудить
+                        <span data-i18n="btn_discuss">Обсудить</span>
                     </a>
                 </div>
 
                 <div class="glass-card p-8 rounded-2xl border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)] relative" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-b-lg">ЛУЧШИЙ ВЫБОР</div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-b-lg" data-i18n="price_badge_best">ЛУЧШИЙ ВЫБОР</div>
                     <div class="flex items-start justify-between mb-6">
                         <div>
                             <h4 class="text-2xl font-bold text-white font-tech">Business</h4>
-                            <p class="text-slate-400 text-sm mt-1">Сайт под заявки</p>
+                            <p class="text-slate-400 text-sm mt-1" data-i18n="price_2_sub">Сайт под заявки</p>
                         </div>
                         <div class="text-right">
                             <div class="text-white font-bold text-3xl">60 000 ₸</div>
-                            <div class="text-slate-400 text-xs mt-1">от</div>
+                            <div class="text-slate-400 text-xs mt-1" data-i18n="price_from">от</div>
                         </div>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> Проработка структуры</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> Упаковка оффера (тексты)</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> Аналитика + цели</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> 30 дней поддержки</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b1">Проработка структуры</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b2">Упаковка оффера (тексты)</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b3">Аналитика + цели</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b4">30 дней поддержки</span></li>
                     </ul>
                     <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="block text-center px-6 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-white transition shadow-[0_0_20px_rgba(79,70,229,0.35)]">
-                        Получить расчёт
+                        <span data-i18n="hero_btn_quote">Получить расчёт</span>
                     </a>
                 </div>
 
@@ -458,17 +478,17 @@
                         </div>
                         <div class="text-right">
                             <div class="text-white font-bold text-3xl">80 000 ₸</div>
-                            <div class="text-slate-400 text-xs mt-1">от</div>
+                            <div class="text-slate-400 text-xs mt-1" data-i18n="price_from">от</div>
                         </div>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> Кампании Google Ads</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> Настройка конверсий</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> Оптимизация 1 месяц</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> Отчетность</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b1">Кампании Google Ads</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b2">Настройка конверсий</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b3">Оптимизация 1 месяц</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b4">Отчетность</span></li>
                     </ul>
                     <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="block text-center px-6 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-white/10 font-bold text-white transition">
-                        Написать в Telegram
+                        <span data-i18n="btn_tg">Написать в Telegram</span>
                     </a>
                 </div>
             </div>
@@ -480,37 +500,37 @@
         <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-white/10 -translate-y-1/2 z-0"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Процесс</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Как вы получите результат</h3>
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="workflow_kicker">Процесс</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="workflow_title">Как вы получите результат</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up">
                     <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-indigo-500/10 transition">01</div>
                     <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center text-indigo-400 mb-6 text-xl"><i class="fas fa-search"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3">Анализ</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">Вы отвечаете на пару вопросов — я собираю структуру, которая ведёт к заявке.</p>
+                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_1_title">Анализ</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_1_desc">Вы отвечаете на пару вопросов — я собираю структуру, которая ведёт к заявке.</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-purple-500/10 transition">02</div>
                     <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 mb-6 text-xl"><i class="fas fa-pencil-ruler"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3">Дизайн</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">Вы утверждаете внешний вид — только после этого начинается разработка.</p>
+                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_2_title">Дизайн</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_2_desc">Вы утверждаете внешний вид — только после этого начинается разработка.</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-cyan-500/10 transition">03</div>
                     <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-400 mb-6 text-xl"><i class="fas fa-code"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3">Разработка</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">Вы получаете быстрый адаптивный сайт на чистом коде (HTML/CSS/JS).</p>
+                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_3_title">Разработка</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_3_desc">Вы получаете быстрый адаптивный сайт на чистом коде (HTML/CSS/JS).</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="300">
                     <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-green-500/10 transition">04</div>
                     <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 mb-6 text-xl"><i class="fas fa-rocket"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3">Запуск</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">Вы подключаете домен — сайт публикуется. При необходимости запускается Google Ads.</p>
+                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_4_title">Запуск</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_4_desc">Вы подключаете домен — сайт публикуется. При необходимости запускается Google Ads.</p>
                 </div>
             </div>
         </div>
@@ -520,36 +540,36 @@
     <section class="py-24 relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Доверие</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Что говорят клиенты</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Здесь можно вставить реальные отзывы (вы замените текст).</p>
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="test_kicker">Доверие</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="test_title">Что говорят клиенты</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="test_desc">Здесь можно вставить реальные отзывы (вы замените текст).</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="glass p-8 rounded-2xl" data-aos="fade-up">
                     <div class="text-indigo-400 text-xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 leading-relaxed">“Вы сделали быстро и очень аккуратно. Сайт выглядит дороже, чем ожидали.”</p>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="test_1_quote">“Вы сделали быстро и очень аккуратно. Сайт выглядит дороже, чем ожидали.”</p>
                     <div class="mt-6 text-sm">
-                        <div class="text-white font-bold">Клиент Ержан</div>
-                        <div class="text-slate-500">Ниша - Услуги манипулятора / город Алматы</div>
+                        <div class="text-white font-bold" data-i18n="test_1_name">Клиент Ержан</div>
+                        <div class="text-slate-500" data-i18n="test_1_role">Ниша - Услуги манипулятора / город Алматы</div>
                     </div>
                 </div>
 
                 <div class="glass p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-purple-400 text-xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 leading-relaxed">“Вы подсказали по структуре и офферу — стало понятно, за что платим и что получаем.”</p>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="test_2_quote">“Вы подсказали по структуре и офферу — стало понятно, за что платим и что получаем.”</p>
                     <div class="mt-6 text-sm">
-                        <div class="text-white font-bold">Клиент Салтанат</div>
-                        <div class="text-slate-500">Ниша - Дроны / город Астана</div>
+                        <div class="text-white font-bold" data-i18n="test_2_name">Клиент Салтанат</div>
+                        <div class="text-slate-500" data-i18n="test_2_role">Ниша - Дроны / город Астана</div>
                     </div>
                 </div>
 
                 <div class="glass p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-cyan-400 text-xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 leading-relaxed">“Вы сделали всё под ключ: сайт, аналитика и связь — просто написали и получили результат.”</p>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="test_3_quote">“Вы сделали всё под ключ: сайт, аналитика и связь — просто написали и получили результат.”</p>
                     <div class="mt-6 text-sm">
-                        <div class="text-white font-bold">Клиент Аня</div>
-                        <div class="text-slate-500">Ниша - Интернет магазин / город Жезказган</div>
+                        <div class="text-white font-bold" data-i18n="test_3_name">Клиент Аня</div>
+                        <div class="text-slate-500" data-i18n="test_3_role">Ниша - Интернет магазин / город Жезказган</div>
                     </div>
                 </div>
             </div>
@@ -560,47 +580,47 @@
     <section id="faq" class="py-24 relative z-10">
         <div class="container mx-auto px-6 max-w-3xl">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">FAQ</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white font-tech">Частые вопросы</h3>
+                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="faq_kicker">FAQ</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white font-tech" data-i18n="faq_title">Частые вопросы</h3>
             </div>
 
             <div class="space-y-4">
                 <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up">
                     <summary class="flex justify-between items-center font-bold text-white">
-                        Сколько времени занимает разработка?
+                        <span data-i18n="faq_q1">Сколько времени занимает разработка?</span>
                         <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
                     </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a1">
                         Обычно вы получаете Landing Page за 1–2 дня. Многостраничные проекты — 2–5 дней. Перед стартом вы получаете точные сроки.
                     </p>
                 </details>
 
                 <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="100">
                     <summary class="flex justify-between items-center font-bold text-white">
-                        Есть ли ежемесячная оплата?
+                        <span data-i18n="faq_q2">Есть ли ежемесячная оплата?</span>
                         <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
                     </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a2">
                         Вы оплачиваете разработку один раз. Далее у вас только хостинг/домен (обычно это недорого). Никаких скрытых платежей.
                     </p>
                 </details>
 
                 <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="200">
                     <summary class="flex justify-between items-center font-bold text-white">
-                        Сможете ли вы менять текст и цены?
+                        <span data-i18n="faq_q3">Сможете ли вы менять текст и цены?</span>
                         <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
                     </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a3">
                         Да. По запросу вы получаете удобный способ обновлять контент (даже с телефона). Либо вы просто пишете — и изменения вносятся.
                     </p>
                 </details>
 
                 <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="300">
                     <summary class="flex justify-between items-center font-bold text-white">
-                        Что нужно, чтобы начать?
+                        <span data-i18n="faq_q4">Что нужно, чтобы начать?</span>
                         <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
                     </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a4">
                         Просто напишите в WhatsApp или Telegram. Вы отвечаете на несколько вопросов — дальше вы получаете структуру и план работ.
                     </p>
                 </details>
@@ -613,22 +633,22 @@
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
 
         <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 font-tech">Готовы получить сайт под заявки?</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 font-tech" data-i18n="footer_title">Готовы получить сайт под заявки?</h2>
 
             <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-10">
                 <a href="https://t.me/Anukenn" target="_blank" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto flex items-center justify-center gap-4 bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white px-8 py-4 rounded-xl transition duration-300">
                     <i class="fab fa-telegram text-2xl"></i>
                     <div class="text-left">
-                        <div class="text-xs opacity-70">Написать в</div>
-                        <div class="font-bold">Telegram</div>
+                        <div class="text-xs opacity-70" data-i18n="footer_write_in">Написать в</div>
+                        <div class="font-bold" data-i18n="footer_tg">Telegram</div>
                     </div>
                 </a>
 
                 <a href="https://wa.me/77074534518" target="_blank" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto flex items-center justify-center gap-4 bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500 hover:text-white px-8 py-4 rounded-xl transition duration-300">
                     <i class="fab fa-whatsapp text-2xl"></i>
                     <div class="text-left">
-                        <div class="text-xs opacity-70">Написать в</div>
-                        <div class="font-bold">WhatsApp</div>
+                        <div class="text-xs opacity-70" data-i18n="footer_write_in">Написать в</div>
+                        <div class="font-bold" data-i18n="footer_wa">WhatsApp</div>
                     </div>
                 </a>
             </div>
@@ -644,7 +664,7 @@
 
             <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
                 <p>&copy; 2015-2026 Anuken Development.</p>
-                <p>Астана, Казахстан.</p>
+                <p data-i18n="footer_city">Астана, Казахстан.</p>
             </div>
         </div>
     </footer>
@@ -769,6 +789,318 @@
         mobileMenu.addEventListener('click', (e) => {
             if (e.target === mobileMenu) closeMenu();
         });
+
+        // ===== RU / EN i18n (переключатель языка) =====
+        (function () {
+            const translations = {
+                ru: {
+                    meta_title: "Anuken | Разработчик сайтов",
+                    meta_desc: "Вы получаете продающий сайт и поток клиентов из Google. Разработка под ключ: дизайн, код, аналитика, запуск рекламы.",
+
+                    nav_services: "Услуги",
+                    nav_cases: "Кейсы",
+                    nav_pricing: "Цены",
+                    nav_workflow: "Процесс",
+                    nav_portfolio: "Портфолио",
+                    nav_faq: "Вопросы",
+                    header_cta_telegram: "Telegram",
+
+                    mobile_cta_tg: "Написать в Telegram",
+                    mobile_cta_wa: "Написать в WhatsApp",
+
+                    hero_badge: "Доступен для проектов",
+                    hero_title: "Вы получаете <br> <span class=\"text-gradient\">продающий сайт</span>",
+                    hero_desc: "Вы получаете современный сайт под ключ и понятный путь к заявкам: структура, дизайн, код, аналитика и запуск. <span class=\"text-white font-medium border-b border-indigo-500/50\">Без посредников и лишних переплат.</span>",
+                    trust_1_title: "Сроки",
+                    trust_1_value: "2–5 дней",
+                    trust_2_title: "Аналитика",
+                    trust_2_value: "GA4 / цели",
+                    trust_3_title: "Бесплатное обслуживание",
+                    trust_3_value: "30 дней",
+                    trust_4_title: "Связь",
+                    trust_4_value: "WhatsApp/Telegram",
+                    hero_btn_quote: "Получить расчёт",
+                    hero_btn_cases: "Посмотреть кейсы",
+                    hero_stat_1: "кейсов",
+                    hero_stat_2: "дней",
+                    hero_stat_3: "контакт",
+
+                    services_kicker: "Что вы получите",
+                    services_title: "Услуги под ключ",
+                    services_desc: "Вы получаете понятный результат: сайт, который выглядит современно, быстро загружается и ведёт клиента к заявке.",
+                    service_1_title: "Landing Page",
+                    service_1_desc: "Вы получаете одностраничный сайт с высокой конверсией для продажи услуг или товара.",
+                    service_1_b1: "Уникальный дизайн",
+                    service_1_b2: "Адаптация под телефон",
+                    service_1_b3: "Базовая SEO-структура",
+                    service_badge_reco: "РЕКОМЕНДУЮ",
+                    service_2_title: "Сайт + Google Ads",
+                    service_2_desc: "Вы получаете сайт и настроенную рекламу с аналитикой — чтобы заявки можно было измерять.",
+                    service_2_b1: "Семантика и структура",
+                    service_2_b2: "Настройка целей/конверсий",
+                    service_2_b3: "Ведение 1 месяц",
+                    service_3_title: "Техподдержка",
+                    service_3_desc: "Если сайт уже есть — вы получаете улучшения: скорость, правки, адаптив, обновление контента.",
+                    service_3_b1: "Правка кода",
+                    service_3_b2: "Оптимизация загрузки",
+                    service_3_b3: "Исправление ошибок",
+
+                    cases_kicker: "Кейсы",
+                    cases_title: "Примеры работ",
+                    cases_desc: "Вы можете посмотреть живые сайты и понять стиль, уровень и подход.",
+                    case_1_desc: "Вы получаете технологичный лендинг с интерактивом, модалками и интеграцией WhatsApp.",
+                    case_2_desc: "Вы получаете магазин с логикой корзины, расчетом и отправкой заказа в WhatsApp.",
+                    case_3_desc: "Вы получаете многостраничный сайт с навигацией, секциями и современными анимациями.",
+                    btn_details: "Подробнее",
+                    cases_all_portfolio: "Смотреть всё портфолио",
+
+                    pricing_kicker: "Пакеты",
+                    pricing_title: "Цены и комплектация",
+                    pricing_desc: "Ниже — ориентиры. Вы сможете заменить цены и состав пакетов под свой оффер.",
+                    price_from: "от",
+                    btn_discuss: "Обсудить",
+                    price_badge_best: "ЛУЧШИЙ ВЫБОР",
+                    price_2_sub: "Сайт под заявки",
+                    price_1_b1: "Дизайн + верстка",
+                    price_1_b2: "Адаптив под телефон",
+                    price_1_b3: "Базовая SEO-структура",
+                    price_1_b4: "Подключение домена",
+                    price_2_b1: "Проработка структуры",
+                    price_2_b2: "Упаковка оффера (тексты)",
+                    price_2_b3: "Аналитика + цели",
+                    price_2_b4: "30 дней поддержки",
+                    price_3_b1: "Кампании Google Ads",
+                    price_3_b2: "Настройка конверсий",
+                    price_3_b3: "Оптимизация 1 месяц",
+                    price_3_b4: "Отчетность",
+                    btn_tg: "Написать в Telegram",
+
+                    workflow_kicker: "Процесс",
+                    workflow_title: "Как вы получите результат",
+                    workflow_1_title: "Анализ",
+                    workflow_1_desc: "Вы отвечаете на пару вопросов — я собираю структуру, которая ведёт к заявке.",
+                    workflow_2_title: "Дизайн",
+                    workflow_2_desc: "Вы утверждаете внешний вид — только после этого начинается разработка.",
+                    workflow_3_title: "Разработка",
+                    workflow_3_desc: "Вы получаете быстрый адаптивный сайт на чистом коде (HTML/CSS/JS).",
+                    workflow_4_title: "Запуск",
+                    workflow_4_desc: "Вы подключаете домен — сайт публикуется. При необходимости запускается Google Ads.",
+
+                    test_kicker: "Доверие",
+                    test_title: "Что говорят клиенты",
+                    test_desc: "Здесь можно вставить реальные отзывы (вы замените текст).",
+                    test_1_quote: "“Вы сделали быстро и очень аккуратно. Сайт выглядит дороже, чем ожидали.”",
+                    test_1_name: "Клиент Ержан",
+                    test_1_role: "Ниша - Услуги манипулятора / город Алматы",
+                    test_2_quote: "“Вы подсказали по структуре и офферу — стало понятно, за что платим и что получаем.”",
+                    test_2_name: "Клиент Салтанат",
+                    test_2_role: "Ниша - Дроны / город Астана",
+                    test_3_quote: "“Вы сделали всё под ключ: сайт, аналитика и связь — просто написали и получили результат.”",
+                    test_3_name: "Клиент Аня",
+                    test_3_role: "Ниша - Интернет магазин / город Жезказган",
+
+                    faq_kicker: "FAQ",
+                    faq_title: "Частые вопросы",
+                    faq_q1: "Сколько времени занимает разработка?",
+                    faq_a1: "Обычно вы получаете Landing Page за 1–2 дня. Многостраничные проекты — 2–5 дней. Перед стартом вы получаете точные сроки.",
+                    faq_q2: "Есть ли ежемесячная оплата?",
+                    faq_a2: "Вы оплачиваете разработку один раз. Далее у вас только хостинг/домен (обычно это недорого). Никаких скрытых платежей.",
+                    faq_q3: "Сможете ли вы менять текст и цены?",
+                    faq_a3: "Да. По запросу вы получаете удобный способ обновлять контент (даже с телефона). Либо вы просто пишете — и изменения вносятся.",
+                    faq_q4: "Что нужно, чтобы начать?",
+                    faq_a4: "Просто напишите в WhatsApp или Telegram. Вы отвечаете на несколько вопросов — дальше вы получаете структуру и план работ.",
+
+                    footer_title: "Готовы получить сайт под заявки?",
+                    footer_write_in: "Написать в",
+                    footer_tg: "Telegram",
+                    footer_wa: "WhatsApp",
+                    footer_city: "Астана, Казахстан."
+                },
+
+                en: {
+                    meta_title: "Anuken | Website Developer",
+                    meta_desc: "You get a high-converting website and a stream of clients from Google. Turnkey delivery: design, code, analytics, ad launch.",
+
+                    nav_services: "Services",
+                    nav_cases: "Cases",
+                    nav_pricing: "Pricing",
+                    nav_workflow: "Process",
+                    nav_portfolio: "Portfolio",
+                    nav_faq: "FAQ",
+                    header_cta_telegram: "Telegram",
+
+                    mobile_cta_tg: "Message on Telegram",
+                    mobile_cta_wa: "Message on WhatsApp",
+
+                    hero_badge: "Available for projects",
+                    hero_title: "You get a <br> <span class=\"text-gradient\">high-converting website</span>",
+                    hero_desc: "You get a modern turnkey website and a clear path to leads: structure, design, code, analytics, and launch. <span class=\"text-white font-medium border-b border-indigo-500/50\">No middlemen and no extra markups.</span>",
+                    trust_1_title: "Timeline",
+                    trust_1_value: "2–5 days",
+                    trust_2_title: "Analytics",
+                    trust_2_value: "GA4 / conversions",
+                    trust_3_title: "Free maintenance",
+                    trust_3_value: "30 days",
+                    trust_4_title: "Contact",
+                    trust_4_value: "WhatsApp/Telegram",
+                    hero_btn_quote: "Get a quote",
+                    hero_btn_cases: "View cases",
+                    hero_stat_1: "cases",
+                    hero_stat_2: "days",
+                    hero_stat_3: "contact",
+
+                    services_kicker: "What you get",
+                    services_title: "Turnkey services",
+                    services_desc: "You get a clear outcome: a website that looks modern, loads fast, and guides visitors to a request.",
+                    service_1_title: "Landing Page",
+                    service_1_desc: "You get a single-page website with high conversion to sell a service or product.",
+                    service_1_b1: "Custom design",
+                    service_1_b2: "Mobile responsive",
+                    service_1_b3: "Basic SEO structure",
+                    service_badge_reco: "RECOMMENDED",
+                    service_2_title: "Website + Google Ads",
+                    service_2_desc: "You get a website and configured ads with analytics — so leads are measurable.",
+                    service_2_b1: "Keywords & structure",
+                    service_2_b2: "Conversion tracking setup",
+                    service_2_b3: "1 month management",
+                    service_3_title: "Support",
+                    service_3_desc: "If you already have a website — you get improvements: speed, edits, responsiveness, content updates.",
+                    service_3_b1: "Code edits",
+                    service_3_b2: "Load speed optimization",
+                    service_3_b3: "Bug fixes",
+
+                    cases_kicker: "Cases",
+                    cases_title: "Work examples",
+                    cases_desc: "You can open live websites and understand the style, quality, and approach.",
+                    case_1_desc: "You get a tech-style landing with interactions, modals, and WhatsApp integration.",
+                                        case_1_desc: "You get a tech-style landing with interactions, modals, and WhatsApp integration.",
+                    case_2_desc: "You get an online store with cart logic, pricing calculation, and WhatsApp order sending.",
+                    case_3_desc: "You get a multi-page website with navigation, sections, and modern animations.",
+                    btn_details: "Details",
+                    cases_all_portfolio: "View full portfolio",
+
+                    pricing_kicker: "Packages",
+                    pricing_title: "Pricing & what's included",
+                    pricing_desc: "Below are starting points. You can replace prices and package contents to match your offer.",
+                    price_from: "from",
+                    btn_discuss: "Discuss",
+                    price_badge_best: "BEST VALUE",
+                    price_2_sub: "Lead-gen website",
+                    price_1_b1: "Design + build",
+                    price_1_b2: "Mobile responsive",
+                    price_1_b3: "Basic SEO structure",
+                    price_1_b4: "Domain connection",
+                    price_2_b1: "Structure planning",
+                    price_2_b2: "Offer packaging (copy)",
+                    price_2_b3: "Analytics + goals",
+                    price_2_b4: "30 days support",
+                    price_3_b1: "Google Ads campaigns",
+                    price_3_b2: "Conversion tracking setup",
+                    price_3_b3: "1 month optimization",
+                    price_3_b4: "Reporting",
+                    btn_tg: "Message on Telegram",
+
+                    workflow_kicker: "Process",
+                    workflow_title: "How you get results",
+                    workflow_1_title: "Discovery",
+                    workflow_1_desc: "You answer a few questions — I build a structure that leads to inquiries.",
+                    workflow_2_title: "Design",
+                    workflow_2_desc: "You approve the look — only then development begins.",
+                    workflow_3_title: "Development",
+                    workflow_3_desc: "You get a fast responsive website in clean code (HTML/CSS/JS).",
+                    workflow_4_title: "Launch",
+                    workflow_4_desc: "You connect the domain — the site goes live. Google Ads can be launched if needed.",
+
+                    test_kicker: "Trust",
+                    test_title: "What clients say",
+                    test_desc: "You can place real testimonials here (replace the text).",
+                    test_1_quote: "“You delivered fast and very neatly. The website looks more premium than we expected.”",
+                    test_1_name: "Client Erzhan",
+                    test_1_role: "Niche — Crane service / Almaty",
+                    test_2_quote: "“You helped with structure and offer — it became clear what we're paying for and what we get.”",
+                    test_2_name: "Client Saltanat",
+                    test_2_role: "Niche — Drones / Astana",
+                    test_3_quote: "“Everything turnkey: website, analytics, communication — we just messaged you and got the result.”",
+                    test_3_name: "Client Anya",
+                    test_3_role: "Niche — E-commerce / Zhezkazgan",
+
+                    faq_kicker: "FAQ",
+                    faq_title: "Frequently asked questions",
+                    faq_q1: "How long does development take?",
+                    faq_a1: "Typically, you get a landing page in 1–2 days. Multi-page projects take 2–5 days. Before we start, you get exact timelines.",
+                    faq_q2: "Is there a monthly fee?",
+                    faq_a2: "You pay for development once. After that, you only have hosting/domain (usually inexpensive). No hidden fees.",
+                    faq_q3: "Can you change text and prices later?",
+                    faq_a3: "Yes. On request, you get a convenient way to update content (even from your phone). Or you just message me — and changes are applied.",
+                    faq_q4: "What do you need to start?",
+                    faq_a4: "Just message me on WhatsApp or Telegram. You answer a few questions — then you get a structure and a work plan.",
+
+                    footer_title: "Ready to get a lead-generating website?",
+                    footer_write_in: "Message on",
+                    footer_tg: "Telegram",
+                    footer_wa: "WhatsApp",
+                    footer_city: "Astana, Kazakhstan."
+                }
+            };
+
+            const htmlEl = document.documentElement;
+            const titleEl = document.querySelector('title');
+            const metaDescEl = document.querySelector('meta[name="description"]');
+
+            function setActiveButtons(lang) {
+                document.querySelectorAll('.lang-toggle').forEach(btn => {
+                    const isActive = btn.dataset.lang === lang;
+                    btn.classList.toggle('lang-active', isActive);
+                    btn.classList.toggle('lang-inactive', !isActive);
+                });
+            }
+
+            function applyLang(lang) {
+                const dict = translations[lang] || translations.ru;
+
+                // html lang
+                htmlEl.setAttribute('lang', lang);
+
+                // title + meta description
+                if (titleEl && dict.meta_title) titleEl.textContent = dict.meta_title;
+                if (metaDescEl && dict.meta_desc) metaDescEl.setAttribute('content', dict.meta_desc);
+
+                // elements with text
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (!key) return;
+                    if (dict[key] !== undefined) el.textContent = dict[key];
+                });
+
+                // elements with html (keep your spans/br)
+                document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-html');
+                    if (!key) return;
+                    if (dict[key] !== undefined) el.innerHTML = dict[key];
+                });
+
+                setActiveButtons(lang);
+
+                try { localStorage.setItem('siteLang', lang); } catch (_) {}
+            }
+
+            // Detect initial language
+            const saved = (() => { try { return localStorage.getItem('siteLang'); } catch (_) { return null; } })();
+            const browserLang = (navigator.language || '').toLowerCase().startsWith('ru') ? 'ru' : 'en';
+            const initial = (saved === 'ru' || saved === 'en') ? saved : browserLang;
+
+            // Bind toggles
+            document.querySelectorAll('.lang-toggle').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.dataset.lang;
+                    if (!lang) return;
+                    applyLang(lang);
+                });
+            });
+
+            // Apply on load
+            applyLang(initial);
+        })();
     </script>
 </body>
 </html>
