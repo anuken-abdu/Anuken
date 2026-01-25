@@ -54,53 +54,46 @@
   </script>
 
   <style>
-  .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-  .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.70) 0%, rgba(15, 23, 42, 0.92) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.35s ease; }
-  .glass-card:hover { transform: translateY(-4px); border-color: rgba(99, 102, 241, 0.9); box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.28); }
-  .text-gradient { background: linear-gradient(to right, #818cf8, #c084fc, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: gradient 6s linear infinite; }
-  @keyframes gradient { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
-  .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
-  .animation-delay-2000 { animation-delay: 2s; }
-  .animation-delay-4000 { animation-delay: 4s; }
-  ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #020617; } ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.70) 0%, rgba(15, 23, 42, 0.92) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.35s ease; }
+    .glass-card:hover { transform: translateY(-4px); border-color: rgba(99, 102, 241, 0.9); box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.28); }
+    .text-gradient { background: linear-gradient(to right, #818cf8, #c084fc, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: gradient 6s linear infinite; }
+    @keyframes gradient { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
+    .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animation-delay-4000 { animation-delay: 4s; }
+    ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #020617; } ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
 
-  .modal-hidden { display: none; }
-  .modal-show { display: flex; }
+    .modal-hidden { display: none; }
+    .modal-show { display: flex; }
 
-  /* iOS плавный скролл внутри модалки */
-  #projectModal { -webkit-overflow-scrolling: touch; }
+    /* iOS плавный скролл внутри модалки */
+    #projectModal { -webkit-overflow-scrolling: touch; }
 
-  @media (prefers-reduced-motion: reduce) {
-    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-  }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
 
-  /* ---------- Language (Google Translate) ---------- */
-  .goog-te-banner-frame.skiptranslate { display: none !important; }
-  body { top: 0 !important; }
-  #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
-  .goog-text-highlight { background: inherit !important; box-shadow: none !important; }
-  .goog-te-gadget { display: none !important; }
-
-  /* Style for our buttons (Tailwind-agnostic fallback) */
-  .lang-btn{
-    padding: 8px 12px;
-    border-radius: 9999px;
-    font-size: 12px;
-    font-weight: 700;
-    border: 1px solid rgba(255,255,255,0.10);
-    transition: 0.2s ease;
-    color: rgba(203,213,225,1);
-    background: transparent;
-  }
-  .lang-btn:hover{
-    background: rgba(255,255,255,0.06);
-    color: #fff;
-  }
-  .lang-btn.is-active{
-    background: rgba(255,255,255,0.10);
-    color: #fff;
-  }
-</style>
+    /* Style for our buttons (Tailwind-agnostic fallback) */
+    .lang-btn{
+      padding: 8px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: 0.2s ease;
+      color: rgba(203,213,225,1);
+      background: transparent;
+    }
+    .lang-btn:hover{
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+    }
+    .lang-btn.is-active{
+      background: rgba(255,255,255,0.10);
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body class="bg-brand-dark text-slate-300 relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
@@ -122,11 +115,11 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="#cases" class="hover:text-white transition">Кейсы</a>
-        <a href="#packages" class="hover:text-white transition">Пакеты</a>
-        <a href="#niches" class="hover:text-white transition">Ниши</a>
-        <a href="#catalog" class="hover:text-white transition">Каталог</a>
-        <a href="#faq" class="hover:text-white transition">FAQ</a>
+        <a href="#cases" data-i18n="nav.cases" class="hover:text-white transition">Кейсы</a>
+        <a href="#packages" data-i18n="nav.packages" class="hover:text-white transition">Пакеты</a>
+        <a href="#niches" data-i18n="nav.niches" class="hover:text-white transition">Ниши</a>
+        <a href="#catalog" data-i18n="nav.catalog" class="hover:text-white transition">Каталог</a>
+        <a href="#faq" data-i18n="nav.faq" class="hover:text-white transition">FAQ</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-3">
@@ -158,11 +151,11 @@
           <button type="button" data-lang-btn="en" class="lang-btn">EN</button>
         </div>
 
-        <a href="#cases" class="mobile-link hover:text-white transition">Кейсы</a>
-        <a href="#packages" class="mobile-link hover:text-white transition">Пакеты</a>
-        <a href="#niches" class="mobile-link hover:text-white transition">Ниши</a>
-        <a href="#catalog" class="mobile-link hover:text-white transition">Каталог</a>
-        <a href="#faq" class="mobile-link hover:text-white transition">FAQ</a>
+        <a href="#cases" data-i18n="nav.cases" class="mobile-link hover:text-white transition">Кейсы</a>
+        <a href="#packages" data-i18n="nav.packages" class="mobile-link hover:text-white transition">Пакеты</a>
+        <a href="#niches" data-i18n="nav.niches" class="mobile-link hover:text-white transition">Ниши</a>
+        <a href="#catalog" data-i18n="nav.catalog" class="mobile-link hover:text-white transition">Каталог</a>
+        <a href="#faq" data-i18n="nav.faq" class="mobile-link hover:text-white transition">FAQ</a>
 
         <div class="flex gap-3 pt-2">
           <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="flex-1 text-center px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white">
@@ -173,7 +166,7 @@
           </a>
         </div>
 
-        <a href="index.html" class="text-sm text-slate-400 hover:text-white transition pt-2">
+        <a href="index.html" data-i18n="nav.home" class="text-sm text-slate-400 hover:text-white transition pt-2">
           <i class="fas fa-arrow-left mr-2"></i> На главную
         </a>
       </div>
@@ -190,38 +183,40 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            ПОРТФОЛИО / КЕЙСЫ
+            <span data-i18n="hero.badge">ПОРТФОЛИО / КЕЙСЫ</span>
           </div>
 
           <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-5 font-tech">
-            Проекты, которые <span class="text-gradient">приносят заявки</span>
+            <span data-i18n="hero.title1">Проекты, которые</span>
+            <span class="text-gradient" data-i18n="hero.title2">приносят заявки</span>
           </h1>
-          <p class="text-slate-300 leading-relaxed max-w-xl mb-8">
+
+          <p class="text-slate-300 leading-relaxed max-w-xl mb-8" data-i18n="hero.subtitle">
             Здесь вы можете посмотреть реальные работы, увидеть стоимость и быстро выбрать подходящий формат:
             лендинг, сайт услуг или интернет-магазин.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="#catalog" class="px-7 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition transform hover:-translate-y-1 text-center">
-              Смотреть проекты <i class="fas fa-layer-group ml-2"></i>
+              <span data-i18n="hero.btn1">Смотреть проекты</span> <i class="fas fa-layer-group ml-2"></i>
             </a>
             <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-7 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-center text-white font-bold">
-              Обсудить проект <i class="fab fa-whatsapp ml-2"></i>
+              <span data-i18n="hero.btn2">Обсудить проект</span> <i class="fab fa-whatsapp ml-2"></i>
             </a>
           </div>
 
           <div class="grid grid-cols-3 gap-3 mt-8 max-w-xl">
             <div class="glass p-4 rounded-xl">
               <div class="text-white font-bold font-tech text-lg" id="statProjects">—</div>
-              <div class="text-xs text-slate-400">проектов</div>
+              <div class="text-xs text-slate-400" data-i18n="hero.statProjects">проектов</div>
             </div>
             <div class="glass p-4 rounded-xl">
               <div class="text-white font-bold font-tech text-lg" id="statNiches">—</div>
-              <div class="text-xs text-slate-400">ниш</div>
+              <div class="text-xs text-slate-400" data-i18n="hero.statNiches">ниш</div>
             </div>
             <div class="glass p-4 rounded-xl">
               <div class="text-white font-bold font-tech text-lg">HTML/JS</div>
-              <div class="text-xs text-slate-400">чистый код</div>
+              <div class="text-xs text-slate-400" data-i18n="hero.statCode">чистый код</div>
             </div>
           </div>
         </div>
@@ -231,7 +226,7 @@
           <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
           <div class="relative bg-brand-card/90 backdrop-blur border border-white/10 rounded-2xl p-7 shadow-2xl">
             <div class="flex items-center justify-between mb-5">
-              <div class="font-tech text-white font-bold">Что вы получаете</div>
+              <div class="font-tech text-white font-bold" data-i18n="hero.panelTitle">Что вы получаете</div>
               <div class="text-xs text-slate-400 font-mono">Portfolio</div>
             </div>
 
@@ -241,8 +236,8 @@
                   <i class="fas fa-file-alt"></i>
                 </span>
                 <div>
-                  <div class="text-white font-semibold">Кейсы с задачей и решением</div>
-                  <div class="text-slate-400 text-xs">чтобы было понятно, что именно сделано</div>
+                  <div class="text-white font-semibold" data-i18n="hero.p1.title">Кейсы с задачей и решением</div>
+                  <div class="text-slate-400 text-xs" data-i18n="hero.p1.desc">чтобы было понятно, что именно сделано</div>
                 </div>
               </div>
 
@@ -251,8 +246,8 @@
                   <i class="fas fa-filter"></i>
                 </span>
                 <div>
-                  <div class="text-white font-semibold">Фильтры и поиск</div>
-                  <div class="text-slate-400 text-xs">быстро найти похожий проект по нише</div>
+                  <div class="text-white font-semibold" data-i18n="hero.p2.title">Фильтры и поиск</div>
+                  <div class="text-slate-400 text-xs" data-i18n="hero.p2.desc">быстро найти похожий проект по нише</div>
                 </div>
               </div>
 
@@ -261,8 +256,8 @@
                   <i class="fas fa-window-restore"></i>
                 </span>
                 <div>
-                  <div class="text-white font-semibold">Подробности без лишних переходов</div>
-                  <div class="text-slate-400 text-xs">удобный просмотр на телефоне</div>
+                  <div class="text-white font-semibold" data-i18n="hero.p3.title">Подробности без лишних переходов</div>
+                  <div class="text-slate-400 text-xs" data-i18n="hero.p3.desc">удобный просмотр на телефоне</div>
                 </div>
               </div>
 
@@ -271,16 +266,16 @@
                   <i class="fas fa-tags"></i>
                 </span>
                 <div>
-                  <div class="text-white font-semibold">Прозрачная стоимость</div>
-                  <div class="text-slate-400 text-xs">ориентир по бюджету на похожий проект</div>
+                  <div class="text-white font-semibold" data-i18n="hero.p4.title">Прозрачная стоимость</div>
+                  <div class="text-slate-400 text-xs" data-i18n="hero.p4.desc">ориентир по бюджету на похожий проект</div>
                 </div>
               </div>
             </div>
 
             <div class="mt-6 pt-6 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
-              <div>Адаптив</div>
-              <div>Скорость</div>
-              <div>Конверсия</div>
+              <div data-i18n="hero.f1">Адаптив</div>
+              <div data-i18n="hero.f2">Скорость</div>
+              <div data-i18n="hero.f3">Конверсия</div>
             </div>
           </div>
         </div>
@@ -314,9 +309,9 @@
   <section id="cases" class="py-20 relative z-10">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Кейсы</h2>
-        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Мои кейсы</h3>
-        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="cases.kicker">Кейсы</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="cases.title">Мои кейсы</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="cases.desc">
           Коротко: цель проекта, решение и ключевые функции. Стоимость указана как ориентир.
         </p>
       </div>
@@ -325,7 +320,7 @@
         <div class="flex items-center justify-between gap-3 mb-4">
           <div class="text-sm text-slate-400 font-mono">
             <span class="text-white font-bold" id="featuredIndex">01</span>/<span id="featuredTotal">03</span>
-            <span class="ml-3">кейсов</span>
+            <span class="ml-3" data-i18n="cases.countLabel">кейсов</span>
           </div>
           <div class="flex gap-2">
             <button id="featuredPrev" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white">
@@ -348,9 +343,9 @@
   <section id="packages" class="py-20 relative z-10">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Предложения</h2>
-        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Пакеты под ключ</h3>
-        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="packages.kicker">Предложения</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="packages.title">Пакеты под ключ</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="packages.desc">
           Вы выбираете формат — я собираю структуру, дизайн и код, настраиваю аналитику и кнопки связи.
         </p>
       </div>
@@ -359,51 +354,51 @@
         <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
           <div class="flex items-center justify-between mb-5">
             <div class="text-white font-tech font-bold text-xl">Landing Page</div>
-            <div class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/20">Start</div>
+            <div class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/20" data-i18n="packages.badgeStart">Start</div>
           </div>
-          <div class="text-3xl font-bold text-white mb-3">от <span class="text-gradient">20 000 ₸ / 20$</span></div>
-          <p class="text-sm text-slate-400 mb-6 leading-relaxed">Одностраничный сайт для услуги/товара. Упор на конверсию и скорость.</p>
+          <div class="text-3xl font-bold text-white mb-3"><span data-i18n="packages.priceFrom">от</span> <span class="text-gradient">20 000 ₸ / 20$</span></div>
+          <p class="text-sm text-slate-400 mb-6 leading-relaxed" data-i18n="packages.p1.desc">Одностраничный сайт для услуги/товара. Упор на конверсию и скорость.</p>
           <ul class="text-sm text-slate-300 space-y-2 mb-7">
-            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span>Уникальный дизайн</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span>Адаптив под телефон</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span>Кнопки WhatsApp/Telegram</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span data-i18n="packages.p1.f1">Уникальный дизайн</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span data-i18n="packages.p1.f2">Адаптив под телефон</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-indigo-400 mt-1"></i><span data-i18n="packages.p1.f3">Кнопки WhatsApp/Telegram</span></li>
           </ul>
           <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full block text-center px-6 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold">
-            Хочу Landing <i class="fab fa-whatsapp ml-2"></i>
+            <span data-i18n="packages.p1.cta">Хочу Landing</span> <i class="fab fa-whatsapp ml-2"></i>
           </a>
         </div>
 
         <div class="glass-card p-8 rounded-2xl border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)]" data-aos="fade-up" data-aos-delay="100">
           <div class="flex items-center justify-between mb-5">
-            <div class="text-white font-tech font-bold text-xl">Сайт + Реклама</div>
-            <div class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/20">Top</div>
+            <div class="text-white font-tech font-bold text-xl" data-i18n="packages.p2.title">Сайт + Реклама</div>
+            <div class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/20" data-i18n="packages.badgeTop">Top</div>
           </div>
-          <div class="text-3xl font-bold text-white mb-3">от <span class="text-gradient">80 000 ₸ / 160$</span></div>
-          <p class="text-sm text-slate-400 mb-6 leading-relaxed">Сайт + Google Ads + аналитика. Цель: заявки и звонки.</p>
+          <div class="text-3xl font-bold text-white mb-3"><span data-i18n="packages.priceFrom">от</span> <span class="text-gradient">80 000 ₸ / 160$</span></div>
+          <p class="text-sm text-slate-400 mb-6 leading-relaxed" data-i18n="packages.p2.desc">Сайт + Google Ads + аналитика. Цель: заявки и звонки.</p>
           <ul class="text-sm text-slate-300 space-y-2 mb-7">
-            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span>Ключи и структура</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span>Конверсионные блоки</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span>Цели и события</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span data-i18n="packages.p2.f1">Ключи и структура</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span data-i18n="packages.p2.f2">Конверсионные блоки</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-purple-400 mt-1"></i><span data-i18n="packages.p2.f3">Цели и события</span></li>
           </ul>
           <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full block text-center px-6 py-4 rounded-xl bg-purple-600 hover:bg-purple-500 transition text-white font-bold">
-            Хочу заявки <i class="fab fa-whatsapp ml-2"></i>
+            <span data-i18n="packages.p2.cta">Хочу заявки</span> <i class="fab fa-whatsapp ml-2"></i>
           </a>
         </div>
 
         <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
           <div class="flex items-center justify-between mb-5">
-            <div class="text-white font-tech font-bold text-xl">E-commerce / Каталог</div>
-            <div class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/20">Pro</div>
+            <div class="text-white font-tech font-bold text-xl" data-i18n="packages.p3.title">E-commerce / Каталог</div>
+            <div class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/20" data-i18n="packages.badgePro">Pro</div>
           </div>
-          <div class="text-3xl font-bold text-white mb-3">от <span class="text-gradient">150 000 ₸ / 300$</span></div>
-          <p class="text-sm text-slate-400 mb-6 leading-relaxed">Каталог, корзина, расчёты, логика заказа, отправка в мессенджеры.</p>
+          <div class="text-3xl font-bold text-white mb-3"><span data-i18n="packages.priceFrom">от</span> <span class="text-gradient">150 000 ₸ / 300$</span></div>
+          <p class="text-sm text-slate-400 mb-6 leading-relaxed" data-i18n="packages.p3.desc">Каталог, корзина, расчёты, логика заказа, отправка в мессенджеры.</p>
           <ul class="text-sm text-slate-300 space-y-2 mb-7">
-            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span>Корзина / формы</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span>Оптимизация скорости</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span>Масштабирование</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span data-i18n="packages.p3.f1">Корзина / формы</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span data-i18n="packages.p3.f2">Оптимизация скорости</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i><span data-i18n="packages.p3.f3">Масштабирование</span></li>
           </ul>
           <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full block text-center px-6 py-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 transition text-white font-bold">
-            Хочу магазин <i class="fab fa-whatsapp ml-2"></i>
+            <span data-i18n="packages.p3.cta">Хочу магазин</span> <i class="fab fa-whatsapp ml-2"></i>
           </a>
         </div>
       </div>
@@ -414,9 +409,9 @@
   <section id="niches" class="py-20 relative z-10">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Ниши</h2>
-        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Выберите нишу</h3>
-        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="niches.kicker">Ниши</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="niches.title">Выберите нишу</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="niches.desc">
           Выберите категорию — каталог ниже покажет проекты по вашей сфере.
         </p>
       </div>
@@ -431,9 +426,9 @@
   <section id="catalog" class="py-20 relative z-10">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">Каталог</h2>
-        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech">Все проекты</h3>
-        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="catalog.kicker">Каталог</h2>
+        <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="catalog.title">Все проекты</h3>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="catalog.desc">
           Фильтры и поиск помогают быстро найти похожий проект и оценить бюджет.
         </p>
       </div>
@@ -442,10 +437,10 @@
       <div class="glass rounded-2xl p-5 md:p-6 mb-6" data-aos="fade-up">
         <div class="grid lg:grid-cols-12 gap-4 items-center">
           <div class="lg:col-span-5">
-            <label class="text-xs text-slate-400 font-mono">Поиск</label>
+            <label class="text-xs text-slate-400 font-mono" data-i18n="catalog.searchLabel">Поиск</label>
             <div class="mt-1 flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
               <i class="fas fa-search text-slate-400"></i>
-              <input id="searchInput" type="text" placeholder="Введите нишу или название проекта..." class="w-full bg-transparent outline-none text-white placeholder:text-slate-500" />
+              <input id="searchInput" type="text" data-i18n-placeholder="catalog.searchPh" placeholder="Введите нишу или название проекта..." class="w-full bg-transparent outline-none text-white placeholder:text-slate-500" />
               <button id="clearSearch" class="text-slate-400 hover:text-white transition" title="Очистить">
                 <i class="fas fa-times"></i>
               </button>
@@ -453,36 +448,36 @@
           </div>
 
           <div class="lg:col-span-2">
-            <label class="text-xs text-slate-400 font-mono">Тип</label>
+            <label class="text-xs text-slate-400 font-mono" data-i18n="catalog.typeLabel">Тип</label>
             <select id="typeFilter" class="mt-1 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none"></select>
           </div>
 
           <div class="lg:col-span-3">
-            <label class="text-xs text-slate-400 font-mono">Ниша</label>
+            <label class="text-xs text-slate-400 font-mono" data-i18n="catalog.nicheLabel">Ниша</label>
             <select id="nicheFilter" class="mt-1 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none"></select>
           </div>
 
           <div class="lg:col-span-2">
-            <label class="text-xs text-slate-400 font-mono">Сортировка</label>
+            <label class="text-xs text-slate-400 font-mono" data-i18n="catalog.sortLabel">Сортировка</label>
             <select id="sortSelect" class="mt-1 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
-              <option value="new">Сначала новые</option>
-              <option value="name">По названию</option>
-              <option value="priceAsc">Стоимость: по возрастанию</option>
-              <option value="priceDesc">Стоимость: по убыванию</option>
+              <option value="new" data-i18n-opt="catalog.sortNew">Сначала новые</option>
+              <option value="name" data-i18n-opt="catalog.sortName">По названию</option>
+              <option value="priceAsc" data-i18n-opt="catalog.sortPriceAsc">Стоимость: по возрастанию</option>
+              <option value="priceDesc" data-i18n-opt="catalog.sortPriceDesc">Стоимость: по убыванию</option>
             </select>
           </div>
         </div>
 
         <div class="flex flex-wrap items-center justify-between gap-3 mt-5 pt-5 border-t border-white/5">
           <div class="text-xs text-slate-500">
-            Найдено: <span class="text-white font-bold" id="resultsCount">0</span>
+            <span data-i18n="catalog.found">Найдено:</span> <span class="text-white font-bold" id="resultsCount">0</span>
             <span class="mx-2 text-slate-600">|</span>
-            Фильтр: <span class="text-white font-semibold" id="activeBadge">Все</span>
+            <span data-i18n="catalog.filter">Фильтр:</span> <span class="text-white font-semibold" id="activeBadge">Все</span>
           </div>
 
           <div class="flex items-center gap-2">
             <button id="resetFilters" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white text-sm font-semibold">
-              Сбросить <i class="fas fa-undo ml-2"></i>
+              <span data-i18n="catalog.reset">Сбросить</span> <i class="fas fa-undo ml-2"></i>
             </button>
 
             <div class="flex rounded-xl overflow-hidden border border-white/10">
@@ -503,15 +498,15 @@
       <!-- Empty state -->
       <div id="emptyState" class="hidden mt-10 text-center">
         <div class="glass inline-block px-6 py-5 rounded-2xl">
-          <div class="text-white font-tech font-bold text-xl mb-2">Ничего не найдено</div>
-          <div class="text-slate-400 text-sm">Попробуйте изменить фильтры или поиск.</div>
+          <div class="text-white font-tech font-bold text-xl mb-2" data-i18n="catalog.emptyTitle">Ничего не найдено</div>
+          <div class="text-slate-400 text-sm" data-i18n="catalog.emptyDesc">Попробуйте изменить фильтры или поиск.</div>
         </div>
       </div>
 
       <!-- Load more -->
       <div class="mt-10 flex justify-center">
         <button id="loadMoreBtn" class="hidden px-7 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold">
-          Показать ещё <i class="fas fa-plus ml-2"></i>
+          <span data-i18n="catalog.more">Показать ещё</span> <i class="fas fa-plus ml-2"></i>
         </button>
       </div>
     </div>
@@ -522,26 +517,26 @@
     <div class="container mx-auto px-6 max-w-3xl">
       <div class="text-center mb-12" data-aos="fade-up">
         <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3">FAQ</h2>
-        <h3 class="text-3xl md:text-4xl font-bold text-white font-tech">Частые вопросы</h3>
+        <h3 class="text-3xl md:text-4xl font-bold text-white font-tech" data-i18n="faq.title">Частые вопросы</h3>
       </div>
 
       <div class="space-y-4">
         <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up">
           <summary class="flex justify-between items-center font-bold text-white list-none">
-            Сколько занимает разработка?
+            <span data-i18n="faq.q1">Сколько занимает разработка?</span>
             <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
           </summary>
-          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a1">
             В среднем: лендинг — 1–2 дня, многостраничный сайт — 2–7 дней. Срок зависит от объёма контента и функций.
           </p>
         </details>
 
         <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="100">
           <summary class="flex justify-between items-center font-bold text-white list-none">
-            От чего зависит стоимость?
+            <span data-i18n="faq.q2">От чего зависит стоимость?</span>
             <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
           </summary>
-          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a2">
             Стоимость зависит от количества страниц, сложности дизайна, наличия каталога/корзины/калькуляторов и интеграций
             (аналитика, заявки в WhatsApp/Telegram, формы и т.д.).
           </p>
@@ -549,10 +544,10 @@
 
         <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="200">
           <summary class="flex justify-between items-center font-bold text-white list-none">
-            Что нужно, чтобы начать?
+            <span data-i18n="faq.q3">Что нужно, чтобы начать?</span>
             <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
           </summary>
-          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+          <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a3">
             Достаточно: ваша ниша, контакты, пример того, что нравится (если есть), и список услуг/товаров. Тексты и структуру
             можно подготовить вместе.
           </p>
@@ -566,23 +561,23 @@
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-indigo-600/10 rounded-full blur-[110px]"></div>
 
     <div class="container mx-auto px-6 text-center relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-tech">Готовы обсудить проект?</h2>
-      <p class="text-slate-400 max-w-2xl mx-auto mb-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-tech" data-i18n="footer.title">Готовы обсудить проект?</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto mb-10" data-i18n="footer.desc">
         Напишите в WhatsApp или Telegram — я уточню задачу и предложу структуру, которая приведёт заявки.
       </p>
 
       <div class="flex flex-col md:flex-row justify-center items-center gap-4">
         <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto px-8 py-4 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold">
-          <i class="fab fa-whatsapp mr-2"></i> Написать в WhatsApp
+          <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="footer.ctaWa">Написать в WhatsApp</span>
         </a>
         <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto px-8 py-4 rounded-xl bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white transition font-bold">
-          <i class="fab fa-telegram mr-2"></i> Написать в Telegram
+          <i class="fab fa-telegram mr-2"></i> <span data-i18n="footer.ctaTg">Написать в Telegram</span>
         </a>
       </div>
 
       <div class="pt-10 mt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
         <p>&copy; 2026 Anuken Development.</p>
-        <p>Астана, Казахстан.</p>
+        <p data-i18n="footer.location">Астана, Казахстан.</p>
       </div>
     </div>
   </footer>
@@ -618,7 +613,7 @@
 
           <div class="p-4 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div class="glass px-4 py-2 rounded-xl text-white font-bold">
-              <span class="text-slate-300 text-xs font-mono mr-2">Стоимость:</span><span id="modalPrice">—</span>
+              <span class="text-slate-300 text-xs font-mono mr-2" data-i18n="common.priceLabel">Стоимость:</span><span id="modalPrice">—</span>
             </div>
             <div id="modalLiveBtns" class="flex flex-wrap gap-2"></div>
           </div>
@@ -628,31 +623,31 @@
         <div class="p-5 md:p-6">
           <div class="grid sm:grid-cols-2 gap-4 mb-6">
             <div class="glass p-4 rounded-2xl">
-              <div class="text-xs text-slate-400 font-mono mb-1">Задача</div>
+              <div class="text-xs text-slate-400 font-mono mb-1" data-i18n="common.task">Задача</div>
               <div class="text-sm text-slate-200 leading-relaxed" id="modalProblem">—</div>
             </div>
             <div class="glass p-4 rounded-2xl">
-              <div class="text-xs text-slate-400 font-mono mb-1">Решение</div>
+              <div class="text-xs text-slate-400 font-mono mb-1" data-i18n="common.solution">Решение</div>
               <div class="text-sm text-slate-200 leading-relaxed" id="modalSolution">—</div>
             </div>
           </div>
 
           <div class="glass p-4 rounded-2xl mb-6">
-            <div class="text-xs text-slate-400 font-mono mb-2">Что сделано</div>
+            <div class="text-xs text-slate-400 font-mono mb-2" data-i18n="common.done">Что сделано</div>
             <ul class="text-sm text-slate-200 space-y-2" id="modalFeatures"></ul>
           </div>
 
           <div class="glass p-4 rounded-2xl mb-6">
-            <div class="text-xs text-slate-400 font-mono mb-2">Технологии / теги</div>
+            <div class="text-xs text-slate-400 font-mono mb-2" data-i18n="common.tags">Технологии / теги</div>
             <div class="flex flex-wrap gap-2" id="modalTags"></div>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="flex-1 px-6 py-4 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold text-center">
-              Обсудить в WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+              <span data-i18n="common.ctaWa2">Обсудить в WhatsApp</span> <i class="fab fa-whatsapp ml-2"></i>
             </a>
             <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="flex-1 px-6 py-4 rounded-xl bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white transition font-bold text-center">
-              Написать в Telegram <i class="fab fa-telegram-plane ml-2"></i>
+              <span data-i18n="common.ctaTg2">Написать в Telegram</span> <i class="fab fa-telegram-plane ml-2"></i>
             </a>
           </div>
         </div>
@@ -660,11 +655,9 @@
     </div>
   </div>
 
-  <!-- Google Translate mount (hidden) -->
-  <div id="google_translate_element" class="sr-only"></div>
-
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
     AOS.init({ once: true, duration: 900, offset: 60 });
 
@@ -690,7 +683,217 @@
     };
 
     /* =========================================
-       DATA: ПРОЕКТЫ (цены меняете здесь)
+       I18N (ручной перевод RU/EN)
+       ========================================= */
+    const I18N = {
+      ru: {
+        nav: { cases:"Кейсы", packages:"Пакеты", niches:"Ниши", catalog:"Каталог", faq:"FAQ", home:"На главную" },
+        hero: {
+          badge:"ПОРТФОЛИО / КЕЙСЫ",
+          title1:"Проекты, которые",
+          title2:"приносят заявки",
+          subtitle:"Здесь вы можете посмотреть реальные работы, увидеть стоимость и быстро выбрать подходящий формат: лендинг, сайт услуг или интернет-магазин.",
+          btn1:"Смотреть проекты",
+          btn2:"Обсудить проект",
+          statProjects:"проектов",
+          statNiches:"ниш",
+          statCode:"чистый код",
+          panelTitle:"Что вы получаете",
+          p1:{ title:"Кейсы с задачей и решением", desc:"чтобы было понятно, что именно сделано" },
+          p2:{ title:"Фильтры и поиск", desc:"быстро найти похожий проект по нише" },
+          p3:{ title:"Подробности без лишних переходов", desc:"удобный просмотр на телефоне" },
+          p4:{ title:"Прозрачная стоимость", desc:"ориентир по бюджету на похожий проект" },
+          f1:"Адаптив", f2:"Скорость", f3:"Конверсия"
+        },
+        cases: { kicker:"Кейсы", title:"Мои кейсы", desc:"Коротко: цель проекта, решение и ключевые функции. Стоимость указана как ориентир.", countLabel:"кейсов" },
+        packages: {
+          kicker:"Предложения",
+          title:"Пакеты под ключ",
+          desc:"Вы выбираете формат — я собираю структуру, дизайн и код, настраиваю аналитику и кнопки связи.",
+          badgeStart:"Start", badgeTop:"Top", badgePro:"Pro",
+          priceFrom:"от",
+          p1:{ desc:"Одностраничный сайт для услуги/товара. Упор на конверсию и скорость.", f1:"Уникальный дизайн", f2:"Адаптив под телефон", f3:"Кнопки WhatsApp/Telegram", cta:"Хочу Landing" },
+          p2:{ title:"Сайт + Реклама", desc:"Сайт + Google Ads + аналитика. Цель: заявки и звонки.", f1:"Ключи и структура", f2:"Конверсионные блоки", f3:"Цели и события", cta:"Хочу заявки" },
+          p3:{ title:"E-commerce / Каталог", desc:"Каталог, корзина, расчёты, логика заказа, отправка в мессенджеры.", f1:"Корзина / формы", f2:"Оптимизация скорости", f3:"Масштабирование", cta:"Хочу магазин" }
+        },
+        niches: { kicker:"Ниши", title:"Выберите нишу", desc:"Выберите категорию — каталог ниже покажет проекты по вашей сфере." },
+        catalog: {
+          kicker:"Каталог", title:"Все проекты", desc:"Фильтры и поиск помогают быстро найти похожий проект и оценить бюджет.",
+          searchLabel:"Поиск", searchPh:"Введите нишу или название проекта...",
+          typeLabel:"Тип", nicheLabel:"Ниша", sortLabel:"Сортировка",
+          sortNew:"Сначала новые", sortName:"По названию", sortPriceAsc:"Стоимость: по возрастанию", sortPriceDesc:"Стоимость: по убыванию",
+          found:"Найдено:", filter:"Фильтр:", reset:"Сбросить",
+          emptyTitle:"Ничего не найдено", emptyDesc:"Попробуйте изменить фильтры или поиск.",
+          more:"Показать ещё",
+          all:"Все", allTypes:"Все типы", allNiches:"Все ниши",
+          chipAllTitle:"Все", chipAllDesc:"Показать все проекты",
+          chipDesc:"Показать проекты по нише"
+        },
+        faq: {
+          title:"Частые вопросы",
+          q1:"Сколько занимает разработка?",
+          a1:"В среднем: лендинг — 1–2 дня, многостраничный сайт — 2–7 дней. Срок зависит от объёма контента и функций.",
+          q2:"От чего зависит стоимость?",
+          a2:"Стоимость зависит от количества страниц, сложности дизайна, наличия каталога/корзины/калькуляторов и интеграций (аналитика, заявки в WhatsApp/Telegram, формы и т.д.).",
+          q3:"Что нужно, чтобы начать?",
+          a3:"Достаточно: ваша ниша, контакты, пример того, что нравится (если есть), и список услуг/товаров. Тексты и структуру можно подготовить вместе."
+        },
+        footer: {
+          title:"Готовы обсудить проект?",
+          desc:"Напишите в WhatsApp или Telegram — я уточню задачу и предложу структуру, которая приведёт заявки.",
+          ctaWa:"Написать в WhatsApp",
+          ctaTg:"Написать в Telegram",
+          location:"Астана, Казахстан."
+        },
+        common: {
+          featured:"FEATURED",
+          case:"Кейс",
+          priceLabel:"Стоимость:",
+          live:"Live",
+          details:"Подробнее",
+          toCatalog:"В каталог",
+          discuss:"Обсудить проект",
+          discussShort:"Обсудить",
+          task:"Задача",
+          solution:"Решение",
+          done:"Что сделано",
+          tags:"Технологии / теги",
+          versions:"2 версии",
+          version:"Вариант",
+          projectsSoonTitle:"Проекты появятся здесь",
+          projectsSoonDesc:"Скоро добавим новые кейсы.",
+          ctaWa2:"Обсудить в WhatsApp",
+          ctaTg2:"Написать в Telegram"
+        },
+        labels: {
+          types: { landing:"Landing / Service", store:"Online Store", multi:"Multi-page" },
+          niches: { tech:"Tech", ecommerce:"E-commerce", service:"Services", beauty:"Beauty", sport:"Sport", education:"Education" }
+        }
+      },
+
+      en: {
+        nav: { cases:"Cases", packages:"Packages", niches:"Industries", catalog:"Catalog", faq:"FAQ", home:"Home" },
+        hero: {
+          badge:"PORTFOLIO / CASES",
+          title1:"Projects that",
+          title2:"generate leads",
+          subtitle:"Here you can review real work, see pricing, and quickly choose the right format: a landing page, a service website, or an online store.",
+          btn1:"View projects",
+          btn2:"Discuss a project",
+          statProjects:"projects",
+          statNiches:"industries",
+          statCode:"clean code",
+          panelTitle:"What you get",
+          p1:{ title:"Cases with task & solution", desc:"so it’s clear what was delivered" },
+          p2:{ title:"Filters & search", desc:"quickly find similar work by industry" },
+          p3:{ title:"Details without extra clicks", desc:"comfortable viewing on mobile" },
+          p4:{ title:"Transparent pricing", desc:"budget guidance for similar scope" },
+          f1:"Responsive", f2:"Speed", f3:"Conversion"
+        },
+        cases: { kicker:"Cases", title:"My cases", desc:"Briefly: goal, solution, and key features. Pricing is shown as a reference.", countLabel:"cases" },
+        packages: {
+          kicker:"Offers",
+          title:"Turnkey packages",
+          desc:"You choose the format — I build the structure, design, and code, set up analytics, and contact buttons.",
+          badgeStart:"Start", badgeTop:"Top", badgePro:"Pro",
+          priceFrom:"from",
+          p1:{ desc:"One-page website for a service or product. Focus on conversion and speed.", f1:"Unique design", f2:"Mobile responsive", f3:"WhatsApp/Telegram buttons", cta:"I want a landing" },
+          p2:{ title:"Website + Ads", desc:"Website + Google Ads + analytics. Goal: leads and calls.", f1:"Keywords & structure", f2:"Conversion blocks", f3:"Goals & events", cta:"I want leads" },
+          p3:{ title:"E-commerce / Catalog", desc:"Catalog, cart, calculations, order logic, messenger submission.", f1:"Cart / forms", f2:"Performance optimization", f3:"Scalable foundation", cta:"I want a store" }
+        },
+        niches: { kicker:"Industries", title:"Choose an industry", desc:"Pick a category — the catalog below will show relevant projects." },
+        catalog: {
+          kicker:"Catalog", title:"All projects", desc:"Filters and search help you quickly find similar work and estimate budget.",
+          searchLabel:"Search", searchPh:"Type an industry or project name...",
+          typeLabel:"Type", nicheLabel:"Industry", sortLabel:"Sort",
+          sortNew:"Newest first", sortName:"By name", sortPriceAsc:"Price: low to high", sortPriceDesc:"Price: high to low",
+          found:"Found:", filter:"Filter:", reset:"Reset",
+          emptyTitle:"Nothing found", emptyDesc:"Try adjusting filters or search.",
+          more:"Load more",
+          all:"All", allTypes:"All types", allNiches:"All industries",
+          chipAllTitle:"All", chipAllDesc:"Show all projects",
+          chipDesc:"Show projects in this industry"
+        },
+        faq: {
+          title:"FAQ",
+          q1:"How long does development take?",
+          a1:"On average: a landing page takes 1–2 days; a multi-page site takes 2–7 days. Timeline depends on content volume and features.",
+          q2:"What does the price depend on?",
+          a2:"Price depends on page count, design complexity, presence of catalog/cart/calculators, and integrations (analytics, WhatsApp/Telegram leads, forms, etc.).",
+          q3:"What do you need to start?",
+          a3:"Just your industry, contacts, examples you like (if any), and a list of services/products. We can prepare copy and structure together."
+        },
+        footer: {
+          title:"Ready to discuss your project?",
+          desc:"Message me on WhatsApp or Telegram — I’ll уточню задачи and propose a structure that converts.",
+          ctaWa:"Message on WhatsApp",
+          ctaTg:"Message on Telegram",
+          location:"Astana, Kazakhstan."
+        },
+        common: {
+          featured:"FEATURED",
+          case:"Case",
+          priceLabel:"Price:",
+          live:"Live",
+          details:"Details",
+          toCatalog:"To catalog",
+          discuss:"Discuss a project",
+          discussShort:"Discuss",
+          task:"Task",
+          solution:"Solution",
+          done:"What was done",
+          tags:"Tech / tags",
+          versions:"2 versions",
+          version:"Version",
+          projectsSoonTitle:"Projects will appear here",
+          projectsSoonDesc:"New cases will be added soon.",
+          ctaWa2:"Discuss on WhatsApp",
+          ctaTg2:"Message on Telegram"
+        },
+        labels: {
+          types: { landing:"Landing / Service", store:"Online Store", multi:"Multi-page" },
+          niches: { tech:"Tech", ecommerce:"E-commerce", service:"Services", beauty:"Beauty", sport:"Sport", education:"Education" }
+        }
+      }
+    };
+
+    const LANG_KEY = "site_lang";
+    let currentLang = localStorage.getItem(LANG_KEY) || "ru";
+
+    const t = (path) => {
+      const parts = path.split(".");
+      let obj = I18N[currentLang];
+      for (const p of parts) obj = obj?.[p];
+      return (obj !== undefined && obj !== null) ? obj : path;
+    };
+
+    function applyI18nToDOM() {
+      document.documentElement.lang = currentLang;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        el.innerHTML = t(el.getAttribute("data-i18n"));
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
+      });
+
+      // Sort options (text updates)
+      document.querySelectorAll("[data-i18n-opt]").forEach(opt => {
+        opt.textContent = t(opt.getAttribute("data-i18n-opt"));
+      });
+
+      // Paint active button
+      document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+        const is = btn.getAttribute("data-lang-btn") === currentLang;
+        btn.classList.toggle("is-active", is);
+        btn.setAttribute("aria-pressed", is ? "true" : "false");
+      });
+    }
+
+    /* =========================================
+       DATA: ПРОЕКТЫ (с RU/EN текстами)
+       Важно: фильтры работают по ключам typeKey/nicheKey
        ========================================= */
     const PROJECTS = [
       {
@@ -698,151 +901,256 @@
         title: "Avia-Drones",
         url: "https://avia-drones.vercel.app/",
         image: "images/avia-drones.jpg",
-        niche: "Aviation / Tech",
-        type: "Landing / Catalog",
+        nicheKey: "tech",
+        typeKey: "landing",
         year: 2026,
         featured: true,
         price: 120000,
-        short: "Технологичный лендинг по продаже дронов: интерактив, модальные окна, анимации, интеграция WhatsApp.",
-        problem: "Нужен продающий сайт с эффектным интерфейсом и удобной подачей моделей.",
-        solution: "Сделан интерактивный интерфейс + понятная структура и быстрые CTA для заявок.",
-        tags: ["Interactive", "Catalog", "HUD UI", "WhatsApp", "Animation"],
-        features: [
-          "Интерактивные карточки и модальные окна с характеристиками",
-          "Продуманная структура и блоки доверия",
-          "CTA: WhatsApp/Telegram/формы",
-          "Адаптив и оптимизация загрузки"
-        ]
+        i18n: {
+          ru: {
+            short: "Технологичный лендинг по продаже дронов: интерактив, модальные окна, анимации, интеграция WhatsApp.",
+            problem: "Нужен продающий сайт с эффектным интерфейсом и удобной подачей моделей.",
+            solution: "Сделан интерактивный интерфейс + понятная структура и быстрые CTA для заявок.",
+            features: [
+              "Интерактивные карточки и модальные окна с характеристиками",
+              "Продуманная структура и блоки доверия",
+              "CTA: WhatsApp/Telegram/формы",
+              "Адаптив и оптимизация загрузки"
+            ]
+          },
+          en: {
+            short: "A tech landing page for drone sales: interactive UI, modals, animations, WhatsApp integration.",
+            problem: "A sales-focused site with a strong interface and clear model presentation was required.",
+            solution: "Built an interactive experience, clean structure, and fast CTA paths for inquiries.",
+            features: [
+              "Interactive cards and spec modals",
+              "Clear structure and trust blocks",
+              "CTAs: WhatsApp/Telegram/forms",
+              "Responsive layout and performance optimizations"
+            ]
+          }
+        },
+        tags: ["Interactive", "Catalog", "HUD UI", "WhatsApp", "Animation"]
       },
       {
         id: "kassenova-store",
         title: "Kassenova Store",
         url: "https://kassenova-market.vercel.app/",
         image: "images/kassenova.jpg",
-        niche: "E-commerce",
-        type: "Online Store",
+        nicheKey: "ecommerce",
+        typeKey: "store",
         year: 2026,
         featured: true,
         price: 250000,
-        short: "Интернет-магазин техники: корзина, логика заказа, расчёт стоимости и отправка заявки в WhatsApp.",
-        problem: "Нужен магазин с удобным оформлением заказа и логикой под разные сценарии покупки.",
-        solution: "Реализована корзина, расчёты, удобный каталог и отправка заказа в мессенджер.",
-        tags: ["HTML5", "JS Logic", "Cart", "Calculator", "Opt"],
-        features: [
-          "Корзина и управление количеством/суммой",
-          "Калькулятор и логика заказа",
-          "Отправка заказа в WhatsApp",
-          "Оптимизация скорости и UX каталога"
-        ]
+        i18n: {
+          ru: {
+            short: "Интернет-магазин техники: корзина, логика заказа, расчёт стоимости и отправка заявки в WhatsApp.",
+            problem: "Нужен магазин с удобным оформлением заказа и логикой под разные сценарии покупки.",
+            solution: "Реализована корзина, расчёты, удобный каталог и отправка заказа в мессенджер.",
+            features: [
+              "Корзина и управление количеством/суммой",
+              "Калькулятор и логика заказа",
+              "Отправка заказа в WhatsApp",
+              "Оптимизация скорости и UX каталога"
+            ]
+          },
+          en: {
+            short: "Electronics store: cart, checkout logic, price calculations, and WhatsApp order submission.",
+            problem: "A store with a convenient checkout flow and logic for different purchase scenarios.",
+            solution: "Implemented cart, calculations, a smooth catalog, and messenger order submission.",
+            features: [
+              "Cart with quantity/total controls",
+              "Calculator and order logic",
+              "WhatsApp order submission",
+              "Performance and catalog UX optimization"
+            ]
+          }
+        },
+        tags: ["HTML5", "JS Logic", "Cart", "Calculator", "Opt"]
       },
       {
         id: "manipulator",
         title: "Аренда Манипулятора",
         url: "https://manipulator-evakuator.vercel.app/",
         image: "images/manipulator.jpg",
-        niche: "Спецтехника / Services",
-        type: "Landing Page",
+        nicheKey: "service",
+        typeKey: "landing",
         year: 2026,
         featured: true,
         price: 90000,
-        short: "Конверсионный сайт услуг: быстрые кнопки связи, блоки доверия, карта/галерея при необходимости.",
-        problem: "Нужен сайт, который приводит звонки и заявки с телефона.",
-        solution: "Сделана конверсионная структура и максимально быстрый путь к связи.",
-        tags: ["Адаптив", "Speed", "CTA", "Service"],
-        features: [
-          "Сильный оффер и конверсионные блоки",
-          "Кнопки звонка/WhatsApp/Telegram",
-          "Адаптив под телефон",
-          "Оптимизация скорости загрузки"
-        ]
+        i18n: {
+          ru: {
+            short: "Конверсионный сайт услуг: быстрые кнопки связи, блоки доверия, карта/галерея при необходимости.",
+            problem: "Нужен сайт, который приводит звонки и заявки с телефона.",
+            solution: "Сделана конверсионная структура и максимально быстрый путь к связи.",
+            features: [
+              "Сильный оффер и конверсионные блоки",
+              "Кнопки звонка/WhatsApp/Telegram",
+              "Адаптив под телефон",
+              "Оптимизация скорости загрузки"
+            ]
+          },
+          en: {
+            short: "Conversion-focused service landing: fast contact buttons, trust blocks, optional map/gallery.",
+            problem: "A site that drives calls and leads from mobile traffic.",
+            solution: "Built a conversion structure with the shortest path to contact.",
+            features: [
+              "Strong offer and conversion blocks",
+              "Call/WhatsApp/Telegram CTAs",
+              "Mobile-first responsive layout",
+              "Page speed optimization"
+            ]
+          }
+        },
+        tags: ["Responsive", "Speed", "CTA", "Service"]
       },
       {
         id: "elegance",
         title: "Салон ELEGANCE",
         url: "https://elegance-almaty.vercel.app/",
         image: "images/elegance.jpg",
-        niche: "Beauty",
-        type: "Landing Page",
+        nicheKey: "beauty",
+        typeKey: "landing",
         year: 2026,
         featured: false,
         price: 70000,
-        short: "Премиальный лендинг: прайс, анимации, тёмная эстетика, удобная запись через мессенджеры.",
-        problem: "Нужен стильный сайт, который соответствует премиум-позиционированию и ведёт к записи.",
-        solution: "Сделан строгий дизайн, понятный прайс и быстрый сценарий записи.",
-        tags: ["Design", "Animation", "Price List", "Booking"],
-        features: [
-          "Блоки: услуги/прайс/контакты",
-          "Аккуратные анимации и премиальная подача",
-          "CTA на запись",
-          "Адаптив и оптимизация"
-        ]
+        i18n: {
+          ru: {
+            short: "Премиальный лендинг: прайс, анимации, тёмная эстетика, удобная запись через мессенджеры.",
+            problem: "Нужен стильный сайт, который соответствует премиум-позиционированию и ведёт к записи.",
+            solution: "Сделан строгий дизайн, понятный прайс и быстрый сценарий записи.",
+            features: [
+              "Блоки: услуги/прайс/контакты",
+              "Аккуратные анимации и премиальная подача",
+              "CTA на запись",
+              "Адаптив и оптимизация"
+            ]
+          },
+          en: {
+            short: "Premium landing: pricing section, animations, dark aesthetics, easy booking via messengers.",
+            problem: "A stylish site aligned with premium positioning and focused on bookings.",
+            solution: "Designed a clean premium layout, clear pricing, and fast booking path.",
+            features: [
+              "Sections: services/pricing/contacts",
+              "Subtle animations and premium presentation",
+              "Booking CTAs",
+              "Responsive and optimized"
+            ]
+          }
+        },
+        tags: ["Design", "Animation", "Price List", "Booking"]
       },
       {
         id: "maverick",
         title: "Maverick Barbershop",
         url: "https://maver1ck.vercel.app/",
         image: "images/maverick.jpg",
-        niche: "Service / Beauty",
-        type: "Landing Page",
+        nicheKey: "beauty",
+        typeKey: "landing",
         year: 2026,
         featured: false,
         price: 85000,
-        short: "Сайт с видео-фоном, блоком мастеров, CTA и записью. Акцент на атмосферу и бренд.",
-        problem: "Нужен сайт, который подчёркивает стиль и приводит записи.",
-        solution: "Сделана выразительная подача, видеоряд и простой путь к записи.",
-        tags: ["Video BG", "Booking", "Team", "Branding"],
-        features: [
-          "Видео-фон и выразительный hero-блок",
-          "Раздел мастеров/услуг",
-          "CTA и запись",
-          "Адаптив и оптимизация"
-        ]
+        i18n: {
+          ru: {
+            short: "Сайт с видео-фоном, блоком мастеров, CTA и записью. Акцент на атмосферу и бренд.",
+            problem: "Нужен сайт, который подчёркивает стиль и приводит записи.",
+            solution: "Сделана выразительная подача, видеоряд и простой путь к записи.",
+            features: [
+              "Видео-фон и выразительный hero-блок",
+              "Раздел мастеров/услуг",
+              "CTA и запись",
+              "Адаптив и оптимизация"
+            ]
+          },
+          en: {
+            short: "Website with video hero, team section, CTAs, and booking. Focus on vibe and branding.",
+            problem: "A site that highlights style and drives bookings.",
+            solution: "Created a strong visual hero, video layer, and a simple booking flow.",
+            features: [
+              "Video background and strong hero block",
+              "Team/services sections",
+              "Booking CTAs",
+              "Responsive and optimized"
+            ]
+          }
+        },
+        tags: ["Video BG", "Booking", "Team", "Branding"]
       },
       {
         id: "astanajas",
         title: "ASTANA JAS | Football Academy",
         url: "https://astanajas-kz.vercel.app/",
         urls: [
-          { label: "Вариант 1", url: "https://astanajas-kz.vercel.app/" },
-          { label: "Вариант 2", url: "https://astanajas.vercel.app/" }
+          { labelRu: "Вариант 1", labelEn: "Version 1", url: "https://astanajas-kz.vercel.app/" },
+          { labelRu: "Вариант 2", labelEn: "Version 2", url: "https://astanajas.vercel.app/" }
         ],
         image: "images/astanajas.jpg",
-        niche: "Sport / Education",
-        type: "Multi-page",
+        nicheKey: "sport",
+        typeKey: "multi",
         year: 2026,
         featured: false,
         price: 200000,
-        short: "Сайт футбольной академии: презентация программ, секции, преимущества, контакты и удобная навигация.",
-        problem: "Нужен современный сайт академии с понятной структурой, сильным визуалом и быстрыми контактами.",
-        solution: "Сделана многостраничная структура, акцент на доверие, программы и удобную связь.",
-        tags: ["Multi-page", "AOS", "Tailwind", "UX", "Brand"],
-        features: [
-          "Многостраничная структура и удобная навигация",
-          "Блоки программ, преимуществ и вопросов",
-          "Адаптив и оптимизация",
-          "Две версии дизайна на выбор заказчику"
-        ]
+        i18n: {
+          ru: {
+            short: "Сайт футбольной академии: презентация программ, секции, преимущества, контакты и удобная навигация.",
+            problem: "Нужен современный сайт академии с понятной структурой, сильным визуалом и быстрыми контактами.",
+            solution: "Сделана многостраничная структура, акцент на доверие, программы и удобную связь.",
+            features: [
+              "Многостраничная структура и удобная навигация",
+              "Блоки программ, преимуществ и вопросов",
+              "Адаптив и оптимизация",
+              "Две версии дизайна на выбор заказчику"
+            ]
+          },
+          en: {
+            short: "Football academy website: programs, sections, advantages, contacts, and smooth navigation.",
+            problem: "A modern academy website with clear structure, strong visuals, and quick contact routes.",
+            solution: "Built a multi-page structure focusing on trust, programs, and easy communication.",
+            features: [
+              "Multi-page structure with clear navigation",
+              "Programs/benefits/FAQ sections",
+              "Responsive and optimized",
+              "Two design variants for the client"
+            ]
+          }
+        },
+        tags: ["Multi-page", "AOS", "Tailwind", "UX", "Brand"]
       },
       {
         id: "nextgen-academy",
         title: "NextGen Academy",
         url: "https://nextgen-academy-flame.vercel.app/",
         image: "images/nextgen-academy.jpg",
-        niche: "Education / Intensive",
-        type: "Landing Page",
+        nicheKey: "education",
+        typeKey: "landing",
         year: 2026,
         featured: false,
         price: 60000,
-        short: "Лендинг бесплатного 3-дневного интенсива: сильный оффер, секции «Кому», «Навыки», «Программа», и понятная регистрация.",
-        problem: "Нужен продающий лендинг под регистрацию на интенсив: быстро объяснить ценность, удержать внимание и довести до заявки.",
-        solution: "Собрана конверсионная структура с CTA, блоками смысла и формой регистрации, оптимизированная под мобильные устройства.",
-        tags: ["Landing", "Education", "CTA", "Form", "Responsive"],
-        features: [
-          "Конверсионный hero-блок + строго под ТЗ",
-          "Секции: кому подходит, навыки, программа, детали интенсива",
-          "Форма регистрации и логика захвата лидов",
-          "Адаптив и аккуратная подача контента"
-        ]
+        i18n: {
+          ru: {
+            short: "Лендинг бесплатного 3-дневного интенсива: сильный оффер, секции и понятная регистрация.",
+            problem: "Нужен продающий лендинг под регистрацию на интенсив: быстро объяснить ценность и довести до заявки.",
+            solution: "Собрана конверсионная структура с CTA и формой регистрации, оптимизированная под мобильные устройства.",
+            features: [
+              "Конверсионный hero-блок + строго под ТЗ",
+              "Секции: кому подходит, программа, детали",
+              "Форма регистрации и логика захвата лидов",
+              "Адаптив и аккуратная подача контента"
+            ]
+          },
+          en: {
+            short: "Landing page for a free 3-day intensive: strong offer, sections, and clear registration.",
+            problem: "A registration-focused landing: explain value fast and convert to sign-ups.",
+            solution: "Built conversion structure with CTAs and a registration form, optimized for mobile.",
+            features: [
+              "Conversion hero block aligned with the brief",
+              "Sections: audience, program, details",
+              "Registration form and lead capture logic",
+              "Responsive and clean content layout"
+            ]
+          }
+        },
+        tags: ["Landing", "Education", "CTA", "Form", "Responsive"]
       }
     ];
 
@@ -857,16 +1165,18 @@
     const $ = (sel) => document.querySelector(sel);
     const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
+    const typeLabel = (k) => I18N[currentLang].labels.types[k] || k;
+    const nicheLabel = (k) => I18N[currentLang].labels.niches[k] || k;
+
     /* =========================================
        STATS
        ========================================= */
-    const allNiches = uniq(PROJECTS.map(p => p.niche));
+    const allNiches = uniq(PROJECTS.map(p => p.nicheKey));
     $("#statProjects").textContent = PROJECTS.length;
     $("#statNiches").textContent = allNiches.length;
 
     /* =========================================
-       FEATURED SLIDER (no overlay on image)
-       Теперь показываем ВЕСЬ список проектов
+       FEATURED SLIDER
        ========================================= */
     const featured = [...PROJECTS];
     $("#featuredTotal").textContent = String(Math.max(featured.length, 1)).padStart(2, '0');
@@ -879,8 +1189,8 @@
       if (!featured.length) {
         container.innerHTML = `
           <div class="glass-card rounded-2xl p-8 text-center">
-            <div class="text-white font-tech font-bold text-xl mb-2">Проекты появятся здесь</div>
-            <div class="text-slate-400 text-sm">Скоро добавим новые кейсы.</div>
+            <div class="text-white font-tech font-bold text-xl mb-2">${t("common.projectsSoonTitle")}</div>
+            <div class="text-slate-400 text-sm">${t("common.projectsSoonDesc")}</div>
           </div>
         `;
         $("#featuredIndex").textContent = "01";
@@ -888,9 +1198,10 @@
       }
 
       const p = featured[featuredIndex];
+      const pp = p.i18n?.[currentLang] || p.i18n?.ru || {};
       $("#featuredIndex").textContent = String(featuredIndex + 1).padStart(2, '0');
 
-      const multi = (p.urls && p.urls.length > 1) ? ` <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">2 версии</span>` : ``;
+      const multi = (p.urls && p.urls.length > 1) ? ` <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${t("common.versions")}</span>` : ``;
 
       container.innerHTML = `
         <div class="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl glass-card">
@@ -900,9 +1211,9 @@
               <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-transparent"></div>
 
               <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-                <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
-                <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
-                ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+                <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${typeLabel(p.typeKey)}</span>
+                <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${nicheLabel(p.nicheKey)}</span>
+                ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">${t("common.featured")}</span>` : ``}
                 ${multi}
               </div>
             </div>
@@ -910,48 +1221,48 @@
             <!-- Bar under image (no overlap) -->
             <div class="p-4 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div class="glass px-4 py-2 rounded-xl text-white font-bold">
-                <span class="text-slate-300 text-xs font-mono mr-2">Стоимость:</span>${formatPrice(p.price)}
+                <span class="text-slate-300 text-xs font-mono mr-2">${t("common.priceLabel")}</span>${formatPrice(p.price)}
               </div>
               <div class="flex gap-2 w-full sm:w-auto">
                 <a href="${p.url}" target="_blank" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
-                  Live <i class="fas fa-external-link-alt ml-2"></i>
+                  ${t("common.live")} <i class="fas fa-external-link-alt ml-2"></i>
                 </a>
                 <button data-open-modal="${p.id}" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold text-center">
-                  Подробнее <i class="fas fa-window-restore ml-2"></i>
+                  ${t("common.details")} <i class="fas fa-window-restore ml-2"></i>
                 </button>
               </div>
             </div>
           </div>
 
           <div class="p-6 md:p-7">
-            <div class="text-indigo-300 text-xs font-bold tracking-widest uppercase mb-2">Кейс</div>
+            <div class="text-indigo-300 text-xs font-bold tracking-widest uppercase mb-2">${t("common.case")}</div>
             <h4 class="text-white font-tech font-bold text-2xl mb-3">${p.title}</h4>
-            <p class="text-slate-400 text-sm leading-relaxed mb-5">${p.short}</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">${pp.short || ""}</p>
 
             <div class="grid sm:grid-cols-2 gap-4 mb-5">
               <div class="glass p-4 rounded-2xl">
-                <div class="text-xs text-slate-400 font-mono mb-1">Задача</div>
-                <div class="text-sm text-slate-200 leading-relaxed">${p.problem}</div>
+                <div class="text-xs text-slate-400 font-mono mb-1">${t("common.task")}</div>
+                <div class="text-sm text-slate-200 leading-relaxed">${pp.problem || ""}</div>
               </div>
               <div class="glass p-4 rounded-2xl">
-                <div class="text-xs text-slate-400 font-mono mb-1">Решение</div>
-                <div class="text-sm text-slate-200 leading-relaxed">${p.solution}</div>
+                <div class="text-xs text-slate-400 font-mono mb-1">${t("common.solution")}</div>
+                <div class="text-sm text-slate-200 leading-relaxed">${pp.solution || ""}</div>
               </div>
             </div>
 
             <div class="glass p-4 rounded-2xl">
-              <div class="text-xs text-slate-400 font-mono mb-2">Технологии / теги</div>
+              <div class="text-xs text-slate-400 font-mono mb-2">${t("common.tags")}</div>
               <div class="flex flex-wrap gap-2">
-                ${(p.tags || []).map(t => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>`).join("")}
+                ${(p.tags || []).map(tg => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${tg}</span>`).join("")}
               </div>
             </div>
 
             <div class="mt-5 flex flex-col sm:flex-row gap-3">
               <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="flex-1 px-5 py-3 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold text-center">
-                Обсудить проект <i class="fab fa-whatsapp ml-2"></i>
+                ${t("common.discuss")} <i class="fab fa-whatsapp ml-2"></i>
               </a>
               <a href="#catalog" class="flex-1 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
-                В каталог <i class="fas fa-arrow-down ml-2"></i>
+                ${t("common.toCatalog")} <i class="fas fa-arrow-down ml-2"></i>
               </a>
             </div>
           </div>
@@ -974,37 +1285,39 @@
       renderFeatured();
     });
 
-    renderFeatured();
-
     /* =========================================
-       FILTERS
+       FILTERS (по ключам)
        ========================================= */
-    const TYPES = uniq(PROJECTS.map(p => p.type)).sort();
-    const NICHES = uniq(PROJECTS.map(p => p.niche)).sort();
+    const TYPES = uniq(PROJECTS.map(p => p.typeKey)).sort();
+    const NICHES = uniq(PROJECTS.map(p => p.nicheKey)).sort();
 
-    function fillSelect(selectEl, values, placeholder = "Все") {
-      selectEl.innerHTML = `<option value="__all__">${placeholder}</option>` + values.map(v => `<option value="${v}">${v}</option>`).join("");
+    function fillSelect(selectEl, values, placeholderText, labelGetter) {
+      const current = selectEl.value || "__all__";
+      selectEl.innerHTML =
+        `<option value="__all__">${placeholderText}</option>` +
+        values.map(v => `<option value="${v}">${labelGetter(v)}</option>`).join("");
+      // preserve selection if possible
+      selectEl.value = values.includes(current) ? current : "__all__";
     }
-    fillSelect($("#typeFilter"), TYPES, "Все типы");
-    fillSelect($("#nicheFilter"), NICHES, "Все ниши");
 
     function renderNicheChips() {
       const wrap = $("#nicheChips");
-      const items = ["Все", ...NICHES];
-      wrap.innerHTML = items.map((n, idx) => {
-        const isAll = (n === "Все");
+      const items = ["__all__", ...NICHES];
+
+      wrap.innerHTML = items.map((key, idx) => {
+        const isAll = (key === "__all__");
+        const title = isAll ? t("catalog.chipAllTitle") : nicheLabel(key);
+        const desc = isAll ? t("catalog.chipAllDesc") : t("catalog.chipDesc");
         return `
-          <button data-niche-chip="${isAll ? "__all__" : n}"
+          <button data-niche-chip="${key}"
             class="glass-card rounded-2xl p-5 text-left hover:-translate-y-1 transition ${idx === 0 ? 'border-indigo-500/40' : ''}">
             <div class="flex items-center justify-between gap-3">
-              <div class="text-white font-tech font-bold">${n}</div>
+              <div class="text-white font-tech font-bold">${title}</div>
               <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-200">
                 <i class="fas ${isAll ? 'fa-layer-group' : 'fa-bullseye'}"></i>
               </div>
             </div>
-            <div class="mt-3 text-xs text-slate-400">
-              ${isAll ? 'Показать все проекты' : 'Показать проекты по нише'}
-            </div>
+            <div class="mt-3 text-xs text-slate-400">${desc}</div>
           </button>
         `;
       }).join("");
@@ -1013,12 +1326,12 @@
         btn.addEventListener("click", () => {
           const v = btn.getAttribute("data-niche-chip");
           $("#nicheFilter").value = v;
+          state.niche = v;
           applyAndRender(true);
           document.getElementById("catalog").scrollIntoView({ behavior: "smooth" });
         });
       });
     }
-    renderNicheChips();
 
     /* =========================================
        CATALOG
@@ -1029,18 +1342,26 @@
       const q = state.search.trim().toLowerCase();
       let list = [...PROJECTS];
 
-      if (state.type !== "__all__") list = list.filter(p => p.type === state.type);
-      if (state.niche !== "__all__") list = list.filter(p => p.niche === state.niche);
+      if (state.type !== "__all__") list = list.filter(p => p.typeKey === state.type);
+      if (state.niche !== "__all__") list = list.filter(p => p.nicheKey === state.niche);
 
       if (q) {
         list = list.filter(p => {
-          const hay = [p.title, p.short, p.problem, p.solution, p.niche, p.type, ...(p.tags || [])].join(" ").toLowerCase();
+          const ppRu = p.i18n?.ru || {};
+          const ppEn = p.i18n?.en || {};
+          const hay = [
+            p.title,
+            ppRu.short, ppRu.problem, ppRu.solution, ...(ppRu.features || []),
+            ppEn.short, ppEn.problem, ppEn.solution, ...(ppEn.features || []),
+            typeLabel(p.typeKey), nicheLabel(p.nicheKey),
+            ...(p.tags || [])
+          ].join(" ").toLowerCase();
           return hay.includes(q);
         });
       }
 
       switch (state.sort) {
-        case "name": list.sort((a,b) => a.title.localeCompare(b.title, "ru")); break;
+        case "name": list.sort((a,b) => a.title.localeCompare(b.title, currentLang === "ru" ? "ru" : "en")); break;
         case "priceAsc": list.sort((a,b) => (a.price || 0) - (b.price || 0)); break;
         case "priceDesc": list.sort((a,b) => (b.price || 0) - (a.price || 0)); break;
         case "new":
@@ -1051,8 +1372,9 @@
     }
 
     function projectCardGrid(p) {
+      const pp = p.i18n?.[currentLang] || p.i18n?.ru || {};
       const tagTop = (p.tags || []).slice(0, 3);
-      const multi = (p.urls && p.urls.length > 1) ? `<span class="text-[10px] font-bold px-2 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">2 версии</span>` : ``;
+      const multi = (p.urls && p.urls.length > 1) ? `<span class="text-[10px] font-bold px-2 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${t("common.versions")}</span>` : ``;
 
       return `
         <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
@@ -1060,9 +1382,9 @@
             <img src="${p.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="${p.title}" loading="lazy" onerror="__imgFallback(this,'${p.title.replace(/'/g, "\\'")}')">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
             <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
-              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
-              ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${typeLabel(p.typeKey)}</span>
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${nicheLabel(p.nicheKey)}</span>
+              ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">${t("common.featured")}</span>` : ``}
               ${multi}
             </div>
           </div>
@@ -1075,20 +1397,20 @@
 
             <div class="flex flex-wrap items-center gap-2 mb-4">
               <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white font-semibold">
-                Стоимость: ${formatPrice(p.price)}
+                ${t("common.priceLabel")} ${formatPrice(p.price)}
               </span>
-              ${tagTop.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>`).join("")}
+              ${tagTop.map(tg => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${tg}</span>`).join("")}
               ${(p.tags || []).length > 3 ? `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">+${(p.tags || []).length - 3}</span>` : ``}
             </div>
 
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">${p.short}</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">${pp.short || ""}</p>
 
             <div class="mt-auto grid grid-cols-2 gap-3">
               <a href="${p.url}" target="_blank" class="py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
-                Live <i class="fas fa-external-link-alt ml-2"></i>
+                ${t("common.live")} <i class="fas fa-external-link-alt ml-2"></i>
               </a>
               <button data-open-modal="${p.id}" class="py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold text-center">
-                Подробнее <i class="fas fa-window-restore ml-2"></i>
+                ${t("common.details")} <i class="fas fa-window-restore ml-2"></i>
               </button>
             </div>
           </div>
@@ -1097,8 +1419,9 @@
     }
 
     function projectCardList(p) {
+      const pp = p.i18n?.[currentLang] || p.i18n?.ru || {};
       const tagTop = (p.tags || []).slice(0, 6);
-      const multi = (p.urls && p.urls.length > 1) ? `<span class="text-[10px] font-bold px-2 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">2 версии</span>` : ``;
+      const multi = (p.urls && p.urls.length > 1) ? `<span class="text-[10px] font-bold px-2 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${t("common.versions")}</span>` : ``;
 
       return `
         <div class="glass-card rounded-2xl overflow-hidden flex flex-col md:flex-row" data-aos="fade-up">
@@ -1107,9 +1430,9 @@
             <div class="absolute inset-0 bg-black/20"></div>
 
             <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
-              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
-              ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${typeLabel(p.typeKey)}</span>
+              <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${nicheLabel(p.nicheKey)}</span>
+              ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">${t("common.featured")}</span>` : ``}
               ${multi}
             </div>
           </div>
@@ -1122,22 +1445,22 @@
 
             <div class="flex flex-wrap items-center gap-2 mt-3">
               <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white font-semibold">
-                Стоимость: ${formatPrice(p.price)}
+                ${t("common.priceLabel")} ${formatPrice(p.price)}
               </span>
-              ${tagTop.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>`).join("")}
+              ${tagTop.map(tg => `<span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${tg}</span>`).join("")}
             </div>
 
-            <p class="text-slate-400 text-sm leading-relaxed mt-4">${p.short}</p>
+            <p class="text-slate-400 text-sm leading-relaxed mt-4">${pp.short || ""}</p>
 
             <div class="mt-6 flex flex-col sm:flex-row gap-3">
               <a href="${p.url}" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-white font-bold text-center">
-                Live <i class="fas fa-external-link-alt ml-2"></i>
+                ${t("common.live")} <i class="fas fa-external-link-alt ml-2"></i>
               </a>
               <button data-open-modal="${p.id}" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white font-bold text-center">
-                Подробнее <i class="fas fa-window-restore ml-2"></i>
+                ${t("common.details")} <i class="fas fa-window-restore ml-2"></i>
               </button>
               <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-5 py-3 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500 hover:text-white transition font-bold text-center">
-                Обсудить <i class="fab fa-whatsapp ml-2"></i>
+                ${t("common.discussShort")} <i class="fab fa-whatsapp ml-2"></i>
               </a>
             </div>
           </div>
@@ -1152,10 +1475,10 @@
       $("#resultsCount").textContent = total;
 
       const parts = [];
-      if (state.type !== "__all__") parts.push(state.type);
-      if (state.niche !== "__all__") parts.push(state.niche);
-      if (state.search.trim()) parts.push(`поиск: "${state.search.trim()}"`);
-      $("#activeBadge").textContent = parts.length ? parts.join(" • ") : "Все";
+      if (state.type !== "__all__") parts.push(typeLabel(state.type));
+      if (state.niche !== "__all__") parts.push(nicheLabel(state.niche));
+      if (state.search.trim()) parts.push(`${currentLang === "ru" ? "поиск" : "search"}: "${state.search.trim()}"`);
+      $("#activeBadge").textContent = parts.length ? parts.join(" • ") : t("catalog.all");
 
       if (!total) {
         wrap.innerHTML = "";
@@ -1191,42 +1514,8 @@
       if (resetPage) state.page = 1;
       const list = getFiltered();
       renderProjects(list, true);
+      renderFeatured();
     }
-
-    $("#searchInput").addEventListener("input", (e) => { state.search = e.target.value; applyAndRender(true); });
-    $("#clearSearch").addEventListener("click", () => { state.search = ""; $("#searchInput").value = ""; applyAndRender(true); });
-    $("#typeFilter").addEventListener("change", (e) => { state.type = e.target.value; applyAndRender(true); });
-    $("#nicheFilter").addEventListener("change", (e) => { state.niche = e.target.value; applyAndRender(true); });
-    $("#sortSelect").addEventListener("change", (e) => { state.sort = e.target.value; applyAndRender(true); });
-
-    $("#resetFilters").addEventListener("click", () => {
-      state.search = "";
-      state.type = "__all__";
-      state.niche = "__all__";
-      state.sort = "new";
-      $("#searchInput").value = "";
-      $("#typeFilter").value = "__all__";
-      $("#nicheFilter").value = "__all__";
-      $("#sortSelect").value = "new";
-      applyAndRender(true);
-    });
-
-    $("#viewGrid").addEventListener("click", () => {
-      state.view = "grid";
-      $("#viewGrid").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
-      $("#viewList").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
-      applyAndRender(false);
-    });
-    $("#viewList").addEventListener("click", () => {
-      state.view = "list";
-      $("#viewList").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
-      $("#viewGrid").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
-      applyAndRender(false);
-    });
-
-    $("#loadMoreBtn").addEventListener("click", () => { state.page += 1; applyAndRender(false); });
-
-    applyAndRender(true);
 
     /* =========================================
        MODAL
@@ -1238,44 +1527,52 @@
       const p = PROJECTS.find(x => x.id === projectId);
       if (!p) return;
 
+      const pp = p.i18n?.[currentLang] || p.i18n?.ru || {};
+
       $("#modalTitle").textContent = p.title;
-      $("#modalMeta").textContent = `${p.type} • ${p.niche}${p.year ? " • " + p.year : ""}`;
+      $("#modalMeta").textContent = `${typeLabel(p.typeKey)} • ${nicheLabel(p.nicheKey)}${p.year ? " • " + p.year : ""}`;
       $("#modalImage").src = p.image;
       $("#modalImage").alt = p.title;
       $("#modalImage").onerror = function(){ __imgFallback(this, p.title); };
       $("#modalPrice").textContent = formatPrice(p.price);
 
-      $("#modalProblem").textContent = p.problem || "—";
-      $("#modalSolution").textContent = p.solution || "—";
+      $("#modalProblem").textContent = pp.problem || "—";
+      $("#modalSolution").textContent = pp.solution || "—";
 
-      const multi = (p.urls && p.urls.length > 1) ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">2 версии</span>` : ``;
+      const multi = (p.urls && p.urls.length > 1) ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${t("common.versions")}</span>` : ``;
 
       $("#modalBadges").innerHTML = `
-        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${p.type}</span>
-        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${p.niche}</span>
-        ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">FEATURED</span>` : ``}
+        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-indigo-600 text-white">${typeLabel(p.typeKey)}</span>
+        <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-200">${nicheLabel(p.nicheKey)}</span>
+        ${p.featured ? `<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500 text-black">${t("common.featured")}</span>` : ``}
         ${multi}
       `;
 
       const fWrap = $("#modalFeatures");
-      fWrap.innerHTML = (p.features || []).map(item => `
+      fWrap.innerHTML = (pp.features || []).map(item => `
         <li class="flex gap-3">
           <i class="fas fa-check-circle text-indigo-400 mt-1"></i>
           <span>${item}</span>
         </li>
       `).join("") || `<li class="text-slate-400">—</li>`;
 
-      $("#modalTags").innerHTML = (p.tags || []).map(t => `
-        <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${t}</span>
+      $("#modalTags").innerHTML = (p.tags || []).map(tg => `
+        <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200">${tg}</span>
       `).join("") || `<span class="text-xs text-slate-400">—</span>`;
 
-      const urls = (p.urls && p.urls.length) ? p.urls : [{ label: "Открыть сайт", url: p.url }];
-      $("#modalLiveBtns").innerHTML = urls.map((u, idx) => `
-        <a href="${u.url}" target="_blank"
-           class="px-4 py-2 rounded-xl ${idx === 0 ? 'bg-indigo-600 hover:bg-indigo-500' : 'bg-white/5 hover:bg-white/10 border border-white/10'} transition text-white font-bold">
-          ${u.label} <i class="fas fa-external-link-alt ml-2"></i>
-        </a>
-      `).join("");
+      const urls = (p.urls && p.urls.length)
+        ? p.urls
+        : [{ labelRu: "Открыть сайт", labelEn: "Open website", url: p.url }];
+
+      $("#modalLiveBtns").innerHTML = urls.map((u, idx) => {
+        const label = currentLang === "ru" ? (u.labelRu || u.label || "Открыть") : (u.labelEn || u.label || "Open");
+        return `
+          <a href="${u.url}" target="_blank"
+             class="px-4 py-2 rounded-xl ${idx === 0 ? 'bg-indigo-600 hover:bg-indigo-500' : 'bg-white/5 hover:bg-white/10 border border-white/10'} transition text-white font-bold">
+            ${label} <i class="fas fa-external-link-alt ml-2"></i>
+          </a>
+        `;
+      }).join("");
 
       modal.classList.remove("modal-hidden");
       modal.classList.add("modal-show");
@@ -1312,72 +1609,73 @@
         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       });
     });
+
+    /* =========================================
+       UI EVENTS
+       ========================================= */
+    $("#searchInput").addEventListener("input", (e) => { state.search = e.target.value; applyAndRender(true); });
+    $("#clearSearch").addEventListener("click", () => { state.search = ""; $("#searchInput").value = ""; applyAndRender(true); });
+    $("#typeFilter").addEventListener("change", (e) => { state.type = e.target.value; applyAndRender(true); });
+    $("#nicheFilter").addEventListener("change", (e) => { state.niche = e.target.value; applyAndRender(true); });
+    $("#sortSelect").addEventListener("change", (e) => { state.sort = e.target.value; applyAndRender(true); });
+
+    $("#resetFilters").addEventListener("click", () => {
+      state.search = "";
+      state.type = "__all__";
+      state.niche = "__all__";
+      state.sort = "new";
+      $("#searchInput").value = "";
+      $("#typeFilter").value = "__all__";
+      $("#nicheFilter").value = "__all__";
+      $("#sortSelect").value = "new";
+      applyAndRender(true);
+    });
+
+    $("#viewGrid").addEventListener("click", () => {
+      state.view = "grid";
+      $("#viewGrid").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
+      $("#viewList").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
+      applyAndRender(false);
+    });
+    $("#viewList").addEventListener("click", () => {
+      state.view = "list";
+      $("#viewList").className = "px-4 py-2 bg-indigo-600 text-white text-sm font-bold";
+      $("#viewGrid").className = "px-4 py-2 bg-white/5 hover:bg-white/10 transition text-white text-sm font-bold";
+      applyAndRender(false);
+    });
+
+    $("#loadMoreBtn").addEventListener("click", () => { state.page += 1; applyAndRender(false); });
+
+    /* =========================================
+       LANGUAGE SWITCH (NO GOOGLE TRANSLATE)
+       ========================================= */
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-lang-btn]");
+      if (!btn) return;
+      e.preventDefault();
+      const lang = btn.getAttribute("data-lang-btn");
+      if (!lang || (lang !== "ru" && lang !== "en")) return;
+
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, currentLang);
+
+      // Re-render UI
+      applyI18nToDOM();
+      fillSelect($("#typeFilter"), TYPES, t("catalog.allTypes"), typeLabel);
+      fillSelect($("#nicheFilter"), NICHES, t("catalog.allNiches"), nicheLabel);
+      renderNicheChips();
+      applyAndRender(false);
+    });
+
+    /* =========================================
+       INITIAL RENDER
+       ========================================= */
+    applyI18nToDOM();
+    fillSelect($("#typeFilter"), TYPES, t("catalog.allTypes"), typeLabel);
+    fillSelect($("#nicheFilter"), NICHES, t("catalog.allNiches"), nicheLabel);
+    renderNicheChips();
+    renderFeatured();
+    applyAndRender(true);
   </script>
-
-  <!-- Language scripts (RU/EN) -->
-  <script>
-    (function () {
-      const KEY = "site_lang";
-
-      function paint(lang) {
-        document.querySelectorAll("[data-lang-btn]").forEach(btn => {
-          const is = btn.getAttribute("data-lang-btn") === lang;
-          btn.classList.toggle("is-active", is);
-          btn.setAttribute("aria-pressed", is ? "true" : "false");
-        });
-      }
-
-      function setCookie(val) {
-        const maxAge = 60 * 60 * 24 * 365; // 1 year
-        document.cookie = `googtrans=${val};path=/;max-age=${maxAge}`;
-        document.cookie = `googtrans=${val};path=/;domain=${location.hostname};max-age=${maxAge}`;
-      }
-
-      function apply(lang) {
-        const target = (lang === "en") ? "en" : "ru";
-        localStorage.setItem(KEY, target);
-        paint(target);
-
-        // Google Translate cookie format: "/source/target"
-        setCookie(`/ru/${target}`);
-
-        // If widget already loaded, also trigger without reload
-        const combo = document.querySelector(".goog-te-combo");
-        if (combo) {
-          combo.value = target;
-          combo.dispatchEvent(new Event("change"));
-        }
-
-        // Clean revert to RU if page is already translated
-        if (target === "ru" && (document.documentElement.classList.contains("translated-ltr") || document.documentElement.classList.contains("translated-rtl"))) {
-          setTimeout(() => location.reload(), 150);
-        }
-      }
-
-      document.addEventListener("click", (e) => {
-        const btn = e.target.closest("[data-lang-btn]");
-        if (!btn) return;
-        e.preventDefault();
-        apply(btn.getAttribute("data-lang-btn"));
-      });
-
-      // Google callback must be global
-      window.googleTranslateElementInit = function () {
-        new google.translate.TranslateElement({
-          pageLanguage: "ru",
-          includedLanguages: "ru,en",
-          autoDisplay: false
-        }, "google_translate_element");
-
-        const saved = localStorage.getItem(KEY) || "ru";
-        paint(saved);
-        setTimeout(() => apply(saved), 250);
-      };
-
-      paint(localStorage.getItem(KEY) || "ru");
-    })();
-  </script>
-
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
