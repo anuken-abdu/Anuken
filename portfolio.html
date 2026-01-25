@@ -73,6 +73,33 @@
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   }
+
+  /* ---------- Language (Google Translate) ---------- */
+  .goog-te-banner-frame.skiptranslate { display: none !important; }
+  body { top: 0 !important; }
+  #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+  .goog-text-highlight { background: inherit !important; box-shadow: none !important; }
+  .goog-te-gadget { display: none !important; }
+
+  /* Style for our buttons (Tailwind-agnostic fallback) */
+  .lang-btn{
+    padding: 8px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.10);
+    transition: 0.2s ease;
+    color: rgba(203,213,225,1);
+    background: transparent;
+  }
+  .lang-btn:hover{
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+  }
+  .lang-btn.is-active{
+    background: rgba(255,255,255,0.10);
+    color: #fff;
+  }
 </style>
 </head>
 
@@ -103,6 +130,12 @@
       </nav>
 
       <div class="hidden md:flex items-center gap-3">
+        <!-- Lang switch (RU/EN) -->
+        <div class="flex items-center gap-1 glass rounded-full p-1 border border-white/10">
+          <button type="button" data-lang-btn="ru" class="lang-btn">RU</button>
+          <button type="button" data-lang-btn="en" class="lang-btn">EN</button>
+        </div>
+
         <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white">
           WhatsApp <i class="fab fa-whatsapp ml-1"></i>
         </a>
@@ -119,6 +152,12 @@
     <!-- Mobile menu -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-brand-dark/95 backdrop-blur">
       <div class="container mx-auto px-6 py-5 flex flex-col gap-4 text-base">
+        <!-- Lang switch (RU/EN) -->
+        <div class="flex items-center gap-1 glass rounded-full p-1 border border-white/10 w-fit">
+          <button type="button" data-lang-btn="ru" class="lang-btn">RU</button>
+          <button type="button" data-lang-btn="en" class="lang-btn">EN</button>
+        </div>
+
         <a href="#cases" class="mobile-link hover:text-white transition">Кейсы</a>
         <a href="#packages" class="mobile-link hover:text-white transition">Пакеты</a>
         <a href="#niches" class="mobile-link hover:text-white transition">Ниши</a>
@@ -620,6 +659,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Google Translate mount (hidden) -->
+  <div id="google_translate_element" class="sr-only"></div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1271,5 +1313,71 @@
       });
     });
   </script>
+
+  <!-- Language scripts (RU/EN) -->
+  <script>
+    (function () {
+      const KEY = "site_lang";
+
+      function paint(lang) {
+        document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+          const is = btn.getAttribute("data-lang-btn") === lang;
+          btn.classList.toggle("is-active", is);
+          btn.setAttribute("aria-pressed", is ? "true" : "false");
+        });
+      }
+
+      function setCookie(val) {
+        const maxAge = 60 * 60 * 24 * 365; // 1 year
+        document.cookie = `googtrans=${val};path=/;max-age=${maxAge}`;
+        document.cookie = `googtrans=${val};path=/;domain=${location.hostname};max-age=${maxAge}`;
+      }
+
+      function apply(lang) {
+        const target = (lang === "en") ? "en" : "ru";
+        localStorage.setItem(KEY, target);
+        paint(target);
+
+        // Google Translate cookie format: "/source/target"
+        setCookie(`/ru/${target}`);
+
+        // If widget already loaded, also trigger without reload
+        const combo = document.querySelector(".goog-te-combo");
+        if (combo) {
+          combo.value = target;
+          combo.dispatchEvent(new Event("change"));
+        }
+
+        // Clean revert to RU if page is already translated
+        if (target === "ru" && (document.documentElement.classList.contains("translated-ltr") || document.documentElement.classList.contains("translated-rtl"))) {
+          setTimeout(() => location.reload(), 150);
+        }
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-lang-btn]");
+        if (!btn) return;
+        e.preventDefault();
+        apply(btn.getAttribute("data-lang-btn"));
+      });
+
+      // Google callback must be global
+      window.googleTranslateElementInit = function () {
+        new google.translate.TranslateElement({
+          pageLanguage: "ru",
+          includedLanguages: "ru,en",
+          autoDisplay: false
+        }, "google_translate_element");
+
+        const saved = localStorage.getItem(KEY) || "ru";
+        paint(saved);
+        setTimeout(() => apply(saved), 250);
+      };
+
+      paint(localStorage.getItem(KEY) || "ru");
+    })();
+  </script>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
