@@ -2,1155 +2,321 @@
 <html lang="ru" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#020617">
-<title>Anuken | Сайты и Google Ads под ключ</title>
-<meta name="description" content="Разработка сайтов и настройка Google Ads. Вывод в топ, защита от скликивания, аналитика. Астана, Казахстан.">
+<title>Anuken | Сайты и Google Ads</title>
+<meta name="description" content="Разработка сайтов и настройка Google Ads под ключ. 10 лет опыта. Вывод в топ, защита от скликивания. Астана.">
 <link rel="icon" href="images/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17829892914"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17829892914');
-function gtag_report_conversion(url){var cb=function(){if(typeof url!='undefined')window.location=url};gtag('event','conversion',{'send_to':'AW-17829892914/bFDICJ6f4d0bELKm-rVC','transaction_id':'','event_callback':cb});return false}
-</script>
-
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17829892914');function gtag_report_conversion(url){var cb=function(){if(typeof url!='undefined')window.location=url};gtag('event','conversion',{'send_to':'AW-17829892914/bFDICJ6f4d0bELKm-rVC','transaction_id':'','event_callback':cb});return false}</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#020617;--card:#0a1128;--card2:#0f172a;
-  --accent:#6366f1;--accent2:#818cf8;--accent3:#c084fc;--cyan:#22d3ee;--green:#22c55e;
-  --text:#cbd5e1;--text2:#94a3b8;--text3:#64748b;--white:#f1f5f9;
-  --border:rgba(255,255,255,0.06);--glass:rgba(15,23,42,0.65);
-  --font:'Outfit',system-ui,sans-serif;--font-tech:'Space Grotesk',monospace;
-  --radius:16px;--radius-sm:10px;--radius-full:9999px;
-}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::selection{background:rgba(99,102,241,0.3);color:#c7d2fe}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
-a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
-button{cursor:pointer;border:none;background:none;font-family:inherit}
-
-/* ===== UTILITY ===== */
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
-@media(min-width:768px){.container{padding:0 32px}}
-@media(min-width:1024px){.container{padding:0 40px}}
-
-.glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border-radius:var(--radius);transition:all .3s ease;padding:14px 28px}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 24px rgba(99,102,241,0.35)}
-.btn-primary:hover{background:#5558e6;transform:translateY(-2px);box-shadow:0 8px 32px rgba(99,102,241,0.45)}
-.btn-secondary{background:rgba(255,255,255,0.05);color:#fff;border:1px solid rgba(255,255,255,0.1)}
-.btn-secondary:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
-.btn-green{background:rgba(34,197,94,0.12);color:var(--green);border:1px solid rgba(34,197,94,0.2)}
-.btn-green:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
-.btn-sm{padding:10px 20px;font-size:13px;border-radius:var(--radius-sm)}
-.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--radius-full);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-.section-label{color:var(--accent2);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-.section-title{font-family:var(--font-tech);font-weight:700;color:var(--white);line-height:1.15}
-.section-desc{color:var(--text2);line-height:1.7;max-width:600px}
-
-/* Gradient text */
-.tg{background:linear-gradient(135deg,var(--accent2),var(--accent3),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:tgAnim 4s ease infinite}
-@keyframes tgAnim{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
-/* Background FX */
-.bg-fx{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.bg-blob{position:absolute;border-radius:50%;filter:blur(120px);mix-blend-mode:screen;opacity:.12;animation:blobMove 8s ease-in-out infinite}
-.bg-blob-1{width:500px;height:500px;background:var(--accent);top:-10%;left:15%}
-.bg-blob-2{width:450px;height:450px;background:#7c3aed;top:5%;right:10%;animation-delay:3s}
-.bg-blob-3{width:350px;height:350px;background:var(--cyan);bottom:10%;left:30%;animation-delay:5s;opacity:.08}
-@keyframes blobMove{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.05)}66%{transform:translate(-20px,25px) scale(.95)}}
-.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 75%)}
-
-/* ===== HEADER ===== */
-.header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
-.header.scrolled .header-inner{background:rgba(2,6,23,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.header-inner{padding:16px 0;transition:all .3s}
-.header-row{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--font-tech);font-size:22px;font-weight:700;color:var(--white);display:flex;align-items:center;gap:10px;letter-spacing:-.02em}
-.logo-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:transform .3s}
-.logo:hover .logo-icon{transform:rotate(12deg)}
-
-.nav-desktop{display:none;gap:28px;font-size:14px;font-weight:500}
-@media(min-width:1024px){.nav-desktop{display:flex}}
-.nav-desktop a{color:var(--text2);transition:color .2s}
-.nav-desktop a:hover{color:#fff}
-
-.header-actions{display:flex;align-items:center;gap:10px}
-.lang-sw{display:flex;border-radius:var(--radius-full);overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,0.03)}
-.lang-sw button{padding:6px 12px;font-size:11px;font-weight:800;color:var(--text3);transition:all .2s;letter-spacing:.05em}
-.lang-sw button.active{background:rgba(255,255,255,0.08);color:#fff}
-.lang-sw button:hover{color:#fff}
-
-.menu-toggle{display:flex;width:40px;height:40px;align-items:center;justify-content:center;color:#fff;font-size:20px;border-radius:var(--radius-sm);border:1px solid var(--border)}
-@media(min-width:1024px){.menu-toggle{display:none}}
-.header-cta-desktop{display:none}
-@media(min-width:1024px){.header-cta-desktop{display:flex}}
-
-/* Mobile menu */
-.mobile-menu{position:fixed;inset:0;z-index:99;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transform:translateX(100%);transition:transform .35s ease}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{font-family:var(--font-tech);font-size:28px;color:var(--white);font-weight:600}
-.mobile-menu a:hover{color:var(--accent2)}
-
-/* ===== HERO ===== */
-.hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding-top:80px;padding-bottom:40px;z-index:1}
-.hero-grid{display:grid;gap:40px;align-items:center}
-@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr;gap:60px}}
-.hero-badge{background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.15);color:var(--accent2)}
-.hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--green);position:relative}
-.hero-badge .pulse::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--green);animation:ping 1.5s infinite;opacity:.5}
-@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.2);opacity:0}}
-
-.hero h1{font-family:var(--font-tech);font-size:clamp(36px,7vw,64px);font-weight:800;color:var(--white);line-height:1.08;margin:20px 0}
-.hero-desc{font-size:17px;line-height:1.7;color:var(--text);max-width:520px;margin-bottom:32px}
-.hero-desc strong{color:var(--white);border-bottom:2px solid rgba(99,102,241,0.4)}
-
-.hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px}
-@media(min-width:480px){.hero-trust{grid-template-columns:repeat(4,1fr)}}
-.trust-item{padding:12px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:10px}
-.trust-item i{font-size:16px}
-.trust-item .t-label{font-size:11px;font-weight:700;color:var(--white)}
-.trust-item .t-value{font-size:10px;color:var(--text3)}
-
-.hero-btns{display:flex;flex-direction:column;gap:12px}
-@media(min-width:480px){.hero-btns{flex-direction:row}}
-
-/* Hero right panel */
-.hero-panel{display:none;position:relative}
-@media(min-width:1024px){.hero-panel{display:block}}
-.hero-panel-glow{position:absolute;inset:-2px;border-radius:20px;background:linear-gradient(135deg,var(--accent),#7c3aed);filter:blur(20px);opacity:.25;animation:pulse 3s ease infinite}
-@keyframes pulse{0%,100%{opacity:.25}50%{opacity:.35}}
-.hero-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
-.hero-card-header{display:flex;gap:6px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.hero-card-header span{width:10px;height:10px;border-radius:50%}
-.code-block{font-family:var(--font-tech);font-size:13px;line-height:1.8}
-.code-block .kw{color:#c084fc}.code-block .fn{color:#60a5fa}.code-block .str{color:#4ade80}.code-block .cm{color:var(--text3)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
-.hero-stat{text-align:center;padding:14px;border-radius:var(--radius-sm)}
-.hero-stat .val{font-family:var(--font-tech);font-weight:700;font-size:20px;color:var(--white)}
-.hero-stat .lbl{font-size:11px;color:var(--text3);margin-top:2px}
-
-/* ===== SERVICES ===== */
-.services-section{position:relative;z-index:1;padding:80px 0}
-.services-header{text-align:center;margin-bottom:48px}
-.services-header .section-title{font-size:clamp(28px,5vw,44px)}
-.services-header .section-desc{margin:12px auto 0}
-
-.services-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px}
-.services-tabs button{padding:12px 24px;border-radius:var(--radius-full);font-size:14px;font-weight:700;color:var(--text2);border:1px solid var(--border);background:rgba(255,255,255,0.02);transition:all .3s}
-.services-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 20px rgba(99,102,241,0.3)}
-
-.services-panel{display:none}
-.services-panel.active{display:block}
-
-.service-cards{display:grid;gap:20px}
-@media(min-width:768px){.service-cards{grid-template-columns:repeat(3,1fr)}}
-.service-card{background:linear-gradient(180deg,rgba(30,41,59,0.5),rgba(15,23,42,0.8));border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .4s}
-.service-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(99,102,241,0.2)}
-.service-card.featured{border-color:rgba(99,102,241,0.4);box-shadow:0 0 30px rgba(99,102,241,0.1)}
-.service-card .sc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;border:1px solid}
-.service-card h4{font-family:var(--font-tech);font-size:20px;font-weight:700;color:var(--white);margin-bottom:8px}
-.service-card p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:20px}
-.sc-features{list-style:none;display:flex;flex-direction:column;gap:10px}
-.sc-features li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text)}
-.sc-features li i{font-size:12px}
-.sc-badge{position:absolute;top:0;left:50%;transform:translate(-50%,0);background:var(--accent);color:#fff;font-size:10px;font-weight:800;padding:4px 12px;border-radius:0 0 8px 8px;letter-spacing:.04em}
-.service-card{position:relative;overflow:hidden}
-
-/* ===== PRICING ===== */
-.pricing-section{padding:80px 0;position:relative;z-index:1}
-.pricing-header{text-align:center;margin-bottom:48px}
-.pricing-header .section-title{font-size:clamp(28px,5vw,44px)}
-
-.price-cards{display:grid;gap:20px}
-@media(min-width:768px){.price-cards{grid-template-columns:repeat(3,1fr)}}
-.price-card{background:linear-gradient(180deg,rgba(30,41,59,0.5),rgba(15,23,42,0.8));border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .4s;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.price-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(99,102,241,0.2)}
-.price-card.popular{border-color:rgba(99,102,241,0.5);box-shadow:0 0 40px rgba(99,102,241,0.12)}
-.price-card .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
-.price-name{font-family:var(--font-tech);font-weight:700;font-size:22px;color:var(--white)}
-.price-sub{font-size:12px;color:var(--text3);margin-top:2px}
-.price-amount{font-family:var(--font-tech);font-weight:700;font-size:28px;color:var(--white);text-align:right}
-.price-from{font-size:11px;color:var(--text3);font-weight:400}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1}
-.price-features li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text)}
-.price-features li i{font-size:11px;width:16px;text-align:center}
-.pop-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10px;font-weight:800;padding:4px 14px;border-radius:0 0 8px 8px;letter-spacing:.04em}
-
-/* ===== CASES ===== */
-.cases-section{padding:80px 0;position:relative;z-index:1}
-.cases-header{text-align:center;margin-bottom:48px}
-.cases-header .section-title{font-size:clamp(28px,5vw,44px)}
-
-.cases-grid{display:grid;gap:20px}
-@media(min-width:768px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.cases-grid{grid-template-columns:repeat(3,1fr)}}
-
-.case-card{background:linear-gradient(180deg,rgba(30,41,59,0.5),rgba(15,23,42,0.8));border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .4s;display:flex;flex-direction:column}
-.case-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(99,102,241,0.2)}
-.case-img{position:relative;height:200px;overflow:hidden}
-.case-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.case-card:hover .case-img img{transform:scale(1.05)}
-.case-img .case-badges{position:absolute;top:12px;left:12px;display:flex;flex-wrap:wrap;gap:6px}
-.case-type-badge{font-size:10px;font-weight:700;padding:4px 10px;border-radius:var(--radius-full);color:#fff}
-.case-body{padding:20px;flex:1;display:flex;flex-direction:column}
-.case-body h4{font-family:var(--font-tech);font-weight:700;font-size:18px;color:var(--white);margin-bottom:6px}
-.case-body p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:16px;flex:1}
-.case-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-
-/* ===== WORKFLOW ===== */
-.workflow-section{padding:80px 0;position:relative;z-index:1}
-.workflow-header{text-align:center;margin-bottom:48px}
-.workflow-header .section-title{font-size:clamp(28px,5vw,44px)}
-.workflow-grid{display:grid;gap:16px}
-@media(min-width:768px){.workflow-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.workflow-grid{grid-template-columns:repeat(4,1fr)}}
-.wf-card{padding:24px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(30,41,59,0.4),rgba(15,23,42,0.7));border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden}
-.wf-card:hover{transform:translateY(-3px);border-color:var(--accent)}
-.wf-num{position:absolute;top:8px;right:12px;font-family:var(--font-tech);font-size:48px;font-weight:800;color:rgba(255,255,255,0.03)}
-.wf-card:hover .wf-num{color:rgba(99,102,241,0.08)}
-.wf-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px}
-.wf-card h4{font-family:var(--font-tech);font-weight:700;font-size:17px;color:var(--white);margin-bottom:8px}
-.wf-card p{font-size:13px;color:var(--text2);line-height:1.6}
-
-/* ===== TESTIMONIALS ===== */
-.testimonials-section{padding:80px 0;position:relative;z-index:1}
-.testimonials-header{text-align:center;margin-bottom:48px}
-.testimonials-header .section-title{font-size:clamp(28px,5vw,44px)}
-.test-grid{display:grid;gap:16px}
-@media(min-width:768px){.test-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.test-grid{grid-template-columns:repeat(3,1fr)}}
-.test-card{padding:24px;border-radius:var(--radius);border:1px solid var(--border);transition:all .3s;cursor:pointer;position:relative}
-.test-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 32px rgba(99,102,241,0.15)}
-.test-card .quote-icon{font-size:18px;margin-bottom:12px}
-.test-card .quote-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:16px}
-.test-card .quote-hint{font-size:11px;color:var(--accent2);display:flex;align-items:center;gap:6px;margin-bottom:16px;opacity:.7}
-.test-card:hover .quote-hint{opacity:1}
-.test-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
-.test-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff}
-.test-name{font-size:13px;font-weight:700;color:var(--white)}
-.test-role{font-size:11px;color:var(--text3)}
-
-/* Screenshot modal */
-.screenshot-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
-.screenshot-overlay.open{display:flex}
-.screenshot-overlay img{max-width:100%;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);object-fit:contain}
-.screenshot-close{position:absolute;top:16px;right:20px;color:#fff;font-size:28px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.1);transition:background .2s;cursor:pointer}
-.screenshot-close:hover{background:rgba(255,255,255,0.2)}
-
-/* ===== FAQ ===== */
-.faq-section{padding:80px 0;position:relative;z-index:1}
-.faq-header{text-align:center;margin-bottom:48px}
-.faq-header .section-title{font-size:clamp(28px,5vw,44px)}
-.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
-.faq-item{border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;transition:border-color .3s}
-.faq-item.open{border-color:rgba(99,102,241,0.3);background:rgba(99,102,241,0.03)}
-.faq-q{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--white);font-size:15px;cursor:pointer;user-select:none}
-.faq-q i{color:var(--accent2);transition:transform .3s;font-size:13px}
-.faq-item.open .faq-q i{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
-.faq-a-inner{padding:0 20px 18px;font-size:14px;color:var(--text2);line-height:1.7;border-top:1px solid var(--border);padding-top:14px}
-
-/* ===== FOOTER ===== */
-.footer{padding:60px 0 0;border-top:1px solid var(--border);position:relative;z-index:1;overflow:hidden}
-.footer-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:var(--accent);opacity:.04;border-radius:50%;filter:blur(100px)}
-.footer-inner{position:relative;z-index:1;text-align:center}
-.footer-title{font-family:var(--font-tech);font-size:clamp(28px,5vw,44px);font-weight:700;color:var(--white);margin-bottom:28px}
-.footer-btns{display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:center;margin-bottom:32px}
-@media(min-width:480px){.footer-btns{flex-direction:row}}
-.footer-social{display:flex;justify-content:center;gap:12px;margin-bottom:32px}
-.footer-social a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text3);transition:all .3s}
-.footer-social a:hover{color:#fff;border-color:var(--accent);background:rgba(99,102,241,0.1)}
-.footer-bottom{padding:20px 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;align-items:center;font-size:12px;color:var(--text3);font-family:var(--font-tech)}
-@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
-
-/* ===== MOBILE FIXED BAR ===== */
-.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:98;padding:12px 16px;display:flex;gap:10px}
-@media(min-width:1024px){.mobile-bar{display:none}}
-.mobile-bar a{flex:1;padding:14px;border-radius:14px;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff}
-.mobile-bar .mb-wa{background:var(--green)}
-.mobile-bar .mb-tg{background:var(--accent)}
-
-/* ===== TICKER ===== */
-.ticker{padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;position:relative;z-index:1}
-.ticker-track{display:flex;gap:40px;animation:tickerScroll 22s linear infinite;white-space:nowrap;opacity:.5;transition:opacity .3s}
-.ticker-track:hover{opacity:.9}
-.ticker-item{display:flex;align-items:center;gap:8px;font-family:var(--font-tech);font-size:16px;color:var(--text2)}
-.ticker-item i{font-size:22px}
-@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* ===== CASE MODAL ===== */
-.case-modal{position:fixed;inset:0;z-index:999;display:none;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.case-modal.open{display:flex}
-.case-modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px)}
-.case-modal-content{position:relative;width:100%;max-width:960px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);max-height:calc(100vh - 32px);overflow-y:auto;background:var(--card)}
-.cm-header{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(10,17,40,0.9);backdrop-filter:blur(16px)}
-.cm-title{font-family:var(--font-tech);font-weight:700;color:var(--white);font-size:17px}
-.cm-body{display:grid;gap:0}
-@media(min-width:768px){.cm-body{grid-template-columns:1fr 1fr}}
-.cm-left{background:rgba(0,0,0,0.15)}
-.cm-left img{width:100%;max-height:400px;object-fit:cover}
-.cm-left-bar{padding:14px 16px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
-.cm-right{padding:20px}
-.cm-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
-.cm-info-box{padding:14px;border-radius:var(--radius-sm);border:1px solid var(--border)}
-.cm-info-box .label{font-size:11px;color:var(--text3);font-family:var(--font-tech);margin-bottom:4px}
-.cm-info-box .val{font-size:13px;color:var(--text);line-height:1.5}
-.cm-features{padding:14px;border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:16px}
-.cm-features .label{font-size:11px;color:var(--text3);font-family:var(--font-tech);margin-bottom:8px}
-.cm-features ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-.cm-features li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)}
-.cm-features li i{color:var(--accent2);font-size:11px}
-.cm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.cm-tag{font-size:11px;padding:4px 10px;border-radius:var(--radius-full);background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--text2)}
-.cm-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-
-/* ===== PROTECTION SECTION ===== */
-.protect-section{padding:80px 0;position:relative;z-index:1}
-.protect-grid{display:grid;gap:20px}
-@media(min-width:768px){.protect-grid{grid-template-columns:1fr 1fr}}
-.protect-card{padding:28px;border-radius:var(--radius);border:1px solid var(--border);background:linear-gradient(180deg,rgba(30,41,59,0.4),rgba(15,23,42,0.7));transition:all .3s}
-.protect-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.protect-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
-.protect-card h4{font-family:var(--font-tech);font-weight:700;font-size:18px;color:var(--white);margin-bottom:8px}
-.protect-card p{font-size:13px;color:var(--text2);line-height:1.6}
-
-/* Safe area for mobile bar */
-body::after{content:'';display:block;height:80px}
-@media(min-width:1024px){body::after{height:0}}
-
-/* Animations */
-[data-anim]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-[data-anim].visible{opacity:1;transform:translateY(0)}
-[data-anim][data-delay="1"]{transition-delay:.1s}
-[data-anim][data-delay="2"]{transition-delay:.2s}
-[data-anim][data-delay="3"]{transition-delay:.3s}
-
-@media(prefers-reduced-motion:reduce){
-  [data-anim]{opacity:1;transform:none;transition:none}
-  .bg-blob,.ticker-track{animation:none}
-}
+:root{--bg:#020617;--card:#0c1631;--accent:#6366f1;--accent2:#818cf8;--accent3:#a78bfa;--purple:#7c3aed;--cyan:#22d3ee;--green:#22c55e;--red:#ef4444;--orange:#f97316;--text:#c8d2e0;--text2:#8896ab;--text3:#556178;--white:#eef2f7;--border:rgba(255,255,255,.06);--glass:rgba(8,18,42,.7);--ff:'DM Sans',system-ui,sans-serif;--fh:'Sora',sans-serif;--r:14px;--r2:20px}
+html{scroll-behavior:smooth}body{font-family:var(--ff);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.6}::selection{background:rgba(99,102,241,.3);color:#c7d2fe}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#2a3654;border-radius:3px}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{cursor:pointer;border:none;background:none;font-family:inherit}ul{list-style:none}
+.container{max-width:1140px;margin:0 auto;padding:0 20px}@media(min-width:768px){.container{padding:0 28px}}
+.bgfx{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}.bgfx .b{position:absolute;border-radius:50%;filter:blur(130px);opacity:.10;animation:bm 10s ease-in-out infinite}.bgfx .b1{width:480px;height:480px;background:var(--accent);top:-5%;left:10%}.bgfx .b2{width:420px;height:420px;background:var(--purple);top:8%;right:5%;animation-delay:4s}.bgfx .b3{width:300px;height:300px;background:var(--cyan);bottom:5%;left:35%;opacity:.06;animation-delay:6s}@keyframes bm{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(25px,-35px) scale(1.06)}70%{transform:translate(-18px,20px) scale(.94)}}.gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 70%)}
+.glass{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--border)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14px;border-radius:var(--r);transition:all .25s;padding:13px 24px;white-space:nowrap}.btn-accent{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,.3)}.btn-accent:hover{background:#5558e6;transform:translateY(-2px)}.btn-ghost{background:rgba(255,255,255,.04);color:var(--white);border:1px solid var(--border)}.btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:#1aad4a;transform:translateY(-2px)}.btn-sm{padding:10px 18px;font-size:13px;border-radius:10px}.btn-w{width:100%}
+.tg{background:linear-gradient(135deg,var(--accent2),var(--accent3),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:tga 5s ease infinite}@keyframes tga{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.sec{padding:72px 0;position:relative;z-index:1}@media(min-width:768px){.sec{padding:96px 0}}.sec-label{color:var(--accent2);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}.sec-title{font-family:var(--fh);font-weight:800;color:var(--white);font-size:clamp(26px,5vw,42px);line-height:1.12;margin-bottom:12px}.sec-desc{color:var(--text2);max-width:560px;font-size:15px;line-height:1.7}.sec-center{text-align:center}.sec-center .sec-desc{margin:0 auto}
+.g2{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:600px){.g2{grid-template-columns:1fr 1fr}}.g3{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:600px){.g3{grid-template-columns:1fr 1fr}}@media(min-width:900px){.g3{grid-template-columns:1fr 1fr 1fr}}
+.card{background:linear-gradient(170deg,rgba(18,30,58,.7),rgba(8,18,40,.85));border:1px solid var(--border);border-radius:var(--r2);padding:24px;transition:all .35s;position:relative;overflow:hidden}.card:hover{transform:translateY(-3px);border-color:rgba(99,102,241,.4);box-shadow:0 14px 36px rgba(99,102,241,.12)}.card-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;border:1px solid}.card h4{font-family:var(--fh);font-weight:700;font-size:17px;color:var(--white);margin-bottom:6px}.card p{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px}.card-list{display:flex;flex-direction:column;gap:8px}.card-list li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)}.card-list li i{font-size:11px;width:14px;text-align:center}.card-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:9px;font-weight:800;padding:3px 12px;border-radius:0 0 8px 8px;letter-spacing:.05em}.card.featured{border-color:rgba(99,102,241,.3);box-shadow:0 0 24px rgba(99,102,241,.08)}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 0;transition:all .3s}.hdr.scrolled{background:rgba(2,6,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.hdr-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.logo{font-family:var(--fh);font-size:20px;font-weight:800;color:var(--white);display:flex;align-items:center;gap:8px;letter-spacing:-.02em;flex-shrink:0}.logo-i{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--purple));display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;transition:transform .3s}.logo:hover .logo-i{transform:rotate(12deg)}
+.page-toggle{display:flex;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,.02);flex-shrink:0}.page-toggle button{padding:8px 14px;font-size:11px;font-weight:700;color:var(--text3);transition:all .25s;display:flex;align-items:center;gap:5px}@media(min-width:500px){.page-toggle button{padding:9px 20px;font-size:13px}}.page-toggle button.active{background:var(--accent);color:#fff}.page-toggle button:not(.active):hover{background:rgba(255,255,255,.04);color:var(--white)}
+.hdr-right{display:flex;align-items:center;gap:8px}.lang-sw{display:none;border-radius:999px;overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,.02)}@media(min-width:900px){.lang-sw{display:flex}}.lang-sw button{padding:5px 10px;font-size:10px;font-weight:800;color:var(--text3);transition:all .2s;letter-spacing:.06em}.lang-sw button.on{background:rgba(255,255,255,.08);color:#fff}.lang-sw button:hover{color:#fff}.hdr-cta{display:none}@media(min-width:900px){.hdr-cta{display:flex}}.menu-btn{display:flex;width:38px;height:38px;align-items:center;justify-content:center;color:#fff;font-size:18px;border-radius:10px;border:1px solid var(--border);flex-shrink:0}@media(min-width:900px){.menu-btn{display:none}}
+.mmenu{position:fixed;inset:0;z-index:99;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transform:translateX(100%);transition:transform .3s ease}.mmenu.open{transform:translateX(0)}.mmenu a{font-family:var(--fh);font-size:22px;color:var(--white);font-weight:600}
+.hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:88px 0 48px;z-index:1}.hero-grid{display:grid;gap:32px;align-items:center}@media(min-width:900px){.hero-grid{grid-template-columns:1fr 420px;gap:48px}}.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.04em;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);color:var(--accent2);margin-bottom:16px}.hero-pulse{width:8px;height:8px;border-radius:50%;background:var(--green);position:relative;flex-shrink:0}.hero-pulse::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--green);animation:ping 1.5s infinite;opacity:.5}@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.2);opacity:0}}.hero h1{font-family:var(--fh);font-size:clamp(32px,7vw,56px);font-weight:800;color:var(--white);line-height:1.08;margin-bottom:16px}.hero-text{font-size:16px;color:var(--text);line-height:1.7;max-width:500px;margin-bottom:24px}.hero-text strong{color:var(--white);border-bottom:2px solid rgba(99,102,241,.4)}.hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}@media(min-width:480px){.hero-trust{grid-template-columns:repeat(4,1fr)}}.ht-item{padding:10px 12px;border-radius:10px;display:flex;align-items:center;gap:9px}.ht-item i{font-size:15px;flex-shrink:0}.ht-label{font-size:11px;font-weight:700;color:var(--white);line-height:1.2}.ht-val{font-size:10px;color:var(--text3)}.hero-btns{display:flex;flex-wrap:wrap;gap:10px}
+.hero-panel{display:none;position:relative}@media(min-width:900px){.hero-panel{display:block}}.hp-glow{position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--purple));filter:blur(18px);opacity:.2;animation:hpg 3s ease infinite}@keyframes hpg{0%,100%{opacity:.2}50%{opacity:.3}}.hp-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px}.hp-dots{display:flex;gap:5px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border)}.hp-dots span{width:9px;height:9px;border-radius:50%}.hp-code{font-family:monospace;font-size:12.5px;line-height:1.9;color:var(--text)}.hp-code .k{color:var(--accent3)}.hp-code .f{color:#60a5fa}.hp-code .s{color:#4ade80}.hp-code .c{color:var(--text3)}.hp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}.hp-stat{text-align:center;padding:12px 8px;border-radius:10px}.hp-stat .v{font-family:var(--fh);font-weight:800;font-size:18px;color:var(--white)}.hp-stat .l{font-size:10px;color:var(--text3);margin-top:1px}
+.about-grid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}@media(min-width:768px){.about-grid{grid-template-columns:repeat(4,1fr)}}.about-card{padding:20px;border-radius:var(--r);border:1px solid var(--border);text-align:center;transition:all .3s;background:rgba(255,255,255,.01)}.about-card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-2px)}.about-card .av{font-family:var(--fh);font-size:28px;font-weight:800;color:var(--white);margin-bottom:4px}.about-card .al{font-size:12px;color:var(--text2)}
+.price-card{display:flex;flex-direction:column}.price-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;gap:8px}.price-name{font-family:var(--fh);font-weight:700;font-size:19px;color:var(--white)}.price-sub{font-size:12px;color:var(--text3);margin-top:2px}.price-amount{text-align:right;font-family:var(--fh);font-weight:700;font-size:22px;color:var(--white);line-height:1.2}.price-from{font-size:10px;color:var(--text3);font-weight:400}.price-features{flex:1;margin-bottom:20px}.price-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.case-card{overflow:hidden;display:flex;flex-direction:column}.case-img{position:relative;height:180px;overflow:hidden}@media(min-width:600px){.case-img{height:200px}}.case-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.case-card:hover .case-img img{transform:scale(1.05)}.case-img .cb{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:999px;color:#fff}.case-body{padding:18px;flex:1;display:flex;flex-direction:column}.case-body h4{font-family:var(--fh);font-weight:700;font-size:16px;color:var(--white);margin-bottom:4px}.case-body p{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:14px;flex:1}.case-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rev-card{padding:22px;border-radius:var(--r2);border:1px solid var(--border);cursor:pointer;transition:all .3s;background:rgba(255,255,255,.01)}.rev-card:hover{border-color:rgba(99,102,241,.35);transform:translateY(-3px);box-shadow:0 10px 28px rgba(99,102,241,.1)}.rev-quote{font-size:14px;color:var(--text);line-height:1.7;margin:12px 0;font-style:italic}.rev-hint{font-size:11px;color:var(--accent2);display:flex;align-items:center;gap:5px;opacity:.6;margin-bottom:14px}.rev-card:hover .rev-hint{opacity:1}.rev-footer{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid var(--border)}.rev-ava{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}.rev-name{font-size:12px;font-weight:700;color:var(--white)}.rev-role{font-size:11px;color:var(--text3)}
+.faq-item{border-radius:var(--r);border:1px solid var(--border);overflow:hidden;transition:border-color .3s;margin-bottom:8px}.faq-item.open{border-color:rgba(99,102,241,.25);background:rgba(99,102,241,.02)}.faq-q{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--white);font-size:14px;cursor:pointer}.faq-q i{color:var(--accent2);transition:transform .3s;font-size:12px;flex-shrink:0;margin-left:12px}.faq-item.open .faq-q i{transform:rotate(180deg)}.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}.faq-a-in{padding:0 18px 16px;font-size:13px;color:var(--text2);line-height:1.7;border-top:1px solid var(--border);padding-top:12px}
+.wf-card{padding:22px;border-radius:var(--r2);border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden;background:rgba(255,255,255,.01)}.wf-card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-2px)}.wf-num{position:absolute;top:6px;right:12px;font-family:var(--fh);font-size:42px;font-weight:800;color:rgba(255,255,255,.025)}.wf-card:hover .wf-num{color:rgba(99,102,241,.06)}.wf-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:12px}.wf-card h4{font-family:var(--fh);font-weight:700;font-size:15px;color:var(--white);margin-bottom:6px}.wf-card p{font-size:12px;color:var(--text2);line-height:1.6}
+.footer{padding:56px 0 0;border-top:1px solid var(--border);position:relative;z-index:1;overflow:hidden}.footer-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:var(--accent);opacity:.03;border-radius:50%;filter:blur(100px)}.footer-title{font-family:var(--fh);font-size:clamp(24px,5vw,38px);font-weight:800;color:var(--white);text-align:center;margin-bottom:24px}.footer-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px}.footer-social{display:flex;justify-content:center;gap:10px;margin-bottom:28px}.footer-social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text3);transition:all .3s;font-size:15px}.footer-social a:hover{color:#fff;border-color:var(--accent)}.footer-bot{padding:16px 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px;align-items:center;font-size:11px;color:var(--text3)}@media(min-width:600px){.footer-bot{flex-direction:row;justify-content:space-between}}
+.mob-bar{position:fixed;bottom:0;left:0;right:0;z-index:98;padding:10px 14px;display:flex;gap:8px}@media(min-width:900px){.mob-bar{display:none}}.mob-bar a{flex:1;padding:13px;border-radius:14px;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:7px;color:#fff}body{padding-bottom:76px}@media(min-width:900px){body{padding-bottom:0}}
+.overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}.overlay.open{display:flex}.overlay img{max-width:100%;max-height:88vh;border-radius:12px;box-shadow:0 16px 48px rgba(0,0,0,.5);object-fit:contain}.overlay-close{position:absolute;top:14px;right:16px;color:#fff;font-size:24px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1);cursor:pointer}
+.ticker{padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;position:relative;z-index:1}.ticker-track{display:flex;gap:36px;animation:ts 20s linear infinite;white-space:nowrap;opacity:.4}.ticker-track:hover{opacity:.8}.ticker-track .ti{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--text2)}.ticker-track .ti i{font-size:18px}@keyframes ts{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+[data-a]{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}[data-a].vis{opacity:1;transform:translateY(0)}[data-a][data-d="1"]{transition-delay:.1s}[data-a][data-d="2"]{transition-delay:.2s}[data-a][data-d="3"]{transition-delay:.3s}@media(prefers-reduced-motion:reduce){[data-a]{opacity:1;transform:none;transition:none}.bgfx .b,.ticker-track{animation:none}}
+.page{display:none;animation:fu .4s ease}.page.active{display:block}@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
-
 <body>
+<div class="bgfx"><div class="b b1"></div><div class="b b2"></div><div class="b b3"></div><div class="gridbg"></div></div>
 
-<!-- BG FX -->
-<div class="bg-fx">
-  <div class="bg-blob bg-blob-1"></div>
-  <div class="bg-blob bg-blob-2"></div>
-  <div class="bg-blob bg-blob-3"></div>
-  <div class="grid-overlay"></div>
+<header class="hdr" id="hdr"><div class="container"><div class="hdr-row">
+<a href="#" class="logo"><span class="logo-i"><i class="fas fa-code"></i></span>ANUKEN</a>
+<div class="page-toggle" id="pgTog"><button class="active" data-page="sites"><i class="fas fa-laptop-code"></i> <span data-t="tab_sites">Сайты</span></button><button data-page="ads"><i class="fab fa-google"></i> <span data-t="tab_ads">Google Ads</span></button></div>
+<div class="hdr-right"><div class="lang-sw"><button class="ltg on" data-lang="ru">RU</button><button class="ltg" data-lang="en">EN</button></div><a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm hdr-cta"><i class="fab fa-telegram-plane"></i> Telegram</a><button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button></div>
+</div></div></header>
+
+<div class="mmenu" id="mmenu">
+<div class="lang-sw" style="display:flex;margin-bottom:8px"><button class="ltg on" data-lang="ru">RU</button><button class="ltg" data-lang="en">EN</button></div>
+<div class="page-toggle"><button class="active mm-pg" data-page="sites"><i class="fas fa-laptop-code"></i> <span data-t="tab_sites">Сайты</span></button><button class="mm-pg" data-page="ads"><i class="fab fa-google"></i> <span data-t="tab_ads">Google Ads</span></button></div>
+<a href="#about" class="mm-link" data-t="nav_about">Обо мне</a><a href="#pricing" class="mm-link" data-t="nav_pricing">Цены</a><a href="#cases" class="mm-link" data-t="nav_cases">Кейсы</a><a href="#reviews" class="mm-link" data-t="nav_reviews">Отзывы</a><a href="#faq" class="mm-link" data-t="nav_faq">FAQ</a>
+<div style="display:flex;gap:10px;margin-top:8px"><a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm"><i class="fab fa-telegram-plane"></i> Telegram</a></div></div>
+
+<!-- ══════ PAGE: SITES ══════ -->
+<div class="page active" id="page-sites">
+<section class="hero"><div class="container"><div class="hero-grid"><div>
+<div class="hero-badge"><span class="hero-pulse"></span> <span data-t="hero_badge">Доступен для проектов</span></div>
+<h1 data-t-html="sites_h1">Создаю сайты,<br>которые <span class="tg">продают</span></h1>
+<p class="hero-text" data-t-html="sites_hp">Вы получаете продающий сайт под ключ: структура, дизайн, код, аналитика. <strong>10 лет опыта. Без посредников.</strong></p>
+<div class="hero-trust glass">
+<div class="ht-item"><i class="fas fa-bolt" style="color:var(--accent2)"></i><div><div class="ht-label" data-t="t_sp">2–5 дней</div><div class="ht-val" data-t="t_spv">срок</div></div></div>
+<div class="ht-item"><i class="fas fa-mobile-alt" style="color:var(--cyan)"></i><div><div class="ht-label" data-t="t_ad">Адаптив</div><div class="ht-val" data-t="t_adv">телефон + ПК</div></div></div>
+<div class="ht-item"><i class="fas fa-wrench" style="color:var(--accent3)"></i><div><div class="ht-label" data-t="t_fix">Правки</div><div class="ht-val" data-t="t_fixv">7 дней бесплатно</div></div></div>
+<div class="ht-item"><i class="fas fa-headset" style="color:var(--green)"></i><div><div class="ht-label" data-t="t_con">Связь</div><div class="ht-val">WA / TG</div></div></div>
+</div>
+<div class="hero-btns"><a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> <span data-t="btn_q">Получить расчёт</span></a><a href="#cases" class="btn btn-ghost" data-t="btn_c">Посмотреть кейсы</a></div>
+</div>
+<div class="hero-panel"><div class="hp-glow"></div><div class="hp-card"><div class="hp-dots"><span style="background:#ef4444"></span><span style="background:#eab308"></span><span style="background:#22c55e"></span></div><div class="hp-code"><div><span class="c">// Результат</span></div><div><span class="k">const</span> <span class="f">site</span> = {</div><div style="padding-left:16px">design: <span class="s">'уникальный'</span>,</div><div style="padding-left:16px">speed: <span class="s">'быстрый'</span>,</div><div style="padding-left:16px">mobile: <span class="s">'адаптивный'</span>,</div><div style="padding-left:16px">leads: <span class="s">'больше заявок'</span>,</div><div>}</div></div><div class="hp-stats"><div class="hp-stat glass"><div class="v">7+</div><div class="l" data-t="st_c">кейсов</div></div><div class="hp-stat glass"><div class="v">10</div><div class="l" data-t="st_y">лет</div></div><div class="hp-stat glass"><div class="v">2–5</div><div class="l" data-t="st_d">дней</div></div></div></div></div>
+</div></div></section>
+
+<div class="ticker"><div class="ticker-track" id="tk1"></div></div>
+
+<section id="about" class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="ab_l">Обо мне</div><h2 class="sec-title" data-t="ab_t">Anuken — один исполнитель, полный цикл</h2><p class="sec-desc" data-t="ab_d">10 лет в разработке сайтов и настройке рекламы. Работаю напрямую — без менеджеров, агентств и переплат. Вы общаетесь с тем, кто делает проект.</p></div><div class="about-grid" data-a><div class="about-card"><div class="av">10</div><div class="al" data-t="ab1">лет опыта</div></div><div class="about-card"><div class="av">7+</div><div class="al" data-t="ab2">проектов</div></div><div class="about-card"><div class="av">7<span style="font-size:14px"> д.</span></div><div class="al" data-t="ab3">бесплатные правки</div></div><div class="about-card"><div class="av" style="font-size:20px">HTML/JS</div><div class="al" data-t="ab4">чистый код</div></div></div></div></section>
+
+<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="sv_l">Услуги</div><h2 class="sec-title" data-t="sv_t">Что я делаю</h2></div><div class="g2" id="sitesSvc"></div></div></section>
+
+<section id="pricing" class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="pr_l">Тарифы</div><h2 class="sec-title" data-t="sp_t">Цены на разработку сайтов</h2></div><div class="g3" id="sitesPr"></div></div></section>
+
+<section id="cases" class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="cs_l">Портфолио</div><h2 class="sec-title" data-t="cs_t">Примеры работ</h2><p class="sec-desc" data-t="cs_d">Живые сайты — откройте и оцените качество.</p></div><div class="g2" id="casesG"></div></div></section>
+
+<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="wf_l">Процесс</div><h2 class="sec-title" data-t="swf_t">Как работаем</h2></div><div class="g2" id="sitesWF"></div></div></section>
+
+<section id="reviews" class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="rv_l">Отзывы</div><h2 class="sec-title" data-t="rv_t">Что говорят клиенты</h2><p class="sec-desc" data-t="rv_d">Нажмите на отзыв — скриншот переписки.</p></div><div class="g2" id="revsG1"></div></div></section>
+
+<section id="faq" class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label">FAQ</div><h2 class="sec-title" data-t="fq_t">Частые вопросы</h2></div><div style="max-width:680px;margin:0 auto" id="sitesFQ"></div></div></section>
 </div>
 
-<!-- HEADER -->
-<header class="header" id="header">
-  <div class="header-inner">
-    <div class="container">
-      <div class="header-row">
-        <a href="#" class="logo">
-          <span class="logo-icon"><i class="fas fa-code"></i></span>
-          ANUKEN
-        </a>
+<!-- ══════ PAGE: ADS ══════ -->
+<div class="page" id="page-ads">
+<section class="hero"><div class="container"><div class="hero-grid"><div>
+<div class="hero-badge"><span class="hero-pulse"></span> <span data-t="hero_badge">Доступен для проектов</span></div>
+<h1 data-t-html="ads_h1">Вывожу бизнес<br>в <span class="tg">топ Google</span></h1>
+<p class="hero-text" data-t-html="ads_hp">Настрою рекламу в Google: топ 1–2, защита от скликивания, аналитика, отчёты. <strong>10 лет опыта.</strong></p>
+<div class="hero-trust glass">
+<div class="ht-item"><i class="fas fa-trophy" style="color:#eab308"></i><div><div class="ht-label">Топ 1–2</div><div class="ht-val">Google</div></div></div>
+<div class="ht-item"><i class="fas fa-shield-alt" style="color:var(--green)"></i><div><div class="ht-label" data-t="at2">Защита</div><div class="ht-val" data-t="at2v">антифрод</div></div></div>
+<div class="ht-item"><i class="fas fa-chart-line" style="color:var(--accent3)"></i><div><div class="ht-label" data-t="at3">Отчёты</div><div class="ht-val" data-t="at3v">еженедельно</div></div></div>
+<div class="ht-item"><i class="fas fa-headset" style="color:var(--cyan)"></i><div><div class="ht-label" data-t="t_con">Связь</div><div class="ht-val">WA / TG</div></div></div>
+</div>
+<div class="hero-btns"><a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20Google%20Ads." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> <span data-t="btn_q">Получить расчёт</span></a><a href="#ads-pricing" class="btn btn-ghost" data-t="btn_tr">Смотреть тарифы</a></div>
+</div>
+<div class="hero-panel"><div class="hp-glow"></div><div class="hp-card"><div class="hp-dots"><span style="background:#ef4444"></span><span style="background:#eab308"></span><span style="background:#22c55e"></span></div><div class="hp-code"><div><span class="c">// Google Ads</span></div><div><span class="k">const</span> <span class="f">campaign</span> = {</div><div style="padding-left:16px">position: <span class="s">'TOP 1–2'</span>,</div><div style="padding-left:16px">protection: <span class="s">'anti-fraud'</span>,</div><div style="padding-left:16px">analytics: <span class="s">'GA4 + goals'</span>,</div><div style="padding-left:16px">budget: <span class="s">'protected'</span>,</div><div>}</div></div><div class="hp-stats"><div class="hp-stat glass"><div class="v">TOP</div><div class="l">позиции</div></div><div class="hp-stat glass"><div class="v">10</div><div class="l" data-t="st_y">лет</div></div><div class="hp-stat glass"><div class="v">24/7</div><div class="l">мониторинг</div></div></div></div></div>
+</div></div></section>
 
-        <nav class="nav-desktop">
-          <a href="#services" data-i18n="nav_services">Услуги</a>
-          <a href="#pricing" data-i18n="nav_pricing">Цены</a>
-          <a href="#cases" data-i18n="nav_cases">Кейсы</a>
-          <a href="#workflow" data-i18n="nav_workflow">Процесс</a>
-          <a href="#protection" data-i18n="nav_protection">Защита</a>
-          <a href="#reviews" data-i18n="nav_reviews">Отзывы</a>
-          <a href="#faq" data-i18n="nav_faq">FAQ</a>
-        </nav>
+<div class="ticker"><div class="ticker-track" id="tk2"></div></div>
 
-        <div class="header-actions">
-          <div class="lang-sw">
-            <button class="lang-toggle active" data-lang="ru">RU</button>
-            <button class="lang-toggle" data-lang="en">EN</button>
-          </div>
-          <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-sm btn-primary header-cta-desktop">
-            Telegram <i class="fab fa-telegram-plane"></i>
-          </a>
-          <button class="menu-toggle" id="menuToggle" aria-label="Меню">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="ab_l">Обо мне</div><h2 class="sec-title" data-t="aab_t">Почему доверяют мне рекламу</h2><p class="sec-desc" data-t="aab_d">10 лет в digital. Настраиваю Google Ads вручную — без шаблонов. Каждая кампания под вашу нишу.</p></div><div class="about-grid" data-a><div class="about-card"><div class="av">10</div><div class="al" data-t="ab1">лет опыта</div></div><div class="about-card"><div class="av" style="font-size:22px">TOP</div><div class="al">позиции 1–2</div></div><div class="about-card"><div class="av" style="font-size:22px"><i class="fas fa-shield-alt"></i></div><div class="al" data-t="aab_p">антифрод</div></div><div class="about-card"><div class="av" style="font-size:22px">GA4</div><div class="al" data-t="aab_a">аналитика</div></div></div></div></section>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="lang-sw" style="margin-bottom:8px">
-    <button class="lang-toggle active" data-lang="ru">RU</button>
-    <button class="lang-toggle" data-lang="en">EN</button>
-  </div>
-  <a href="#services" class="mm-link" data-i18n="nav_services">Услуги</a>
-  <a href="#pricing" class="mm-link" data-i18n="nav_pricing">Цены</a>
-  <a href="#cases" class="mm-link" data-i18n="nav_cases">Кейсы</a>
-  <a href="#workflow" class="mm-link" data-i18n="nav_workflow">Процесс</a>
-  <a href="#protection" class="mm-link" data-i18n="nav_protection">Защита</a>
-  <a href="#reviews" class="mm-link" data-i18n="nav_reviews">Отзывы</a>
-  <a href="#faq" class="mm-link" data-i18n="nav_faq">FAQ</a>
-  <div style="display:flex;gap:12px;margin-top:12px">
-    <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary btn-sm"><i class="fab fa-telegram-plane"></i> Telegram</a>
-  </div>
+<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="sv_l">Услуги</div><h2 class="sec-title" data-t="asv_t">Что входит в настройку</h2></div><div class="g2" id="adsSvc"></div></div></section>
+
+<section id="ads-pricing" class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="pr_l">Тарифы</div><h2 class="sec-title" data-t="ap_t">Цены на Google Ads</h2></div><div class="g2" id="adsPr"></div></div></section>
+
+<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="wf_l">Процесс</div><h2 class="sec-title" data-t="awf_t">Как запускаем рекламу</h2></div><div class="g2" id="adsWF"></div></div></section>
+
+<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label" data-t="rv_l">Отзывы</div><h2 class="sec-title" data-t="rv_t">Что говорят клиенты</h2><p class="sec-desc" data-t="rv_d">Нажмите — скриншот переписки.</p></div><div class="g2" id="revsG2"></div></div></section>
+
+<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:36px" data-a><div class="sec-label">FAQ</div><h2 class="sec-title" data-t="fq_t">Частые вопросы</h2></div><div style="max-width:680px;margin:0 auto" id="adsFQ"></div></div></section>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div data-anim>
-        <div class="badge hero-badge">
-          <span class="pulse"></span>
-          <span data-i18n="hero_badge">Доступен для проектов</span>
-        </div>
+<footer class="footer"><div class="footer-glow"></div><div class="container" style="position:relative;z-index:1"><h2 class="footer-title" data-t="ft_t">Готовы начать?</h2><div class="footer-btns"><a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-telegram-plane"></i> Telegram</a></div><div class="footer-social"><a href="https://www.tiktok.com/@anuken_devepoler" target="_blank"><i class="fab fa-tiktok"></i></a><a href="https://wa.me/77074534518" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="https://t.me/Anukenn" target="_blank"><i class="fab fa-telegram-plane"></i></a></div><div class="footer-bot"><span>&copy; 2015–2026 Anuken Development</span><span data-t="ft_city">Астана, Казахстан</span></div></div></footer>
 
-        <h1 data-i18n-html="hero_title">Сайты и <span class="tg">Google Ads</span><br>под ключ</h1>
+<div class="mob-bar glass"><a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" style="background:var(--green)"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" style="background:var(--accent)"><i class="fab fa-telegram-plane"></i> Telegram</a></div>
 
-        <p class="hero-desc" data-i18n-html="hero_desc">Вы получаете продающий сайт и настроенную рекламу в Google. Вывод в топ, аналитика, защита от скликивания. <strong>Один исполнитель — один результат.</strong></p>
-
-        <div class="hero-trust glass">
-          <div class="trust-item">
-            <i class="fas fa-bolt" style="color:var(--accent2)"></i>
-            <div><div class="t-label" data-i18n="trust_1t">Сроки</div><div class="t-value" data-i18n="trust_1v">2–5 дней</div></div>
-          </div>
-          <div class="trust-item">
-            <i class="fas fa-chart-line" style="color:var(--accent3)"></i>
-            <div><div class="t-label" data-i18n="trust_2t">Аналитика</div><div class="t-value" data-i18n="trust_2v">GA4 / цели</div></div>
-          </div>
-          <div class="trust-item">
-            <i class="fas fa-shield-alt" style="color:var(--cyan)"></i>
-            <div><div class="t-label" data-i18n="trust_3t">Защита</div><div class="t-value" data-i18n="trust_3v">Антискликивание</div></div>
-          </div>
-          <div class="trust-item">
-            <i class="fas fa-headset" style="color:var(--green)"></i>
-            <div><div class="t-label" data-i18n="trust_4t">Связь</div><div class="t-value" data-i18n="trust_4v">WA / Telegram</div></div>
-          </div>
-        </div>
-
-        <div class="hero-btns">
-          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary">
-            <i class="fab fa-whatsapp"></i> <span data-i18n="hero_cta1">Получить расчёт</span>
-          </a>
-          <a href="#cases" class="btn btn-secondary">
-            <span data-i18n="hero_cta2">Посмотреть кейсы</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Desktop panel -->
-      <div class="hero-panel" data-anim data-delay="2">
-        <div class="hero-panel-glow"></div>
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <span style="background:#ef4444"></span>
-            <span style="background:#eab308"></span>
-            <span style="background:#22c55e"></span>
-          </div>
-          <div class="code-block">
-            <div><span class="cm">// Что вы получаете</span></div>
-            <div><span class="kw">const</span> <span class="fn">Result</span> = {</div>
-            <div style="padding-left:20px">site: <span class="str">'fast & converting'</span>,</div>
-            <div style="padding-left:20px">ads: <span class="str">'Google Ads top 1-2'</span>,</div>
-            <div style="padding-left:20px">protection: <span class="str">'anti-fraud clicks'</span>,</div>
-            <div style="padding-left:20px">analytics: <span class="str">'GA4 + conversions'</span>,</div>
-            <div style="padding-left:20px">leads: <span class="str">'more calls & orders'</span>,</div>
-            <div>}</div>
-          </div>
-          <div class="hero-stats">
-            <div class="hero-stat glass"><div class="val">7+</div><div class="lbl" data-i18n="stat_cases">кейсов</div></div>
-            <div class="hero-stat glass"><div class="val">2–5</div><div class="lbl" data-i18n="stat_days">дней</div></div>
-            <div class="hero-stat glass"><div class="val">TOP</div><div class="lbl" data-i18n="stat_top">позиции</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TICKER -->
-<section class="ticker">
-  <div class="ticker-track" id="ticker"></div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="services-section">
-  <div class="container">
-    <div class="services-header" data-anim>
-      <div class="section-label" data-i18n="svc_label">Что вы получите</div>
-      <h2 class="section-title" data-i18n="svc_title">Два направления — один результат</h2>
-      <p class="section-desc" data-i18n="svc_desc">Разработка сайтов и настройка Google Ads. Работаю как единая команда: от структуры до запуска рекламы.</p>
-    </div>
-
-    <div class="services-tabs" data-anim>
-      <button class="svc-tab active" data-tab="sites" data-i18n="tab_sites">Сайты</button>
-      <button class="svc-tab" data-tab="ads" data-i18n="tab_ads">Google Ads</button>
-    </div>
-
-    <div id="panelSites" class="services-panel active">
-      <div class="service-cards">
-        <div class="service-card" data-anim>
-          <div class="sc-icon" style="background:rgba(99,102,241,0.12);color:var(--accent2);border-color:rgba(99,102,241,0.2)">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <h4 data-i18n="site_1t">Landing Page</h4>
-          <p data-i18n="site_1d">Одностраничный сайт с высокой конверсией для продажи услуг или товара.</p>
-          <ul class="sc-features">
-            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="site_1f1">Уникальный дизайн</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="site_1f2">Адаптив под телефон</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="site_1f3">Базовая SEO-структура</span></li>
-          </ul>
-        </div>
-        <div class="service-card featured" data-anim data-delay="1">
-          <div class="sc-badge" data-i18n="badge_reco">РЕКОМЕНДУЮ</div>
-          <div class="sc-icon" style="background:rgba(192,132,252,0.12);color:var(--accent3);border-color:rgba(192,132,252,0.2)">
-            <i class="fas fa-layer-group"></i>
-          </div>
-          <h4 data-i18n="site_2t">Сайт под заявки</h4>
-          <p data-i18n="site_2d">Проработанная структура, тексты, аналитика — чтобы заявки можно было измерять.</p>
-          <ul class="sc-features">
-            <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="site_2f1">Проработка структуры</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="site_2f2">Упаковка оффера</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="site_2f3">30 дней поддержки</span></li>
-          </ul>
-        </div>
-        <div class="service-card" data-anim data-delay="2">
-          <div class="sc-icon" style="background:rgba(34,211,238,0.12);color:var(--cyan);border-color:rgba(34,211,238,0.2)">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h4 data-i18n="site_3t">Техподдержка</h4>
-          <p data-i18n="site_3d">Правки, скорость, адаптив, обновление контента на существующем сайте.</p>
-          <ul class="sc-features">
-            <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="site_3f1">Правка кода</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="site_3f2">Оптимизация загрузки</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="site_3f3">Исправление ошибок</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div id="panelAds" class="services-panel">
-      <div class="service-cards">
-        <div class="service-card" data-anim>
-          <div class="sc-icon" style="background:rgba(239,68,68,0.12);color:#f87171;border-color:rgba(239,68,68,0.2)">
-            <i class="fab fa-google"></i>
-          </div>
-          <h4 data-i18n="ads_1t">Поисковая реклама</h4>
-          <p data-i18n="ads_1d">Настройка кампаний в Google Search — ваше объявление в топ 1–2 по целевым запросам.</p>
-          <ul class="sc-features">
-            <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="ads_1f1">Сбор семантики</span></li>
-            <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="ads_1f2">Минус-слова и фильтрация</span></li>
-            <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="ads_1f3">Вывод в топ 1–2</span></li>
-          </ul>
-        </div>
-        <div class="service-card featured" data-anim data-delay="1">
-          <div class="sc-badge" data-i18n="badge_reco">РЕКОМЕНДУЮ</div>
-          <div class="sc-icon" style="background:rgba(99,102,241,0.12);color:var(--accent2);border-color:rgba(99,102,241,0.2)">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h4 data-i18n="ads_2t">Реклама + Аналитика</h4>
-          <p data-i18n="ads_2d">Полный цикл: реклама, цели, конверсии, оптимизация. Прозрачная отчётность.</p>
-          <ul class="sc-features">
-            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ads_2f1">Настройка конверсий GA4</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ads_2f2">Оптимизация 1 месяц</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ads_2f3">Еженедельные отчёты</span></li>
-          </ul>
-        </div>
-        <div class="service-card" data-anim data-delay="2">
-          <div class="sc-icon" style="background:rgba(34,197,94,0.12);color:var(--green);border-color:rgba(34,197,94,0.2)">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h4 data-i18n="ads_3t">Защита от скликивания</h4>
-          <p data-i18n="ads_3d">Система фильтрации фейковых кликов — ваш бюджет не тратится на ботов и конкурентов.</p>
-          <ul class="sc-features">
-            <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="ads_3f1">Обнаружение ботов</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="ads_3f2">Блокировка IP</span></li>
-            <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="ads_3f3">Мониторинг 24/7</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="pricing-section">
-  <div class="container">
-    <div class="pricing-header" data-anim>
-      <div class="section-label" data-i18n="price_label">Цены</div>
-      <h2 class="section-title" data-i18n="price_title">Прозрачные тарифы</h2>
-      <p class="section-desc" style="margin:12px auto 0" data-i18n="price_desc">Разработка сайтов и Google Ads — два отдельных прайса. Выбирайте то, что нужно.</p>
-    </div>
-
-    <!-- Site Pricing -->
-    <div class="section-label" style="margin-bottom:16px;text-align:center" data-anim data-i18n="price_sites_label">
-      <i class="fas fa-code" style="margin-right:6px"></i> Разработка сайтов
-    </div>
-    <div class="price-cards" style="margin-bottom:48px">
-      <div class="price-card" data-anim>
-        <div class="card-top">
-          <div><div class="price-name">Start</div><div class="price-sub">Landing Page</div></div>
-          <div class="price-amount">20 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 20$</div>
-        </div>
-        <ul class="price-features">
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_1">Дизайн + верстка</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_2">Адаптив под телефон</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_3">Базовая SEO-структура</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_4">Подключение домена</span></li>
-        </ul>
-        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_discuss">Обсудить</a>
-      </div>
-      <div class="price-card popular" data-anim data-delay="1">
-        <div class="pop-badge" data-i18n="badge_best">ЛУЧШИЙ ВЫБОР</div>
-        <div class="card-top">
-          <div><div class="price-name">Business</div><div class="price-sub" data-i18n="ps2_sub">Сайт под заявки</div></div>
-          <div class="price-amount">80 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 160$</div>
-        </div>
-        <ul class="price-features">
-          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_1">Проработка структуры</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_2">Упаковка оффера (тексты)</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_3">Аналитика + цели</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_4">30 дней поддержки</span></li>
-        </ul>
-        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary" style="width:100%" data-i18n="hero_cta1">Получить расчёт</a>
-      </div>
-      <div class="price-card" data-anim data-delay="2">
-        <div class="card-top">
-          <div><div class="price-name">Pro</div><div class="price-sub" data-i18n="ps3_sub">E-commerce / Каталог</div></div>
-          <div class="price-amount">150 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 300$</div>
-        </div>
-        <ul class="price-features">
-          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_1">Корзина / формы</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_2">Каталог товаров</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_3">Оптимизация скорости</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_4">Масштабирование</span></li>
-        </ul>
-        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_tg">Написать в Telegram</a>
-      </div>
-    </div>
-
-    <!-- Ads Pricing -->
-    <div class="section-label" style="margin-bottom:16px;text-align:center" data-anim data-i18n="price_ads_label">
-      <i class="fab fa-google" style="margin-right:6px"></i> Google Ads
-    </div>
-    <div class="price-cards">
-      <div class="price-card" data-anim>
-        <div class="card-top">
-          <div><div class="price-name" data-i18n="pa1_name">Настройка</div><div class="price-sub" data-i18n="pa1_sub">Запуск кампаний</div></div>
-          <div class="price-amount">50 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 100$</div>
-        </div>
-        <ul class="price-features">
-          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_1">Сбор ключевых слов</span></li>
-          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_2">Настройка кампаний</span></li>
-          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_3">Подключение аналитики</span></li>
-          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_4">Вывод в топ 1–2</span></li>
-        </ul>
-        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_discuss">Обсудить</a>
-      </div>
-      <div class="price-card popular" data-anim data-delay="1">
-        <div class="pop-badge" data-i18n="badge_best">ЛУЧШИЙ ВЫБОР</div>
-        <div class="card-top">
-          <div><div class="price-name" data-i18n="pa2_name">Полный цикл</div><div class="price-sub" data-i18n="pa2_sub">Реклама + Ведение</div></div>
-          <div class="price-amount">100 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 200$</div>
-        </div>
-        <ul class="price-features">
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_1">Полная настройка</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_2">Оптимизация 1 месяц</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_3">Защита от скликивания</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_4">Еженедельные отчёты</span></li>
-        </ul>
-        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary" style="width:100%" data-i18n="hero_cta1">Получить расчёт</a>
-      </div>
-      <div class="price-card" data-anim data-delay="2">
-        <div class="card-top">
-          <div><div class="price-name" data-i18n="pa3_name">Ежемесячно</div><div class="price-sub" data-i18n="pa3_sub">Ведение + Отчёты</div></div>
-          <div class="price-amount">40 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 80$<span style="font-size:12px;color:var(--text3)">/мес</span></div>
-        </div>
-        <ul class="price-features">
-          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_1">Ежедневный мониторинг</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_2">Корректировка ставок</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_3">A/B тест объявлений</span></li>
-          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_4">Отчёт по конверсиям</span></li>
-        </ul>
-        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_tg">Написать в Telegram</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CASES -->
-<section id="cases" class="cases-section">
-  <div class="container">
-    <div class="cases-header" data-anim>
-      <div class="section-label" data-i18n="cases_label">Портфолио</div>
-      <h2 class="section-title" data-i18n="cases_title">Примеры работ</h2>
-      <p class="section-desc" style="margin:12px auto 0" data-i18n="cases_desc">Живые сайты — откройте и оцените стиль, скорость и конверсионную структуру.</p>
-    </div>
-    <div class="cases-grid" id="casesGrid"></div>
-  </div>
-</section>
-
-<!-- PROTECTION -->
-<section id="protection" class="protect-section">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px" data-anim>
-      <div class="section-label" data-i18n="prot_label">Защита бюджета</div>
-      <h2 class="section-title" style="font-size:clamp(28px,5vw,44px)" data-i18n="prot_title">Антискликивание и безопасность</h2>
-      <p class="section-desc" style="margin:12px auto 0" data-i18n="prot_desc">Система защиты от фейковых кликов — ваш рекламный бюджет работает только на реальных клиентов.</p>
-    </div>
-    <div class="protect-grid">
-      <div class="protect-card" data-anim>
-        <div class="protect-icon" style="background:rgba(239,68,68,0.12);color:#f87171"><i class="fas fa-robot"></i></div>
-        <h4 data-i18n="prot_1t">Обнаружение ботов</h4>
-        <p data-i18n="prot_1d">Автоматическая фильтрация трафика от ботов и скриптов, которые имитируют клики по вашей рекламе.</p>
-      </div>
-      <div class="protect-card" data-anim data-delay="1">
-        <div class="protect-icon" style="background:rgba(99,102,241,0.12);color:var(--accent2)"><i class="fas fa-ban"></i></div>
-        <h4 data-i18n="prot_2t">Блокировка IP конкурентов</h4>
-        <p data-i18n="prot_2d">Выявление и блокировка подозрительных IP-адресов, с которых идут множественные клики.</p>
-      </div>
-      <div class="protect-card" data-anim data-delay="2">
-        <div class="protect-icon" style="background:rgba(34,211,238,0.12);color:var(--cyan)"><i class="fas fa-eye"></i></div>
-        <h4 data-i18n="prot_3t">Мониторинг 24/7</h4>
-        <p data-i18n="prot_3d">Круглосуточное отслеживание аномального поведения и автоматическое обновление чёрных списков.</p>
-      </div>
-      <div class="protect-card" data-anim data-delay="3">
-        <div class="protect-icon" style="background:rgba(34,197,94,0.12);color:var(--green)"><i class="fas fa-chart-bar"></i></div>
-        <h4 data-i18n="prot_4t">Прозрачные отчёты</h4>
-        <p data-i18n="prot_4d">Подробная статистика: сколько кликов заблокировано, экономия бюджета и качество трафика.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WORKFLOW -->
-<section id="workflow" class="workflow-section">
-  <div class="container">
-    <div class="workflow-header" data-anim>
-      <div class="section-label" data-i18n="wf_label">Процесс</div>
-      <h2 class="section-title" style="font-size:clamp(28px,5vw,44px)" data-i18n="wf_title">Как вы получите результат</h2>
-    </div>
-    <div class="workflow-grid">
-      <div class="wf-card" data-anim>
-        <div class="wf-num">01</div>
-        <div class="wf-icon" style="background:rgba(99,102,241,0.15);color:var(--accent2)"><i class="fas fa-search"></i></div>
-        <h4 data-i18n="wf_1t">Анализ</h4>
-        <p data-i18n="wf_1d">Вы отвечаете на пару вопросов — я собираю структуру, которая ведёт к заявке.</p>
-      </div>
-      <div class="wf-card" data-anim data-delay="1">
-        <div class="wf-num">02</div>
-        <div class="wf-icon" style="background:rgba(192,132,252,0.15);color:var(--accent3)"><i class="fas fa-pencil-ruler"></i></div>
-        <h4 data-i18n="wf_2t">Дизайн</h4>
-        <p data-i18n="wf_2d">Вы утверждаете внешний вид — только после этого начинается разработка.</p>
-      </div>
-      <div class="wf-card" data-anim data-delay="2">
-        <div class="wf-num">03</div>
-        <div class="wf-icon" style="background:rgba(34,211,238,0.15);color:var(--cyan)"><i class="fas fa-code"></i></div>
-        <h4 data-i18n="wf_3t">Разработка + Реклама</h4>
-        <p data-i18n="wf_3d">Сайт на чистом коде + настройка Google Ads, аналитика и защита от скликивания.</p>
-      </div>
-      <div class="wf-card" data-anim data-delay="3">
-        <div class="wf-num">04</div>
-        <div class="wf-icon" style="background:rgba(34,197,94,0.15);color:var(--green)"><i class="fas fa-rocket"></i></div>
-        <h4 data-i18n="wf_4t">Запуск</h4>
-        <p data-i18n="wf_4d">Сайт публикуется, реклама запускается. Вы получаете заявки и отчёты.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="reviews" class="testimonials-section">
-  <div class="container">
-    <div class="testimonials-header" data-anim>
-      <div class="section-label" data-i18n="rev_label">Отзывы</div>
-      <h2 class="section-title" data-i18n="rev_title">Что говорят клиенты</h2>
-      <p class="section-desc" style="margin:12px auto 0" data-i18n="rev_desc">Реальные отзывы — нажмите, чтобы увидеть скриншот переписки.</p>
-    </div>
-    <div class="test-grid" id="reviewsGrid"></div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="faq-section">
-  <div class="container">
-    <div class="faq-header" data-anim>
-      <div class="section-label">FAQ</div>
-      <h2 class="section-title" data-i18n="faq_title">Частые вопросы</h2>
-    </div>
-    <div class="faq-list" id="faqList"></div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-glow"></div>
-  <div class="container">
-    <div class="footer-inner">
-      <h2 class="footer-title" data-i18n="footer_title">Готовы получить сайт и заявки?</h2>
-      <div class="footer-btns">
-        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green">
-          <i class="fab fa-whatsapp"></i> <span data-i18n="footer_wa">Написать в WhatsApp</span>
-        </a>
-        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary">
-          <i class="fab fa-telegram-plane"></i> <span data-i18n="footer_tg">Написать в Telegram</span>
-        </a>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.tiktok.com/@anuken_devepoler" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/77074534518" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://t.me/Anukenn" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2015–2026 Anuken Development</span>
-      <span data-i18n="footer_city">Астана, Казахстан</span>
-    </div>
-  </div>
-</footer>
-
-<!-- MOBILE FIXED BAR -->
-<div class="mobile-bar glass">
-  <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="mb-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="mb-tg"><i class="fab fa-telegram-plane"></i> Telegram</a>
-</div>
-
-<!-- SCREENSHOT MODAL -->
-<div class="screenshot-overlay" id="screenshotModal">
-  <button class="screenshot-close" id="screenshotClose"><i class="fas fa-times"></i></button>
-  <img id="screenshotImg" src="" alt="Скриншот переписки">
-</div>
-
-<!-- CASE MODAL -->
-<div class="case-modal" id="caseModal">
-  <div class="case-modal-bg" id="caseModalBg"></div>
-  <div class="case-modal-content">
-    <div class="cm-header">
-      <div class="cm-title" id="cmTitle">—</div>
-      <button id="cmClose" style="color:#fff;font-size:18px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid var(--border)"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="cm-body">
-      <div class="cm-left">
-        <img id="cmImage" src="" alt="">
-        <div class="cm-left-bar">
-          <div style="font-weight:700;color:var(--white);font-size:14px"><span style="font-size:11px;color:var(--text3);font-family:var(--font-tech);margin-right:6px" data-i18n="cm_price">Стоимость:</span><span id="cmPrice">—</span></div>
-          <div id="cmLiveLinks" style="display:flex;gap:6px;flex-wrap:wrap"></div>
-        </div>
-      </div>
-      <div class="cm-right">
-        <div class="cm-info-grid">
-          <div class="cm-info-box"><div class="label" data-i18n="cm_task">Задача</div><div class="val" id="cmProblem">—</div></div>
-          <div class="cm-info-box"><div class="label" data-i18n="cm_solution">Решение</div><div class="val" id="cmSolution">—</div></div>
-        </div>
-        <div class="cm-features"><div class="label" data-i18n="cm_done">Что сделано</div><ul id="cmFeatures"></ul></div>
-        <div id="cmTags" class="cm-tags"></div>
-        <div class="cm-actions">
-          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green btn-sm" style="width:100%"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary btn-sm" style="width:100%"><i class="fab fa-telegram-plane"></i> Telegram</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="overlay" id="ssO"><button class="overlay-close" id="ssC"><i class="fas fa-times"></i></button><img id="ssI" src="" alt="Screenshot"></div>
 
 <script>
-/* ============================
-   DATA
-   ============================ */
-const PROJECTS = [
-  {id:"avia-drones",title:"Avia-Drones",url:"https://avia-drones.vercel.app/",image:"images/avia-drones.jpg",type:"Landing",color:"#6366f1",price:120000,tags:["Interactive","Catalog","WhatsApp","Animation"],
-    ru:{short:"Технологичный лендинг дронов: интерактив, модалки, анимации, WhatsApp.",problem:"Нужен продающий сайт с эффектным интерфейсом.",solution:"Интерактивный интерфейс + понятная структура и быстрые CTA.",features:["Интерактивные карточки и модальные окна","Продуманная структура и блоки доверия","CTA: WhatsApp/Telegram/формы","Адаптив и оптимизация загрузки"]},
-    en:{short:"Tech drone landing: interactivity, modals, animations, WhatsApp.",problem:"A sales-focused site with strong interface was required.",solution:"Interactive experience, clean structure, fast CTA paths.",features:["Interactive cards and spec modals","Clear structure and trust blocks","CTAs: WhatsApp/Telegram/forms","Responsive layout and performance"]}},
-  {id:"kassenova-store",title:"Kassenova Store",url:"https://kassenova-market.vercel.app/",image:"images/kassenova.jpg",type:"E-commerce",color:"#7c3aed",price:250000,tags:["Cart","Calculator","WhatsApp","JS Logic"],
-    ru:{short:"Интернет-магазин: корзина, расчёт, отправка заказа в WhatsApp.",problem:"Нужен магазин с удобным оформлением заказа.",solution:"Корзина, расчёты, каталог и отправка заказа в мессенджер.",features:["Корзина и управление количеством/суммой","Калькулятор и логика заказа","Отправка заказа в WhatsApp","Оптимизация скорости и UX каталога"]},
-    en:{short:"Electronics store: cart, checkout logic, WhatsApp order.",problem:"Store with convenient checkout for different scenarios.",solution:"Cart, calculations, smooth catalog, messenger submission.",features:["Cart with quantity/total controls","Calculator and order logic","WhatsApp order submission","Performance and catalog UX"]}},
-  {id:"manipulator",title:"Аренда Манипулятора",url:"https://manipulator-evakuator.vercel.app/",image:"images/manipulator.jpg",type:"Landing",color:"#6366f1",price:90000,tags:["Responsive","Speed","CTA","Service"],
-    ru:{short:"Конверсионный сайт услуг: быстрые кнопки связи, блоки доверия.",problem:"Нужен сайт, который приводит звонки и заявки с телефона.",solution:"Конверсионная структура и быстрый путь к связи.",features:["Сильный оффер и конверсионные блоки","Кнопки звонка/WhatsApp/Telegram","Адаптив под телефон","Оптимизация скорости загрузки"]},
-    en:{short:"Conversion-focused service landing: fast CTAs, trust blocks.",problem:"A site that drives calls and leads from mobile traffic.",solution:"Conversion structure with shortest path to contact.",features:["Strong offer and conversion blocks","Call/WhatsApp/Telegram CTAs","Mobile-first layout","Page speed optimization"]}},
-  {id:"elegance",title:"Салон ELEGANCE",url:"https://elegance-almaty.vercel.app/",image:"images/elegance.jpg",type:"Landing",color:"#a855f7",price:70000,tags:["Design","Animation","Price List","Booking"],
-    ru:{short:"Премиальный лендинг: прайс, анимации, тёмная эстетика, запись.",problem:"Нужен стильный сайт для премиум-позиционирования.",solution:"Строгий дизайн, понятный прайс и быстрая запись.",features:["Блоки: услуги/прайс/контакты","Анимации и премиальная подача","CTA на запись","Адаптив и оптимизация"]},
-    en:{short:"Premium landing: pricing, animations, dark aesthetics, booking.",problem:"Stylish site aligned with premium positioning.",solution:"Clean layout, clear pricing, fast booking path.",features:["Services/pricing/contacts sections","Subtle animations and premium style","Booking CTAs","Responsive and optimized"]}},
-  {id:"maverick",title:"Maverick Barbershop",url:"https://maver1ck.vercel.app/",image:"images/maverick.jpg",type:"Landing",color:"#6366f1",price:85000,tags:["Video BG","Booking","Team","Branding"],
-    ru:{short:"Сайт с видео-фоном, блоком мастеров, CTA и записью.",problem:"Нужен сайт, подчёркивающий стиль и приводящий записи.",solution:"Выразительная подача, видеоряд, простой путь к записи.",features:["Видео-фон и hero-блок","Раздел мастеров/услуг","CTA и запись","Адаптив и оптимизация"]},
-    en:{short:"Website with video hero, team section, CTAs, booking.",problem:"A site that highlights style and drives bookings.",solution:"Strong visual hero, video layer, simple booking flow.",features:["Video background and hero block","Team/services sections","Booking CTAs","Responsive and optimized"]}},
-  {id:"astanajas",title:"ASTANA JAS Academy",url:"https://astanajas-kz.vercel.app/",urls:[{ru:"Вариант 1",en:"Version 1",url:"https://astanajas-kz.vercel.app/"},{ru:"Вариант 2",en:"Version 2",url:"https://astanajas.vercel.app/"}],image:"images/astanajas.jpg",type:"Multi-page",color:"#22d3ee",price:200000,tags:["Multi-page","AOS","Tailwind","UX"],
-    ru:{short:"Сайт футбольной академии: программы, секции, контакты.",problem:"Нужен современный сайт академии с понятной структурой.",solution:"Многостраничная структура, акцент на доверие и связь.",features:["Многостраничная структура и навигация","Блоки программ и преимуществ","Адаптив и оптимизация","Две версии дизайна"]},
-    en:{short:"Football academy: programs, sections, contacts, navigation.",problem:"Modern academy website with clear structure.",solution:"Multi-page structure, trust focus, easy communication.",features:["Multi-page structure with navigation","Programs/benefits/FAQ sections","Responsive and optimized","Two design variants"]}},
-  {id:"nextgen-academy",title:"NextGen Academy",url:"https://nextgen-academy-flame.vercel.app/",image:"images/nextgen-academy.jpg",type:"Landing",color:"#6366f1",price:60000,tags:["Education","CTA","Form","Responsive"],
-    ru:{short:"Лендинг 3-дневного интенсива: оффер, секции, регистрация.",problem:"Нужен лендинг для регистрации на интенсив.",solution:"Конверсионная структура с CTA и формой регистрации.",features:["Конверсионный hero-блок","Секции: кому подходит, программа","Форма регистрации","Адаптив и подача контента"]},
-    en:{short:"Landing for 3-day intensive: offer, sections, registration.",problem:"Registration-focused landing page.",solution:"Conversion structure with CTAs and registration form.",features:["Conversion hero block","Sections: audience, program, details","Registration form and lead capture","Responsive layout"]}}
+const P=[
+{id:"avia",title:"Avia-Drones",url:"https://avia-drones.vercel.app/",img:"images/avia-drones.jpg",type:"Landing",clr:"#6366f1",ru:"Технологичный лендинг дронов: интерактив, модалки, WhatsApp.",en:"Tech drone landing: interactivity, modals, WhatsApp."},
+{id:"kass",title:"Kassenova Store",url:"https://kassenova-market.vercel.app/",img:"images/kassenova.jpg",type:"E-commerce",clr:"#7c3aed",ru:"Магазин: корзина, расчёт, отправка заказа в WhatsApp.",en:"Store: cart, checkout, WhatsApp order."},
+{id:"manip",title:"Аренда Манипулятора",url:"https://manipulator-evakuator.vercel.app/",img:"images/manipulator.jpg",type:"Landing",clr:"#6366f1",ru:"Конверсионный сайт услуг с быстрыми CTA.",en:"Conversion service landing with fast CTAs."},
+{id:"eleg",title:"Салон ELEGANCE",url:"https://elegance-almaty.vercel.app/",img:"images/elegance.jpg",type:"Landing",clr:"#a855f7",ru:"Премиальный лендинг: прайс, анимации, запись.",en:"Premium landing: pricing, animations, booking."},
+{id:"mav",title:"Maverick Barbershop",url:"https://maver1ck.vercel.app/",img:"images/maverick.jpg",type:"Landing",clr:"#6366f1",ru:"Видео-фон, мастера, CTA и запись.",en:"Video hero, team section, booking."},
+{id:"jas",title:"ASTANA JAS Academy",url:"https://astanajas-kz.vercel.app/",img:"images/astanajas.jpg",type:"Multi-page",clr:"#22d3ee",ru:"Академия: программы, секции, навигация.",en:"Academy: programs, sections, navigation."},
+{id:"next",title:"NextGen Academy",url:"https://nextgen-academy-flame.vercel.app/",img:"images/nextgen-academy.jpg",type:"Landing",clr:"#6366f1",ru:"Лендинг интенсива: оффер, регистрация.",en:"Intensive landing: offer, registration."}
+];
+const R=[
+{av:"Е",ss:"images/review-erzhan.jpg",c:["var(--accent2)","var(--accent3)"],ru:{n:"Ержан",r:"Манипулятор / Алматы",t:"Сделали быстро и аккуратно. Сайт дороже, чем ожидали. Заявки в первую неделю."},en:{n:"Erzhan",r:"Crane / Almaty",t:"Delivered fast and neat. Leads came in the first week."}},
+{av:"С",ss:"images/review-saltanat.jpg",c:["var(--accent3)","var(--cyan)"],ru:{n:"Салтанат",r:"Дроны / Астана",t:"Подсказали по структуре — стало понятно, за что платим. Реклама работает."},en:{n:"Saltanat",r:"Drones / Astana",t:"Helped with structure — clear what we pay for. Ads work great."}},
+{av:"А",ss:"images/review-anya.jpg",c:["var(--cyan)","var(--green)"],ru:{n:"Аня",r:"Магазин / Жезказган",t:"Всё под ключ: сайт, аналитика, защита — написали и получили результат."},en:{n:"Anya",r:"E-commerce / Zhezkazgan",t:"Everything turnkey: site, analytics, protection — just messaged and got results."}},
+{av:"Д",ss:"images/review-dauren.jpg",c:["var(--green)","#f87171"],ru:{n:"Даурен",r:"Автосервис / Астана",t:"Ads настроили за 2 дня. 47 заявок за первый месяц. Защита реально работает."},en:{n:"Dauren",r:"Auto service / Astana",t:"Ads set up in 2 days. 47 leads in first month. Protection really works."}},
+{av:"М",ss:"images/review-madina.jpg",c:["#f87171","#eab308"],ru:{n:"Мадина",r:"Салон / Алматы",t:"Стильный и быстрый сайт. Записи удвоились после запуска рекламы."},en:{n:"Madina",r:"Beauty salon / Almaty",t:"Stylish fast site. Bookings doubled after launching ads."}},
+{av:"К",ss:"images/review-kanat.jpg",c:["#eab308","var(--accent2)"],ru:{n:"Канат",r:"Стройматериалы / Караганда",t:"Магазин с корзиной за 4 дня. Удобно и нам, и клиентам."},en:{n:"Kanat",r:"Building materials / Karaganda",t:"Store with cart in 4 days. Convenient for everyone."}}
+];
+const SP=[
+{name:"Start",sub:"Landing Page",price:"20 000 ₸ / 20$",ex:"https://nextgen-academy-flame.vercel.app/",wa:"Здравствуйте! Интересует Landing Page (Start, от 20 000 ₸). Когда обсудим?",feat:["sp1a","sp1b","sp1c","sp1d"],clr:"var(--accent2)"},
+{name:"Business",subK:"sp2s",price:"80 000 ₸ / 160$",pop:1,ex:"https://manipulator-evakuator.vercel.app/",wa:"Здравствуйте! Интересует сайт под заявки (Business, от 80 000 ₸). Когда обсудим?",feat:["sp2a","sp2b","sp2c","sp2d"],clr:"var(--accent3)"},
+{name:"Pro",sub:"E-commerce",price:"150 000 ₸ / 300$",ex:"https://kassenova-market.vercel.app/",wa:"Здравствуйте! Интересует интернет-магазин (Pro, от 150 000 ₸). Когда обсудим?",feat:["sp3a","sp3b","sp3c","sp3d"],clr:"var(--cyan)"}
+];
+const AP=[
+{nameK:"ap1n",subK:"ap1s",price:"40 000 ₸ / 80$",ex:"images/ads-screenshot-1.jpg",isSS:1,wa:"Здравствуйте! Интересует настройка Google Ads и вывод в топ (40 000 ₸). Когда обсудим?",feat:["ap1a","ap1b","ap1c","ap1d"],clr:"#f87171"},
+{nameK:"ap2n",subK:"ap2s",price:"40 000 ₸ / 80$",pop:1,ex:"images/ads-screenshot-2.jpg",isSS:1,noteK:"ap2note",wa:"Здравствуйте! Интересует защита от скликивания (40 000 ₸). Когда обсудим?",feat:["ap2a","ap2b","ap2c","ap2d"],clr:"var(--green)"}
+];
+const SFQ=[
+{rq:"Сколько времени занимает разработка?",ra:"Landing — 1–2 дня. Многостраничные — 2–5 дней.",eq:"How long does it take?",ea:"Landing — 1–2 days. Multi-page — 2–5 days."},
+{rq:"Есть ежемесячная оплата?",ra:"Нет. Разработка — разовая. Далее только хостинг (недорого).",eq:"Monthly fees?",ea:"No. Development is one-time. Only hosting after."},
+{rq:"Можно менять контент потом?",ra:"Да. 7 дней бесплатных правок. Далее по договорённости.",eq:"Can I change content later?",ea:"Yes. 7 days free edits. Then by agreement."},
+{rq:"Что нужно чтобы начать?",ra:"Напишите в WA/TG. Пару вопросов — и я пришлю структуру.",eq:"What to start?",ea:"Message me. A few questions and I'll send a structure."}
+];
+const AFQ=[
+{rq:"Сколько стоит рекламный бюджет?",ra:"Бюджет платится Google отдельно. Мои 40 000 — настройка и вывод в топ.",eq:"How much is the ad budget?",ea:"Budget is paid to Google separately. My 40k covers setup."},
+{rq:"Как работает защита от скликивания?",ra:"Система блокирует IP ботов/конкурентов. Одно подключение — минимум полгода.",eq:"How does anti-fraud work?",ea:"System blocks bot/competitor IPs. One setup — 6+ months."},
+{rq:"Можно только рекламу без сайта?",ra:"Да. Если есть сайт — настрою рекламу и защиту отдельно.",eq:"Only ads without a site?",ea:"Yes. If you have a site, I'll set up ads separately."},
+{rq:"Через сколько будут заявки?",ra:"Обычно первые заявки — 1–3 дня после запуска.",eq:"When will leads come?",ea:"Usually 1–3 days after launch."}
 ];
 
-const REVIEWS = [
-  {id:"r1",avatar:"Е",screenshot:"images/review-erzhan.jpg",
-    ru:{name:"Клиент Ержан",role:"Услуги манипулятора / Алматы",text:"Сделали быстро и очень аккуратно. Сайт выглядит дороже, чем ожидали. Заявки пошли в первую же неделю."},
-    en:{name:"Client Erzhan",role:"Crane service / Almaty",text:"Delivered fast and very neatly. The website looks more premium than expected. Leads came in the first week."}},
-  {id:"r2",avatar:"С",screenshot:"images/review-saltanat.jpg",
-    ru:{name:"Клиент Салтанат",role:"Дроны / Астана",text:"Подсказали по структуре и офферу — стало понятно, за что платим и что получаем. Реклама работает отлично."},
-    en:{name:"Client Saltanat",role:"Drones / Astana",text:"Helped with structure and offer — it became clear what we're paying for. Ads work great."}},
-  {id:"r3",avatar:"А",screenshot:"images/review-anya.jpg",
-    ru:{name:"Клиент Аня",role:"Интернет-магазин / Жезказган",text:"Всё под ключ: сайт, аналитика, защита от скликивания — просто написали и получили результат."},
-    en:{name:"Client Anya",role:"E-commerce / Zhezkazgan",text:"Everything turnkey: website, analytics, click fraud protection — we just messaged and got the result."}},
-  {id:"r4",avatar:"Д",screenshot:"images/review-dauren.jpg",
-    ru:{name:"Клиент Даурен",role:"Автосервис / Астана",text:"Google Ads настроили за 2 дня, в первый месяц получили 47 заявок. Защита от ботов реально работает."},
-    en:{name:"Client Dauren",role:"Auto service / Astana",text:"Google Ads set up in 2 days, got 47 leads in the first month. Bot protection really works."}},
-  {id:"r5",avatar:"М",screenshot:"images/review-madina.jpg",
-    ru:{name:"Клиент Мадина",role:"Салон красоты / Алматы",text:"Сайт получился стильный и быстрый. Записи увеличились вдвое после запуска рекламы."},
-    en:{name:"Client Madina",role:"Beauty salon / Almaty",text:"The site turned out stylish and fast. Bookings doubled after launching ads."}},
-  {id:"r6",avatar:"К",screenshot:"images/review-kanat.jpg",
-    ru:{name:"Клиент Канат",role:"Стройматериалы / Караганда",text:"Нужен был магазин с корзиной — сделали за 4 дня. Удобно и для нас, и для клиентов."},
-    en:{name:"Client Kanat",role:"Building materials / Karaganda",text:"Needed a store with cart — built in 4 days. Convenient for us and our clients."}}
-];
-
-const FAQS = [
-  {ru:{q:"Сколько времени занимает разработка?",a:"Landing Page — 1–2 дня. Многостраничные проекты — 2–5 дней. Настройка Google Ads — 1–3 дня. Перед стартом вы получаете точные сроки."},
-   en:{q:"How long does development take?",a:"Landing page — 1–2 days. Multi-page — 2–5 days. Google Ads setup — 1–3 days. You get exact timelines before start."}},
-  {ru:{q:"Есть ли ежемесячная оплата?",a:"Разработка сайта — разовая оплата. Ведение рекламы — ежемесячно. Хостинг/домен оплачиваются отдельно (обычно недорого)."},
-   en:{q:"Is there a monthly fee?",a:"Site development is a one-time payment. Ad management is monthly. Hosting/domain are separate (usually inexpensive)."}},
-  {ru:{q:"Что входит в защиту от скликивания?",a:"Система отслеживает подозрительные клики, блокирует IP-адреса ботов и конкурентов, ведёт мониторинг 24/7 и предоставляет отчёты."},
-   en:{q:"What's included in click fraud protection?",a:"The system tracks suspicious clicks, blocks bot/competitor IPs, runs 24/7 monitoring, and provides reports."}},
-  {ru:{q:"Можно заказать только рекламу без сайта?",a:"Да. Если у вас уже есть сайт — настрою Google Ads, подключу аналитику и защиту от скликивания отдельно."},
-   en:{q:"Can I order only ads without a site?",a:"Yes. If you already have a site, I'll set up Google Ads, analytics, and click fraud protection separately."}},
-  {ru:{q:"Что нужно, чтобы начать?",a:"Напишите в WhatsApp или Telegram. Ответите на несколько вопросов — получите структуру и план работ."},
-   en:{q:"What do you need to start?",a:"Message me on WhatsApp or Telegram. Answer a few questions — get a structure and work plan."}}
-];
-
-/* I18N */
-const I18N={
-  ru:{nav_services:"Услуги",nav_pricing:"Цены",nav_cases:"Кейсы",nav_workflow:"Процесс",nav_protection:"Защита",nav_reviews:"Отзывы",nav_faq:"FAQ",
-    hero_badge:"Доступен для проектов",hero_title:'Сайты и <span class="tg">Google Ads</span><br>под ключ',hero_desc:'Вы получаете продающий сайт и настроенную рекламу в Google. Вывод в топ, аналитика, защита от скликивания. <strong>Один исполнитель — один результат.</strong>',
-    trust_1t:"Сроки",trust_1v:"2–5 дней",trust_2t:"Аналитика",trust_2v:"GA4 / цели",trust_3t:"Защита",trust_3v:"Антискликивание",trust_4t:"Связь",trust_4v:"WA / Telegram",
-    hero_cta1:"Получить расчёт",hero_cta2:"Посмотреть кейсы",stat_cases:"кейсов",stat_days:"дней",stat_top:"позиции",
-    svc_label:"Что вы получите",svc_title:"Два направления — один результат",svc_desc:"Разработка сайтов и настройка Google Ads. Работаю как единая команда: от структуры до запуска рекламы.",
-    tab_sites:"Сайты",tab_ads:"Google Ads",
-    site_1t:"Landing Page",site_1d:"Одностраничный сайт с высокой конверсией для продажи услуг или товара.",site_1f1:"Уникальный дизайн",site_1f2:"Адаптив под телефон",site_1f3:"Базовая SEO-структура",
-    badge_reco:"РЕКОМЕНДУЮ",site_2t:"Сайт под заявки",site_2d:"Проработанная структура, тексты, аналитика — чтобы заявки можно было измерять.",site_2f1:"Проработка структуры",site_2f2:"Упаковка оффера",site_2f3:"30 дней поддержки",
-    site_3t:"Техподдержка",site_3d:"Правки, скорость, адаптив, обновление контента на существующем сайте.",site_3f1:"Правка кода",site_3f2:"Оптимизация загрузки",site_3f3:"Исправление ошибок",
-    ads_1t:"Поисковая реклама",ads_1d:"Настройка кампаний в Google Search — ваше объявление в топ 1–2 по целевым запросам.",ads_1f1:"Сбор семантики",ads_1f2:"Минус-слова и фильтрация",ads_1f3:"Вывод в топ 1–2",
-    ads_2t:"Реклама + Аналитика",ads_2d:"Полный цикл: реклама, цели, конверсии, оптимизация. Прозрачная отчётность.",ads_2f1:"Настройка конверсий GA4",ads_2f2:"Оптимизация 1 месяц",ads_2f3:"Еженедельные отчёты",
-    ads_3t:"Защита от скликивания",ads_3d:"Система фильтрации фейковых кликов — бюджет не тратится на ботов.",ads_3f1:"Обнаружение ботов",ads_3f2:"Блокировка IP",ads_3f3:"Мониторинг 24/7",
-    price_label:"Цены",price_title:"Прозрачные тарифы",price_desc:"Разработка сайтов и Google Ads — два отдельных прайса.",
-    price_sites_label:'<i class="fas fa-code" style="margin-right:6px"></i> Разработка сайтов',price_ads_label:'<i class="fab fa-google" style="margin-right:6px"></i> Google Ads',
-    p_from:"от",ps1_1:"Дизайн + верстка",ps1_2:"Адаптив под телефон",ps1_3:"Базовая SEO-структура",ps1_4:"Подключение домена",badge_best:"ЛУЧШИЙ ВЫБОР",ps2_sub:"Сайт под заявки",ps2_1:"Проработка структуры",ps2_2:"Упаковка оффера (тексты)",ps2_3:"Аналитика + цели",ps2_4:"30 дней поддержки",ps3_sub:"E-commerce / Каталог",ps3_1:"Корзина / формы",ps3_2:"Каталог товаров",ps3_3:"Оптимизация скорости",ps3_4:"Масштабирование",
-    pa1_name:"Настройка",pa1_sub:"Запуск кампаний",pa1_1:"Сбор ключевых слов",pa1_2:"Настройка кампаний",pa1_3:"Подключение аналитики",pa1_4:"Вывод в топ 1–2",
-    pa2_name:"Полный цикл",pa2_sub:"Реклама + Ведение",pa2_1:"Полная настройка",pa2_2:"Оптимизация 1 месяц",pa2_3:"Защита от скликивания",pa2_4:"Еженедельные отчёты",
-    pa3_name:"Ежемесячно",pa3_sub:"Ведение + Отчёты",pa3_1:"Ежедневный мониторинг",pa3_2:"Корректировка ставок",pa3_3:"A/B тест объявлений",pa3_4:"Отчёт по конверсиям",
-    btn_discuss:"Обсудить",btn_tg:"Написать в Telegram",
-    cases_label:"Портфолио",cases_title:"Примеры работ",cases_desc:"Живые сайты — откройте и оцените стиль, скорость и конверсионную структуру.",
-    prot_label:"Защита бюджета",prot_title:"Антискликивание и безопасность",prot_desc:"Система защиты от фейковых кликов — бюджет работает только на реальных клиентов.",
-    prot_1t:"Обнаружение ботов",prot_1d:"Автоматическая фильтрация трафика от ботов и скриптов.",prot_2t:"Блокировка IP конкурентов",prot_2d:"Выявление и блокировка подозрительных IP-адресов.",prot_3t:"Мониторинг 24/7",prot_3d:"Круглосуточное отслеживание аномального поведения.",prot_4t:"Прозрачные отчёты",prot_4d:"Статистика: заблокировано кликов, экономия бюджета, качество трафика.",
-    wf_label:"Процесс",wf_title:"Как вы получите результат",wf_1t:"Анализ",wf_1d:"Вы отвечаете на пару вопросов — я собираю структуру под заявки.",wf_2t:"Дизайн",wf_2d:"Вы утверждаете вид — только после этого начинается разработка.",wf_3t:"Разработка + Реклама",wf_3d:"Сайт на чистом коде + Google Ads, аналитика и защита.",wf_4t:"Запуск",wf_4d:"Сайт публикуется, реклама запускается. Заявки и отчёты.",
-    rev_label:"Отзывы",rev_title:"Что говорят клиенты",rev_desc:"Реальные отзывы — нажмите, чтобы увидеть скриншот переписки.",
-    faq_title:"Частые вопросы",footer_title:"Готовы получить сайт и заявки?",footer_wa:"Написать в WhatsApp",footer_tg:"Написать в Telegram",footer_city:"Астана, Казахстан",
-    cm_price:"Стоимость:",cm_task:"Задача",cm_solution:"Решение",cm_done:"Что сделано",btn_live:"Открыть",btn_details:"Подробнее",click_screenshot:"Нажмите, чтобы увидеть скриншот"
-  },
-  en:{nav_services:"Services",nav_pricing:"Pricing",nav_cases:"Cases",nav_workflow:"Process",nav_protection:"Protection",nav_reviews:"Reviews",nav_faq:"FAQ",
-    hero_badge:"Available for projects",hero_title:'Websites & <span class="tg">Google Ads</span><br>turnkey',hero_desc:'You get a converting website and configured Google advertising. Top ranking, analytics, click fraud protection. <strong>One specialist — one result.</strong>',
-    trust_1t:"Timeline",trust_1v:"2–5 days",trust_2t:"Analytics",trust_2v:"GA4 / goals",trust_3t:"Protection",trust_3v:"Anti-fraud",trust_4t:"Contact",trust_4v:"WA / Telegram",
-    hero_cta1:"Get a quote",hero_cta2:"View cases",stat_cases:"cases",stat_days:"days",stat_top:"ranking",
-    svc_label:"What you get",svc_title:"Two services — one result",svc_desc:"Website development and Google Ads setup. I work as a complete team: from structure to ad launch.",
-    tab_sites:"Websites",tab_ads:"Google Ads",
-    site_1t:"Landing Page",site_1d:"Single-page high-converting website for selling services or products.",site_1f1:"Custom design",site_1f2:"Mobile responsive",site_1f3:"Basic SEO structure",
-    badge_reco:"RECOMMENDED",site_2t:"Lead-gen website",site_2d:"Planned structure, copy, analytics — so leads are measurable.",site_2f1:"Structure planning",site_2f2:"Offer packaging",site_2f3:"30 days support",
-    site_3t:"Support",site_3d:"Fixes, speed, responsiveness, content updates for existing site.",site_3f1:"Code edits",site_3f2:"Load optimization",site_3f3:"Bug fixes",
-    ads_1t:"Search Ads",ads_1d:"Google Search campaigns — your ad in top 1–2 for target queries.",ads_1f1:"Keyword research",ads_1f2:"Negative keywords & filtering",ads_1f3:"Top 1–2 ranking",
-    ads_2t:"Ads + Analytics",ads_2d:"Full cycle: ads, goals, conversions, optimization. Transparent reports.",ads_2f1:"GA4 conversion setup",ads_2f2:"1 month optimization",ads_2f3:"Weekly reports",
-    ads_3t:"Click fraud protection",ads_3d:"Fake click filtering system — budget isn't wasted on bots.",ads_3f1:"Bot detection",ads_3f2:"IP blocking",ads_3f3:"24/7 monitoring",
-    price_label:"Pricing",price_title:"Transparent rates",price_desc:"Website development and Google Ads — two separate price lists.",
-    price_sites_label:'<i class="fas fa-code" style="margin-right:6px"></i> Website development',price_ads_label:'<i class="fab fa-google" style="margin-right:6px"></i> Google Ads',
-    p_from:"from",ps1_1:"Design + build",ps1_2:"Mobile responsive",ps1_3:"Basic SEO structure",ps1_4:"Domain connection",badge_best:"BEST VALUE",ps2_sub:"Lead-gen website",ps2_1:"Structure planning",ps2_2:"Offer packaging (copy)",ps2_3:"Analytics + goals",ps2_4:"30 days support",ps3_sub:"E-commerce / Catalog",ps3_1:"Cart / forms",ps3_2:"Product catalog",ps3_3:"Speed optimization",ps3_4:"Scalability",
-    pa1_name:"Setup",pa1_sub:"Campaign launch",pa1_1:"Keyword research",pa1_2:"Campaign setup",pa1_3:"Analytics integration",pa1_4:"Top 1–2 ranking",
-    pa2_name:"Full cycle",pa2_sub:"Ads + Management",pa2_1:"Complete setup",pa2_2:"1 month optimization",pa2_3:"Click fraud protection",pa2_4:"Weekly reports",
-    pa3_name:"Monthly",pa3_sub:"Management + Reports",pa3_1:"Daily monitoring",pa3_2:"Bid adjustments",pa3_3:"A/B ad testing",pa3_4:"Conversion reports",
-    btn_discuss:"Discuss",btn_tg:"Message on Telegram",
-    cases_label:"Portfolio",cases_title:"Work examples",cases_desc:"Live websites — open and evaluate style, speed, and conversion structure.",
-    prot_label:"Budget protection",prot_title:"Anti-fraud & security",prot_desc:"Click fraud protection system — budget works only on real clients.",
-    prot_1t:"Bot detection",prot_1d:"Automatic filtering of bot and script traffic.",prot_2t:"Competitor IP blocking",prot_2d:"Detection and blocking of suspicious IP addresses.",prot_3t:"24/7 monitoring",prot_3d:"Round-the-clock anomaly tracking.",prot_4t:"Transparent reports",prot_4d:"Statistics: blocked clicks, budget savings, traffic quality.",
-    wf_label:"Process",wf_title:"How you get results",wf_1t:"Discovery",wf_1d:"Answer a few questions — I build a lead-focused structure.",wf_2t:"Design",wf_2d:"You approve the look — then development begins.",wf_3t:"Development + Ads",wf_3d:"Clean code site + Google Ads, analytics and protection.",wf_4t:"Launch",wf_4d:"Site goes live, ads launch. Leads and reports.",
-    rev_label:"Reviews",rev_title:"What clients say",rev_desc:"Real reviews — click to see chat screenshot.",
-    faq_title:"FAQ",footer_title:"Ready to get a site and leads?",footer_wa:"Message on WhatsApp",footer_tg:"Message on Telegram",footer_city:"Astana, Kazakhstan",
-    cm_price:"Price:",cm_task:"Task",cm_solution:"Solution",cm_done:"What was done",btn_live:"Open",btn_details:"Details",click_screenshot:"Click to see screenshot"
-  }
+const I={
+ru:{tab_sites:"Сайты",tab_ads:"Google Ads",nav_about:"Обо мне",nav_pricing:"Цены",nav_cases:"Кейсы",nav_reviews:"Отзывы",nav_faq:"FAQ",hero_badge:"Доступен для проектов",
+sites_h1:'Создаю сайты,<br>которые <span class="tg">продают</span>',sites_hp:'Вы получаете продающий сайт под ключ: структура, дизайн, код, аналитика. <strong>10 лет опыта. Без посредников.</strong>',
+ads_h1:'Вывожу бизнес<br>в <span class="tg">топ Google</span>',ads_hp:'Настрою Google Ads: топ 1–2, защита от скликивания, аналитика, отчёты. <strong>10 лет опыта.</strong>',
+t_sp:"2–5 дней",t_spv:"срок",t_ad:"Адаптив",t_adv:"телефон + ПК",t_fix:"Правки",t_fixv:"7 дней бесплатно",t_con:"Связь",at2:"Защита",at2v:"антифрод",at3:"Отчёты",at3v:"еженедельно",
+btn_q:"Получить расчёт",btn_c:"Посмотреть кейсы",btn_tr:"Смотреть тарифы",btn_ex:"Примеры",btn_or:"Заказать",
+st_c:"кейсов",st_y:"лет",st_d:"дней",
+ab_l:"Обо мне",ab_t:"Anuken — один исполнитель, полный цикл",ab_d:"10 лет в разработке сайтов и настройке рекламы. Работаю напрямую — без менеджеров и переплат.",ab1:"лет опыта",ab2:"проектов",ab3:"бесплатные правки",ab4:"чистый код",
+aab_t:"Почему доверяют мне рекламу",aab_d:"10 лет в digital. Настраиваю Google Ads вручную — каждая кампания под вашу нишу.",aab_p:"антифрод",aab_a:"аналитика",
+sv_l:"Услуги",sv_t:"Что я делаю",asv_t:"Что входит в настройку",
+ss1t:"Landing Page",ss1d:"Одностраничный сайт для услуги/товара. Быстро, красиво, конверсионно.",ss1a:"Уникальный дизайн",ss1b:"Адаптив",ss1c:"Кнопки WA/TG",
+ss2t:"Сайт под заявки",ss2d:"Структура + тексты + аналитика. Цель — измеримые заявки.",ss2a:"Проработка оффера",ss2b:"Аналитика GA4",ss2c:"7 дней бесплатных правок",
+ss3t:"E-commerce / Каталог",ss3d:"Магазин: каталог, корзина, калькулятор, мессенджер.",ss3a:"Корзина и формы",ss3b:"Логика заказа",ss3c:"Масштабирование",
+ss4t:"Техподдержка",ss4d:"Доработка, скорость, правки, обновление контента.",ss4a:"Правка кода",ss4b:"Оптимизация",ss4c:"Исправление ошибок",
+badge_pop:"ПОПУЛЯРНО",badge_imp:"ВАЖНО",
+as1t:"Поисковая реклама",as1d:"Кампании в Google Search — объявления в топ 1–2.",as1a:"Сбор семантики",as1b:"Минус-слова",as1c:"Вывод в топ",
+as2t:"Аналитика",as2d:"GA4, цели, события. Вы видите откуда клиенты.",as2a:"Настройка GA4",as2b:"Цели и события",as2c:"Еженедельные отчёты",
+as3t:"Защита от скликивания",as3d:"Фильтрация фейковых кликов. Подключение — минимум полгода экономии.",as3a:"Обнаружение ботов",as3b:"Блокировка IP",as3c:"Мониторинг 24/7",
+as4t:"Оптимизация",as4d:"Мониторинг, A/B тесты, корректировка ставок.",as4a:"A/B тесты",as4b:"Ставки",as4c:"Отчёты",
+pr_l:"Тарифы",sp_t:"Цены на сайты",ap_t:"Цены на Google Ads",p_from:"от",
+sp2s:"Сайт под заявки",sp1a:"Дизайн + верстка",sp1b:"Адаптив",sp1c:"SEO-структура",sp1d:"Подключение домена",sp2a:"Проработка структуры",sp2b:"Упаковка оффера",sp2c:"Аналитика + цели",sp2d:"Правки 7 дней",sp3a:"Каталог товаров",sp3b:"Корзина + формы",sp3c:"Оптимизация скорости",sp3d:"Масштабирование",
+ap1n:"Настройка + Топ",ap1s:"Вывод в топ 1–2",ap1a:"Сбор ключей",ap1b:"Настройка кампаний",ap1c:"Подключение GA4",ap1d:"Вывод в топ 1–2",
+ap2n:"Антискликивание",ap2s:"Защита бюджета",ap2note:"Одно подключение — минимум 6 месяцев работы. Экономия тысяч тенге.",ap2a:"Обнаружение ботов",ap2b:"Блокировка IP",ap2c:"Мониторинг 24/7",ap2d:"Прозрачные отчёты",
+cs_l:"Портфолио",cs_t:"Примеры работ",cs_d:"Живые сайты — откройте и оцените.",
+wf_l:"Процесс",swf_t:"Как работаем",awf_t:"Как запускаем рекламу",
+sw1t:"Анализ",sw1d:"Вы отвечаете на вопросы — я собираю структуру.",sw2t:"Дизайн",sw2d:"Утверждаете вид — потом разработка.",sw3t:"Разработка",sw3d:"Быстрый адаптивный сайт на HTML/CSS/JS.",sw4t:"Запуск",sw4d:"Публикация, домен, проверка.",
+aw1t:"Аудит ниши",aw1d:"Ниша, конкуренты, семантика.",aw2t:"Настройка",aw2d:"Кампании, объявления, минус-слова, цели.",aw3t:"Запуск + Защита",aw3d:"Реклама + антискликивание.",aw4t:"Оптимизация",aw4d:"Мониторинг, A/B, ставки. Отчёты.",
+rv_l:"Отзывы",rv_t:"Что говорят клиенты",rv_d:"Нажмите на отзыв — скриншот переписки.",rv_h:"Нажмите — скриншот",
+fq_t:"Частые вопросы",ft_t:"Готовы начать?",ft_city:"Астана, Казахстан"},
+en:{tab_sites:"Websites",tab_ads:"Google Ads",nav_about:"About",nav_pricing:"Pricing",nav_cases:"Cases",nav_reviews:"Reviews",nav_faq:"FAQ",hero_badge:"Available",
+sites_h1:'I build websites<br>that <span class="tg">convert</span>',sites_hp:'Turnkey website: structure, design, code, analytics. <strong>10 years exp. No middlemen.</strong>',
+ads_h1:'I bring business<br>to <span class="tg">Google\'s top</span>',ads_hp:'Google Ads: top 1–2, click protection, analytics, reports. <strong>10 years exp.</strong>',
+t_sp:"2–5 days",t_spv:"timeline",t_ad:"Responsive",t_adv:"mobile + PC",t_fix:"Edits",t_fixv:"7 days free",t_con:"Contact",at2:"Protection",at2v:"anti-fraud",at3:"Reports",at3v:"weekly",
+btn_q:"Get a quote",btn_c:"View cases",btn_tr:"View pricing",btn_ex:"Examples",btn_or:"Order",
+st_c:"cases",st_y:"years",st_d:"days",
+ab_l:"About",ab_t:"Anuken — one specialist, full cycle",ab_d:"10 years in web dev and ads. Direct work — no agencies or markups.",ab1:"years exp.",ab2:"projects",ab3:"free edits",ab4:"clean code",
+aab_t:"Why trust me with ads",aab_d:"10 years in digital. Manual Google Ads setup for your niche.",aab_p:"anti-fraud",aab_a:"analytics",
+sv_l:"Services",sv_t:"What I do",asv_t:"What's included",
+ss1t:"Landing Page",ss1d:"Single-page site. Fast, beautiful, converting.",ss1a:"Custom design",ss1b:"Responsive",ss1c:"WA/TG buttons",
+ss2t:"Lead-gen website",ss2d:"Structure + copy + analytics. Measurable leads.",ss2a:"Offer planning",ss2b:"GA4 analytics",ss2c:"7 days free edits",
+ss3t:"E-commerce",ss3d:"Store: catalog, cart, calculator, messenger.",ss3a:"Cart & forms",ss3b:"Order logic",ss3c:"Scalability",
+ss4t:"Support",ss4d:"Improvements, speed, fixes, content updates.",ss4a:"Code edits",ss4b:"Optimization",ss4c:"Bug fixes",
+badge_pop:"POPULAR",badge_imp:"IMPORTANT",
+as1t:"Search ads",as1d:"Google Search — your ads in top 1–2.",as1a:"Keywords",as1b:"Negatives",as1c:"Top ranking",
+as2t:"Analytics",as2d:"GA4, goals, events. See where clients come from.",as2a:"GA4 setup",as2b:"Goals & events",as2c:"Weekly reports",
+as3t:"Click fraud protection",as3d:"Fake click filtering. One setup — 6+ months savings.",as3a:"Bot detection",as3b:"IP blocking",as3c:"24/7 monitoring",
+as4t:"Optimization",as4d:"Monitoring, A/B tests, bid adjustments.",as4a:"A/B tests",as4b:"Bids",as4c:"Reports",
+pr_l:"Pricing",sp_t:"Website pricing",ap_t:"Google Ads pricing",p_from:"from",
+sp2s:"Lead-gen site",sp1a:"Design + build",sp1b:"Responsive",sp1c:"SEO structure",sp1d:"Domain setup",sp2a:"Structure planning",sp2b:"Offer packaging",sp2c:"Analytics + goals",sp2d:"7 days edits",sp3a:"Product catalog",sp3b:"Cart + forms",sp3c:"Speed optimization",sp3d:"Scalability",
+ap1n:"Setup + Top",ap1s:"Top 1–2 ranking",ap1a:"Keyword research",ap1b:"Campaign setup",ap1c:"GA4 integration",ap1d:"Top 1–2 ranking",
+ap2n:"Anti-fraud",ap2s:"Budget protection",ap2note:"One setup — 6+ months. Saves thousands.",ap2a:"Bot detection",ap2b:"IP blocking",ap2c:"24/7 monitoring",ap2d:"Transparent reports",
+cs_l:"Portfolio",cs_t:"Work examples",cs_d:"Live sites — open and evaluate.",
+wf_l:"Process",swf_t:"How we work",awf_t:"How we launch ads",
+sw1t:"Discovery",sw1d:"You answer questions — I build structure.",sw2t:"Design",sw2d:"You approve — then development.",sw3t:"Development",sw3d:"Fast responsive HTML/CSS/JS site.",sw4t:"Launch",sw4d:"Publish, domain, check.",
+aw1t:"Niche audit",aw1d:"Niche, competitors, keywords.",aw2t:"Setup",aw2d:"Campaigns, ads, negatives, goals.",aw3t:"Launch + Protection",aw3d:"Ads + anti-fraud.",aw4t:"Optimization",aw4d:"Monitoring, A/B, bids. Reports.",
+rv_l:"Reviews",rv_t:"What clients say",rv_d:"Click a review — chat screenshot.",rv_h:"Click — screenshot",
+fq_t:"FAQ",ft_t:"Ready to start?",ft_city:"Astana, Kazakhstan"}
 };
 
-let lang=localStorage.getItem('siteLang')||((navigator.language||'').startsWith('ru')?'ru':'en');
-const t=k=>I18N[lang]?.[k]||I18N.ru[k]||k;
-const fmt=n=>n?n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₸':'—';
+let lang=localStorage.getItem('siteLang')||'ru';
+const t=k=>I[lang]?.[k]||I.ru[k]||k;
 
-/* ============================
-   RENDER FUNCTIONS
-   ============================ */
-function renderTicker(){
-  const items=['<i class="fab fa-html5" style="color:#f97316"></i> HTML5','<i class="fab fa-css3-alt" style="color:#3b82f6"></i> CSS3','<i class="fab fa-js" style="color:#eab308"></i> JavaScript','<i class="fab fa-google" style="color:#ef4444"></i> Google Ads','<i class="fas fa-chart-line" style="color:#f97316"></i> Analytics','<i class="fas fa-shield-alt" style="color:#22c55e"></i> Anti-Fraud'];
-  document.getElementById('ticker').innerHTML=[...items,...items].map(i=>`<div class="ticker-item">${i}</div>`).join('');
-}
+function mkTK(id){const items=['<i class="fab fa-html5" style="color:#f97316"></i> HTML5','<i class="fab fa-css3-alt" style="color:#3b82f6"></i> CSS3','<i class="fab fa-js" style="color:#eab308"></i> JS','<i class="fab fa-google" style="color:#ef4444"></i> Ads','<i class="fas fa-chart-line" style="color:#f97316"></i> Analytics','<i class="fas fa-shield-alt" style="color:#22c55e"></i> Anti-Fraud'];const e=document.getElementById(id);if(e)e.innerHTML=[...items,...items].map(i=>`<span class="ti">${i}</span>`).join('')}
 
-function renderCases(){
-  const grid=document.getElementById('casesGrid');
-  grid.innerHTML=PROJECTS.map((p,i)=>{
-    const d=p[lang]||p.ru;
-    return `
-    <div class="case-card" data-anim ${i>0?`data-delay="${Math.min(i,3)}"`:''}>
-      <div class="case-img">
-        <img src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.style.background='var(--card)';this.alt='${p.title}'">
-        <div class="case-badges">
-          <span class="case-type-badge" style="background:${p.color}">${p.type}</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <h4>${p.title}</h4>
-        <p>${d.short}</p>
-        <div class="case-btns">
-          <a href="${p.url}" target="_blank" class="btn btn-sm btn-secondary">${t('btn_live')} <i class="fas fa-external-link-alt" style="font-size:11px"></i></a>
-          <button class="btn btn-sm btn-primary" onclick="openCaseModal('${p.id}')">${t('btn_details')} <i class="fas fa-expand" style="font-size:11px"></i></button>
-        </div>
-      </div>
-    </div>`;
-  }).join('');
-}
+function mkSvc(id,items){document.getElementById(id).innerHTML=items.map((s,i)=>`<div class="card ${s.feat?'featured':''}" data-a ${i?`data-d="${Math.min(i,3)}"`:''}>
+${s.feat?`<div class="card-badge">${t(s.feat)}</div>`:''}
+<div class="card-icon" style="background:${s.bg};color:${s.fg};border-color:${s.bc}"><i class="${s.icon}"></i></div>
+<h4>${t(s.t)}</h4><p>${t(s.d)}</p>
+<ul class="card-list">${s.f.map(f=>`<li><i class="fas fa-check" style="color:${s.fg}"></i><span>${t(f)}</span></li>`).join('')}</ul></div>`).join('')}
 
-function renderReviews(){
-  const grid=document.getElementById('reviewsGrid');
-  grid.innerHTML=REVIEWS.map((r,i)=>{
-    const d=r[lang]||r.ru;
-    const colors=['var(--accent2)','var(--accent3)','var(--cyan)','var(--green)','#f87171','#eab308'];
-    return `
-    <div class="test-card glass" data-anim ${i>0?`data-delay="${Math.min(i,3)}"`:''} onclick="openScreenshot('${r.screenshot}')">
-      <div class="quote-icon" style="color:${colors[i%colors.length]}"><i class="fas fa-quote-left"></i></div>
-      <div class="quote-text">"${d.text}"</div>
-      <div class="quote-hint"><i class="fas fa-image"></i> ${t('click_screenshot')}</div>
-      <div class="test-author">
-        <div class="test-avatar" style="background:linear-gradient(135deg,${colors[i%colors.length]},${colors[(i+1)%colors.length]})">${r.avatar}</div>
-        <div><div class="test-name">${d.name}</div><div class="test-role">${d.role}</div></div>
-      </div>
-    </div>`;
-  }).join('');
-}
+function mkPr(id,items){document.getElementById(id).innerHTML=items.map((p,i)=>{
+const nm=p.name||t(p.nameK);const sb=p.sub||t(p.subK||'');
+const note=p.noteK?`<div style="margin-top:12px;padding:10px;border-radius:8px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);font-size:11px;color:var(--green);line-height:1.5">${t(p.noteK)}</div>`:'';
+const exBtn=p.isSS?`<button class="btn btn-ghost btn-sm btn-w" onclick="openSS('${p.ex}')">${t('btn_ex')} <i class="fas fa-image" style="font-size:10px"></i></button>`:`<a href="${p.ex}" target="_blank" class="btn btn-ghost btn-sm btn-w">${t('btn_ex')} <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>`;
+return `<div class="card price-card ${p.pop?'featured':''}" data-a ${i?`data-d="${i}"`:''}>
+${p.pop?`<div class="card-badge">${t('badge_pop')}</div>`:''}
+<div class="price-head"><div><div class="price-name">${nm}</div><div class="price-sub">${sb}</div></div><div class="price-amount">${p.price}<br><span class="price-from">${t('p_from')}</span></div></div>
+<ul class="card-list price-features">${p.feat.map(f=>`<li><i class="fas fa-check-circle" style="color:${p.clr}"></i><span>${t(f)}</span></li>`).join('')}</ul>${note}
+<div class="price-btns" style="margin-top:auto;padding-top:16px">${exBtn}<a href="https://wa.me/77074534518?text=${encodeURIComponent(p.wa)}" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm btn-w">${t('btn_or')} <i class="fab fa-whatsapp" style="font-size:12px"></i></a></div></div>`}).join('')}
 
-function renderFAQ(){
-  const list=document.getElementById('faqList');
-  list.innerHTML=FAQS.map((f,i)=>{
-    const d=f[lang]||f.ru;
-    return `
-    <div class="faq-item" data-anim ${i>0?`data-delay="${Math.min(i,3)}"`:''}>
-      <div class="faq-q" onclick="toggleFAQ(this)"><span>${d.q}</span><i class="fas fa-chevron-down"></i></div>
-      <div class="faq-a"><div class="faq-a-inner">${d.a}</div></div>
-    </div>`;
-  }).join('');
-}
+function mkCases(){document.getElementById('casesG').innerHTML=P.map((p,i)=>`<div class="card case-card" data-a ${i>1?`data-d="${Math.min(i-1,3)}"`:''}>
+<div class="case-img"><img src="${p.img}" alt="${p.title}" loading="lazy"><span class="cb" style="background:${p.clr}">${p.type}</span></div>
+<div class="case-body"><h4>${p.title}</h4><p>${p[lang]||p.ru}</p>
+<div class="case-btns"><a href="${p.url}" target="_blank" class="btn btn-ghost btn-sm">${t('btn_ex')} <i class="fas fa-external-link-alt" style="font-size:10px"></i></a><a href="https://wa.me/77074534518?text=${encodeURIComponent('Здравствуйте! Интересует проект как '+p.title+'.')}" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm">${t('btn_or')} <i class="fab fa-whatsapp" style="font-size:12px"></i></a></div></div></div>`).join('')}
 
-function applyI18n(){
-  document.documentElement.lang=lang;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(I18N[lang]?.[k]!==undefined)el.textContent=I18N[lang][k]});
-  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html');if(I18N[lang]?.[k]!==undefined)el.innerHTML=I18N[lang][k]});
-  document.querySelectorAll('.lang-toggle').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang)});
-}
+function mkWF(id,items){const cl=['var(--accent2)','var(--accent3)','var(--cyan)','var(--green)'],ic=['fa-search','fa-pencil-ruler','fa-code','fa-rocket'];
+document.getElementById(id).innerHTML=items.map((w,i)=>`<div class="wf-card" data-a ${i?`data-d="${i}"`:''}>
+<div class="wf-num">0${i+1}</div><div class="wf-icon" style="background:${cl[i]}20;color:${cl[i]}"><i class="fas ${ic[i]}"></i></div>
+<h4>${t(w.t)}</h4><p>${t(w.d)}</p></div>`).join('')}
 
-function renderAll(){
-  applyI18n();renderTicker();renderCases();renderReviews();renderFAQ();initAnim();
-}
+function mkRevs(id){document.getElementById(id).innerHTML=R.map((r,i)=>{const d=r[lang]||r.ru;return`<div class="rev-card glass" data-a ${i?`data-d="${Math.min(i,3)}"`:''} onclick="openSS('${r.ss}')">
+<i class="fas fa-quote-left" style="color:${r.c[0]};font-size:15px"></i>
+<div class="rev-quote">"${d.t}"</div>
+<div class="rev-hint"><i class="fas fa-image"></i> ${t('rv_h')}</div>
+<div class="rev-footer"><div class="rev-ava" style="background:linear-gradient(135deg,${r.c[0]},${r.c[1]})">${r.av}</div><div><div class="rev-name">${d.n}</div><div class="rev-role">${d.r}</div></div></div></div>`}).join('')}
 
-/* ============================
-   INTERACTIONS
-   ============================ */
-// Header scroll
-let lastScroll=0;
-window.addEventListener('scroll',()=>{
-  document.getElementById('header').classList.toggle('scrolled',window.scrollY>40);
-},{passive:true});
+function mkFAQ(faqs,id){document.getElementById(id).innerHTML=faqs.map((f,i)=>`<div class="faq-item" data-a ${i?`data-d="${Math.min(i,3)}"`:''}>
+<div class="faq-q" onclick="togFAQ(this)"><span>${lang==='en'?f.eq:f.rq}</span><i class="fas fa-chevron-down"></i></div>
+<div class="faq-a"><div class="faq-a-in">${lang==='en'?f.ea:f.ra}</div></div></div>`).join('')}
 
-// Mobile menu
-const menuToggle=document.getElementById('menuToggle');
-const mobileMenu=document.getElementById('mobileMenu');
-let menuOpen=false;
-menuToggle.addEventListener('click',()=>{
-  menuOpen=!menuOpen;
-  mobileMenu.classList.toggle('open',menuOpen);
-  menuToggle.innerHTML=menuOpen?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
-  document.body.style.overflow=menuOpen?'hidden':'';
-});
-document.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click',()=>{
-  menuOpen=false;mobileMenu.classList.remove('open');menuToggle.innerHTML='<i class="fas fa-bars"></i>';document.body.style.overflow='';
-}));
+function applyI18n(){document.documentElement.lang=lang;
+document.querySelectorAll('[data-t]').forEach(e=>{const v=I[lang]?.[e.getAttribute('data-t')];if(v!==undefined)e.textContent=v});
+document.querySelectorAll('[data-t-html]').forEach(e=>{const v=I[lang]?.[e.getAttribute('data-t-html')];if(v!==undefined)e.innerHTML=v});
+document.querySelectorAll('.ltg').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang))}
 
-// Language toggle
-document.addEventListener('click',e=>{
-  const btn=e.target.closest('.lang-toggle');
-  if(!btn)return;
-  const newLang=btn.dataset.lang;
-  if(newLang&&newLang!==lang){lang=newLang;localStorage.setItem('siteLang',lang);renderAll()}
-});
+const siteSvc=[
+{t:'ss1t',d:'ss1d',f:['ss1a','ss1b','ss1c'],icon:'fas fa-laptop-code',bg:'rgba(99,102,241,.1)',fg:'var(--accent2)',bc:'rgba(99,102,241,.2)'},
+{t:'ss2t',d:'ss2d',f:['ss2a','ss2b','ss2c'],icon:'fas fa-layer-group',bg:'rgba(167,139,250,.1)',fg:'var(--accent3)',bc:'rgba(167,139,250,.2)',feat:'badge_pop'},
+{t:'ss3t',d:'ss3d',f:['ss3a','ss3b','ss3c'],icon:'fas fa-shopping-cart',bg:'rgba(34,211,238,.1)',fg:'var(--cyan)',bc:'rgba(34,211,238,.2)'},
+{t:'ss4t',d:'ss4d',f:['ss4a','ss4b','ss4c'],icon:'fas fa-tools',bg:'rgba(34,197,94,.1)',fg:'var(--green)',bc:'rgba(34,197,94,.2)'}
+];
+const adsSvc=[
+{t:'as1t',d:'as1d',f:['as1a','as1b','as1c'],icon:'fab fa-google',bg:'rgba(239,68,68,.1)',fg:'#f87171',bc:'rgba(239,68,68,.2)'},
+{t:'as2t',d:'as2d',f:['as2a','as2b','as2c'],icon:'fas fa-chart-line',bg:'rgba(99,102,241,.1)',fg:'var(--accent2)',bc:'rgba(99,102,241,.2)'},
+{t:'as3t',d:'as3d',f:['as3a','as3b','as3c'],icon:'fas fa-shield-alt',bg:'rgba(34,197,94,.1)',fg:'var(--green)',bc:'rgba(34,197,94,.2)',feat:'badge_imp'},
+{t:'as4t',d:'as4d',f:['as4a','as4b','as4c'],icon:'fas fa-sync-alt',bg:'rgba(249,115,22,.1)',fg:'var(--orange)',bc:'rgba(249,115,22,.2)'}
+];
 
-// Service tabs
-document.querySelectorAll('.svc-tab').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.svc-tab').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const tab=btn.dataset.tab;
-    document.getElementById('panelSites').classList.toggle('active',tab==='sites');
-    document.getElementById('panelAds').classList.toggle('active',tab==='ads');
-  });
-});
+function renderAll(){applyI18n();mkTK('tk1');mkTK('tk2');
+mkSvc('sitesSvc',siteSvc);mkSvc('adsSvc',adsSvc);
+mkPr('sitesPr',SP);mkPr('adsPr',AP);mkCases();
+mkWF('sitesWF',[{t:'sw1t',d:'sw1d'},{t:'sw2t',d:'sw2d'},{t:'sw3t',d:'sw3d'},{t:'sw4t',d:'sw4d'}]);
+mkWF('adsWF',[{t:'aw1t',d:'aw1d'},{t:'aw2t',d:'aw2d'},{t:'aw3t',d:'aw3d'},{t:'aw4t',d:'aw4d'}]);
+mkRevs('revsG1');mkRevs('revsG2');mkFAQ(SFQ,'sitesFQ');mkFAQ(AFQ,'adsFQ');initA()}
 
-// FAQ
-function toggleFAQ(el){
-  const item=el.parentElement;
-  const wasOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(f=>{f.classList.remove('open');f.querySelector('.faq-a').style.maxHeight='0'});
-  if(!wasOpen){item.classList.add('open');const a=item.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}
-}
+let cur='sites';
+function switchPg(pg){if(pg===cur)return;cur=pg;document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+pg).classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===pg));window.scrollTo({top:0,behavior:'smooth'});setTimeout(initA,100)}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b){e.preventDefault();switchPg(b.dataset.page);if(document.getElementById('mmenu').classList.contains('open'))closeMM()}});
 
-// Screenshot modal
-function openScreenshot(src){
-  const modal=document.getElementById('screenshotModal');
-  document.getElementById('screenshotImg').src=src;
-  modal.classList.add('open');document.body.style.overflow='hidden';
-}
-document.getElementById('screenshotModal').addEventListener('click',e=>{
-  if(e.target===document.getElementById('screenshotModal')||e.target.closest('#screenshotClose')){
-    document.getElementById('screenshotModal').classList.remove('open');document.body.style.overflow='';
-  }
-});
+window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
 
-// Case modal
-function openCaseModal(id){
-  const p=PROJECTS.find(x=>x.id===id);if(!p)return;
-  const d=p[lang]||p.ru;
-  document.getElementById('cmTitle').textContent=p.title;
-  document.getElementById('cmImage').src=p.image;
-  document.getElementById('cmPrice').textContent=fmt(p.price);
-  document.getElementById('cmProblem').textContent=d.problem||'—';
-  document.getElementById('cmSolution').textContent=d.solution||'—';
-  document.getElementById('cmFeatures').innerHTML=(d.features||[]).map(f=>`<li><i class="fas fa-check-circle"></i>${f}</li>`).join('');
-  document.getElementById('cmTags').innerHTML=(p.tags||[]).map(t=>`<span class="cm-tag">${t}</span>`).join('');
-  const urls=p.urls||[{ru:t('btn_live'),en:t('btn_live'),url:p.url}];
-  document.getElementById('cmLiveLinks').innerHTML=urls.map((u,i)=>`<a href="${u.url}" target="_blank" class="btn btn-sm ${i===0?'btn-primary':'btn-secondary'}">${u[lang]||u.ru||t('btn_live')} <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>`).join('');
-  document.getElementById('caseModal').classList.add('open');document.body.style.overflow='hidden';
-}
-function closeCaseModal(){document.getElementById('caseModal').classList.remove('open');document.body.style.overflow=''}
-document.getElementById('cmClose').addEventListener('click',closeCaseModal);
-document.getElementById('caseModalBg').addEventListener('click',closeCaseModal);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCaseModal();document.getElementById('screenshotModal').classList.remove('open');document.body.style.overflow=''}});
+let mmO=false;function closeMM(){mmO=false;document.getElementById('mmenu').classList.remove('open');document.getElementById('menuBtn').innerHTML='<i class="fas fa-bars"></i>';document.body.style.overflow=''}
+document.getElementById('menuBtn').addEventListener('click',()=>{mmO=!mmO;document.getElementById('mmenu').classList.toggle('open',mmO);document.getElementById('menuBtn').innerHTML=mmO?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';document.body.style.overflow=mmO?'hidden':''});
+document.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click',closeMM));
 
-// Scroll animations
-function initAnim(){
-  const els=document.querySelectorAll('[data-anim]');
-  const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(el=>obs.observe(el));
-}
+document.addEventListener('click',e=>{const b=e.target.closest('.ltg');if(b){const nl=b.dataset.lang;if(nl&&nl!==lang){lang=nl;localStorage.setItem('siteLang',lang);renderAll()}}});
 
-// INIT
+function togFAQ(el){const it=el.parentElement;const was=it.classList.contains('open');it.closest('[id]')?.querySelectorAll('.faq-item').forEach(f=>{f.classList.remove('open');f.querySelector('.faq-a').style.maxHeight='0'});if(!was){it.classList.add('open');const a=it.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}}
+
+function openSS(src){document.getElementById('ssI').src=src;document.getElementById('ssO').classList.add('open');document.body.style.overflow='hidden'}
+document.getElementById('ssO').addEventListener('click',e=>{if(e.target===document.getElementById('ssO')||e.target.closest('#ssC')){document.getElementById('ssO').classList.remove('open');document.body.style.overflow=''}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('ssO').classList.remove('open');document.body.style.overflow=''}});
+
+function initA(){const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('[data-a]:not(.vis)').forEach(el=>obs.observe(el))}
+
 renderAll();
 </script>
 </body>
