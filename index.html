@@ -32,7 +32,7 @@ html{scroll-behavior:smooth}body{font-family:var(--ff);background:var(--bg);colo
 @media(min-width:768px){.g2{gap:16px}}
 
 /* ── Cards ── */
-.card{background:linear-gradient(170deg,rgba(18,30,58,.7),rgba(8,18,40,.85));border:1px solid var(--border);border-radius:var(--r);padding:14px;transition:all .35s;position:relative;overflow:hidden;word-break:break-word;display:flex;flex-direction:column}
+.card{background:linear-gradient(170deg,rgba(18,30,58,.7),rgba(8,18,40,.85));border:1px solid var(--border);border-radius:var(--r);padding:14px;transition:all .35s;position:relative;word-break:break-word;display:flex;flex-direction:column}
 @media(min-width:768px){.card{padding:22px;border-radius:var(--r2)}}
 .card:hover{transform:translateY(-3px);border-color:rgba(99,102,241,.4);box-shadow:0 12px 32px rgba(99,102,241,.12)}
 .card-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:10px;border:1px solid}
@@ -41,16 +41,15 @@ html{scroll-behavior:smooth}body{font-family:var(--ff);background:var(--bg);colo
 @media(min-width:768px){.card h4{font-size:17px;margin-bottom:6px}}
 .card p{font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px}
 @media(min-width:768px){.card p{font-size:13px;line-height:1.65;margin-bottom:14px}}
-.card-list{display:flex;flex-direction:column;gap:5px}
+.card-list{display:flex;flex-direction:column;gap:5px;margin-top:auto}
 @media(min-width:768px){.card-list{gap:7px}}
 .card-list li{display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--text);line-height:1.4}
 @media(min-width:768px){.card-list li{font-size:13px;gap:8px}}
 .card-list li i{font-size:9px;width:12px;text-align:center;margin-top:3px;flex-shrink:0}
 @media(min-width:768px){.card-list li i{font-size:11px;width:14px}}
-.card-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:7px;font-weight:800;padding:2px 8px;border-radius:0 0 6px 6px;letter-spacing:.06em;z-index:2}
-@media(min-width:768px){.card-badge{font-size:8px;padding:3px 10px}}
-.card.featured{border-color:rgba(99,102,241,.3);box-shadow:0 0 20px rgba(99,102,241,.08);padding-top:20px}
-@media(min-width:768px){.card.featured{padding-top:28px}}
+.card-badge{position:absolute;top:-1px;left:50%;transform:translate(-50%,-50%);background:var(--accent);color:#fff;font-size:8px;font-weight:800;padding:3px 12px;border-radius:8px;letter-spacing:.06em;z-index:2;white-space:nowrap}
+@media(min-width:768px){.card-badge{font-size:9px;padding:4px 14px}}
+.card.featured{border-color:rgba(99,102,241,.3);box-shadow:0 0 20px rgba(99,102,241,.08)}
 
 /* Header */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:10px 0;transition:all .3s}.hdr.scrolled{background:rgba(2,6,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.hdr-row{display:flex;align-items:center;justify-content:space-between;gap:8px}.logo{font-family:var(--fh);font-size:18px;font-weight:800;color:var(--white);display:flex;align-items:center;gap:6px;letter-spacing:-.02em;flex-shrink:0}.logo-i{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--purple));display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;transition:transform .3s}.logo:hover .logo-i{transform:rotate(12deg)}
@@ -235,7 +234,7 @@ const SP=[
 {nameK:"sp4n",subK:"sp4s",price:"10 000 ₸ / 20$",ex:"https://ventasgroup.kz/",wa:"Здравствуйте! Интересует техподдержка сайта. Когда можно обсудить?",feat:["sp4a","sp4b","sp4c","sp4d"],clr:"var(--green)"}
 ];
 const AP=[
-{nameK:"ap1n",subK:"ap1s",price:"40 000 ₸ / 80$",ex:"images/ads-screenshot-1.jpg",isSS:1,wa:"Здравствуйте! Интересует настройка Google Ads и вывод в топ (40 000 ₸). Когда можно обсудить?",feat:["ap1a","ap1b","ap1c","ap1d"],clr:"#f87171"},
+{nameK:"ap1n",subK:"ap1s",price:"40 000 ₸ / 80$",ex:"images/ads-screenshot-1.jpg",isSS:1,noteK:"ap1note",wa:"Здравствуйте! Интересует настройка Google Ads и вывод в топ (40 000 ₸). Когда можно обсудить?",feat:["ap1a","ap1b","ap1c","ap1d"],clr:"#f87171"},
 {nameK:"ap2n",subK:"ap2s",price:"40 000 ₸ / 80$",pop:1,ex:"images/ads-screenshot-2.jpg",isSS:1,noteK:"ap2note",wa:"Здравствуйте! Интересует защита от фейк кликов (40 000 ₸). Когда можно обсудить?",feat:["ap2a","ap2b","ap2c","ap2d"],clr:"var(--green)"}
 ];
 const SFQ=[
@@ -261,20 +260,20 @@ st_c:"кейсов",st_y:"лет",st_d:"дней",
 ab_l:"Обо мне",ab_t:"Anuken — один исполнитель, полный цикл",ab_d:"10 лет в разработке и рекламе. Работаю напрямую — без менеджеров и переплат. Каждый сайт вручную на чистом HTML/CSS/JS — без конструкторов.",ab1:"лет опыта",ab2:"проектов",ab3:"бесплатные правки",ab4:"чистый код",
 aab_t:"Почему доверяют мне рекламу",aab_d:"10 лет в digital. Настраиваю Google Ads вручную — каждая кампания под вашу нишу. Сбор ключей, минус-слова, настройка конверсий.",aab_p:"защита от фейк кликов",aab_a:"аналитика",
 sv_l:"Услуги",sv_t:"Что я делаю",asv_t:"Что входит в настройку",
-ss1t:"Landing Page",ss1d:"Одностраничный сайт для услуги или товара. Продуманная структура, которая ведёт посетителя к заявке. Быстрая загрузка, кнопки связи, адаптив под все устройства.",ss1a:"Уникальный дизайн под вашу нишу",ss1b:"Адаптив: телефон, планшет, ПК",ss1c:"Кнопки WhatsApp и Telegram",ss1d2:"Базовая SEO-оптимизация",
-badge_pop:"ПОПУЛЯРНО",ss2t:"Сайт под заявки",ss2d:"Полноценный сайт с проработанной структурой, текстами и аналитикой. Цель — измеримые заявки и звонки. Подключение GA4 для отслеживания конверсий.",ss2a:"Глубокая проработка оффера и текстов",ss2b:"Аналитика GA4 + цели конверсий",ss2c:"Бесплатные правки 7 дней после сдачи",ss2d2:"Подключение домена и хостинга",
-ss3t:"E-commerce / Каталог",ss3d:"Интернет-магазин: каталог товаров с фильтрами, корзина с подсчётом, калькулятор стоимости, отправка заказа в WhatsApp или Telegram.",ss3a:"Каталог с карточками товаров",ss3b:"Корзина, калькулятор, формы",ss3c:"Логика заказа в мессенджеры",ss3d2:"Масштабирование и оптимизация",
-ss4t:"Техподдержка",ss4d:"Уже есть сайт? Доработаю: увеличу скорость загрузки, исправлю ошибки, обновлю дизайн, добавлю новые блоки и функции.",ss4a:"Правка и доработка кода",ss4b:"Оптимизация скорости загрузки",ss4c:"Исправление ошибок и багов",
+ss1t:"Landing Page",ss1d:"Одностраничный сайт для услуги или товара. Структура под заявки, быстрая загрузка, адаптив.",ss1a:"Уникальный дизайн",ss1b:"Адаптив: телефон + ПК",ss1c:"Кнопки WA и Telegram",ss1d2:"SEO-оптимизация",
+badge_pop:"ПОПУЛЯРНО",ss2t:"Сайт под заявки",ss2d:"Сайт с проработанной структурой и текстами. Цель — заявки и звонки. Аналитика GA4.",ss2a:"Проработка оффера",ss2b:"Аналитика GA4 + цели",ss2c:"Правки 7 дней бесплатно",ss2d2:"Домен и хостинг",
+ss3t:"E-commerce",ss3d:"Магазин: каталог, корзина, калькулятор, заказ в WhatsApp или Telegram.",ss3a:"Каталог товаров",ss3b:"Корзина и калькулятор",ss3c:"Заказ в мессенджеры",ss3d2:"Масштабирование",
+ss4t:"Техподдержка",ss4d:"Уже есть сайт? Доработаю: скорость, ошибки, дизайн, новые блоки.",ss4a:"Правка кода",ss4b:"Ускорение загрузки",ss4c:"Исправление ошибок",ss4d2:"Добавление блоков",
 badge_imp:"ВАЖНО",
-as1t:"Поисковая реклама",as1d:"Настройка кампаний в Google Search. Ваши объявления показываются в топ 1–2 по целевым запросам — когда клиент ищет именно вашу услугу.",as1a:"Сбор семантического ядра",as1b:"Проработка минус-слов",as1c:"Вывод объявлений в топ 1–2",as1d2:"Написание продающих текстов",
-as2t:"Аналитика и конверсии",as2d:"Подключение GA4 для отслеживания заявок, звонков и действий на сайте. Вы видите, откуда пришёл каждый клиент и сколько стоила заявка.",as2a:"Полная настройка Google Analytics 4",as2b:"Цели, события и воронки",as2c:"Еженедельные отчёты с цифрами",
-as3t:"Защита от фейк кликов",as3d:"Система определяет конкурентов по IP-адресу — Google видит, что у них такая же услуга. Это доказывает скликивание. Защита автоматически блокирует IP и компенсирует сумму за клик.",as3a:"Определение конкурентов по IP",as3b:"Автоматическая блокировка + компенсация",as3c:"Мониторинг и отчёты 24/7",
-as4t:"Оптимизация кампаний",as4d:"Ежедневный мониторинг результатов, A/B тестирование объявлений, корректировка ставок и минус-слов для снижения стоимости заявки.",as4a:"A/B тесты текстов объявлений",as4b:"Корректировка ставок по ключам",as4c:"Отчёты по конверсиям и расходам",
+as1t:"Поисковая реклама",as1d:"Кампании в Google Search. Объявления в топ 1–2 по вашим запросам.",as1a:"Сбор семантики",as1b:"Минус-слова",as1c:"Топ 1–2 позиции",as1d2:"Продающие тексты",
+as2t:"Аналитика",as2d:"GA4 для отслеживания заявок и звонков. Видите откуда каждый клиент.",as2a:"Настройка GA4",as2b:"Цели и события",as2c:"Еженедельные отчёты",as2d2:"Воронки конверсий",
+as3t:"Защита от фейк кликов",as3d:"Определяет конкурентов по IP. Google видит их услугу — доказательство скликивания. Блокировка + компенсация.",as3a:"Определение по IP",as3b:"Автоблокировка",as3c:"Компенсация за клик",as3d2:"Мониторинг 24/7",
+as4t:"Оптимизация",as4d:"Мониторинг, A/B тесты объявлений, корректировка ставок и минус-слов.",as4a:"A/B тесты",as4b:"Корректировка ставок",as4c:"Отчёты по расходам",as4d2:"Снижение цены заявки",
 pr_l:"Тарифы",sp_t:"Цены на разработку сайтов",ap_t:"Цены на Google Ads",p_from:"от",
-sp2s:"Сайт под заявки",sp1a:"Дизайн + адаптивная верстка",sp1b:"Мобильный + десктоп адаптив",sp1c:"SEO-структура + мета-теги",sp1d:"Подключение домена и хостинга",sp2a:"Проработка структуры и оффера",sp2b:"Написание продающих текстов",sp2c:"Аналитика GA4 + цели конверсий",sp2d:"Бесплатные правки 7 дней",sp3a:"Каталог товаров с фильтрами",sp3b:"Корзина + формы + калькулятор",sp3c:"Оптимизация скорости загрузки",sp3d:"Масштабирование и доработки",
+sp2s:"Сайт под заявки",sp1a:"Дизайн + верстка",sp1b:"Адаптив телефон + ПК",sp1c:"SEO + мета-теги",sp1d:"Домен и хостинг",sp2a:"Структура и оффер",sp2b:"Продающие тексты",sp2c:"GA4 + конверсии",sp2d:"Правки 7 дней",sp3a:"Каталог с фильтрами",sp3b:"Корзина + калькулятор",sp3c:"Скорость загрузки",sp3d:"Масштабирование",
 sp4n:"Техподдержка",sp4s:"Доработка сайта",sp4a:"Правки кода и дизайна",sp4b:"Ускорение загрузки",sp4c:"Добавление новых блоков",sp4d:"Обновление контента",
-ap1n:"Настройка + Топ 1–2",ap1s:"Вывод в топ позиции Google",ap1a:"Сбор и группировка ключевых слов",ap1b:"Создание и настройка кампаний",ap1c:"Подключение аналитики GA4",ap1d:"Вывод объявлений в топ 1–2",
-ap2n:"Защита от фейк кликов",ap2s:"Экономия рекламного бюджета",ap2note:"Система определяет конкурентов по IP — Google видит их услугу, доказывая скликивание. Автоблокировка IP + компенсация за клик. Одно подключение — минимум 6 месяцев защиты.",ap2a:"Определение конкурентов по IP",ap2b:"Автоматическая блокировка IP",ap2c:"Компенсация суммы за каждый клик",ap2d:"Работает минимум 6 месяцев",
+ap1n:"Настройка + Топ 1–2",ap1s:"Позиции в Google",ap1note:"Ваши объявления появятся в топ 1–2 Google по целевым запросам. Собираю ключи, пишу объявления, настраиваю цели. Вы платите только за реальных клиентов.",ap1a:"Сбор ключевых слов",ap1b:"Настройка кампаний",ap1c:"Подключение GA4",ap1d:"Вывод в топ 1–2",
+ap2n:"Защита от фейк кликов",ap2s:"Экономия бюджета",ap2note:"Система определяет конкурентов по IP — Google видит их услугу, доказывая скликивание. Автоблокировка IP + компенсация за клик. Одно подключение — минимум 6 мес.",ap2a:"Определение по IP",ap2b:"Автоблокировка IP",ap2c:"Компенсация за клик",ap2d:"Работает 6+ месяцев",
 cs_l:"Портфолио",cs_t:"Примеры работ",cs_d:"Реальные проекты — откройте и оцените дизайн, скорость и удобство на телефоне.",
 wf_l:"Процесс",swf_t:"Как работаем",awf_t:"Как запускаем рекламу",
 sw1t:"Анализ",sw1d:"Вы отвечаете на вопросы о нише и целях — я собираю структуру, которая ведёт к заявкам.",sw2t:"Дизайн",sw2d:"Утверждаете внешний вид — разработка начинается только после вашего согласия.",sw3t:"Разработка",sw3d:"Быстрый адаптивный сайт на чистом HTML/CSS/JS. Без конструкторов и шаблонов.",sw4t:"Запуск",sw4d:"Публикация, подключение домена, проверка на всех устройствах, передача доступов.",
@@ -290,20 +289,20 @@ st_c:"cases",st_y:"years",st_d:"days",
 ab_l:"About",ab_t:"Anuken — one specialist, full cycle",ab_d:"10 years in dev and ads. Direct work — no agencies. Every site hand-coded in HTML/CSS/JS.",ab1:"years exp.",ab2:"projects",ab3:"free edits",ab4:"clean code",
 aab_t:"Why trust me with ads",aab_d:"10 years in digital. Manual Google Ads — each campaign built for your niche.",aab_p:"fake click protection",aab_a:"analytics",
 sv_l:"Services",sv_t:"What I do",asv_t:"What's included",
-ss1t:"Landing Page",ss1d:"Single-page site with a structure that drives leads. Fast loading, contact buttons, responsive.",ss1a:"Custom design for your niche",ss1b:"Responsive: phone, tablet, PC",ss1c:"WhatsApp & Telegram buttons",ss1d2:"Basic SEO optimization",
-badge_pop:"POPULAR",ss2t:"Lead-gen website",ss2d:"Full site with planned structure, copy, and analytics. Goal: measurable leads and calls.",ss2a:"Deep offer and copy planning",ss2b:"GA4 analytics + conversion goals",ss2c:"Free edits 7 days after delivery",ss2d2:"Domain and hosting setup",
-ss3t:"E-commerce",ss3d:"Online store: product catalog with filters, cart with totals, calculator, messenger order submission.",ss3a:"Product cards with catalog",ss3b:"Cart, calculator, forms",ss3c:"Messenger order logic",ss3d2:"Scalability and optimization",
-ss4t:"Support",ss4d:"Already have a site? I'll improve speed, fix bugs, update design, add new blocks.",ss4a:"Code editing and improvements",ss4b:"Load speed optimization",ss4c:"Bug fixes and error correction",
+ss1t:"Landing Page",ss1d:"Single-page site with lead-focused structure. Fast loading, responsive.",ss1a:"Custom design",ss1b:"Responsive: phone + PC",ss1c:"WA & Telegram buttons",ss1d2:"SEO optimization",
+badge_pop:"POPULAR",ss2t:"Lead-gen website",ss2d:"Site with planned structure, copy, and analytics. Goal: measurable leads.",ss2a:"Offer planning",ss2b:"GA4 + conversion goals",ss2c:"Free edits 7 days",ss2d2:"Domain and hosting",
+ss3t:"E-commerce",ss3d:"Store: catalog, cart, calculator, messenger orders.",ss3a:"Product catalog",ss3b:"Cart + calculator",ss3c:"Messenger orders",ss3d2:"Scalability",
+ss4t:"Support",ss4d:"Have a site? Speed, bugs, design, new blocks.",ss4a:"Code edits",ss4b:"Speed optimization",ss4c:"Bug fixes",ss4d2:"Adding new blocks",
 badge_imp:"IMPORTANT",
-as1t:"Search advertising",as1d:"Google Search campaigns. Your ads in top 1–2 when clients search for your service.",as1a:"Keyword research and grouping",as1b:"Negative keyword planning",as1c:"Top 1–2 ad placement",as1d2:"Converting ad copy",
-as2t:"Analytics & conversions",as2d:"GA4 setup for tracking leads, calls, and site actions. See where each client came from.",as2a:"Full GA4 setup",as2b:"Goals, events and funnels",as2c:"Weekly reports with numbers",
-as3t:"Fake click protection",as3d:"System detects competitors by IP — Google sees they run same service, proving fraud. Auto-blocks IP and compensates click cost.",as3a:"Competitor detection by IP",as3b:"Auto-block + compensation",as3c:"24/7 monitoring and reports",
-as4t:"Campaign optimization",as4d:"Daily monitoring, A/B testing, bid adjustments to lower cost per lead.",as4a:"Ad copy A/B testing",as4b:"Keyword bid adjustments",as4c:"Conversion and cost reports",
+as1t:"Search advertising",as1d:"Google Search campaigns. Your ads in top 1–2 for target queries.",as1a:"Keyword research",as1b:"Negative keywords",as1c:"Top 1–2 positions",as1d2:"Converting ad copy",
+as2t:"Analytics",as2d:"GA4 for tracking leads and calls. See where each client came from.",as2a:"GA4 setup",as2b:"Goals and events",as2c:"Weekly reports",as2d2:"Conversion funnels",
+as3t:"Fake click protection",as3d:"Detects competitors by IP. Google sees their service — proof of fraud. Auto-block + compensation.",as3a:"Detection by IP",as3b:"Auto-blocking",as3c:"Click compensation",as3d2:"24/7 monitoring",
+as4t:"Optimization",as4d:"Monitoring, A/B testing, bid and keyword adjustments.",as4a:"A/B testing",as4b:"Bid adjustments",as4c:"Cost reports",as4d2:"Lower cost per lead",
 pr_l:"Pricing",sp_t:"Website pricing",ap_t:"Google Ads pricing",p_from:"from",
-sp2s:"Lead-gen site",sp1a:"Design + responsive build",sp1b:"Mobile + desktop responsive",sp1c:"SEO structure + meta tags",sp1d:"Domain and hosting setup",sp2a:"Structure and offer planning",sp2b:"Converting copywriting",sp2c:"GA4 analytics + goals",sp2d:"Free edits 7 days",sp3a:"Product catalog with filters",sp3b:"Cart + forms + calculator",sp3c:"Speed optimization",sp3d:"Scalability and support",
+sp2s:"Lead-gen site",sp1a:"Design + build",sp1b:"Phone + PC responsive",sp1c:"SEO + meta tags",sp1d:"Domain + hosting",sp2a:"Structure + offer",sp2b:"Converting copy",sp2c:"GA4 + goals",sp2d:"Free edits 7 days",sp3a:"Catalog with filters",sp3b:"Cart + calculator",sp3c:"Speed optimization",sp3d:"Scalability",
 sp4n:"Support",sp4s:"Site improvements",sp4a:"Code and design edits",sp4b:"Speed optimization",sp4c:"Adding new blocks",sp4d:"Content updates",
-ap1n:"Setup + Top 1–2",ap1s:"Google top positions",ap1a:"Keyword collection and grouping",ap1b:"Campaign creation and setup",ap1c:"GA4 analytics integration",ap1d:"Top 1–2 ad placement",
-ap2n:"Fake click protection",ap2s:"Ad budget savings",ap2note:"Detects competitors by IP — Google sees their service = fraud proof. Auto-blocks IP + compensates click cost. One setup — 6+ months.",ap2a:"Competitor IP detection",ap2b:"Automatic IP blocking",ap2c:"Click cost compensation",ap2d:"Works 6+ months minimum",
+ap1n:"Setup + Top 1–2",ap1s:"Google positions",ap1note:"Your ads appear in Google's top 1–2 for target queries. I collect keywords, write ads, set up goals. You pay only for real clients.",ap1a:"Keyword research",ap1b:"Campaign setup",ap1c:"GA4 integration",ap1d:"Top 1–2 positions",
+ap2n:"Fake click protection",ap2s:"Budget savings",ap2note:"Detects competitors by IP — Google sees their service = fraud proof. Auto-blocks IP + compensates click cost. One setup — 6+ months.",ap2a:"Detection by IP",ap2b:"Auto IP blocking",ap2c:"Click compensation",ap2d:"Works 6+ months",
 cs_l:"Portfolio",cs_t:"Work examples",cs_d:"Real projects — open and evaluate design, speed, and mobile experience.",
 wf_l:"Process",swf_t:"How we work",awf_t:"How we launch ads",
 sw1t:"Discovery",sw1d:"You answer questions about niche and goals — I build a lead-focused structure.",sw2t:"Design",sw2d:"You approve the look — development starts only after your confirmation.",sw3t:"Development",sw3d:"Fast responsive site in clean HTML/CSS/JS. No builders or templates.",sw4t:"Launch",sw4d:"Publishing, domain setup, testing on all devices, access handover.",
@@ -362,13 +361,13 @@ const siteSvc=[
 {t:'ss1t',d:'ss1d',f:['ss1a','ss1b','ss1c','ss1d2'],icon:'fas fa-laptop-code',bg:'rgba(99,102,241,.1)',fg:'var(--accent2)',bc:'rgba(99,102,241,.2)'},
 {t:'ss2t',d:'ss2d',f:['ss2a','ss2b','ss2c','ss2d2'],icon:'fas fa-layer-group',bg:'rgba(167,139,250,.1)',fg:'var(--accent3)',bc:'rgba(167,139,250,.2)',feat:'badge_pop'},
 {t:'ss3t',d:'ss3d',f:['ss3a','ss3b','ss3c','ss3d2'],icon:'fas fa-shopping-cart',bg:'rgba(34,211,238,.1)',fg:'var(--cyan)',bc:'rgba(34,211,238,.2)'},
-{t:'ss4t',d:'ss4d',f:['ss4a','ss4b','ss4c'],icon:'fas fa-tools',bg:'rgba(34,197,94,.1)',fg:'var(--green)',bc:'rgba(34,197,94,.2)'}
+{t:'ss4t',d:'ss4d',f:['ss4a','ss4b','ss4c','ss4d2'],icon:'fas fa-tools',bg:'rgba(34,197,94,.1)',fg:'var(--green)',bc:'rgba(34,197,94,.2)'}
 ];
 const adsSvc=[
 {t:'as1t',d:'as1d',f:['as1a','as1b','as1c','as1d2'],icon:'fab fa-google',bg:'rgba(239,68,68,.1)',fg:'#f87171',bc:'rgba(239,68,68,.2)'},
-{t:'as2t',d:'as2d',f:['as2a','as2b','as2c'],icon:'fas fa-chart-line',bg:'rgba(99,102,241,.1)',fg:'var(--accent2)',bc:'rgba(99,102,241,.2)'},
-{t:'as3t',d:'as3d',f:['as3a','as3b','as3c'],icon:'fas fa-shield-alt',bg:'rgba(34,197,94,.1)',fg:'var(--green)',bc:'rgba(34,197,94,.2)',feat:'badge_imp'},
-{t:'as4t',d:'as4d',f:['as4a','as4b','as4c'],icon:'fas fa-sync-alt',bg:'rgba(249,115,22,.1)',fg:'var(--orange)',bc:'rgba(249,115,22,.2)'}
+{t:'as2t',d:'as2d',f:['as2a','as2b','as2c','as2d2'],icon:'fas fa-chart-line',bg:'rgba(99,102,241,.1)',fg:'var(--accent2)',bc:'rgba(99,102,241,.2)'},
+{t:'as3t',d:'as3d',f:['as3a','as3b','as3c','as3d2'],icon:'fas fa-shield-alt',bg:'rgba(34,197,94,.1)',fg:'var(--green)',bc:'rgba(34,197,94,.2)',feat:'badge_imp'},
+{t:'as4t',d:'as4d',f:['as4a','as4b','as4c','as4d2'],icon:'fas fa-sync-alt',bg:'rgba(249,115,22,.1)',fg:'var(--orange)',bc:'rgba(249,115,22,.2)'}
 ];
 
 function renderAll(){applyI18n();mkTK('tk1');mkTK('tk2');
