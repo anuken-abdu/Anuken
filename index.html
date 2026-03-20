@@ -1,1106 +1,1157 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#020617">
+<title>Anuken | Сайты и Google Ads под ключ</title>
+<meta name="description" content="Разработка сайтов и настройка Google Ads. Вывод в топ, защита от скликивания, аналитика. Астана, Казахстан.">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <meta name="theme-color" content="#020617">
-    <title>Anuken | Разработчик сайтов</title>
-    <meta name="description" content="Вы получаете продающий сайт и поток клиентов из Google. Разработка под ключ: дизайн, код, аналитика, запуск рекламы.">
+<!-- Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17829892914"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17829892914');
+function gtag_report_conversion(url){var cb=function(){if(typeof url!='undefined')window.location=url};gtag('event','conversion',{'send_to':'AW-17829892914/bFDICJ6f4d0bELKm-rVC','transaction_id':'','event_callback':cb});return false}
+</script>
 
-    <link rel="icon" href="images/favicon.png" type="image/png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020617;--card:#0a1128;--card2:#0f172a;
+  --accent:#6366f1;--accent2:#818cf8;--accent3:#c084fc;--cyan:#22d3ee;--green:#22c55e;
+  --text:#cbd5e1;--text2:#94a3b8;--text3:#64748b;--white:#f1f5f9;
+  --border:rgba(255,255,255,0.06);--glass:rgba(15,23,42,0.65);
+  --font:'Outfit',system-ui,sans-serif;--font-tech:'Space Grotesk',monospace;
+  --radius:16px;--radius-sm:10px;--radius-full:9999px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(99,102,241,0.3);color:#c7d2fe}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+/* ===== UTILITY ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.container{padding:0 32px}}
+@media(min-width:1024px){.container{padding:0 40px}}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+.glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border-radius:var(--radius);transition:all .3s ease;padding:14px 28px}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 24px rgba(99,102,241,0.35)}
+.btn-primary:hover{background:#5558e6;transform:translateY(-2px);box-shadow:0 8px 32px rgba(99,102,241,0.45)}
+.btn-secondary{background:rgba(255,255,255,0.05);color:#fff;border:1px solid rgba(255,255,255,0.1)}
+.btn-secondary:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
+.btn-green{background:rgba(34,197,94,0.12);color:var(--green);border:1px solid rgba(34,197,94,0.2)}
+.btn-green:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
+.btn-sm{padding:10px 20px;font-size:13px;border-radius:var(--radius-sm)}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--radius-full);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.section-label{color:var(--accent2);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:var(--font-tech);font-weight:700;color:var(--white);line-height:1.15}
+.section-desc{color:var(--text2);line-height:1.7;max-width:600px}
 
-    <!-- Google Ads -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17829892914"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17829892914');
-    </script>
+/* Gradient text */
+.tg{background:linear-gradient(135deg,var(--accent2),var(--accent3),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:tgAnim 4s ease infinite}
+@keyframes tgAnim{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-    <script>
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') window.location = url;
-        };
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17829892914/bFDICJ6f4d0bELKm-rVC',
-          'transaction_id': '',
-          'event_callback': callback
-        });
-        return false;
-      }
-    </script>
+/* Background FX */
+.bg-fx{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg-blob{position:absolute;border-radius:50%;filter:blur(120px);mix-blend-mode:screen;opacity:.12;animation:blobMove 8s ease-in-out infinite}
+.bg-blob-1{width:500px;height:500px;background:var(--accent);top:-10%;left:15%}
+.bg-blob-2{width:450px;height:450px;background:#7c3aed;top:5%;right:10%;animation-delay:3s}
+.bg-blob-3{width:350px;height:350px;background:var(--cyan);bottom:10%;left:30%;animation-delay:5s;opacity:.08}
+@keyframes blobMove{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.05)}66%{transform:translate(-20px,25px) scale(.95)}}
+.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 75%)}
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'], tech: ['Space Grotesk', 'sans-serif'] },
-                    colors: { brand: { dark: '#020617', card: '#0f172a', accent: '#6366f1' } },
-                    animation: { 'blob': 'blob 7s infinite', 'scroll': 'scroll 20s linear infinite' },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
-                        },
-                        scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-100%)' } }
-                    }
-                }
-            }
-        }
-    </script>
+/* ===== HEADER ===== */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
+.header.scrolled .header-inner{background:rgba(2,6,23,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{padding:16px 0;transition:all .3s}
+.header-row{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-tech);font-size:22px;font-weight:700;color:var(--white);display:flex;align-items:center;gap:10px;letter-spacing:-.02em}
+.logo-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:transform .3s}
+.logo:hover .logo-icon{transform:rotate(12deg)}
 
-    <style>
-        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .glass-card { background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease; }
-        .glass-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3); }
+.nav-desktop{display:none;gap:28px;font-size:14px;font-weight:500}
+@media(min-width:1024px){.nav-desktop{display:flex}}
+.nav-desktop a{color:var(--text2);transition:color .2s}
+.nav-desktop a:hover{color:#fff}
 
-        .text-gradient { background: linear-gradient(to right, #818cf8, #c084fc, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: gradient 5s linear infinite; }
-        @keyframes gradient { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
+.header-actions{display:flex;align-items:center;gap:10px}
+.lang-sw{display:flex;border-radius:var(--radius-full);overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,0.03)}
+.lang-sw button{padding:6px 12px;font-size:11px;font-weight:800;color:var(--text3);transition:all .2s;letter-spacing:.05em}
+.lang-sw button.active{background:rgba(255,255,255,0.08);color:#fff}
+.lang-sw button:hover{color:#fff}
 
-        .grid-bg { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 80%); }
+.menu-toggle{display:flex;width:40px;height:40px;align-items:center;justify-content:center;color:#fff;font-size:20px;border-radius:var(--radius-sm);border:1px solid var(--border)}
+@media(min-width:1024px){.menu-toggle{display:none}}
+.header-cta-desktop{display:none}
+@media(min-width:1024px){.header-cta-desktop{display:flex}}
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #020617; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:99;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transform:translateX(100%);transition:transform .35s ease}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:var(--font-tech);font-size:28px;color:var(--white);font-weight:600}
+.mobile-menu a:hover{color:var(--accent2)}
 
-        /* Mobile menu */
-        #mobile-menu { transition: transform 0.3s ease-in-out; }
-        #mobile-menu.open { transform: translateX(0); }
-        #mobile-menu.closed { transform: translateX(100%); }
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding-top:80px;padding-bottom:40px;z-index:1}
+.hero-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr;gap:60px}}
+.hero-badge{background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.15);color:var(--accent2)}
+.hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--green);position:relative}
+.hero-badge .pulse::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--green);animation:ping 1.5s infinite;opacity:.5}
+@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.2);opacity:0}}
 
-        /* AOS delays helper */
-        .animation-delay-2000 { animation-delay: 2s; }
+.hero h1{font-family:var(--font-tech);font-size:clamp(36px,7vw,64px);font-weight:800;color:var(--white);line-height:1.08;margin:20px 0}
+.hero-desc{font-size:17px;line-height:1.7;color:var(--text);max-width:520px;margin-bottom:32px}
+.hero-desc strong{color:var(--white);border-bottom:2px solid rgba(99,102,241,0.4)}
 
-        /* FAQ */
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
-        @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+.hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px}
+@media(min-width:480px){.hero-trust{grid-template-columns:repeat(4,1fr)}}
+.trust-item{padding:12px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:10px}
+.trust-item i{font-size:16px}
+.trust-item .t-label{font-size:11px;font-weight:700;color:var(--white)}
+.trust-item .t-value{font-size:10px;color:var(--text3)}
 
-        /* Hero background fade */
-        #hero-bg { opacity: .6; transition: opacity .55s ease; }
+.hero-btns{display:flex;flex-direction:column;gap:12px}
+@media(min-width:480px){.hero-btns{flex-direction:row}}
 
-        /* Language switch */
-        .lang-switch { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); }
-        .lang-btn { padding: 6px 10px; border-radius: 9999px; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: .06em; }
-        .lang-btn.lang-active { background: rgba(255,255,255,0.10); color: #fff; }
-        .lang-btn.lang-inactive { color: #94a3b8; }
-        .lang-btn:hover { color: #fff; }
-    </style>
+/* Hero right panel */
+.hero-panel{display:none;position:relative}
+@media(min-width:1024px){.hero-panel{display:block}}
+.hero-panel-glow{position:absolute;inset:-2px;border-radius:20px;background:linear-gradient(135deg,var(--accent),#7c3aed);filter:blur(20px);opacity:.25;animation:pulse 3s ease infinite}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:.35}}
+.hero-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.hero-card-header{display:flex;gap:6px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.hero-card-header span{width:10px;height:10px;border-radius:50%}
+.code-block{font-family:var(--font-tech);font-size:13px;line-height:1.8}
+.code-block .kw{color:#c084fc}.code-block .fn{color:#60a5fa}.code-block .str{color:#4ade80}.code-block .cm{color:var(--text3)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.hero-stat{text-align:center;padding:14px;border-radius:var(--radius-sm)}
+.hero-stat .val{font-family:var(--font-tech);font-weight:700;font-size:20px;color:var(--white)}
+.hero-stat .lbl{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* ===== SERVICES ===== */
+.services-section{position:relative;z-index:1;padding:80px 0}
+.services-header{text-align:center;margin-bottom:48px}
+.services-header .section-title{font-size:clamp(28px,5vw,44px)}
+.services-header .section-desc{margin:12px auto 0}
+
+.services-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px}
+.services-tabs button{padding:12px 24px;border-radius:var(--radius-full);font-size:14px;font-weight:700;color:var(--text2);border:1px solid var(--border);background:rgba(255,255,255,0.02);transition:all .3s}
+.services-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+
+.services-panel{display:none}
+.services-panel.active{display:block}
+
+.service-cards{display:grid;gap:20px}
+@media(min-width:768px){.service-cards{grid-template-columns:repeat(3,1fr)}}
+.service-card{background:linear-gradient(180deg,rgba(30,41,59,0.5),rgba(15,23,42,0.8));border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .4s}
+.service-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(99,102,241,0.2)}
+.service-card.featured{border-color:rgba(99,102,241,0.4);box-shadow:0 0 30px rgba(99,102,241,0.1)}
+.service-card .sc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;border:1px solid}
+.service-card h4{font-family:var(--font-tech);font-size:20px;font-weight:700;color:var(--white);margin-bottom:8px}
+.service-card p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:20px}
+.sc-features{list-style:none;display:flex;flex-direction:column;gap:10px}
+.sc-features li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text)}
+.sc-features li i{font-size:12px}
+.sc-badge{position:absolute;top:0;left:50%;transform:translate(-50%,0);background:var(--accent);color:#fff;font-size:10px;font-weight:800;padding:4px 12px;border-radius:0 0 8px 8px;letter-spacing:.04em}
+.service-card{position:relative;overflow:hidden}
+
+/* ===== PRICING ===== */
+.pricing-section{padding:80px 0;position:relative;z-index:1}
+.pricing-header{text-align:center;margin-bottom:48px}
+.pricing-header .section-title{font-size:clamp(28px,5vw,44px)}
+
+.price-cards{display:grid;gap:20px}
+@media(min-width:768px){.price-cards{grid-template-columns:repeat(3,1fr)}}
+.price-card{background:linear-gradient(180deg,rgba(30,41,59,0.5),rgba(15,23,42,0.8));border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .4s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.price-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(99,102,241,0.2)}
+.price-card.popular{border-color:rgba(99,102,241,0.5);box-shadow:0 0 40px rgba(99,102,241,0.12)}
+.price-card .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.price-name{font-family:var(--font-tech);font-weight:700;font-size:22px;color:var(--white)}
+.price-sub{font-size:12px;color:var(--text3);margin-top:2px}
+.price-amount{font-family:var(--font-tech);font-weight:700;font-size:28px;color:var(--white);text-align:right}
+.price-from{font-size:11px;color:var(--text3);font-weight:400}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1}
+.price-features li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text)}
+.price-features li i{font-size:11px;width:16px;text-align:center}
+.pop-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10px;font-weight:800;padding:4px 14px;border-radius:0 0 8px 8px;letter-spacing:.04em}
+
+/* ===== CASES ===== */
+.cases-section{padding:80px 0;position:relative;z-index:1}
+.cases-header{text-align:center;margin-bottom:48px}
+.cases-header .section-title{font-size:clamp(28px,5vw,44px)}
+
+.cases-grid{display:grid;gap:20px}
+@media(min-width:768px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.cases-grid{grid-template-columns:repeat(3,1fr)}}
+
+.case-card{background:linear-gradient(180deg,rgba(30,41,59,0.5),rgba(15,23,42,0.8));border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .4s;display:flex;flex-direction:column}
+.case-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(99,102,241,0.2)}
+.case-img{position:relative;height:200px;overflow:hidden}
+.case-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.case-card:hover .case-img img{transform:scale(1.05)}
+.case-img .case-badges{position:absolute;top:12px;left:12px;display:flex;flex-wrap:wrap;gap:6px}
+.case-type-badge{font-size:10px;font-weight:700;padding:4px 10px;border-radius:var(--radius-full);color:#fff}
+.case-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.case-body h4{font-family:var(--font-tech);font-weight:700;font-size:18px;color:var(--white);margin-bottom:6px}
+.case-body p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:16px;flex:1}
+.case-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+/* ===== WORKFLOW ===== */
+.workflow-section{padding:80px 0;position:relative;z-index:1}
+.workflow-header{text-align:center;margin-bottom:48px}
+.workflow-header .section-title{font-size:clamp(28px,5vw,44px)}
+.workflow-grid{display:grid;gap:16px}
+@media(min-width:768px){.workflow-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.workflow-grid{grid-template-columns:repeat(4,1fr)}}
+.wf-card{padding:24px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(30,41,59,0.4),rgba(15,23,42,0.7));border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden}
+.wf-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.wf-num{position:absolute;top:8px;right:12px;font-family:var(--font-tech);font-size:48px;font-weight:800;color:rgba(255,255,255,0.03)}
+.wf-card:hover .wf-num{color:rgba(99,102,241,0.08)}
+.wf-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px}
+.wf-card h4{font-family:var(--font-tech);font-weight:700;font-size:17px;color:var(--white);margin-bottom:8px}
+.wf-card p{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-section{padding:80px 0;position:relative;z-index:1}
+.testimonials-header{text-align:center;margin-bottom:48px}
+.testimonials-header .section-title{font-size:clamp(28px,5vw,44px)}
+.test-grid{display:grid;gap:16px}
+@media(min-width:768px){.test-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.test-grid{grid-template-columns:repeat(3,1fr)}}
+.test-card{padding:24px;border-radius:var(--radius);border:1px solid var(--border);transition:all .3s;cursor:pointer;position:relative}
+.test-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 32px rgba(99,102,241,0.15)}
+.test-card .quote-icon{font-size:18px;margin-bottom:12px}
+.test-card .quote-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:16px}
+.test-card .quote-hint{font-size:11px;color:var(--accent2);display:flex;align-items:center;gap:6px;margin-bottom:16px;opacity:.7}
+.test-card:hover .quote-hint{opacity:1}
+.test-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
+.test-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff}
+.test-name{font-size:13px;font-weight:700;color:var(--white)}
+.test-role{font-size:11px;color:var(--text3)}
+
+/* Screenshot modal */
+.screenshot-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.screenshot-overlay.open{display:flex}
+.screenshot-overlay img{max-width:100%;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);object-fit:contain}
+.screenshot-close{position:absolute;top:16px;right:20px;color:#fff;font-size:28px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.1);transition:background .2s;cursor:pointer}
+.screenshot-close:hover{background:rgba(255,255,255,0.2)}
+
+/* ===== FAQ ===== */
+.faq-section{padding:80px 0;position:relative;z-index:1}
+.faq-header{text-align:center;margin-bottom:48px}
+.faq-header .section-title{font-size:clamp(28px,5vw,44px)}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:rgba(99,102,241,0.3);background:rgba(99,102,241,0.03)}
+.faq-q{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--white);font-size:15px;cursor:pointer;user-select:none}
+.faq-q i{color:var(--accent2);transition:transform .3s;font-size:13px}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-a-inner{padding:0 20px 18px;font-size:14px;color:var(--text2);line-height:1.7;border-top:1px solid var(--border);padding-top:14px}
+
+/* ===== FOOTER ===== */
+.footer{padding:60px 0 0;border-top:1px solid var(--border);position:relative;z-index:1;overflow:hidden}
+.footer-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:var(--accent);opacity:.04;border-radius:50%;filter:blur(100px)}
+.footer-inner{position:relative;z-index:1;text-align:center}
+.footer-title{font-family:var(--font-tech);font-size:clamp(28px,5vw,44px);font-weight:700;color:var(--white);margin-bottom:28px}
+.footer-btns{display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:center;margin-bottom:32px}
+@media(min-width:480px){.footer-btns{flex-direction:row}}
+.footer-social{display:flex;justify-content:center;gap:12px;margin-bottom:32px}
+.footer-social a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text3);transition:all .3s}
+.footer-social a:hover{color:#fff;border-color:var(--accent);background:rgba(99,102,241,0.1)}
+.footer-bottom{padding:20px 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;align-items:center;font-size:12px;color:var(--text3);font-family:var(--font-tech)}
+@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
+
+/* ===== MOBILE FIXED BAR ===== */
+.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:98;padding:12px 16px;display:flex;gap:10px}
+@media(min-width:1024px){.mobile-bar{display:none}}
+.mobile-bar a{flex:1;padding:14px;border-radius:14px;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff}
+.mobile-bar .mb-wa{background:var(--green)}
+.mobile-bar .mb-tg{background:var(--accent)}
+
+/* ===== TICKER ===== */
+.ticker{padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;position:relative;z-index:1}
+.ticker-track{display:flex;gap:40px;animation:tickerScroll 22s linear infinite;white-space:nowrap;opacity:.5;transition:opacity .3s}
+.ticker-track:hover{opacity:.9}
+.ticker-item{display:flex;align-items:center;gap:8px;font-family:var(--font-tech);font-size:16px;color:var(--text2)}
+.ticker-item i{font-size:22px}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== CASE MODAL ===== */
+.case-modal{position:fixed;inset:0;z-index:999;display:none;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.case-modal.open{display:flex}
+.case-modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px)}
+.case-modal-content{position:relative;width:100%;max-width:960px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);max-height:calc(100vh - 32px);overflow-y:auto;background:var(--card)}
+.cm-header{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(10,17,40,0.9);backdrop-filter:blur(16px)}
+.cm-title{font-family:var(--font-tech);font-weight:700;color:var(--white);font-size:17px}
+.cm-body{display:grid;gap:0}
+@media(min-width:768px){.cm-body{grid-template-columns:1fr 1fr}}
+.cm-left{background:rgba(0,0,0,0.15)}
+.cm-left img{width:100%;max-height:400px;object-fit:cover}
+.cm-left-bar{padding:14px 16px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.cm-right{padding:20px}
+.cm-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.cm-info-box{padding:14px;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.cm-info-box .label{font-size:11px;color:var(--text3);font-family:var(--font-tech);margin-bottom:4px}
+.cm-info-box .val{font-size:13px;color:var(--text);line-height:1.5}
+.cm-features{padding:14px;border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:16px}
+.cm-features .label{font-size:11px;color:var(--text3);font-family:var(--font-tech);margin-bottom:8px}
+.cm-features ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.cm-features li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)}
+.cm-features li i{color:var(--accent2);font-size:11px}
+.cm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.cm-tag{font-size:11px;padding:4px 10px;border-radius:var(--radius-full);background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--text2)}
+.cm-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+/* ===== PROTECTION SECTION ===== */
+.protect-section{padding:80px 0;position:relative;z-index:1}
+.protect-grid{display:grid;gap:20px}
+@media(min-width:768px){.protect-grid{grid-template-columns:1fr 1fr}}
+.protect-card{padding:28px;border-radius:var(--radius);border:1px solid var(--border);background:linear-gradient(180deg,rgba(30,41,59,0.4),rgba(15,23,42,0.7));transition:all .3s}
+.protect-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.protect-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
+.protect-card h4{font-family:var(--font-tech);font-weight:700;font-size:18px;color:var(--white);margin-bottom:8px}
+.protect-card p{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* Safe area for mobile bar */
+body::after{content:'';display:block;height:80px}
+@media(min-width:1024px){body::after{height:0}}
+
+/* Animations */
+[data-anim]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+[data-anim].visible{opacity:1;transform:translateY(0)}
+[data-anim][data-delay="1"]{transition-delay:.1s}
+[data-anim][data-delay="2"]{transition-delay:.2s}
+[data-anim][data-delay="3"]{transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  [data-anim]{opacity:1;transform:none;transition:none}
+  .bg-blob,.ticker-track{animation:none}
+}
+</style>
 </head>
 
-<body class="bg-brand-dark text-slate-300 relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
+<body>
 
-    <!-- Background -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute inset-0 grid-bg opacity-20"></div>
+<!-- BG FX -->
+<div class="bg-fx">
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="container">
+      <div class="header-row">
+        <a href="#" class="logo">
+          <span class="logo-icon"><i class="fas fa-code"></i></span>
+          ANUKEN
+        </a>
+
+        <nav class="nav-desktop">
+          <a href="#services" data-i18n="nav_services">Услуги</a>
+          <a href="#pricing" data-i18n="nav_pricing">Цены</a>
+          <a href="#cases" data-i18n="nav_cases">Кейсы</a>
+          <a href="#workflow" data-i18n="nav_workflow">Процесс</a>
+          <a href="#protection" data-i18n="nav_protection">Защита</a>
+          <a href="#reviews" data-i18n="nav_reviews">Отзывы</a>
+          <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-sw">
+            <button class="lang-toggle active" data-lang="ru">RU</button>
+            <button class="lang-toggle" data-lang="en">EN</button>
+          </div>
+          <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-sm btn-primary header-cta-desktop">
+            Telegram <i class="fab fa-telegram-plane"></i>
+          </a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="lang-sw" style="margin-bottom:8px">
+    <button class="lang-toggle active" data-lang="ru">RU</button>
+    <button class="lang-toggle" data-lang="en">EN</button>
+  </div>
+  <a href="#services" class="mm-link" data-i18n="nav_services">Услуги</a>
+  <a href="#pricing" class="mm-link" data-i18n="nav_pricing">Цены</a>
+  <a href="#cases" class="mm-link" data-i18n="nav_cases">Кейсы</a>
+  <a href="#workflow" class="mm-link" data-i18n="nav_workflow">Процесс</a>
+  <a href="#protection" class="mm-link" data-i18n="nav_protection">Защита</a>
+  <a href="#reviews" class="mm-link" data-i18n="nav_reviews">Отзывы</a>
+  <a href="#faq" class="mm-link" data-i18n="nav_faq">FAQ</a>
+  <div style="display:flex;gap:12px;margin-top:12px">
+    <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary btn-sm"><i class="fab fa-telegram-plane"></i> Telegram</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div data-anim>
+        <div class="badge hero-badge">
+          <span class="pulse"></span>
+          <span data-i18n="hero_badge">Доступен для проектов</span>
+        </div>
+
+        <h1 data-i18n-html="hero_title">Сайты и <span class="tg">Google Ads</span><br>под ключ</h1>
+
+        <p class="hero-desc" data-i18n-html="hero_desc">Вы получаете продающий сайт и настроенную рекламу в Google. Вывод в топ, аналитика, защита от скликивания. <strong>Один исполнитель — один результат.</strong></p>
+
+        <div class="hero-trust glass">
+          <div class="trust-item">
+            <i class="fas fa-bolt" style="color:var(--accent2)"></i>
+            <div><div class="t-label" data-i18n="trust_1t">Сроки</div><div class="t-value" data-i18n="trust_1v">2–5 дней</div></div>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-chart-line" style="color:var(--accent3)"></i>
+            <div><div class="t-label" data-i18n="trust_2t">Аналитика</div><div class="t-value" data-i18n="trust_2v">GA4 / цели</div></div>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-shield-alt" style="color:var(--cyan)"></i>
+            <div><div class="t-label" data-i18n="trust_3t">Защита</div><div class="t-value" data-i18n="trust_3v">Антискликивание</div></div>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-headset" style="color:var(--green)"></i>
+            <div><div class="t-label" data-i18n="trust_4t">Связь</div><div class="t-value" data-i18n="trust_4v">WA / Telegram</div></div>
+          </div>
+        </div>
+
+        <div class="hero-btns">
+          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary">
+            <i class="fab fa-whatsapp"></i> <span data-i18n="hero_cta1">Получить расчёт</span>
+          </a>
+          <a href="#cases" class="btn btn-secondary">
+            <span data-i18n="hero_cta2">Посмотреть кейсы</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Desktop panel -->
+      <div class="hero-panel" data-anim data-delay="2">
+        <div class="hero-panel-glow"></div>
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span style="background:#ef4444"></span>
+            <span style="background:#eab308"></span>
+            <span style="background:#22c55e"></span>
+          </div>
+          <div class="code-block">
+            <div><span class="cm">// Что вы получаете</span></div>
+            <div><span class="kw">const</span> <span class="fn">Result</span> = {</div>
+            <div style="padding-left:20px">site: <span class="str">'fast & converting'</span>,</div>
+            <div style="padding-left:20px">ads: <span class="str">'Google Ads top 1-2'</span>,</div>
+            <div style="padding-left:20px">protection: <span class="str">'anti-fraud clicks'</span>,</div>
+            <div style="padding-left:20px">analytics: <span class="str">'GA4 + conversions'</span>,</div>
+            <div style="padding-left:20px">leads: <span class="str">'more calls & orders'</span>,</div>
+            <div>}</div>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat glass"><div class="val">7+</div><div class="lbl" data-i18n="stat_cases">кейсов</div></div>
+            <div class="hero-stat glass"><div class="val">2–5</div><div class="lbl" data-i18n="stat_days">дней</div></div>
+            <div class="hero-stat glass"><div class="val">TOP</div><div class="lbl" data-i18n="stat_top">позиции</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<section class="ticker">
+  <div class="ticker-track" id="ticker"></div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="services-header" data-anim>
+      <div class="section-label" data-i18n="svc_label">Что вы получите</div>
+      <h2 class="section-title" data-i18n="svc_title">Два направления — один результат</h2>
+      <p class="section-desc" data-i18n="svc_desc">Разработка сайтов и настройка Google Ads. Работаю как единая команда: от структуры до запуска рекламы.</p>
     </div>
 
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-tech text-2xl font-bold text-white tracking-tighter flex items-center gap-2 group z-50 relative">
-                <span class="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm group-hover:rotate-12 transition duration-300"><i class="fas fa-code"></i></span>
-                ANUKEN
-            </a>
-
-            <nav class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#services" class="hover:text-white transition hover:scale-105" data-i18n="nav_services">Услуги</a>
-                <a href="#cases" class="hover:text-white transition hover:scale-105" data-i18n="nav_cases">Кейсы</a>
-                <a href="#pricing" class="hover:text-white transition hover:scale-105" data-i18n="nav_pricing">Цены</a>
-                <a href="#workflow" class="hover:text-white transition hover:scale-105" data-i18n="nav_workflow">Процесс</a>
-                <a href="portfolio.html" class="hover:text-white transition hover:scale-105" data-i18n="nav_portfolio">Портфолио</a>
-                <a href="#faq" class="hover:text-white transition hover:scale-105" data-i18n="nav_faq">Вопросы</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-3">
-                <div class="lang-switch rounded-full p-1 flex items-center gap-1">
-                    <button type="button" class="lang-btn lang-active lang-toggle" data-lang="ru">RU</button>
-                    <button type="button" class="lang-btn lang-inactive lang-toggle" data-lang="en">EN</button>
-                </div>
-
-                <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white group">
-                    <span data-i18n="header_cta_telegram">Telegram</span> <i class="fab fa-telegram-plane group-hover:translate-x-1 transition"></i>
-                </a>
-            </div>
-
-            <button id="menu-btn" class="md:hidden text-2xl text-white z-50 relative" aria-label="Открыть меню">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark flex flex-col items-center justify-center gap-8 closed md:hidden">
-        <div class="lang-switch rounded-full p-1 flex items-center gap-1">
-            <button type="button" class="lang-btn lang-active lang-toggle" data-lang="ru">RU</button>
-            <button type="button" class="lang-btn lang-inactive lang-toggle" data-lang="en">EN</button>
-        </div>
-
-        <a href="#services" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_services">Услуги</a>
-        <a href="#cases" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_cases">Кейсы</a>
-        <a href="#pricing" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_pricing">Цены</a>
-        <a href="#workflow" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_workflow">Процесс</a>
-        <a href="portfolio.html" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_portfolio">Портфолио</a>
-        <a href="#faq" class="mobile-link text-3xl font-tech text-white hover:text-indigo-500 transition" data-i18n="nav_faq">Вопросы</a>
-
-        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="px-8 py-3 rounded-full bg-indigo-600 text-white font-bold" data-i18n="mobile_cta_tg">Написать в Telegram</a>
-        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-8 py-3 rounded-full bg-green-600 text-white font-bold" data-i18n="mobile_cta_wa">Написать в WhatsApp</a>
+    <div class="services-tabs" data-anim>
+      <button class="svc-tab active" data-tab="sites" data-i18n="tab_sites">Сайты</button>
+      <button class="svc-tab" data-tab="ads" data-i18n="tab_ads">Google Ads</button>
     </div>
 
-    <!-- Hero -->
-    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <!-- ВАЖНО: добавлен id="hero-bg" для смены фона -->
-            <img id="hero-bg" src="images/image.png" alt="Background" class="w-full h-full object-cover" fetchpriority="high">
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/70 to-brand-dark/35"></div>
+    <div id="panelSites" class="services-panel active">
+      <div class="service-cards">
+        <div class="service-card" data-anim>
+          <div class="sc-icon" style="background:rgba(99,102,241,0.12);color:var(--accent2);border-color:rgba(99,102,241,0.2)">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h4 data-i18n="site_1t">Landing Page</h4>
+          <p data-i18n="site_1d">Одностраничный сайт с высокой конверсией для продажи услуг или товара.</p>
+          <ul class="sc-features">
+            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="site_1f1">Уникальный дизайн</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="site_1f2">Адаптив под телефон</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="site_1f3">Базовая SEO-структура</span></li>
+          </ul>
         </div>
-
-        <div class="container mx-auto px-6 z-10 grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold mb-6 backdrop-blur-sm">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span data-i18n="hero_badge">Доступен для проектов</span>
-                </div>
-
-                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 font-tech" data-i18n-html="hero_title">
-                    Вы получаете <br> <span class="text-gradient">продающий сайт</span>
-                </h1>
-
-                <p class="text-lg text-slate-300 mb-8 max-w-xl leading-relaxed" data-i18n-html="hero_desc">
-                    Вы получаете современный сайт под ключ и понятный путь к заявкам: структура, дизайн, код, аналитика и запуск.
-                    <span class="text-white font-medium border-b border-indigo-500/50">Без посредников и лишних переплат.</span>
-                </p>
-
-                <!-- Trust row -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-                    <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
-                        <i class="fas fa-bolt text-indigo-400"></i>
-                        <div class="leading-tight">
-                            <div class="text-white font-bold text-xs" data-i18n="trust_1_title">Сроки</div>
-                            <div class="text-slate-400 text-xs" data-i18n="trust_1_value">2–5 дней</div>
-                        </div>
-                    </div>
-                    <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
-                        <i class="fas fa-chart-line text-purple-400"></i>
-                        <div class="leading-tight">
-                            <div class="text-white font-bold text-xs" data-i18n="trust_2_title">Аналитика</div>
-                            <div class="text-slate-400 text-xs" data-i18n="trust_2_value">GA4 / цели</div>
-                        </div>
-                    </div>
-                    <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
-                        <i class="fas fa-shield-alt text-cyan-400"></i>
-                        <div class="leading-tight">
-                            <div class="text-white font-bold text-xs" data-i18n="trust_3_title">Бесплатное обслуживание</div>
-                            <div class="text-slate-400 text-xs" data-i18n="trust_3_value">30 дней</div>
-                        </div>
-                    </div>
-                    <div class="glass px-4 py-3 rounded-xl text-sm flex items-center gap-3">
-                        <i class="fas fa-headset text-green-400"></i>
-                        <div class="leading-tight">
-                            <div class="text-white font-bold text-xs" data-i18n="trust_4_title">Связь</div>
-                            <div class="text-slate-400 text-xs" data-i18n="trust_4_value">WhatsApp/Telegram</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-[0_0_20px_rgba(79,70,229,0.4)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
-                        <i class="fab fa-whatsapp text-xl"></i> <span data-i18n="hero_btn_quote">Получить расчёт</span>
-                    </a>
-                    <a href="#cases" class="px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 backdrop-blur text-white font-bold border border-slate-600 transition text-center">
-                        <span data-i18n="hero_btn_cases">Посмотреть кейсы</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right card -->
-            <div class="relative hidden md:block" data-aos="fade-left">
-                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
-                <div class="relative bg-brand-card/90 backdrop-blur border border-white/10 rounded-2xl p-6 shadow-2xl">
-                    <div class="flex items-center gap-2 mb-4 border-b border-white/5 pb-4">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div><div class="w-3 h-3 rounded-full bg-yellow-500"></div><div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="font-mono text-sm leading-relaxed">
-                        <div class="text-slate-400"><span class="text-purple-400">const</span> <span class="text-blue-400">Result</span> = {</div>
-                        <div class="pl-4 text-slate-300">site: <span class="text-green-400">'fast & premium'</span>,</div>
-                        <div class="pl-4 text-slate-300">ads: <span class="text-green-400">'Google Ads'</span>,</div>
-                        <div class="pl-4 text-slate-300">analytics: <span class="text-green-400">'trackable'</span>,</div>
-                        <div class="pl-4 text-slate-300">leads: <span class="text-green-400">'more calls'</span>,</div>
-                        <div class="pl-4">}</div>
-                    </div>
-
-                    <div class="mt-6 grid grid-cols-3 gap-3">
-                        <div class="glass rounded-xl p-4 text-center">
-                            <div class="text-white font-bold text-xl">5+</div>
-                            <div class="text-slate-400 text-xs mt-1" data-i18n="hero_stat_1">кейсов</div>
-                        </div>
-                        <div class="glass rounded-xl p-4 text-center">
-                            <div class="text-white font-bold text-xl">2–5</div>
-                            <div class="text-slate-400 text-xs mt-1" data-i18n="hero_stat_2">дней</div>
-                        </div>
-                        <div class="glass rounded-xl p-4 text-center">
-                            <div class="text-white font-bold text-xl">1</div>
-                            <div class="text-slate-400 text-xs mt-1" data-i18n="hero_stat_3">контакт</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div class="service-card featured" data-anim data-delay="1">
+          <div class="sc-badge" data-i18n="badge_reco">РЕКОМЕНДУЮ</div>
+          <div class="sc-icon" style="background:rgba(192,132,252,0.12);color:var(--accent3);border-color:rgba(192,132,252,0.2)">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h4 data-i18n="site_2t">Сайт под заявки</h4>
+          <p data-i18n="site_2d">Проработанная структура, тексты, аналитика — чтобы заявки можно было измерять.</p>
+          <ul class="sc-features">
+            <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="site_2f1">Проработка структуры</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="site_2f2">Упаковка оффера</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="site_2f3">30 дней поддержки</span></li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Tech ticker -->
-    <section class="py-8 bg-brand-dark border-y border-white/5 overflow-hidden relative z-20">
-        <div class="flex animate-scroll whitespace-nowrap gap-16 items-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500">
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-html5 text-orange-500 text-3xl"></i> HTML5</div>
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-css3-alt text-blue-500 text-3xl"></i> CSS3</div>
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-js text-yellow-400 text-3xl"></i> JavaScript</div>
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-google text-red-500 text-3xl"></i> Google Ads</div>
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fas fa-chart-line text-orange-400 text-3xl"></i> Analytics</div>
-
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-html5 text-orange-500 text-3xl"></i> HTML5</div>
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-css3-alt text-blue-500 text-3xl"></i> CSS3</div>
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-js text-yellow-400 text-3xl"></i> JavaScript</div>
-            <div class="flex items-center gap-2 text-xl font-tech"><i class="fab fa-google text-red-500 text-3xl"></i> Google Ads</div>
+        <div class="service-card" data-anim data-delay="2">
+          <div class="sc-icon" style="background:rgba(34,211,238,0.12);color:var(--cyan);border-color:rgba(34,211,238,0.2)">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h4 data-i18n="site_3t">Техподдержка</h4>
+          <p data-i18n="site_3d">Правки, скорость, адаптив, обновление контента на существующем сайте.</p>
+          <ul class="sc-features">
+            <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="site_3f1">Правка кода</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="site_3f2">Оптимизация загрузки</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="site_3f3">Исправление ошибок</span></li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="py-24 relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="services_kicker">Что вы получите</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="services_title">Услуги под ключ</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="services_desc">
-                    Вы получаете понятный результат: сайт, который выглядит современно, быстро загружается и ведёт клиента к заявке.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center text-2xl text-indigo-400 mb-6 border border-indigo-500/20"><i class="fas fa-laptop-code"></i></div>
-                    <h4 class="text-2xl font-bold text-white mb-2" data-i18n="service_1_title">Landing Page</h4>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-i18n="service_1_desc">Вы получаете одностраничный сайт с высокой конверсией для продажи услуг или товара.</p>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="service_1_b1">Уникальный дизайн</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="service_1_b2">Адаптация под телефон</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="service_1_b3">Базовая SEO-структура</span></li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)]" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-b-lg" data-i18n="service_badge_reco">РЕКОМЕНДУЮ</div>
-                    <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center text-2xl text-purple-400 mb-6 border border-purple-500/20"><i class="fab fa-google"></i></div>
-                    <h4 class="text-2xl font-bold text-white mb-2" data-i18n="service_2_title">Сайт + Google Ads</h4>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-i18n="service_2_desc">Вы получаете сайт и настроенную рекламу с аналитикой — чтобы заявки можно было измерять.</p>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="service_2_b1">Семантика и структура</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="service_2_b2">Настройка целей/конверсий</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="service_2_b3">Ведение 1 месяц</span></li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center text-2xl text-cyan-400 mb-6 border border-cyan-500/20"><i class="fas fa-tools"></i></div>
-                    <h4 class="text-2xl font-bold text-white mb-2" data-i18n="service_3_title">Техподдержка</h4>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-i18n="service_3_desc">Если сайт уже есть — вы получаете улучшения: скорость, правки, адаптив, обновление контента.</p>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="service_3_b1">Правка кода</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="service_3_b2">Оптимизация загрузки</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="service_3_b3">Исправление ошибок</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cases preview -->
-    <section id="cases" class="py-24 relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="cases_kicker">Кейсы</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="cases_title">Примеры работ</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="cases_desc">Вы можете посмотреть живые сайты и понять стиль, уровень и подход.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up">
-                    <div class="h-52 relative overflow-hidden">
-                        <img src="images/avia-drones.jpg" alt="Avia-Drones" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
-                        <div class="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition"></div>
-                        <div class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Landing / Catalog</div>
-                    </div>
-                    <div class="p-7 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-white font-tech mb-2">Avia-Drones</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-5" data-i18n="case_1_desc">Вы получаете технологичный лендинг с интерактивом, модалками и интеграцией WhatsApp.</p>
-                        <div class="mt-auto flex gap-3">
-                            <a href="https://avia-drones.vercel.app/" target="_blank" class="flex-1 py-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-white text-center font-bold border border-white/10 transition">
-                                Live <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
-                            <a href="portfolio.html" class="flex-1 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition">
-                                <span data-i18n="btn_details">Подробнее</span> <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-52 relative overflow-hidden">
-                        <img src="images/kassenova.jpg" alt="Kassenova Store" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
-                        <div class="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition"></div>
-                        <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">E-commerce</div>
-                    </div>
-                    <div class="p-7 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-white font-tech mb-2">Kassenova Store</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-5" data-i18n="case_2_desc">Вы получаете магазин с логикой корзины, расчетом и отправкой заказа в WhatsApp.</p>
-                        <div class="mt-auto flex gap-3">
-                            <a href="https://kassenova-market.vercel.app/" target="_blank" class="flex-1 py-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-white text-center font-bold border border-white/10 transition">
-                                Live <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
-                            <a href="portfolio.html" class="flex-1 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition">
-                                <span data-i18n="btn_details">Подробнее</span> <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl overflow-hidden group flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-52 relative overflow-hidden">
-                        <img src="images/astanajas.jpg" alt="Astana Jas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
-                        <div class="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition"></div>
-                        <div class="absolute top-4 left-4 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full">Multi-page</div>
-                    </div>
-                    <div class="p-7 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-white font-tech mb-2">Astana Jas</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-5" data-i18n="case_3_desc">Вы получаете многостраничный сайт с навигацией, секциями и современными анимациями.</p>
-                        <div class="mt-auto flex gap-3">
-                            <a href="https://astanajas.vercel.app/" target="_blank" class="flex-1 py-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-white text-center font-bold border border-white/10 transition">
-                                Live <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
-                            <a href="portfolio.html" class="flex-1 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold transition">
-                                <span data-i18n="btn_details">Подробнее</span> <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-10">
-                <a href="portfolio.html" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-semibold text-white">
-                    <span data-i18n="cases_all_portfolio">Смотреть всё портфолио</span> <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="py-24 relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="pricing_kicker">Пакеты</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="pricing_title">Цены и комплектация</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="pricing_desc">
-                    Ниже — ориентиры. Вы сможете заменить цены и состав пакетов под свой оффер.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
-                    <div class="flex items-start justify-between mb-6">
-                        <div>
-                            <h4 class="text-2xl font-bold text-white font-tech">Start</h4>
-                            <p class="text-slate-400 text-sm mt-1">Landing Page</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-white font-bold text-3xl">20 000 ₸ / 20$</div>
-                            <div class="text-slate-400 text-xs mt-1" data-i18n="price_from">от</div>
-                        </div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b1">Дизайн + верстка</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b2">Адаптив под телефон</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b3">Базовая SEO-структура</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-500"></i> <span data-i18n="price_1_b4">Подключение домена</span></li>
-                    </ul>
-                    <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="block text-center px-6 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-white/10 font-bold text-white transition">
-                        <span data-i18n="btn_discuss">Обсудить</span>
-                    </a>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)] relative" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-b-lg" data-i18n="price_badge_best">ЛУЧШИЙ ВЫБОР</div>
-                    <div class="flex items-start justify-between mb-6">
-                        <div>
-                            <h4 class="text-2xl font-bold text-white font-tech">Business</h4>
-                            <p class="text-slate-400 text-sm mt-1" data-i18n="price_2_sub">Сайт под заявки</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-white font-bold text-3xl">80 000 ₸ / 160$</div>
-                            <div class="text-slate-400 text-xs mt-1" data-i18n="price_from">от</div>
-                        </div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b1">Проработка структуры</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b2">Упаковка оффера (тексты)</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b3">Аналитика + цели</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> <span data-i18n="price_2_b4">30 дней поддержки</span></li>
-                    </ul>
-                    <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="block text-center px-6 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-white transition shadow-[0_0_20px_rgba(79,70,229,0.35)]">
-                        <span data-i18n="hero_btn_quote">Получить расчёт</span>
-                    </a>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-start justify-between mb-6">
-                        <div>
-                            <h4 class="text-2xl font-bold text-white font-tech">Pro</h4>
-                            <p class="text-slate-400 text-sm mt-1">Сайт + Google Ads</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-white font-bold text-3xl">150 000 ₸ / 300$</div>
-                            <div class="text-slate-400 text-xs mt-1" data-i18n="price_from">от</div>
-                        </div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b1">Кампании Google Ads</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b2">Настройка конверсий</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b3">Оптимизация 1 месяц</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-500"></i> <span data-i18n="price_3_b4">Отчетность</span></li>
-                    </ul>
-                    <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="block text-center px-6 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-white/10 font-bold text-white transition">
-                        <span data-i18n="btn_tg">Написать в Telegram</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflow -->
-    <section id="workflow" class="py-24 bg-brand-dark relative z-10 overflow-hidden">
-        <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-white/10 -translate-y-1/2 z-0"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="workflow_kicker">Процесс</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="workflow_title">Как вы получите результат</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up">
-                    <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-indigo-500/10 transition">01</div>
-                    <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center text-indigo-400 mb-6 text-xl"><i class="fas fa-search"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_1_title">Анализ</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_1_desc">Вы отвечаете на пару вопросов — я собираю структуру, которая ведёт к заявке.</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-purple-500/10 transition">02</div>
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 mb-6 text-xl"><i class="fas fa-pencil-ruler"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_2_title">Дизайн</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_2_desc">Вы утверждаете внешний вид — только после этого начинается разработка.</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-cyan-500/10 transition">03</div>
-                    <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-400 mb-6 text-xl"><i class="fas fa-code"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_3_title">Разработка</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_3_desc">Вы получаете быстрый адаптивный сайт на чистом коде (HTML/CSS/JS).</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl relative group hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-6xl font-tech font-bold text-white/5 absolute top-2 right-4 group-hover:text-green-500/10 transition">04</div>
-                    <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 mb-6 text-xl"><i class="fas fa-rocket"></i></div>
-                    <h4 class="text-xl font-bold text-white mb-3" data-i18n="workflow_4_title">Запуск</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="workflow_4_desc">Вы подключаете домен — сайт публикуется. При необходимости запускается Google Ads.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-24 relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="test_kicker">Доверие</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-white font-tech" data-i18n="test_title">Что говорят клиенты</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto" data-i18n="test_desc">Здесь можно вставить реальные отзывы (вы замените текст).</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-2xl" data-aos="fade-up">
-                    <div class="text-indigo-400 text-xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 leading-relaxed" data-i18n="test_1_quote">“Вы сделали быстро и очень аккуратно. Сайт выглядит дороже, чем ожидали.”</p>
-                    <div class="mt-6 text-sm">
-                        <div class="text-white font-bold" data-i18n="test_1_name">Клиент Ержан</div>
-                        <div class="text-slate-500" data-i18n="test_1_role">Ниша - Услуги манипулятора / город Алматы</div>
-                    </div>
-                </div>
-
-                <div class="glass p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-purple-400 text-xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 leading-relaxed" data-i18n="test_2_quote">“Вы подсказали по структуре и офферу — стало понятно, за что платим и что получаем.”</p>
-                    <div class="mt-6 text-sm">
-                        <div class="text-white font-bold" data-i18n="test_2_name">Клиент Салтанат</div>
-                        <div class="text-slate-500" data-i18n="test_2_role">Ниша - Дроны / город Астана</div>
-                    </div>
-                </div>
-
-                <div class="glass p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-cyan-400 text-xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 leading-relaxed" data-i18n="test_3_quote">“Вы сделали всё под ключ: сайт, аналитика и связь — просто написали и получили результат.”</p>
-                    <div class="mt-6 text-sm">
-                        <div class="text-white font-bold" data-i18n="test_3_name">Клиент Аня</div>
-                        <div class="text-slate-500" data-i18n="test_3_role">Ниша - Интернет магазин / город Жезказган</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-24 relative z-10">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-indigo-500 font-bold tracking-widest text-sm uppercase mb-3" data-i18n="faq_kicker">FAQ</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white font-tech" data-i18n="faq_title">Частые вопросы</h3>
-            </div>
-
-            <div class="space-y-4">
-                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up">
-                    <summary class="flex justify-between items-center font-bold text-white">
-                        <span data-i18n="faq_q1">Сколько времени занимает разработка?</span>
-                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a1">
-                        Обычно вы получаете Landing Page за 1–2 дня. Многостраничные проекты — 2–5 дней. Перед стартом вы получаете точные сроки.
-                    </p>
-                </details>
-
-                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <summary class="flex justify-between items-center font-bold text-white">
-                        <span data-i18n="faq_q2">Есть ли ежемесячная оплата?</span>
-                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a2">
-                        Вы оплачиваете разработку один раз. Далее у вас только хостинг/домен (обычно это недорого). Никаких скрытых платежей.
-                    </p>
-                </details>
-
-                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <summary class="flex justify-between items-center font-bold text-white">
-                        <span data-i18n="faq_q3">Сможете ли вы менять текст и цены?</span>
-                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a3">
-                        Да. По запросу вы получаете удобный способ обновлять контент (даже с телефона). Либо вы просто пишете — и изменения вносятся.
-                    </p>
-                </details>
-
-                <details class="group glass p-6 rounded-2xl cursor-pointer open:bg-indigo-900/20 transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <summary class="flex justify-between items-center font-bold text-white">
-                        <span data-i18n="faq_q4">Что нужно, чтобы начать?</span>
-                        <span class="transition group-open:rotate-180 text-indigo-400"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq_a4">
-                        Просто напишите в WhatsApp или Telegram. Вы отвечаете на несколько вопросов — дальше вы получаете структуру и план работ.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer CTA -->
-    <footer class="py-16 bg-[#020617] border-t border-white/5 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
-
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 font-tech" data-i18n="footer_title">Готовы получить сайт под заявки?</h2>
-
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-10">
-                <a href="https://t.me/Anukenn" target="_blank" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto flex items-center justify-center gap-4 bg-[#2AABEE]/10 text-[#2AABEE] border border-[#2AABEE]/20 hover:bg-[#2AABEE] hover:text-white px-8 py-4 rounded-xl transition duration-300">
-                    <i class="fab fa-telegram text-2xl"></i>
-                    <div class="text-left">
-                        <div class="text-xs opacity-70" data-i18n="footer_write_in">Написать в</div>
-                        <div class="font-bold" data-i18n="footer_tg">Telegram</div>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/77074534518" target="_blank" onclick="return gtag_report_conversion(this.href);" class="w-full md:w-auto flex items-center justify-center gap-4 bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500 hover:text-white px-8 py-4 rounded-xl transition duration-300">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                    <div class="text-left">
-                        <div class="text-xs opacity-70" data-i18n="footer_write_in">Написать в</div>
-                        <div class="font-bold" data-i18n="footer_wa">WhatsApp</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="flex justify-center items-center gap-6 mb-12">
-                <a href="https://www.tiktok.com/@anuken_devepoler?_r=1&_t=ZM-934Ptob1mrk" target="_blank" class="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition transform hover:scale-110 border border-white/5">
-                    <i class="fab fa-tiktok text-xl"></i>
-                </a>
-                <a href="https://wa.me/77074534518" target="_blank" class="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-green-400 hover:bg-slate-700 transition transform hover:scale-110 border border-white/5">
-                    <i class="fab fa-whatsapp text-xl"></i>
-                </a>
-            </div>
-
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
-                <p>&copy; 2015-2026 Anuken Development.</p>
-                <p data-i18n="footer_city">Астана, Казахстан.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Mobile fixed CTA bar -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-        <div class="mx-4 mb-4 glass rounded-2xl p-3 flex gap-3">
-            <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="flex-1 bg-green-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="flex-1 bg-indigo-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
-                <i class="fab fa-telegram-plane"></i> Telegram
-            </a>
-        </div>
+      </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Reduce animations for users who prefer it
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    <div id="panelAds" class="services-panel">
+      <div class="service-cards">
+        <div class="service-card" data-anim>
+          <div class="sc-icon" style="background:rgba(239,68,68,0.12);color:#f87171;border-color:rgba(239,68,68,0.2)">
+            <i class="fab fa-google"></i>
+          </div>
+          <h4 data-i18n="ads_1t">Поисковая реклама</h4>
+          <p data-i18n="ads_1d">Настройка кампаний в Google Search — ваше объявление в топ 1–2 по целевым запросам.</p>
+          <ul class="sc-features">
+            <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="ads_1f1">Сбор семантики</span></li>
+            <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="ads_1f2">Минус-слова и фильтрация</span></li>
+            <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="ads_1f3">Вывод в топ 1–2</span></li>
+          </ul>
+        </div>
+        <div class="service-card featured" data-anim data-delay="1">
+          <div class="sc-badge" data-i18n="badge_reco">РЕКОМЕНДУЮ</div>
+          <div class="sc-icon" style="background:rgba(99,102,241,0.12);color:var(--accent2);border-color:rgba(99,102,241,0.2)">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4 data-i18n="ads_2t">Реклама + Аналитика</h4>
+          <p data-i18n="ads_2d">Полный цикл: реклама, цели, конверсии, оптимизация. Прозрачная отчётность.</p>
+          <ul class="sc-features">
+            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ads_2f1">Настройка конверсий GA4</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ads_2f2">Оптимизация 1 месяц</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ads_2f3">Еженедельные отчёты</span></li>
+          </ul>
+        </div>
+        <div class="service-card" data-anim data-delay="2">
+          <div class="sc-icon" style="background:rgba(34,197,94,0.12);color:var(--green);border-color:rgba(34,197,94,0.2)">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4 data-i18n="ads_3t">Защита от скликивания</h4>
+          <p data-i18n="ads_3d">Система фильтрации фейковых кликов — ваш бюджет не тратится на ботов и конкурентов.</p>
+          <ul class="sc-features">
+            <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="ads_3f1">Обнаружение ботов</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="ads_3f2">Блокировка IP</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="ads_3f3">Мониторинг 24/7</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Hero background randomizer (меняется при каждом заходе)
-        (function () {
-            const imgEl = document.getElementById('hero-bg');
-            if (!imgEl) return;
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div class="container">
+    <div class="pricing-header" data-anim>
+      <div class="section-label" data-i18n="price_label">Цены</div>
+      <h2 class="section-title" data-i18n="price_title">Прозрачные тарифы</h2>
+      <p class="section-desc" style="margin:12px auto 0" data-i18n="price_desc">Разработка сайтов и Google Ads — два отдельных прайса. Выбирайте то, что нужно.</p>
+    </div>
 
-            // Добавьте свои файлы в папку /images и при необходимости поменяйте список
-            const heroImages = [
-                'images/image.png',     // текущий фон (fallback)
-                'images/hero-1.jpg',
-                'images/hero-2.jpg',
-                'images/hero-3.jpg',
-                'images/hero-4.jpg'
-            ];
+    <!-- Site Pricing -->
+    <div class="section-label" style="margin-bottom:16px;text-align:center" data-anim data-i18n="price_sites_label">
+      <i class="fas fa-code" style="margin-right:6px"></i> Разработка сайтов
+    </div>
+    <div class="price-cards" style="margin-bottom:48px">
+      <div class="price-card" data-anim>
+        <div class="card-top">
+          <div><div class="price-name">Start</div><div class="price-sub">Landing Page</div></div>
+          <div class="price-amount">20 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 20$</div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_1">Дизайн + верстка</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_2">Адаптив под телефон</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_3">Базовая SEO-структура</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="ps1_4">Подключение домена</span></li>
+        </ul>
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_discuss">Обсудить</a>
+      </div>
+      <div class="price-card popular" data-anim data-delay="1">
+        <div class="pop-badge" data-i18n="badge_best">ЛУЧШИЙ ВЫБОР</div>
+        <div class="card-top">
+          <div><div class="price-name">Business</div><div class="price-sub" data-i18n="ps2_sub">Сайт под заявки</div></div>
+          <div class="price-amount">80 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 160$</div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_1">Проработка структуры</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_2">Упаковка оффера (тексты)</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_3">Аналитика + цели</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent3)"></i> <span data-i18n="ps2_4">30 дней поддержки</span></li>
+        </ul>
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary" style="width:100%" data-i18n="hero_cta1">Получить расчёт</a>
+      </div>
+      <div class="price-card" data-anim data-delay="2">
+        <div class="card-top">
+          <div><div class="price-name">Pro</div><div class="price-sub" data-i18n="ps3_sub">E-commerce / Каталог</div></div>
+          <div class="price-amount">150 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 300$</div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_1">Корзина / формы</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_2">Каталог товаров</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_3">Оптимизация скорости</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--cyan)"></i> <span data-i18n="ps3_4">Масштабирование</span></li>
+        </ul>
+        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_tg">Написать в Telegram</a>
+      </div>
+    </div>
 
-            // Убираем дубликаты, если случайно добавите одинаковые пути
-            const unique = Array.from(new Set(heroImages)).filter(Boolean);
+    <!-- Ads Pricing -->
+    <div class="section-label" style="margin-bottom:16px;text-align:center" data-anim data-i18n="price_ads_label">
+      <i class="fab fa-google" style="margin-right:6px"></i> Google Ads
+    </div>
+    <div class="price-cards">
+      <div class="price-card" data-anim>
+        <div class="card-top">
+          <div><div class="price-name" data-i18n="pa1_name">Настройка</div><div class="price-sub" data-i18n="pa1_sub">Запуск кампаний</div></div>
+          <div class="price-amount">50 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 100$</div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_1">Сбор ключевых слов</span></li>
+          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_2">Настройка кампаний</span></li>
+          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_3">Подключение аналитики</span></li>
+          <li><i class="fas fa-check-circle" style="color:#f87171"></i> <span data-i18n="pa1_4">Вывод в топ 1–2</span></li>
+        </ul>
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_discuss">Обсудить</a>
+      </div>
+      <div class="price-card popular" data-anim data-delay="1">
+        <div class="pop-badge" data-i18n="badge_best">ЛУЧШИЙ ВЫБОР</div>
+        <div class="card-top">
+          <div><div class="price-name" data-i18n="pa2_name">Полный цикл</div><div class="price-sub" data-i18n="pa2_sub">Реклама + Ведение</div></div>
+          <div class="price-amount">100 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 200$</div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_1">Полная настройка</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_2">Оптимизация 1 месяц</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_3">Защита от скликивания</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--accent2)"></i> <span data-i18n="pa2_4">Еженедельные отчёты</span></li>
+        </ul>
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary" style="width:100%" data-i18n="hero_cta1">Получить расчёт</a>
+      </div>
+      <div class="price-card" data-anim data-delay="2">
+        <div class="card-top">
+          <div><div class="price-name" data-i18n="pa3_name">Ежемесячно</div><div class="price-sub" data-i18n="pa3_sub">Ведение + Отчёты</div></div>
+          <div class="price-amount">40 000 ₸<br><span class="price-from" data-i18n="p_from">от</span> 80$<span style="font-size:12px;color:var(--text3)">/мес</span></div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_1">Ежедневный мониторинг</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_2">Корректировка ставок</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_3">A/B тест объявлений</span></li>
+          <li><i class="fas fa-check-circle" style="color:var(--green)"></i> <span data-i18n="pa3_4">Отчёт по конверсиям</span></li>
+        </ul>
+        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-secondary" style="width:100%" data-i18n="btn_tg">Написать в Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-            const last = localStorage.getItem('heroBgLast') || '';
-            // Перемешаем, но постараемся не брать тот же самый, что был прошлый раз
-            const candidates = unique.filter(s => s !== last);
-            const pool = (candidates.length ? candidates : unique).slice();
+<!-- CASES -->
+<section id="cases" class="cases-section">
+  <div class="container">
+    <div class="cases-header" data-anim>
+      <div class="section-label" data-i18n="cases_label">Портфолио</div>
+      <h2 class="section-title" data-i18n="cases_title">Примеры работ</h2>
+      <p class="section-desc" style="margin:12px auto 0" data-i18n="cases_desc">Живые сайты — откройте и оцените стиль, скорость и конверсионную структуру.</p>
+    </div>
+    <div class="cases-grid" id="casesGrid"></div>
+  </div>
+</section>
 
-            // Fisher–Yates shuffle
-            for (let i = pool.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [pool[i], pool[j]] = [pool[j], pool[i]];
-            }
+<!-- PROTECTION -->
+<section id="protection" class="protect-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px" data-anim>
+      <div class="section-label" data-i18n="prot_label">Защита бюджета</div>
+      <h2 class="section-title" style="font-size:clamp(28px,5vw,44px)" data-i18n="prot_title">Антискликивание и безопасность</h2>
+      <p class="section-desc" style="margin:12px auto 0" data-i18n="prot_desc">Система защиты от фейковых кликов — ваш рекламный бюджет работает только на реальных клиентов.</p>
+    </div>
+    <div class="protect-grid">
+      <div class="protect-card" data-anim>
+        <div class="protect-icon" style="background:rgba(239,68,68,0.12);color:#f87171"><i class="fas fa-robot"></i></div>
+        <h4 data-i18n="prot_1t">Обнаружение ботов</h4>
+        <p data-i18n="prot_1d">Автоматическая фильтрация трафика от ботов и скриптов, которые имитируют клики по вашей рекламе.</p>
+      </div>
+      <div class="protect-card" data-anim data-delay="1">
+        <div class="protect-icon" style="background:rgba(99,102,241,0.12);color:var(--accent2)"><i class="fas fa-ban"></i></div>
+        <h4 data-i18n="prot_2t">Блокировка IP конкурентов</h4>
+        <p data-i18n="prot_2d">Выявление и блокировка подозрительных IP-адресов, с которых идут множественные клики.</p>
+      </div>
+      <div class="protect-card" data-anim data-delay="2">
+        <div class="protect-icon" style="background:rgba(34,211,238,0.12);color:var(--cyan)"><i class="fas fa-eye"></i></div>
+        <h4 data-i18n="prot_3t">Мониторинг 24/7</h4>
+        <p data-i18n="prot_3d">Круглосуточное отслеживание аномального поведения и автоматическое обновление чёрных списков.</p>
+      </div>
+      <div class="protect-card" data-anim data-delay="3">
+        <div class="protect-icon" style="background:rgba(34,197,94,0.12);color:var(--green)"><i class="fas fa-chart-bar"></i></div>
+        <h4 data-i18n="prot_4t">Прозрачные отчёты</h4>
+        <p data-i18n="prot_4d">Подробная статистика: сколько кликов заблокировано, экономия бюджета и качество трафика.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            function apply(src) {
-                try { localStorage.setItem('heroBgLast', src); } catch (_) {}
+<!-- WORKFLOW -->
+<section id="workflow" class="workflow-section">
+  <div class="container">
+    <div class="workflow-header" data-anim>
+      <div class="section-label" data-i18n="wf_label">Процесс</div>
+      <h2 class="section-title" style="font-size:clamp(28px,5vw,44px)" data-i18n="wf_title">Как вы получите результат</h2>
+    </div>
+    <div class="workflow-grid">
+      <div class="wf-card" data-anim>
+        <div class="wf-num">01</div>
+        <div class="wf-icon" style="background:rgba(99,102,241,0.15);color:var(--accent2)"><i class="fas fa-search"></i></div>
+        <h4 data-i18n="wf_1t">Анализ</h4>
+        <p data-i18n="wf_1d">Вы отвечаете на пару вопросов — я собираю структуру, которая ведёт к заявке.</p>
+      </div>
+      <div class="wf-card" data-anim data-delay="1">
+        <div class="wf-num">02</div>
+        <div class="wf-icon" style="background:rgba(192,132,252,0.15);color:var(--accent3)"><i class="fas fa-pencil-ruler"></i></div>
+        <h4 data-i18n="wf_2t">Дизайн</h4>
+        <p data-i18n="wf_2d">Вы утверждаете внешний вид — только после этого начинается разработка.</p>
+      </div>
+      <div class="wf-card" data-anim data-delay="2">
+        <div class="wf-num">03</div>
+        <div class="wf-icon" style="background:rgba(34,211,238,0.15);color:var(--cyan)"><i class="fas fa-code"></i></div>
+        <h4 data-i18n="wf_3t">Разработка + Реклама</h4>
+        <p data-i18n="wf_3d">Сайт на чистом коде + настройка Google Ads, аналитика и защита от скликивания.</p>
+      </div>
+      <div class="wf-card" data-anim data-delay="3">
+        <div class="wf-num">04</div>
+        <div class="wf-icon" style="background:rgba(34,197,94,0.15);color:var(--green)"><i class="fas fa-rocket"></i></div>
+        <h4 data-i18n="wf_4t">Запуск</h4>
+        <p data-i18n="wf_4d">Сайт публикуется, реклама запускается. Вы получаете заявки и отчёты.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                if (reduceMotion) {
-                    imgEl.src = src;
-                    return;
-                }
+<!-- TESTIMONIALS -->
+<section id="reviews" class="testimonials-section">
+  <div class="container">
+    <div class="testimonials-header" data-anim>
+      <div class="section-label" data-i18n="rev_label">Отзывы</div>
+      <h2 class="section-title" data-i18n="rev_title">Что говорят клиенты</h2>
+      <p class="section-desc" style="margin:12px auto 0" data-i18n="rev_desc">Реальные отзывы — нажмите, чтобы увидеть скриншот переписки.</p>
+    </div>
+    <div class="test-grid" id="reviewsGrid"></div>
+  </div>
+</section>
 
-                imgEl.style.opacity = '0';
-                setTimeout(() => {
-                    imgEl.src = src;
-                    requestAnimationFrame(() => { imgEl.style.opacity = '0.6'; });
-                }, 220);
-            }
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="faq-header" data-anim>
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title" data-i18n="faq_title">Частые вопросы</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
 
-            // Попытка загрузить первый доступный (если файла нет — пробуем следующий)
-            let idx = 0;
-            function tryNext() {
-                if (idx >= pool.length) return; // оставляем текущий src
-                const src = pool[idx++];
-                const test = new Image();
-                test.onload = () => apply(src);
-                test.onerror = () => tryNext();
-                test.src = src;
-            }
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-glow"></div>
+  <div class="container">
+    <div class="footer-inner">
+      <h2 class="footer-title" data-i18n="footer_title">Готовы получить сайт и заявки?</h2>
+      <div class="footer-btns">
+        <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green">
+          <i class="fab fa-whatsapp"></i> <span data-i18n="footer_wa">Написать в WhatsApp</span>
+        </a>
+        <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary">
+          <i class="fab fa-telegram-plane"></i> <span data-i18n="footer_tg">Написать в Telegram</span>
+        </a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@anuken_devepoler" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/77074534518" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/Anukenn" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2015–2026 Anuken Development</span>
+      <span data-i18n="footer_city">Астана, Казахстан</span>
+    </div>
+  </div>
+</footer>
 
-            tryNext();
-        })();
+<!-- MOBILE FIXED BAR -->
+<div class="mobile-bar glass">
+  <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="mb-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="mb-tg"><i class="fab fa-telegram-plane"></i> Telegram</a>
+</div>
 
-        AOS.init({
-            once: true,
-            duration: reduceMotion ? 0 : 900,
-            offset: 50,
-            disable: () => reduceMotion
-        });
+<!-- SCREENSHOT MODAL -->
+<div class="screenshot-overlay" id="screenshotModal">
+  <button class="screenshot-close" id="screenshotClose"><i class="fas fa-times"></i></button>
+  <img id="screenshotImg" src="" alt="Скриншот переписки">
+</div>
 
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let isMenuOpen = false;
+<!-- CASE MODAL -->
+<div class="case-modal" id="caseModal">
+  <div class="case-modal-bg" id="caseModalBg"></div>
+  <div class="case-modal-content">
+    <div class="cm-header">
+      <div class="cm-title" id="cmTitle">—</div>
+      <button id="cmClose" style="color:#fff;font-size:18px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid var(--border)"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cm-body">
+      <div class="cm-left">
+        <img id="cmImage" src="" alt="">
+        <div class="cm-left-bar">
+          <div style="font-weight:700;color:var(--white);font-size:14px"><span style="font-size:11px;color:var(--text3);font-family:var(--font-tech);margin-right:6px" data-i18n="cm_price">Стоимость:</span><span id="cmPrice">—</span></div>
+          <div id="cmLiveLinks" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+        </div>
+      </div>
+      <div class="cm-right">
+        <div class="cm-info-grid">
+          <div class="cm-info-box"><div class="label" data-i18n="cm_task">Задача</div><div class="val" id="cmProblem">—</div></div>
+          <div class="cm-info-box"><div class="label" data-i18n="cm_solution">Решение</div><div class="val" id="cmSolution">—</div></div>
+        </div>
+        <div class="cm-features"><div class="label" data-i18n="cm_done">Что сделано</div><ul id="cmFeatures"></ul></div>
+        <div id="cmTags" class="cm-tags"></div>
+        <div class="cm-actions">
+          <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green btn-sm" style="width:100%"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-primary btn-sm" style="width:100%"><i class="fab fa-telegram-plane"></i> Telegram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        function openMenu() {
-            isMenuOpen = true;
-            mobileMenu.classList.remove('closed');
-            mobileMenu.classList.add('open');
-            menuBtn.innerHTML = '<i class="fas fa-times"></i>';
-            document.documentElement.style.overflow = 'hidden';
-            document.body.style.overflow = 'hidden';
-        }
+<script>
+/* ============================
+   DATA
+   ============================ */
+const PROJECTS = [
+  {id:"avia-drones",title:"Avia-Drones",url:"https://avia-drones.vercel.app/",image:"images/avia-drones.jpg",type:"Landing",color:"#6366f1",price:120000,tags:["Interactive","Catalog","WhatsApp","Animation"],
+    ru:{short:"Технологичный лендинг дронов: интерактив, модалки, анимации, WhatsApp.",problem:"Нужен продающий сайт с эффектным интерфейсом.",solution:"Интерактивный интерфейс + понятная структура и быстрые CTA.",features:["Интерактивные карточки и модальные окна","Продуманная структура и блоки доверия","CTA: WhatsApp/Telegram/формы","Адаптив и оптимизация загрузки"]},
+    en:{short:"Tech drone landing: interactivity, modals, animations, WhatsApp.",problem:"A sales-focused site with strong interface was required.",solution:"Interactive experience, clean structure, fast CTA paths.",features:["Interactive cards and spec modals","Clear structure and trust blocks","CTAs: WhatsApp/Telegram/forms","Responsive layout and performance"]}},
+  {id:"kassenova-store",title:"Kassenova Store",url:"https://kassenova-market.vercel.app/",image:"images/kassenova.jpg",type:"E-commerce",color:"#7c3aed",price:250000,tags:["Cart","Calculator","WhatsApp","JS Logic"],
+    ru:{short:"Интернет-магазин: корзина, расчёт, отправка заказа в WhatsApp.",problem:"Нужен магазин с удобным оформлением заказа.",solution:"Корзина, расчёты, каталог и отправка заказа в мессенджер.",features:["Корзина и управление количеством/суммой","Калькулятор и логика заказа","Отправка заказа в WhatsApp","Оптимизация скорости и UX каталога"]},
+    en:{short:"Electronics store: cart, checkout logic, WhatsApp order.",problem:"Store with convenient checkout for different scenarios.",solution:"Cart, calculations, smooth catalog, messenger submission.",features:["Cart with quantity/total controls","Calculator and order logic","WhatsApp order submission","Performance and catalog UX"]}},
+  {id:"manipulator",title:"Аренда Манипулятора",url:"https://manipulator-evakuator.vercel.app/",image:"images/manipulator.jpg",type:"Landing",color:"#6366f1",price:90000,tags:["Responsive","Speed","CTA","Service"],
+    ru:{short:"Конверсионный сайт услуг: быстрые кнопки связи, блоки доверия.",problem:"Нужен сайт, который приводит звонки и заявки с телефона.",solution:"Конверсионная структура и быстрый путь к связи.",features:["Сильный оффер и конверсионные блоки","Кнопки звонка/WhatsApp/Telegram","Адаптив под телефон","Оптимизация скорости загрузки"]},
+    en:{short:"Conversion-focused service landing: fast CTAs, trust blocks.",problem:"A site that drives calls and leads from mobile traffic.",solution:"Conversion structure with shortest path to contact.",features:["Strong offer and conversion blocks","Call/WhatsApp/Telegram CTAs","Mobile-first layout","Page speed optimization"]}},
+  {id:"elegance",title:"Салон ELEGANCE",url:"https://elegance-almaty.vercel.app/",image:"images/elegance.jpg",type:"Landing",color:"#a855f7",price:70000,tags:["Design","Animation","Price List","Booking"],
+    ru:{short:"Премиальный лендинг: прайс, анимации, тёмная эстетика, запись.",problem:"Нужен стильный сайт для премиум-позиционирования.",solution:"Строгий дизайн, понятный прайс и быстрая запись.",features:["Блоки: услуги/прайс/контакты","Анимации и премиальная подача","CTA на запись","Адаптив и оптимизация"]},
+    en:{short:"Premium landing: pricing, animations, dark aesthetics, booking.",problem:"Stylish site aligned with premium positioning.",solution:"Clean layout, clear pricing, fast booking path.",features:["Services/pricing/contacts sections","Subtle animations and premium style","Booking CTAs","Responsive and optimized"]}},
+  {id:"maverick",title:"Maverick Barbershop",url:"https://maver1ck.vercel.app/",image:"images/maverick.jpg",type:"Landing",color:"#6366f1",price:85000,tags:["Video BG","Booking","Team","Branding"],
+    ru:{short:"Сайт с видео-фоном, блоком мастеров, CTA и записью.",problem:"Нужен сайт, подчёркивающий стиль и приводящий записи.",solution:"Выразительная подача, видеоряд, простой путь к записи.",features:["Видео-фон и hero-блок","Раздел мастеров/услуг","CTA и запись","Адаптив и оптимизация"]},
+    en:{short:"Website with video hero, team section, CTAs, booking.",problem:"A site that highlights style and drives bookings.",solution:"Strong visual hero, video layer, simple booking flow.",features:["Video background and hero block","Team/services sections","Booking CTAs","Responsive and optimized"]}},
+  {id:"astanajas",title:"ASTANA JAS Academy",url:"https://astanajas-kz.vercel.app/",urls:[{ru:"Вариант 1",en:"Version 1",url:"https://astanajas-kz.vercel.app/"},{ru:"Вариант 2",en:"Version 2",url:"https://astanajas.vercel.app/"}],image:"images/astanajas.jpg",type:"Multi-page",color:"#22d3ee",price:200000,tags:["Multi-page","AOS","Tailwind","UX"],
+    ru:{short:"Сайт футбольной академии: программы, секции, контакты.",problem:"Нужен современный сайт академии с понятной структурой.",solution:"Многостраничная структура, акцент на доверие и связь.",features:["Многостраничная структура и навигация","Блоки программ и преимуществ","Адаптив и оптимизация","Две версии дизайна"]},
+    en:{short:"Football academy: programs, sections, contacts, navigation.",problem:"Modern academy website with clear structure.",solution:"Multi-page structure, trust focus, easy communication.",features:["Multi-page structure with navigation","Programs/benefits/FAQ sections","Responsive and optimized","Two design variants"]}},
+  {id:"nextgen-academy",title:"NextGen Academy",url:"https://nextgen-academy-flame.vercel.app/",image:"images/nextgen-academy.jpg",type:"Landing",color:"#6366f1",price:60000,tags:["Education","CTA","Form","Responsive"],
+    ru:{short:"Лендинг 3-дневного интенсива: оффер, секции, регистрация.",problem:"Нужен лендинг для регистрации на интенсив.",solution:"Конверсионная структура с CTA и формой регистрации.",features:["Конверсионный hero-блок","Секции: кому подходит, программа","Форма регистрации","Адаптив и подача контента"]},
+    en:{short:"Landing for 3-day intensive: offer, sections, registration.",problem:"Registration-focused landing page.",solution:"Conversion structure with CTAs and registration form.",features:["Conversion hero block","Sections: audience, program, details","Registration form and lead capture","Responsive layout"]}}
+];
 
-        function closeMenu() {
-            isMenuOpen = false;
-            mobileMenu.classList.remove('open');
-            mobileMenu.classList.add('closed');
-            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            document.documentElement.style.overflow = '';
-            document.body.style.overflow = '';
-        }
+const REVIEWS = [
+  {id:"r1",avatar:"Е",screenshot:"images/review-erzhan.jpg",
+    ru:{name:"Клиент Ержан",role:"Услуги манипулятора / Алматы",text:"Сделали быстро и очень аккуратно. Сайт выглядит дороже, чем ожидали. Заявки пошли в первую же неделю."},
+    en:{name:"Client Erzhan",role:"Crane service / Almaty",text:"Delivered fast and very neatly. The website looks more premium than expected. Leads came in the first week."}},
+  {id:"r2",avatar:"С",screenshot:"images/review-saltanat.jpg",
+    ru:{name:"Клиент Салтанат",role:"Дроны / Астана",text:"Подсказали по структуре и офферу — стало понятно, за что платим и что получаем. Реклама работает отлично."},
+    en:{name:"Client Saltanat",role:"Drones / Astana",text:"Helped with structure and offer — it became clear what we're paying for. Ads work great."}},
+  {id:"r3",avatar:"А",screenshot:"images/review-anya.jpg",
+    ru:{name:"Клиент Аня",role:"Интернет-магазин / Жезказган",text:"Всё под ключ: сайт, аналитика, защита от скликивания — просто написали и получили результат."},
+    en:{name:"Client Anya",role:"E-commerce / Zhezkazgan",text:"Everything turnkey: website, analytics, click fraud protection — we just messaged and got the result."}},
+  {id:"r4",avatar:"Д",screenshot:"images/review-dauren.jpg",
+    ru:{name:"Клиент Даурен",role:"Автосервис / Астана",text:"Google Ads настроили за 2 дня, в первый месяц получили 47 заявок. Защита от ботов реально работает."},
+    en:{name:"Client Dauren",role:"Auto service / Astana",text:"Google Ads set up in 2 days, got 47 leads in the first month. Bot protection really works."}},
+  {id:"r5",avatar:"М",screenshot:"images/review-madina.jpg",
+    ru:{name:"Клиент Мадина",role:"Салон красоты / Алматы",text:"Сайт получился стильный и быстрый. Записи увеличились вдвое после запуска рекламы."},
+    en:{name:"Client Madina",role:"Beauty salon / Almaty",text:"The site turned out stylish and fast. Bookings doubled after launching ads."}},
+  {id:"r6",avatar:"К",screenshot:"images/review-kanat.jpg",
+    ru:{name:"Клиент Канат",role:"Стройматериалы / Караганда",text:"Нужен был магазин с корзиной — сделали за 4 дня. Удобно и для нас, и для клиентов."},
+    en:{name:"Client Kanat",role:"Building materials / Karaganda",text:"Needed a store with cart — built in 4 days. Convenient for us and our clients."}}
+];
 
-        menuBtn.addEventListener('click', () => {
-            if (isMenuOpen) closeMenu();
-            else openMenu();
-        });
+const FAQS = [
+  {ru:{q:"Сколько времени занимает разработка?",a:"Landing Page — 1–2 дня. Многостраничные проекты — 2–5 дней. Настройка Google Ads — 1–3 дня. Перед стартом вы получаете точные сроки."},
+   en:{q:"How long does development take?",a:"Landing page — 1–2 days. Multi-page — 2–5 days. Google Ads setup — 1–3 days. You get exact timelines before start."}},
+  {ru:{q:"Есть ли ежемесячная оплата?",a:"Разработка сайта — разовая оплата. Ведение рекламы — ежемесячно. Хостинг/домен оплачиваются отдельно (обычно недорого)."},
+   en:{q:"Is there a monthly fee?",a:"Site development is a one-time payment. Ad management is monthly. Hosting/domain are separate (usually inexpensive)."}},
+  {ru:{q:"Что входит в защиту от скликивания?",a:"Система отслеживает подозрительные клики, блокирует IP-адреса ботов и конкурентов, ведёт мониторинг 24/7 и предоставляет отчёты."},
+   en:{q:"What's included in click fraud protection?",a:"The system tracks suspicious clicks, blocks bot/competitor IPs, runs 24/7 monitoring, and provides reports."}},
+  {ru:{q:"Можно заказать только рекламу без сайта?",a:"Да. Если у вас уже есть сайт — настрою Google Ads, подключу аналитику и защиту от скликивания отдельно."},
+   en:{q:"Can I order only ads without a site?",a:"Yes. If you already have a site, I'll set up Google Ads, analytics, and click fraud protection separately."}},
+  {ru:{q:"Что нужно, чтобы начать?",a:"Напишите в WhatsApp или Telegram. Ответите на несколько вопросов — получите структуру и план работ."},
+   en:{q:"What do you need to start?",a:"Message me on WhatsApp or Telegram. Answer a few questions — get a structure and work plan."}}
+];
 
-        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+/* I18N */
+const I18N={
+  ru:{nav_services:"Услуги",nav_pricing:"Цены",nav_cases:"Кейсы",nav_workflow:"Процесс",nav_protection:"Защита",nav_reviews:"Отзывы",nav_faq:"FAQ",
+    hero_badge:"Доступен для проектов",hero_title:'Сайты и <span class="tg">Google Ads</span><br>под ключ',hero_desc:'Вы получаете продающий сайт и настроенную рекламу в Google. Вывод в топ, аналитика, защита от скликивания. <strong>Один исполнитель — один результат.</strong>',
+    trust_1t:"Сроки",trust_1v:"2–5 дней",trust_2t:"Аналитика",trust_2v:"GA4 / цели",trust_3t:"Защита",trust_3v:"Антискликивание",trust_4t:"Связь",trust_4v:"WA / Telegram",
+    hero_cta1:"Получить расчёт",hero_cta2:"Посмотреть кейсы",stat_cases:"кейсов",stat_days:"дней",stat_top:"позиции",
+    svc_label:"Что вы получите",svc_title:"Два направления — один результат",svc_desc:"Разработка сайтов и настройка Google Ads. Работаю как единая команда: от структуры до запуска рекламы.",
+    tab_sites:"Сайты",tab_ads:"Google Ads",
+    site_1t:"Landing Page",site_1d:"Одностраничный сайт с высокой конверсией для продажи услуг или товара.",site_1f1:"Уникальный дизайн",site_1f2:"Адаптив под телефон",site_1f3:"Базовая SEO-структура",
+    badge_reco:"РЕКОМЕНДУЮ",site_2t:"Сайт под заявки",site_2d:"Проработанная структура, тексты, аналитика — чтобы заявки можно было измерять.",site_2f1:"Проработка структуры",site_2f2:"Упаковка оффера",site_2f3:"30 дней поддержки",
+    site_3t:"Техподдержка",site_3d:"Правки, скорость, адаптив, обновление контента на существующем сайте.",site_3f1:"Правка кода",site_3f2:"Оптимизация загрузки",site_3f3:"Исправление ошибок",
+    ads_1t:"Поисковая реклама",ads_1d:"Настройка кампаний в Google Search — ваше объявление в топ 1–2 по целевым запросам.",ads_1f1:"Сбор семантики",ads_1f2:"Минус-слова и фильтрация",ads_1f3:"Вывод в топ 1–2",
+    ads_2t:"Реклама + Аналитика",ads_2d:"Полный цикл: реклама, цели, конверсии, оптимизация. Прозрачная отчётность.",ads_2f1:"Настройка конверсий GA4",ads_2f2:"Оптимизация 1 месяц",ads_2f3:"Еженедельные отчёты",
+    ads_3t:"Защита от скликивания",ads_3d:"Система фильтрации фейковых кликов — бюджет не тратится на ботов.",ads_3f1:"Обнаружение ботов",ads_3f2:"Блокировка IP",ads_3f3:"Мониторинг 24/7",
+    price_label:"Цены",price_title:"Прозрачные тарифы",price_desc:"Разработка сайтов и Google Ads — два отдельных прайса.",
+    price_sites_label:'<i class="fas fa-code" style="margin-right:6px"></i> Разработка сайтов',price_ads_label:'<i class="fab fa-google" style="margin-right:6px"></i> Google Ads',
+    p_from:"от",ps1_1:"Дизайн + верстка",ps1_2:"Адаптив под телефон",ps1_3:"Базовая SEO-структура",ps1_4:"Подключение домена",badge_best:"ЛУЧШИЙ ВЫБОР",ps2_sub:"Сайт под заявки",ps2_1:"Проработка структуры",ps2_2:"Упаковка оффера (тексты)",ps2_3:"Аналитика + цели",ps2_4:"30 дней поддержки",ps3_sub:"E-commerce / Каталог",ps3_1:"Корзина / формы",ps3_2:"Каталог товаров",ps3_3:"Оптимизация скорости",ps3_4:"Масштабирование",
+    pa1_name:"Настройка",pa1_sub:"Запуск кампаний",pa1_1:"Сбор ключевых слов",pa1_2:"Настройка кампаний",pa1_3:"Подключение аналитики",pa1_4:"Вывод в топ 1–2",
+    pa2_name:"Полный цикл",pa2_sub:"Реклама + Ведение",pa2_1:"Полная настройка",pa2_2:"Оптимизация 1 месяц",pa2_3:"Защита от скликивания",pa2_4:"Еженедельные отчёты",
+    pa3_name:"Ежемесячно",pa3_sub:"Ведение + Отчёты",pa3_1:"Ежедневный мониторинг",pa3_2:"Корректировка ставок",pa3_3:"A/B тест объявлений",pa3_4:"Отчёт по конверсиям",
+    btn_discuss:"Обсудить",btn_tg:"Написать в Telegram",
+    cases_label:"Портфолио",cases_title:"Примеры работ",cases_desc:"Живые сайты — откройте и оцените стиль, скорость и конверсионную структуру.",
+    prot_label:"Защита бюджета",prot_title:"Антискликивание и безопасность",prot_desc:"Система защиты от фейковых кликов — бюджет работает только на реальных клиентов.",
+    prot_1t:"Обнаружение ботов",prot_1d:"Автоматическая фильтрация трафика от ботов и скриптов.",prot_2t:"Блокировка IP конкурентов",prot_2d:"Выявление и блокировка подозрительных IP-адресов.",prot_3t:"Мониторинг 24/7",prot_3d:"Круглосуточное отслеживание аномального поведения.",prot_4t:"Прозрачные отчёты",prot_4d:"Статистика: заблокировано кликов, экономия бюджета, качество трафика.",
+    wf_label:"Процесс",wf_title:"Как вы получите результат",wf_1t:"Анализ",wf_1d:"Вы отвечаете на пару вопросов — я собираю структуру под заявки.",wf_2t:"Дизайн",wf_2d:"Вы утверждаете вид — только после этого начинается разработка.",wf_3t:"Разработка + Реклама",wf_3d:"Сайт на чистом коде + Google Ads, аналитика и защита.",wf_4t:"Запуск",wf_4d:"Сайт публикуется, реклама запускается. Заявки и отчёты.",
+    rev_label:"Отзывы",rev_title:"Что говорят клиенты",rev_desc:"Реальные отзывы — нажмите, чтобы увидеть скриншот переписки.",
+    faq_title:"Частые вопросы",footer_title:"Готовы получить сайт и заявки?",footer_wa:"Написать в WhatsApp",footer_tg:"Написать в Telegram",footer_city:"Астана, Казахстан",
+    cm_price:"Стоимость:",cm_task:"Задача",cm_solution:"Решение",cm_done:"Что сделано",btn_live:"Открыть",btn_details:"Подробнее",click_screenshot:"Нажмите, чтобы увидеть скриншот"
+  },
+  en:{nav_services:"Services",nav_pricing:"Pricing",nav_cases:"Cases",nav_workflow:"Process",nav_protection:"Protection",nav_reviews:"Reviews",nav_faq:"FAQ",
+    hero_badge:"Available for projects",hero_title:'Websites & <span class="tg">Google Ads</span><br>turnkey',hero_desc:'You get a converting website and configured Google advertising. Top ranking, analytics, click fraud protection. <strong>One specialist — one result.</strong>',
+    trust_1t:"Timeline",trust_1v:"2–5 days",trust_2t:"Analytics",trust_2v:"GA4 / goals",trust_3t:"Protection",trust_3v:"Anti-fraud",trust_4t:"Contact",trust_4v:"WA / Telegram",
+    hero_cta1:"Get a quote",hero_cta2:"View cases",stat_cases:"cases",stat_days:"days",stat_top:"ranking",
+    svc_label:"What you get",svc_title:"Two services — one result",svc_desc:"Website development and Google Ads setup. I work as a complete team: from structure to ad launch.",
+    tab_sites:"Websites",tab_ads:"Google Ads",
+    site_1t:"Landing Page",site_1d:"Single-page high-converting website for selling services or products.",site_1f1:"Custom design",site_1f2:"Mobile responsive",site_1f3:"Basic SEO structure",
+    badge_reco:"RECOMMENDED",site_2t:"Lead-gen website",site_2d:"Planned structure, copy, analytics — so leads are measurable.",site_2f1:"Structure planning",site_2f2:"Offer packaging",site_2f3:"30 days support",
+    site_3t:"Support",site_3d:"Fixes, speed, responsiveness, content updates for existing site.",site_3f1:"Code edits",site_3f2:"Load optimization",site_3f3:"Bug fixes",
+    ads_1t:"Search Ads",ads_1d:"Google Search campaigns — your ad in top 1–2 for target queries.",ads_1f1:"Keyword research",ads_1f2:"Negative keywords & filtering",ads_1f3:"Top 1–2 ranking",
+    ads_2t:"Ads + Analytics",ads_2d:"Full cycle: ads, goals, conversions, optimization. Transparent reports.",ads_2f1:"GA4 conversion setup",ads_2f2:"1 month optimization",ads_2f3:"Weekly reports",
+    ads_3t:"Click fraud protection",ads_3d:"Fake click filtering system — budget isn't wasted on bots.",ads_3f1:"Bot detection",ads_3f2:"IP blocking",ads_3f3:"24/7 monitoring",
+    price_label:"Pricing",price_title:"Transparent rates",price_desc:"Website development and Google Ads — two separate price lists.",
+    price_sites_label:'<i class="fas fa-code" style="margin-right:6px"></i> Website development',price_ads_label:'<i class="fab fa-google" style="margin-right:6px"></i> Google Ads',
+    p_from:"from",ps1_1:"Design + build",ps1_2:"Mobile responsive",ps1_3:"Basic SEO structure",ps1_4:"Domain connection",badge_best:"BEST VALUE",ps2_sub:"Lead-gen website",ps2_1:"Structure planning",ps2_2:"Offer packaging (copy)",ps2_3:"Analytics + goals",ps2_4:"30 days support",ps3_sub:"E-commerce / Catalog",ps3_1:"Cart / forms",ps3_2:"Product catalog",ps3_3:"Speed optimization",ps3_4:"Scalability",
+    pa1_name:"Setup",pa1_sub:"Campaign launch",pa1_1:"Keyword research",pa1_2:"Campaign setup",pa1_3:"Analytics integration",pa1_4:"Top 1–2 ranking",
+    pa2_name:"Full cycle",pa2_sub:"Ads + Management",pa2_1:"Complete setup",pa2_2:"1 month optimization",pa2_3:"Click fraud protection",pa2_4:"Weekly reports",
+    pa3_name:"Monthly",pa3_sub:"Management + Reports",pa3_1:"Daily monitoring",pa3_2:"Bid adjustments",pa3_3:"A/B ad testing",pa3_4:"Conversion reports",
+    btn_discuss:"Discuss",btn_tg:"Message on Telegram",
+    cases_label:"Portfolio",cases_title:"Work examples",cases_desc:"Live websites — open and evaluate style, speed, and conversion structure.",
+    prot_label:"Budget protection",prot_title:"Anti-fraud & security",prot_desc:"Click fraud protection system — budget works only on real clients.",
+    prot_1t:"Bot detection",prot_1d:"Automatic filtering of bot and script traffic.",prot_2t:"Competitor IP blocking",prot_2d:"Detection and blocking of suspicious IP addresses.",prot_3t:"24/7 monitoring",prot_3d:"Round-the-clock anomaly tracking.",prot_4t:"Transparent reports",prot_4d:"Statistics: blocked clicks, budget savings, traffic quality.",
+    wf_label:"Process",wf_title:"How you get results",wf_1t:"Discovery",wf_1d:"Answer a few questions — I build a lead-focused structure.",wf_2t:"Design",wf_2d:"You approve the look — then development begins.",wf_3t:"Development + Ads",wf_3d:"Clean code site + Google Ads, analytics and protection.",wf_4t:"Launch",wf_4d:"Site goes live, ads launch. Leads and reports.",
+    rev_label:"Reviews",rev_title:"What clients say",rev_desc:"Real reviews — click to see chat screenshot.",
+    faq_title:"FAQ",footer_title:"Ready to get a site and leads?",footer_wa:"Message on WhatsApp",footer_tg:"Message on Telegram",footer_city:"Astana, Kazakhstan",
+    cm_price:"Price:",cm_task:"Task",cm_solution:"Solution",cm_done:"What was done",btn_live:"Open",btn_details:"Details",click_screenshot:"Click to see screenshot"
+  }
+};
 
-        // Close on ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMenuOpen) closeMenu();
-        });
+let lang=localStorage.getItem('siteLang')||((navigator.language||'').startsWith('ru')?'ru':'en');
+const t=k=>I18N[lang]?.[k]||I18N.ru[k]||k;
+const fmt=n=>n?n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₸':'—';
 
-        // Close on click outside menu items area (background)
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) closeMenu();
-        });
+/* ============================
+   RENDER FUNCTIONS
+   ============================ */
+function renderTicker(){
+  const items=['<i class="fab fa-html5" style="color:#f97316"></i> HTML5','<i class="fab fa-css3-alt" style="color:#3b82f6"></i> CSS3','<i class="fab fa-js" style="color:#eab308"></i> JavaScript','<i class="fab fa-google" style="color:#ef4444"></i> Google Ads','<i class="fas fa-chart-line" style="color:#f97316"></i> Analytics','<i class="fas fa-shield-alt" style="color:#22c55e"></i> Anti-Fraud'];
+  document.getElementById('ticker').innerHTML=[...items,...items].map(i=>`<div class="ticker-item">${i}</div>`).join('');
+}
 
-        // ===== RU / EN i18n (переключатель языка) =====
-        (function () {
-            const translations = {
-                ru: {
-                    meta_title: "Anuken | Разработчик сайтов",
-                    meta_desc: "Вы получаете продающий сайт и поток клиентов из Google. Разработка под ключ: дизайн, код, аналитика, запуск рекламы.",
+function renderCases(){
+  const grid=document.getElementById('casesGrid');
+  grid.innerHTML=PROJECTS.map((p,i)=>{
+    const d=p[lang]||p.ru;
+    return `
+    <div class="case-card" data-anim ${i>0?`data-delay="${Math.min(i,3)}"`:''}>
+      <div class="case-img">
+        <img src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.style.background='var(--card)';this.alt='${p.title}'">
+        <div class="case-badges">
+          <span class="case-type-badge" style="background:${p.color}">${p.type}</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <h4>${p.title}</h4>
+        <p>${d.short}</p>
+        <div class="case-btns">
+          <a href="${p.url}" target="_blank" class="btn btn-sm btn-secondary">${t('btn_live')} <i class="fas fa-external-link-alt" style="font-size:11px"></i></a>
+          <button class="btn btn-sm btn-primary" onclick="openCaseModal('${p.id}')">${t('btn_details')} <i class="fas fa-expand" style="font-size:11px"></i></button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
-                    nav_services: "Услуги",
-                    nav_cases: "Кейсы",
-                    nav_pricing: "Цены",
-                    nav_workflow: "Процесс",
-                    nav_portfolio: "Портфолио",
-                    nav_faq: "Вопросы",
-                    header_cta_telegram: "Telegram",
+function renderReviews(){
+  const grid=document.getElementById('reviewsGrid');
+  grid.innerHTML=REVIEWS.map((r,i)=>{
+    const d=r[lang]||r.ru;
+    const colors=['var(--accent2)','var(--accent3)','var(--cyan)','var(--green)','#f87171','#eab308'];
+    return `
+    <div class="test-card glass" data-anim ${i>0?`data-delay="${Math.min(i,3)}"`:''} onclick="openScreenshot('${r.screenshot}')">
+      <div class="quote-icon" style="color:${colors[i%colors.length]}"><i class="fas fa-quote-left"></i></div>
+      <div class="quote-text">"${d.text}"</div>
+      <div class="quote-hint"><i class="fas fa-image"></i> ${t('click_screenshot')}</div>
+      <div class="test-author">
+        <div class="test-avatar" style="background:linear-gradient(135deg,${colors[i%colors.length]},${colors[(i+1)%colors.length]})">${r.avatar}</div>
+        <div><div class="test-name">${d.name}</div><div class="test-role">${d.role}</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
-                    mobile_cta_tg: "Написать в Telegram",
-                    mobile_cta_wa: "Написать в WhatsApp",
+function renderFAQ(){
+  const list=document.getElementById('faqList');
+  list.innerHTML=FAQS.map((f,i)=>{
+    const d=f[lang]||f.ru;
+    return `
+    <div class="faq-item" data-anim ${i>0?`data-delay="${Math.min(i,3)}"`:''}>
+      <div class="faq-q" onclick="toggleFAQ(this)"><span>${d.q}</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-a"><div class="faq-a-inner">${d.a}</div></div>
+    </div>`;
+  }).join('');
+}
 
-                    hero_badge: "Доступен для проектов",
-                    hero_title: "Вы получаете <br> <span class=\"text-gradient\">продающий сайт</span>",
-                    hero_desc: "Вы получаете современный сайт под ключ и понятный путь к заявкам: структура, дизайн, код, аналитика и запуск. <span class=\"text-white font-medium border-b border-indigo-500/50\">Без посредников и лишних переплат.</span>",
-                    trust_1_title: "Сроки",
-                    trust_1_value: "2–5 дней",
-                    trust_2_title: "Аналитика",
-                    trust_2_value: "GA4 / цели",
-                    trust_3_title: "Бесплатное обслуживание",
-                    trust_3_value: "30 дней",
-                    trust_4_title: "Связь",
-                    trust_4_value: "WhatsApp/Telegram",
-                    hero_btn_quote: "Получить расчёт",
-                    hero_btn_cases: "Посмотреть кейсы",
-                    hero_stat_1: "кейсов",
-                    hero_stat_2: "дней",
-                    hero_stat_3: "контакт",
+function applyI18n(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(I18N[lang]?.[k]!==undefined)el.textContent=I18N[lang][k]});
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html');if(I18N[lang]?.[k]!==undefined)el.innerHTML=I18N[lang][k]});
+  document.querySelectorAll('.lang-toggle').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang)});
+}
 
-                    services_kicker: "Что вы получите",
-                    services_title: "Услуги под ключ",
-                    services_desc: "Вы получаете понятный результат: сайт, который выглядит современно, быстро загружается и ведёт клиента к заявке.",
-                    service_1_title: "Landing Page",
-                    service_1_desc: "Вы получаете одностраничный сайт с высокой конверсией для продажи услуг или товара.",
-                    service_1_b1: "Уникальный дизайн",
-                    service_1_b2: "Адаптация под телефон",
-                    service_1_b3: "Базовая SEO-структура",
-                    service_badge_reco: "РЕКОМЕНДУЮ",
-                    service_2_title: "Сайт + Google Ads",
-                    service_2_desc: "Вы получаете сайт и настроенную рекламу с аналитикой — чтобы заявки можно было измерять.",
-                    service_2_b1: "Семантика и структура",
-                    service_2_b2: "Настройка целей/конверсий",
-                    service_2_b3: "Ведение 1 месяц",
-                    service_3_title: "Техподдержка",
-                    service_3_desc: "Если сайт уже есть — вы получаете улучшения: скорость, правки, адаптив, обновление контента.",
-                    service_3_b1: "Правка кода",
-                    service_3_b2: "Оптимизация загрузки",
-                    service_3_b3: "Исправление ошибок",
+function renderAll(){
+  applyI18n();renderTicker();renderCases();renderReviews();renderFAQ();initAnim();
+}
 
-                    cases_kicker: "Кейсы",
-                    cases_title: "Примеры работ",
-                    cases_desc: "Вы можете посмотреть живые сайты и понять стиль, уровень и подход.",
-                    case_1_desc: "Вы получаете технологичный лендинг с интерактивом, модалками и интеграцией WhatsApp.",
-                    case_2_desc: "Вы получаете магазин с логикой корзины, расчетом и отправкой заказа в WhatsApp.",
-                    case_3_desc: "Вы получаете многостраничный сайт с навигацией, секциями и современными анимациями.",
-                    btn_details: "Подробнее",
-                    cases_all_portfolio: "Смотреть всё портфолио",
+/* ============================
+   INTERACTIONS
+   ============================ */
+// Header scroll
+let lastScroll=0;
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>40);
+},{passive:true});
 
-                    pricing_kicker: "Пакеты",
-                    pricing_title: "Цены и комплектация",
-                    pricing_desc: "Ниже — ориентиры. Вы сможете заменить цены и состав пакетов под свой оффер.",
-                    price_from: "от",
-                    btn_discuss: "Обсудить",
-                    price_badge_best: "ЛУЧШИЙ ВЫБОР",
-                    price_2_sub: "Сайт под заявки",
-                    price_1_b1: "Дизайн + верстка",
-                    price_1_b2: "Адаптив под телефон",
-                    price_1_b3: "Базовая SEO-структура",
-                    price_1_b4: "Подключение домена",
-                    price_2_b1: "Проработка структуры",
-                    price_2_b2: "Упаковка оффера (тексты)",
-                    price_2_b3: "Аналитика + цели",
-                    price_2_b4: "30 дней поддержки",
-                    price_3_b1: "Кампании Google Ads",
-                    price_3_b2: "Настройка конверсий",
-                    price_3_b3: "Оптимизация 1 месяц",
-                    price_3_b4: "Отчетность",
-                    btn_tg: "Написать в Telegram",
+// Mobile menu
+const menuToggle=document.getElementById('menuToggle');
+const mobileMenu=document.getElementById('mobileMenu');
+let menuOpen=false;
+menuToggle.addEventListener('click',()=>{
+  menuOpen=!menuOpen;
+  mobileMenu.classList.toggle('open',menuOpen);
+  menuToggle.innerHTML=menuOpen?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
+  document.body.style.overflow=menuOpen?'hidden':'';
+});
+document.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click',()=>{
+  menuOpen=false;mobileMenu.classList.remove('open');menuToggle.innerHTML='<i class="fas fa-bars"></i>';document.body.style.overflow='';
+}));
 
-                    workflow_kicker: "Процесс",
-                    workflow_title: "Как вы получите результат",
-                    workflow_1_title: "Анализ",
-                    workflow_1_desc: "Вы отвечаете на пару вопросов — я собираю структуру, которая ведёт к заявке.",
-                    workflow_2_title: "Дизайн",
-                    workflow_2_desc: "Вы утверждаете внешний вид — только после этого начинается разработка.",
-                    workflow_3_title: "Разработка",
-                    workflow_3_desc: "Вы получаете быстрый адаптивный сайт на чистом коде (HTML/CSS/JS).",
-                    workflow_4_title: "Запуск",
-                    workflow_4_desc: "Вы подключаете домен — сайт публикуется. При необходимости запускается Google Ads.",
+// Language toggle
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('.lang-toggle');
+  if(!btn)return;
+  const newLang=btn.dataset.lang;
+  if(newLang&&newLang!==lang){lang=newLang;localStorage.setItem('siteLang',lang);renderAll()}
+});
 
-                    test_kicker: "Доверие",
-                    test_title: "Что говорят клиенты",
-                    test_desc: "Здесь можно вставить реальные отзывы (вы замените текст).",
-                    test_1_quote: "“Вы сделали быстро и очень аккуратно. Сайт выглядит дороже, чем ожидали.”",
-                    test_1_name: "Клиент Ержан",
-                    test_1_role: "Ниша - Услуги манипулятора / город Алматы",
-                    test_2_quote: "“Вы подсказали по структуре и офферу — стало понятно, за что платим и что получаем.”",
-                    test_2_name: "Клиент Салтанат",
-                    test_2_role: "Ниша - Дроны / город Астана",
-                    test_3_quote: "“Вы сделали всё под ключ: сайт, аналитика и связь — просто написали и получили результат.”",
-                    test_3_name: "Клиент Аня",
-                    test_3_role: "Ниша - Интернет магазин / город Жезказган",
+// Service tabs
+document.querySelectorAll('.svc-tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.svc-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab=btn.dataset.tab;
+    document.getElementById('panelSites').classList.toggle('active',tab==='sites');
+    document.getElementById('panelAds').classList.toggle('active',tab==='ads');
+  });
+});
 
-                    faq_kicker: "FAQ",
-                    faq_title: "Частые вопросы",
-                    faq_q1: "Сколько времени занимает разработка?",
-                    faq_a1: "Обычно вы получаете Landing Page за 1–2 дня. Многостраничные проекты — 2–5 дней. Перед стартом вы получаете точные сроки.",
-                    faq_q2: "Есть ли ежемесячная оплата?",
-                    faq_a2: "Вы оплачиваете разработку один раз. Далее у вас только хостинг/домен (обычно это недорого). Никаких скрытых платежей.",
-                    faq_q3: "Сможете ли вы менять текст и цены?",
-                    faq_a3: "Да. По запросу вы получаете удобный способ обновлять контент (даже с телефона). Либо вы просто пишете — и изменения вносятся.",
-                    faq_q4: "Что нужно, чтобы начать?",
-                    faq_a4: "Просто напишите в WhatsApp или Telegram. Вы отвечаете на несколько вопросов — дальше вы получаете структуру и план работ.",
+// FAQ
+function toggleFAQ(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f=>{f.classList.remove('open');f.querySelector('.faq-a').style.maxHeight='0'});
+  if(!wasOpen){item.classList.add('open');const a=item.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}
+}
 
-                    footer_title: "Готовы получить сайт под заявки?",
-                    footer_write_in: "Написать в",
-                    footer_tg: "Telegram",
-                    footer_wa: "WhatsApp",
-                    footer_city: "Астана, Казахстан."
-                },
+// Screenshot modal
+function openScreenshot(src){
+  const modal=document.getElementById('screenshotModal');
+  document.getElementById('screenshotImg').src=src;
+  modal.classList.add('open');document.body.style.overflow='hidden';
+}
+document.getElementById('screenshotModal').addEventListener('click',e=>{
+  if(e.target===document.getElementById('screenshotModal')||e.target.closest('#screenshotClose')){
+    document.getElementById('screenshotModal').classList.remove('open');document.body.style.overflow='';
+  }
+});
 
-                en: {
-                    meta_title: "Anuken | Website Developer",
-                    meta_desc: "You get a high-converting website and a stream of clients from Google. Turnkey delivery: design, code, analytics, ad launch.",
+// Case modal
+function openCaseModal(id){
+  const p=PROJECTS.find(x=>x.id===id);if(!p)return;
+  const d=p[lang]||p.ru;
+  document.getElementById('cmTitle').textContent=p.title;
+  document.getElementById('cmImage').src=p.image;
+  document.getElementById('cmPrice').textContent=fmt(p.price);
+  document.getElementById('cmProblem').textContent=d.problem||'—';
+  document.getElementById('cmSolution').textContent=d.solution||'—';
+  document.getElementById('cmFeatures').innerHTML=(d.features||[]).map(f=>`<li><i class="fas fa-check-circle"></i>${f}</li>`).join('');
+  document.getElementById('cmTags').innerHTML=(p.tags||[]).map(t=>`<span class="cm-tag">${t}</span>`).join('');
+  const urls=p.urls||[{ru:t('btn_live'),en:t('btn_live'),url:p.url}];
+  document.getElementById('cmLiveLinks').innerHTML=urls.map((u,i)=>`<a href="${u.url}" target="_blank" class="btn btn-sm ${i===0?'btn-primary':'btn-secondary'}">${u[lang]||u.ru||t('btn_live')} <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>`).join('');
+  document.getElementById('caseModal').classList.add('open');document.body.style.overflow='hidden';
+}
+function closeCaseModal(){document.getElementById('caseModal').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('cmClose').addEventListener('click',closeCaseModal);
+document.getElementById('caseModalBg').addEventListener('click',closeCaseModal);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCaseModal();document.getElementById('screenshotModal').classList.remove('open');document.body.style.overflow=''}});
 
-                    nav_services: "Services",
-                    nav_cases: "Cases",
-                    nav_pricing: "Pricing",
-                    nav_workflow: "Process",
-                    nav_portfolio: "Portfolio",
-                    nav_faq: "FAQ",
-                    header_cta_telegram: "Telegram",
+// Scroll animations
+function initAnim(){
+  const els=document.querySelectorAll('[data-anim]');
+  const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(el=>obs.observe(el));
+}
 
-                    mobile_cta_tg: "Message on Telegram",
-                    mobile_cta_wa: "Message on WhatsApp",
-
-                    hero_badge: "Available for projects",
-                    hero_title: "You get a <br> <span class=\"text-gradient\">high-converting website</span>",
-                    hero_desc: "You get a modern turnkey website and a clear path to leads: structure, design, code, analytics, and launch. <span class=\"text-white font-medium border-b border-indigo-500/50\">No middlemen and no extra markups.</span>",
-                    trust_1_title: "Timeline",
-                    trust_1_value: "2–5 days",
-                    trust_2_title: "Analytics",
-                    trust_2_value: "GA4 / conversions",
-                    trust_3_title: "Free maintenance",
-                    trust_3_value: "30 days",
-                    trust_4_title: "Contact",
-                    trust_4_value: "WhatsApp/Telegram",
-                    hero_btn_quote: "Get a quote",
-                    hero_btn_cases: "View cases",
-                    hero_stat_1: "cases",
-                    hero_stat_2: "days",
-                    hero_stat_3: "contact",
-
-                    services_kicker: "What you get",
-                    services_title: "Turnkey services",
-                    services_desc: "You get a clear outcome: a website that looks modern, loads fast, and guides visitors to a request.",
-                    service_1_title: "Landing Page",
-                    service_1_desc: "You get a single-page website with high conversion to sell a service or product.",
-                    service_1_b1: "Custom design",
-                    service_1_b2: "Mobile responsive",
-                    service_1_b3: "Basic SEO structure",
-                    service_badge_reco: "RECOMMENDED",
-                    service_2_title: "Website + Google Ads",
-                    service_2_desc: "You get a website and configured ads with analytics — so leads are measurable.",
-                    service_2_b1: "Keywords & structure",
-                    service_2_b2: "Conversion tracking setup",
-                    service_2_b3: "1 month management",
-                    service_3_title: "Support",
-                    service_3_desc: "If you already have a website — you get improvements: speed, edits, responsiveness, content updates.",
-                    service_3_b1: "Code edits",
-                    service_3_b2: "Load speed optimization",
-                    service_3_b3: "Bug fixes",
-
-                    cases_kicker: "Cases",
-                    cases_title: "Work examples",
-                    cases_desc: "You can open live websites and understand the style, quality, and approach.",
-                    case_1_desc: "You get a tech-style landing with interactions, modals, and WhatsApp integration.",
-                                        case_1_desc: "You get a tech-style landing with interactions, modals, and WhatsApp integration.",
-                    case_2_desc: "You get an online store with cart logic, pricing calculation, and WhatsApp order sending.",
-                    case_3_desc: "You get a multi-page website with navigation, sections, and modern animations.",
-                    btn_details: "Details",
-                    cases_all_portfolio: "View full portfolio",
-
-                    pricing_kicker: "Packages",
-                    pricing_title: "Pricing & what's included",
-                    pricing_desc: "Below are starting points. You can replace prices and package contents to match your offer.",
-                    price_from: "from",
-                    btn_discuss: "Discuss",
-                    price_badge_best: "BEST VALUE",
-                    price_2_sub: "Lead-gen website",
-                    price_1_b1: "Design + build",
-                    price_1_b2: "Mobile responsive",
-                    price_1_b3: "Basic SEO structure",
-                    price_1_b4: "Domain connection",
-                    price_2_b1: "Structure planning",
-                    price_2_b2: "Offer packaging (copy)",
-                    price_2_b3: "Analytics + goals",
-                    price_2_b4: "30 days support",
-                    price_3_b1: "Google Ads campaigns",
-                    price_3_b2: "Conversion tracking setup",
-                    price_3_b3: "1 month optimization",
-                    price_3_b4: "Reporting",
-                    btn_tg: "Message on Telegram",
-
-                    workflow_kicker: "Process",
-                    workflow_title: "How you get results",
-                    workflow_1_title: "Discovery",
-                    workflow_1_desc: "You answer a few questions — I build a structure that leads to inquiries.",
-                    workflow_2_title: "Design",
-                    workflow_2_desc: "You approve the look — only then development begins.",
-                    workflow_3_title: "Development",
-                    workflow_3_desc: "You get a fast responsive website in clean code (HTML/CSS/JS).",
-                    workflow_4_title: "Launch",
-                    workflow_4_desc: "You connect the domain — the site goes live. Google Ads can be launched if needed.",
-
-                    test_kicker: "Trust",
-                    test_title: "What clients say",
-                    test_desc: "You can place real testimonials here (replace the text).",
-                    test_1_quote: "“You delivered fast and very neatly. The website looks more premium than we expected.”",
-                    test_1_name: "Client Erzhan",
-                    test_1_role: "Niche — Crane service / Almaty",
-                    test_2_quote: "“You helped with structure and offer — it became clear what we're paying for and what we get.”",
-                    test_2_name: "Client Saltanat",
-                    test_2_role: "Niche — Drones / Astana",
-                    test_3_quote: "“Everything turnkey: website, analytics, communication — we just messaged you and got the result.”",
-                    test_3_name: "Client Anya",
-                    test_3_role: "Niche — E-commerce / Zhezkazgan",
-
-                    faq_kicker: "FAQ",
-                    faq_title: "Frequently asked questions",
-                    faq_q1: "How long does development take?",
-                    faq_a1: "Typically, you get a landing page in 1–2 days. Multi-page projects take 2–5 days. Before we start, you get exact timelines.",
-                    faq_q2: "Is there a monthly fee?",
-                    faq_a2: "You pay for development once. After that, you only have hosting/domain (usually inexpensive). No hidden fees.",
-                    faq_q3: "Can you change text and prices later?",
-                    faq_a3: "Yes. On request, you get a convenient way to update content (even from your phone). Or you just message me — and changes are applied.",
-                    faq_q4: "What do you need to start?",
-                    faq_a4: "Just message me on WhatsApp or Telegram. You answer a few questions — then you get a structure and a work plan.",
-
-                    footer_title: "Ready to get a lead-generating website?",
-                    footer_write_in: "Message on",
-                    footer_tg: "Telegram",
-                    footer_wa: "WhatsApp",
-                    footer_city: "Astana, Kazakhstan."
-                }
-            };
-
-            const htmlEl = document.documentElement;
-            const titleEl = document.querySelector('title');
-            const metaDescEl = document.querySelector('meta[name="description"]');
-
-            function setActiveButtons(lang) {
-                document.querySelectorAll('.lang-toggle').forEach(btn => {
-                    const isActive = btn.dataset.lang === lang;
-                    btn.classList.toggle('lang-active', isActive);
-                    btn.classList.toggle('lang-inactive', !isActive);
-                });
-            }
-
-            function applyLang(lang) {
-                const dict = translations[lang] || translations.ru;
-
-                // html lang
-                htmlEl.setAttribute('lang', lang);
-
-                // title + meta description
-                if (titleEl && dict.meta_title) titleEl.textContent = dict.meta_title;
-                if (metaDescEl && dict.meta_desc) metaDescEl.setAttribute('content', dict.meta_desc);
-
-                // elements with text
-                document.querySelectorAll('[data-i18n]').forEach(el => {
-                    const key = el.getAttribute('data-i18n');
-                    if (!key) return;
-                    if (dict[key] !== undefined) el.textContent = dict[key];
-                });
-
-                // elements with html (keep your spans/br)
-                document.querySelectorAll('[data-i18n-html]').forEach(el => {
-                    const key = el.getAttribute('data-i18n-html');
-                    if (!key) return;
-                    if (dict[key] !== undefined) el.innerHTML = dict[key];
-                });
-
-                setActiveButtons(lang);
-
-                try { localStorage.setItem('siteLang', lang); } catch (_) {}
-            }
-
-            // Detect initial language
-            const saved = (() => { try { return localStorage.getItem('siteLang'); } catch (_) { return null; } })();
-            const browserLang = (navigator.language || '').toLowerCase().startsWith('ru') ? 'ru' : 'en';
-            const initial = (saved === 'ru' || saved === 'en') ? saved : browserLang;
-
-            // Bind toggles
-            document.querySelectorAll('.lang-toggle').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const lang = btn.dataset.lang;
-                    if (!lang) return;
-                    applyLang(lang);
-                });
-            });
-
-            // Apply on load
-            applyLang(initial);
-        })();
-    </script>
+// INIT
+renderAll();
+</script>
 </body>
 </html>
