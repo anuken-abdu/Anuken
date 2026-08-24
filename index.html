@@ -1,593 +1,509 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#13303D">
-<title>Anuken | Сайты, Google Ads и OLX</title>
-<meta name="description" content="Разработка сайтов под ключ, настройка Google Ads и продвижение на OLX. 10 лет опыта. Вывод в топ, защита от фейк кликов. Астана.">
+<title>Anuken — сайты, реклама в Google и продвижение на OLX | Астана, Алматы</title>
+<meta name="description" content="Разработка сайтов под ключ (10 лет опыта), настройка рекламы в Google и продвижение на OLX (5 лет). 28 работ в портфолио, более 200 клиентов по Казахстану.">
 <link rel="canonical" href="https://anuken.kz/">
-<!-- Open Graph (превью ссылки в WhatsApp/Telegram/Facebook) -->
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Anuken">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://anuken.kz/">
-<meta property="og:title" content="Anuken — Сайты, Google Ads и OLX">
-<meta property="og:description" content="Разработка сайтов под ключ, реклама в Google (топ 1–2) и продвижение на OLX. 10 лет опыта, 200+ клиентов по РК. Астана · Алматы.">
+<meta property="og:title" content="Anuken — сайты, реклама в Google и продвижение на OLX | Астана, Алматы">
+<meta property="og:description" content="Разработка сайтов под ключ (10 лет опыта), настройка рекламы в Google и продвижение на OLX (5 лет). 28 работ в портфолио, более 200 клиентов по Казахстану.">
 <meta property="og:image" content="https://anuken.kz/images/og-banner.jpg">
-<meta property="og:image:secure_url" content="https://anuken.kz/images/og-banner.jpg">
-<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Anuken — веб-студия полного цикла">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Anuken — Сайты, Google Ads и OLX">
-<meta name="twitter:description" content="Разработка сайтов под ключ, реклама в Google и продвижение на OLX. 10 лет опыта, 200+ клиентов по РК.">
-<meta name="twitter:image" content="https://anuken.kz/images/og-banner.jpg">
 <link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<!-- шрифты: подключаем заранее, показываем текст сразу -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap"></noscript>
+
+<!-- иконки: не блокируют показ страницы -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+<!-- главная картинка грузится в первую очередь -->
+<link rel="preload" as="image" href="images/hero-1.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/style.css">
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17829892914"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17829892914');function gtag_report_conversion(url){var cb=function(){if(typeof url!='undefined')window.location=url};gtag('event','conversion',{'send_to':'AW-17829892914/bFDICJ6f4d0bELKm-rVC','transaction_id':'','event_callback':cb});return false}</script>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
---bg:#13303D;--bg2:#0E2833;--navy:#214357;--card:#1B3A4B;
---cream:#F6EEE3;--cream2:#FBF5EC;
---accent:#CFA384;--accent2:#DBB891;--accent3:#B5865E;
---white:#FFFFFF;--ink:#101418;
---text:rgba(255,255,255,.9);--text2:rgba(255,255,255,.58);--text3:rgba(255,255,255,.42);
---slate:rgba(16,20,24,.72);--slate2:rgba(16,20,24,.5);
---border:rgba(255,255,255,.09);--line2:#E7DCC9;
---ff:'Manrope',system-ui,sans-serif;--r:0px}
-html{scroll-behavior:smooth}
-body{font-family:var(--ff);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.65}
-::selection{background:rgba(207,163,132,.35);color:#fff}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:#2c5265}
-a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{cursor:pointer;border:none;background:none;font-family:inherit}ul{list-style:none}
-
-.container{max-width:1160px;margin:0 auto;padding:0 16px}@media(min-width:768px){.container{padding:0 28px}}
-
-.bgfx{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.bgfx .b{position:absolute;border-radius:50%;filter:blur(150px);opacity:.13;animation:bm 13s ease-in-out infinite}
-.bgfx .b1{width:480px;height:480px;background:var(--accent);top:-6%;left:8%}
-.bgfx .b2{width:420px;height:420px;background:#2f6076;top:12%;right:4%;animation-delay:5s}
-@keyframes bm{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(24px,-30px) scale(1.05)}70%{transform:translate(-16px,18px) scale(.95)}}
-.gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at 50% 40%,black 15%,transparent 70%)}
-
-/* buttons — sharp */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:700;font-size:12.5px;letter-spacing:.02em;border-radius:0;transition:all .22s;padding:12px 20px;white-space:nowrap}
-@media(min-width:768px){.btn{font-size:13px;padding:13px 24px}}
-.btn-accent{background:var(--accent);color:#101418}.btn-accent:hover{background:var(--accent2);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.24)}.btn-ghost:hover{background:rgba(255,255,255,.06);border-color:var(--accent);transform:translateY(-2px)}
-.btn-green{background:#1FA855;color:#fff}.btn-green:hover{background:#1a934a;transform:translateY(-2px)}
-.btn-sm{padding:10px 15px;font-size:11.5px}
-.btn-w{width:100%}
-
-/* highlighter signature — white text, peach mark */
-.tg{color:#fff;position:relative;white-space:nowrap;background-image:linear-gradient(transparent 58%,rgba(207,163,132,.55) 58%);padding:0 .06em}
-
-/* sections */
-.sec{padding:56px 0;position:relative;z-index:1}@media(min-width:768px){.sec{padding:90px 0}}
-.sec-label{display:inline-flex;align-items:center;gap:9px;color:#fff;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
-.sec-label::before{content:"";width:24px;height:2px;background:var(--accent);display:inline-block}
-.sec-title{font-weight:800;color:#fff;font-size:clamp(24px,5vw,42px);line-height:1.1;letter-spacing:-.02em;margin-bottom:12px}
-.sec-desc{color:var(--text2);max-width:600px;font-size:14.5px;line-height:1.75}
-.sec-center{text-align:center}.sec-center .sec-desc{margin:0 auto}.sec-center .sec-label{justify-content:center}
-
-/* LIGHT (cream) section — black text */
-.sec.light{background:var(--cream)}
-.sec.light .sec-title{color:var(--ink)}
-.sec.light .sec-desc{color:var(--slate)}
-.sec.light .sec-label{color:var(--ink)}
-.sec.light .card{background:#fff;border-color:var(--line2)}
-.sec.light .card h4{color:var(--ink)}.sec.light .card p{color:var(--slate)}.sec.light .card-list li{color:rgba(16,20,24,.82)}
-.sec.light .price-card{background:#fff;border-color:var(--line2)}
-.sec.light .price-name,.sec.light .price-amount{color:var(--ink)}
-.sec.light .price-sub,.sec.light .price-from{color:var(--slate2)}
-.sec.light .price-head{border-color:var(--line2)}
-.sec.light .price-note{color:rgba(16,20,24,.78)}
-.sec.light .faq-item{border-color:var(--line2);background:#fff}.sec.light .faq-item.open{border-color:var(--accent)}
-.sec.light .faq-q{color:var(--ink)}.sec.light .faq-a-in{color:var(--slate);border-color:var(--line2)}
-.sec.light .btn-ghost{border-color:rgba(16,20,24,.22);color:var(--ink)}.sec.light .btn-ghost:hover{background:rgba(16,20,24,.05);border-color:var(--accent3)}
-.sec.light .about-lead{color:var(--ink)}
-.sec.light .prose-col h4{color:var(--ink)}.sec.light .prose-col p{color:var(--slate)}
-
-/* grid */
-.g2{display:grid;gap:10px;grid-template-columns:1fr 1fr;align-items:stretch}.g2>*{min-width:0}@media(min-width:768px){.g2{gap:16px}}
-
-/* cards */
-.card{background:var(--card);border:1px solid var(--border);border-radius:0;padding:16px;transition:all .3s;position:relative;word-break:break-word;display:flex;flex-direction:column}
-@media(min-width:768px){.card{padding:24px}}
-.card:hover{transform:translateY(-3px);border-color:rgba(207,163,132,.5);box-shadow:0 14px 34px rgba(0,0,0,.25)}
-.card-icon{width:42px;height:42px;border-radius:0;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:12px;color:var(--accent);background:rgba(207,163,132,.12);border:1px solid rgba(207,163,132,.28)}
-@media(min-width:768px){.card-icon{width:48px;height:48px;font-size:19px;margin-bottom:16px}}
-.card h4{font-weight:700;font-size:15px;color:#fff;margin-bottom:6px}
-@media(min-width:768px){.card h4{font-size:17px}}
-.card p{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:12px}
-@media(min-width:768px){.card p{font-size:13px}}
-.card-list{display:flex;flex-direction:column;gap:6px;margin-top:auto}@media(min-width:768px){.card-list{gap:8px}}
-.card-list li{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.45}@media(min-width:768px){.card-list li{font-size:13px}}
-.card-list li i{color:var(--accent);font-size:10px;width:13px;text-align:center;margin-top:3px;flex-shrink:0}@media(min-width:768px){.card-list li i{font-size:11px;width:14px}}
-
-/* header — no logo */
-.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:10px 0;transition:all .3s}
-.hdr.scrolled{background:rgba(14,40,51,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.hdr-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.page-toggle{display:flex;border-radius:0;overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,.03);flex-shrink:0}
-.page-toggle button{padding:8px 12px;font-weight:700;font-size:11px;color:var(--text3);transition:all .22s;letter-spacing:.02em}
-@media(min-width:520px){.page-toggle button{padding:9px 18px;font-size:12.5px}}
-.page-toggle button.active{background:var(--accent);color:#101418}.page-toggle button:not(.active):hover{background:rgba(255,255,255,.05);color:#fff}
-.hdr-right{display:flex;align-items:center;gap:6px}
-.lang-sw{display:none;border-radius:0;overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,.03)}@media(min-width:900px){.lang-sw{display:flex}}
-.lang-sw button{padding:6px 11px;font-weight:800;font-size:10px;color:var(--text3);transition:all .2s}.lang-sw button.on{background:rgba(255,255,255,.1);color:#fff}
-.hdr-cta{display:none}@media(min-width:900px){.hdr-cta{display:flex}}
-.menu-btn{display:flex;width:40px;height:40px;align-items:center;justify-content:center;color:#fff;font-size:16px;border-radius:0;border:1px solid var(--border);flex-shrink:0}@media(min-width:900px){.menu-btn{display:none}}
-.mmenu{position:fixed;inset:0;z-index:99;background:var(--bg2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transform:translateX(100%);transition:transform .3s ease;padding:24px}.mmenu.open{transform:translateX(0)}.mmenu a.mm-link{font-size:19px;color:#fff;font-weight:600}
-
-/* hero */
-.hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:100px 0 48px;z-index:1;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.72;transition:opacity .6s}
-.hero-bg .hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(19,48,61,.9) 0%,rgba(19,48,61,.58) 45%,rgba(19,48,61,.22) 100%)}
-@media(max-width:899px){.hero-bg .hero-overlay{background:linear-gradient(to bottom,rgba(19,48,61,.64) 0%,rgba(19,48,61,.8) 55%,rgba(19,48,61,.92) 100%)}}
-.hero-content{position:relative;z-index:1}
-.hero-grid{display:grid;gap:30px;align-items:center}@media(min-width:900px){.hero-grid{grid-template-columns:1fr 400px;gap:46px}}
-.hero h1{font-weight:800;font-size:clamp(30px,7vw,56px);color:#fff;line-height:1.05;letter-spacing:-.025em;margin-bottom:18px}
-.hero-text{font-size:14.5px;color:#fff;line-height:1.75;max-width:500px;margin-bottom:24px}@media(min-width:768px){.hero-text{font-size:16px}}
-.hero-text strong{color:#fff;font-weight:700;box-shadow:inset 0 -2px 0 rgba(207,163,132,.6)}
-.hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:24px;background:var(--border);border:1px solid var(--border)}@media(min-width:480px){.hero-trust{grid-template-columns:repeat(4,1fr)}}
-.ht-item{padding:13px 12px;display:flex;align-items:center;gap:9px;background:rgba(14,40,51,.72)}
-.ht-item i{font-size:15px;color:var(--accent);flex-shrink:0}
-.ht-label{font-size:11.5px;font-weight:700;color:#fff;line-height:1.2}.ht-val{font-size:9.5px;color:var(--text3)}
-.hero-btns{display:flex;flex-wrap:wrap;gap:8px}
-.hero-panel{display:none;position:relative}@media(min-width:900px){.hero-panel{display:block}}
-.hp-glow{position:absolute;inset:-2px;background:var(--accent);filter:blur(28px);opacity:.13;animation:hpg 3.6s ease infinite}@keyframes hpg{0%,100%{opacity:.11}50%{opacity:.2}}
-.hp-card{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:0;padding:26px}
-.hp-eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text2);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-.hp-list{display:flex;flex-direction:column;gap:13px;margin-bottom:20px}
-.hp-list li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:#fff;line-height:1.4}
-.hp-list li i{color:var(--accent);font-size:13px;margin-top:3px;flex-shrink:0}
-.hp-foot{display:flex;align-items:baseline;gap:9px;padding:13px 15px;background:rgba(207,163,132,.12);border-left:3px solid var(--accent)}
-.hp-foot .v{font-weight:800;font-size:20px;color:#fff}.hp-foot .l{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.05em}
-
-/* about prose */
-.about-lead{max-width:740px;margin:0 auto 34px;text-align:center;font-size:16px;line-height:1.8;color:#fff}
-.prose-grid{display:grid;gap:22px;grid-template-columns:1fr}@media(min-width:768px){.prose-grid{grid-template-columns:repeat(3,1fr);gap:30px}}
-.prose-col h4{font-weight:800;font-size:16px;color:#fff;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid var(--accent);display:inline-block;letter-spacing:-.01em}
-.prose-col p{font-size:13.5px;line-height:1.75;color:var(--text2)}
-
-/* pricing */
-.price-card{display:flex;flex-direction:column}
-.price-head{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-.price-name{font-weight:800;font-size:16px;color:#fff;letter-spacing:-.01em}@media(min-width:768px){.price-name{font-size:20px}}
-.price-sub{font-size:11px;color:var(--text3);margin-top:3px;font-weight:500}
-.price-amount{font-weight:800;font-size:20px;color:#fff;line-height:1.15;margin-top:8px}@media(min-width:768px){.price-amount{font-size:26px}}
-.price-from{font-size:10px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
-.price-features{flex:1;margin-bottom:12px}
-.price-note{margin-top:6px;padding:11px 13px;background:rgba(207,163,132,.1);border-left:3px solid var(--accent);font-size:11.5px;color:var(--text2);line-height:1.6}
-
-/* cases — whole card clickable */
-.case-card{overflow:hidden;display:flex;flex-direction:column;padding:0;cursor:pointer}
-.case-img{position:relative;height:130px;overflow:hidden;background:var(--bg2)}@media(min-width:600px){.case-img{height:180px}}
-.case-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.case-card:hover .case-img img{transform:scale(1.06)}
-.case-body{padding:14px;flex:1;display:flex;flex-direction:column}@media(min-width:768px){.case-body{padding:20px}}
-.case-body h4{font-weight:700;font-size:14px;color:#fff;margin-bottom:5px}@media(min-width:768px){.case-body h4{font-size:16px}}
-.case-body p{font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:8px;flex:1}@media(min-width:768px){.case-body p{font-size:12.5px}}
-.case-open{font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:5px}
-
-/* faq */
-.faq-item{border-radius:0;border:1px solid var(--border);overflow:hidden;transition:border-color .3s;margin-bottom:8px;background:var(--card)}.faq-item.open{border-color:rgba(207,163,132,.4)}
-.faq-q{padding:15px 17px;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#fff;font-size:13.5px;cursor:pointer}@media(min-width:768px){.faq-q{font-size:14.5px;padding:17px 20px}}
-.faq-q i{color:var(--accent);transition:transform .3s;font-size:12px;flex-shrink:0;margin-left:12px}.faq-item.open .faq-q i{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}.faq-a-in{padding:0 17px 15px;font-size:12.5px;color:var(--text2);line-height:1.75;border-top:1px solid var(--border);padding-top:12px}@media(min-width:768px){.faq-a-in{font-size:13.5px;padding:0 20px 17px;padding-top:13px}}
-
-/* workflow */
-.wf-card{padding:18px;border-radius:0;border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden;background:var(--card)}@media(min-width:768px){.wf-card{padding:26px}}
-.wf-card:hover{border-color:rgba(207,163,132,.4);transform:translateY(-2px)}
-.wf-num{position:absolute;top:2px;right:12px;font-weight:800;font-size:38px;color:rgba(255,255,255,.05)}@media(min-width:768px){.wf-num{font-size:50px;top:4px;right:16px}}.wf-card:hover .wf-num{color:rgba(207,163,132,.14)}
-.wf-icon{width:40px;height:40px;border-radius:0;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:12px;color:var(--accent);background:rgba(207,163,132,.12);border:1px solid rgba(207,163,132,.24)}
-.wf-card h4{font-weight:700;font-size:14px;color:#fff;margin-bottom:5px}@media(min-width:768px){.wf-card h4{font-size:16px}}
-.wf-card p{font-size:11px;color:var(--text2);line-height:1.55}@media(min-width:768px){.wf-card p{font-size:12.5px}}
-
-/* footer */
-.footer{padding:60px 0 0;border-top:1px solid var(--border);position:relative;z-index:1;overflow:hidden;background:var(--bg2)}
-.footer-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:420px;height:300px;background:var(--accent);opacity:.05;filter:blur(100px)}
-.footer-title{font-weight:800;font-size:clamp(24px,5.5vw,40px);color:#fff;text-align:center;margin-bottom:24px;letter-spacing:-.02em}
-.footer-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px}
-.footer-social{display:flex;justify-content:center;gap:10px;margin-bottom:28px}
-.footer-social a{width:42px;height:42px;border-radius:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text3);transition:all .3s;font-size:15px}.footer-social a:hover{color:#101418;background:var(--accent);border-color:var(--accent)}
-.footer-bot{padding:18px 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:5px;align-items:center;font-size:10.5px;color:var(--text3)}@media(min-width:600px){.footer-bot{flex-direction:row;justify-content:space-between}}
-
-/* anim */
-[data-a]{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}[data-a].vis{opacity:1;transform:translateY(0)}[data-a][data-d="1"]{transition-delay:.08s}[data-a][data-d="2"]{transition-delay:.14s}[data-a][data-d="3"]{transition-delay:.2s}
-@media(prefers-reduced-motion:reduce){[data-a]{opacity:1;transform:none;transition:none}.bgfx .b{animation:none}}
-.page{display:none;animation:fu .4s ease}.page.active{display:block}@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-</style>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17829892914');
+function gtag_report_conversion(url){gtag('event','conversion',{'send_to':'AW-17829892914/bFDICJ6f4d0bELKm-rVC'});return true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Anuken", "url": "https://anuken.kz/", "description": "Разработка сайтов, настройка рекламы в Google и продвижение на OLX. Астана и Алматы.", "telephone": "+77074534518", "areaServed": ["Астана", "Алматы", "Казахстан"], "address": {"@type": "PostalAddress", "addressLocality": "Астана", "addressCountry": "KZ"}, "sameAs": ["https://wa.me/77074534518", "https://t.me/Anukenn"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Разработка лендинга", "url": "https://anuken.kz/uslugi/landing.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Сайт из нескольких страниц", "url": "https://anuken.kz/uslugi/multistranichnyj-sajt.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Многостраничный сайт", "url": "https://anuken.kz/uslugi/mnogostranichnyj-sajt.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Интернет-магазин", "url": "https://anuken.kz/uslugi/internet-magazin.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Дизайн сайта и Google Аналитика", "url": "https://anuken.kz/uslugi/dizajn-i-analitika.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Доработка и поддержка сайта", "url": "https://anuken.kz/uslugi/dorabotka-sajta.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Настройка рекламы в Google", "url": "https://anuken.kz/uslugi/google-ads-nastrojka.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Защита от фейковых кликов", "url": "https://anuken.kz/uslugi/zashchita-ot-fejk-klikov.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Аналитика и подсчёт заявок", "url": "https://anuken.kz/uslugi/google-ads-analitika.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ведение рекламы", "url": "https://anuken.kz/uslugi/google-ads-vedenie.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Продвижение объявлений в топ OLX", "url": "https://anuken.kz/uslugi/olx-prodvizhenie.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Оформление и ведение объявлений на OLX", "url": "https://anuken.kz/uslugi/olx-oformlenie.html"}}]}</script>
 </head>
-<body>
+<body data-tabs="1">
 <div class="bgfx"><div class="b b1"></div><div class="b b2"></div><div class="gridbg"></div></div>
 
 <header class="hdr" id="hdr"><div class="container"><div class="hdr-row">
-<div class="page-toggle" id="pgTog"><button class="active" data-page="sites" data-t="tab_sites">Сайты</button><button data-page="ads" data-t="tab_ads">Google Ads</button><button data-page="olx" data-t="tab_olx">OLX</button></div>
-<div class="hdr-right"><div class="lang-sw"><button class="ltg on" data-lang="ru">RU</button><button class="ltg" data-lang="en">EN</button></div><a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm hdr-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a><button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button></div>
-</div></div></header>
+<a href="index.html" class="brand" style="font-weight:800;letter-spacing:.16em;font-size:14px;color:#fff">ANUKEN</a>
+<nav class="hdr-nav" style="display:none;gap:22px;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.62)"><a href="#about">Обо мне</a><a href="#portfolio">Портфолио</a><a href="#services">Услуги</a><a href="#faq">Вопросы</a></nav>
+<div class="hdr-right">
+<a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm hdr-cta" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<button class="menu-btn" id="menuBtn" aria-label="Меню" aria-expanded="false"><i class="fas fa-bars"></i></button>
+</div></div></div></header>
+<style>@media(min-width:900px){.hdr-nav{display:flex!important}.hdr-nav a:hover{color:#CFA384}}</style>
 
 <div class="mmenu" id="mmenu">
-<div class="lang-sw" style="display:flex;margin-bottom:4px"><button class="ltg on" data-lang="ru">RU</button><button class="ltg" data-lang="en">EN</button></div>
-<div class="page-toggle"><button class="active mm-pg" data-page="sites" data-t="tab_sites">Сайты</button><button class="mm-pg" data-page="ads" data-t="tab_ads">Google Ads</button><button class="mm-pg" data-page="olx" data-t="tab_olx">OLX</button></div>
-<a href="#about" class="mm-link" data-t="nav_about">Обо мне</a><a href="#pricing" class="mm-link" data-t="nav_pricing">Цены</a><a href="#cases" class="mm-link" data-t="nav_cases">Кейсы</a><a href="#faq" class="mm-link" data-t="nav_faq">FAQ</a>
-<div style="display:flex;gap:8px;margin-top:8px"><a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm"><i class="fab fa-telegram-plane"></i> Telegram</a></div></div>
-
-<!-- ══════ SITES ══════ -->
-<div class="page active" id="page-sites">
-<section class="hero"><div class="hero-bg"><img id="heroBg1" src="images/hero-1.jpg" alt=""><div class="hero-overlay"></div></div><div class="container hero-content"><div class="hero-grid"><div>
-<h1 data-t-html="sites_h1">Создаю сайты,<br>которые <span class="tg">продают</span></h1>
-<p class="hero-text" data-t-html="sites_hp">Разрабатываю продающие сайты под ключ: продуманная структура, уникальный дизайн, чистый код, подключение аналитики и мессенджеров. Каждый сайт адаптивен — идеально выглядит на телефоне и компьютере. <strong>10 лет опыта. Без посредников и переплат.</strong></p>
-<div class="hero-trust">
-<div class="ht-item"><i class="fas fa-bolt"></i><div><div class="ht-label" data-t="t_sp">2–5 дней</div><div class="ht-val" data-t="t_spv">срок сдачи</div></div></div>
-<div class="ht-item"><i class="fas fa-mobile-alt"></i><div><div class="ht-label" data-t="t_ad">Адаптив</div><div class="ht-val" data-t="t_adv">телефон + ПК</div></div></div>
-<div class="ht-item"><i class="fas fa-wrench"></i><div><div class="ht-label" data-t="t_fix">Правки</div><div class="ht-val" data-t="t_fixv">7 дней бесплатно</div></div></div>
-<div class="ht-item"><i class="fas fa-headset"></i><div><div class="ht-label" data-t="t_con">Связь</div><div class="ht-val">WA / TG</div></div></div>
+<a href="#about" class="mm-link">Обо мне</a><a href="#portfolio" class="mm-link">Портфолио</a><a href="#services" class="mm-link">Услуги</a><a href="#faq" class="mm-link">Вопросы</a>
+<a href="#sajty" class="mm-link">Сайты</a>
+<a href="#google-ads" class="mm-link">Google Ads</a>
+<a href="#olx" class="mm-link">OLX</a>
+<div style="display:flex;gap:8px;margin-top:10px">
+<a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green btn-sm" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm" rel="noopener"><i class="fab fa-telegram-plane"></i> Telegram</a></div>
 </div>
-<div class="hero-btns"><a data-wa="Здравствуйте! Пишу с сайта Anuken. Интересует разработка сайта. Подскажите, пожалуйста, детали." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> <span data-t="btn_q">Получить расчёт</span></a><a href="#cases" class="btn btn-ghost" data-t="btn_c">Посмотреть кейсы</a></div>
+
+<div class="backbar"><div class="container"><button id="btnBack" class="btn-back" data-home="index.html"><i class="fas fa-arrow-left"></i> Назад</button></div></div>
+
+<div class="page active" id="page-sajty">
+<section class="hero" id="sajty"><div class="hero-bg"><picture><source srcset="images/hero-1.webp" type="image/webp"><img src="images/hero-1.jpg" data-fallback="images/hero-1.jpg" alt="" width="1600" height="900" decoding="async" fetchpriority="high"></picture><div class="hero-overlay"></div></div>
+<div class="container hero-content"><div class="hero-grid"><div>
+<h1>Создаю сайты,<br>которые <span class="tg">приносят заявки</span></h1>
+<p class="hero-text">Делаю сайты под ключ: понятная структура, свой дизайн, ваши фотографии, быстрая загрузка, кнопки WhatsApp на каждом экране. Одинаково удобно на телефоне и компьютере. <strong>10 лет опыта, без посредников и переплат.</strong></p>
+<div class="hero-trust"><div class="ht-item"><i class="fas fa-bolt"></i><div><div class="ht-label">2–5 дней</div><div class="ht-val">срок сдачи</div></div></div><div class="ht-item"><i class="fas fa-mobile-alt"></i><div><div class="ht-label">Телефон + ПК</div><div class="ht-val">одинаково удобно</div></div></div><div class="ht-item"><i class="fas fa-wrench"></i><div><div class="ht-label">7 дней</div><div class="ht-val">правки бесплатно</div></div></div><div class="ht-item"><i class="fas fa-headset"></i><div><div class="ht-label">Связь</div><div class="ht-val">WhatsApp / Telegram</div></div></div></div>
+<div class="hero-btns">
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D0%B8." rel="noopener" data-wa="Здравствуйте! Пишу с сайта Anuken. Интересует разработка сайта. Подскажите детали." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> Получить расчёт</a>
+<a href="#portfolio" class="btn btn-ghost">Посмотреть работы</a></div>
 </div>
 <div class="hero-panel"><div class="hp-glow"></div><div class="hp-card">
-<div class="hp-eyebrow" data-t="hps_e">Что вы получаете</div>
-<ul class="hp-list"><li><i class="fas fa-check"></i><span data-t="hps_1">Уникальный дизайн под вашу нишу</span></li><li><i class="fas fa-check"></i><span data-t="hps_2">Адаптив: телефон и компьютер</span></li><li><i class="fas fa-check"></i><span data-t="hps_3">Структуру, ведущую к заявке</span></li><li><i class="fas fa-check"></i><span data-t="hps_4">Аналитику и кнопки WhatsApp</span></li></ul>
-<div class="hp-foot"><span class="v">2–5</span><span class="l" data-t="hps_fl">дней до запуска</span></div></div></div>
+<div class="hp-eyebrow">Что вы получаете</div>
+<ul class="hp-list">
+<li><i class="fas fa-check"></i><span>Свой дизайн под вашу нишу</span></li>
+<li><i class="fas fa-check"></i><span>Удобно на телефоне и компьютере</span></li>
+<li><i class="fas fa-check"></i><span>Страницу под каждую услугу</span></li>
+<li><i class="fas fa-check"></i><span>Быструю загрузку и кнопки WhatsApp</span></li></ul>
+<div class="hp-foot"><span class="v">2–5</span><span class="l">дней до запуска</span></div></div></div>
 </div></div></section>
 
 <section id="about" class="sec light"><div class="container">
-<div class="sec-center" style="margin-bottom:34px" data-a><div class="sec-label" data-t="ab_l">Обо мне</div><h2 class="sec-title" data-t="ab_t">Один исполнитель — полный цикл</h2></div>
-<p class="about-lead" data-a data-t="ab_lead">Anuken — это один человек и полный цикл работ. Уже 10 лет я создаю сайты и привожу клиентов из интернета — без агентств, менеджеров и переплат. Вы общаетесь напрямую с тем, кто выполняет проект от первого экрана до первой заявки.</p>
+<div class="sec-center" style="margin-bottom:34px" data-a><div class="sec-label">Обо мне</div><h2 class="sec-title">Один исполнитель — весь цикл работ</h2></div>
+<p class="about-lead" data-a>Anuken — это один человек и полный цикл работ. Сайты делаю 10 лет, рекламой в Google и продвижением на OLX занимаюсь 5 лет. Без агентства, менеджеров и наценок: вы общаетесь напрямую с тем, кто делает работу — от первого экрана до первой заявки.</p>
 <div class="prose-grid" data-a>
-<div class="prose-col"><h4 data-t="abp1_t">Создание сайтов</h4><p data-t="abp1_d">Собираю сайты вручную на чистом HTML, CSS и JavaScript — без конструкторов и тяжёлых шаблонов. Поэтому они быстро загружаются, корректно выглядят на любом экране и легко продвигаются. Структуру продумываю так, чтобы посетитель дошёл до заявки, а не просто посмотрел «красивую картинку».</p></div>
-<div class="prose-col"><h4 data-t="abp2_t">Продвижение в Google</h4><p data-t="abp2_d">Настраиваю Google Ads так, чтобы ваши объявления стояли в топ 1–2 по целевым запросам. Собираю ключевые слова, прорабатываю минус-слова, подключаю аналитику и защиту от фейковых кликов. В отчётах прозрачно видно, за что вы платите и сколько стоит заявка.</p></div>
-<div class="prose-col"><h4 data-t="abp3_t">Продвижение на OLX</h4><p data-t="abp3_d">Закрепляю ваши объявления в верхних позициях OLX и веду их каждый день — чтобы вас находили первыми и звонки шли стабильно. Более 200 клиентов по Казахстану уже получают заявки этим способом, часто дешевле, чем через рекламу.</p></div>
+<div class="prose-col"><h4>Сайты — 10 лет</h4><p>Собираю сайты вручную, без конструкторов и тяжёлых шаблонов. Поэтому они открываются за 1–2 секунды, нормально выглядят на любом экране и готовы к рекламе сразу после сдачи. Структуру строю так, чтобы человек дошёл до кнопки «написать», а не просто посмотрел картинки.</p></div>
+<div class="prose-col"><h4>Реклама в Google — 5 лет</h4><p>Настраиваю рекламу руками: собираю запросы, по которым вас ищут, отсекаю лишние, пишу объявления под каждую группу запросов. Плюс защита от конкурентов, которые нажимают на вашу рекламу, чтобы слить бюджет. В отчёте видно, сколько потрачено и во сколько обошлась одна заявка.</p></div>
+<div class="prose-col"><h4>OLX — 5 лет</h4><p>Держу ваши объявления в верхних строчках OLX и веду их каждый день, чтобы вас видели первыми и звонили именно вам. Более 200 клиентов по Казахстану получают заявки этим способом — часто дешевле, чем через рекламу.</p></div>
 </div></div></section>
 
-<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="sv_l">Услуги</div><h2 class="sec-title" data-t="sv_t">Что я делаю</h2></div><div class="g2" id="sitesSvc"></div></div></section>
+<section id="portfolio" class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Портфолио</div>
+<h2 class="sec-title">Мои работы</h2>
+<p class="sec-desc">28 действующих сайтов клиентов по Казахстану. Нажмите на карточку — сайт откроется в новой вкладке.</p></div>
+<div class="g2"><article class="card case-card" data-a onclick="window.open('https://хз.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">01</span><picture><source srcset="images/portfolio/01-himzona.webp" type="image/webp"><img src="images/portfolio/01-himzona.jpg" data-fallback="images/portfolio/01-himzona.jpg" alt="хз.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>хз.kz</h4><p>HIMZONA — служба дезинфекции в Алматы: обработка от насекомых и грызунов, вызов мастера в день обращения.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20%D1%85%D0%B7.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="1" onclick="window.open('https://labanalyt.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">02</span><picture><source srcset="images/portfolio/02-labanalyt.webp" type="image/webp"><img src="images/portfolio/02-labanalyt.jpg" data-fallback="images/portfolio/02-labanalyt.jpg" alt="labanalyt.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>labanalyt.kz</h4><p>Лабораторное оборудование и реактивы в Астане: каталог, подбор под задачу, заявка в один клик.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20labanalyt.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="2" onclick="window.open('https://ok-remont.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">03</span><picture><source srcset="images/portfolio/03-ok-remont.webp" type="image/webp"><img src="images/portfolio/03-ok-remont.jpg" data-fallback="images/portfolio/03-ok-remont.jpg" alt="ok-remont.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>ok-remont.kz</h4><p>Ремонт квартир и офисов в Астане: виды ремонта, этапы работ, расчёт сметы и запись на замер.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20ok-remont.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://qazautorent.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">04</span><picture><source srcset="images/portfolio/04-qazautorent.webp" type="image/webp"><img src="images/portfolio/04-qazautorent.jpg" data-fallback="images/portfolio/04-qazautorent.jpg" alt="qazautorent.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>qazautorent.kz</h4><p>Прокат авто в Алматы: от эконом до VIP, страховка, оплата Kaspi, поддержка круглосуточно.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20qazautorent.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://cleaning-almaty.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">05</span><picture><source srcset="images/portfolio/05-cleaning-almaty.webp" type="image/webp"><img src="images/portfolio/05-cleaning-almaty.jpg" data-fallback="images/portfolio/05-cleaning-almaty.jpg" alt="cleaning-almaty.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>cleaning-almaty.kz</h4><p>Клининг в Алматы: уборка квартир и офисов, прайс по площади, запись онлайн.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20cleaning-almaty.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://ocean-cleaning.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">06</span><picture><source srcset="images/portfolio/06-ocean-cleaning.webp" type="image/webp"><img src="images/portfolio/06-ocean-cleaning.jpg" data-fallback="images/portfolio/06-ocean-cleaning.jpg" alt="ocean-cleaning.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>ocean-cleaning.kz</h4><p>Химчистка мебели и уборка для кафе и отелей в Алматы: услуги, договор, заявка в WhatsApp.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20ocean-cleaning.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://megaperevozki.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">07</span><picture><source srcset="images/portfolio/07-megaperevozki.webp" type="image/webp"><img src="images/portfolio/07-megaperevozki.jpg" data-fallback="images/portfolio/07-megaperevozki.jpg" alt="megaperevozki.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>megaperevozki.kz</h4><p>Грузоперевозки и квартирные переезды: грузчики, транспорт, расчёт по объёму.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20megaperevozki.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://arenda-krana.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">08</span><picture><source srcset="images/portfolio/08-arenda-krana.webp" type="image/webp"><img src="images/portfolio/08-arenda-krana.jpg" data-fallback="images/portfolio/08-arenda-krana.jpg" alt="arenda-krana.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>arenda-krana.kz</h4><p>Аренда автокрана: парк по грузоподъёмности, условия работы, расчёт стоимости.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20arenda-krana.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://autokran-almaty.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">09</span><picture><source srcset="images/portfolio/09-autokran-almaty.webp" type="image/webp"><img src="images/portfolio/09-autokran-almaty.jpg" data-fallback="images/portfolio/09-autokran-almaty.jpg" alt="autokran-almaty.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>autokran-almaty.kz</h4><p>Аренда автокранов в Алматы: краны 25–50 тонн, быстрая подача, заявка в WhatsApp.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20autokran-almaty.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://diz-astana.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">10</span><picture><source srcset="images/portfolio/10-diz-astana.webp" type="image/webp"><img src="images/portfolio/10-diz-astana.jpg" data-fallback="images/portfolio/10-diz-astana.jpg" alt="diz-astana.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>diz-astana.kz</h4><p>Дезинфекция в Астане: уничтожение насекомых и грызунов, выезд в день обращения.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20diz-astana.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://dezclub.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">11</span><picture><source srcset="images/portfolio/11-dezclub.webp" type="image/webp"><img src="images/portfolio/11-dezclub.jpg" data-fallback="images/portfolio/11-dezclub.jpg" alt="dezclub.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>dezclub.kz</h4><p>Служба дезинфекции и санобработки: услуги, отзывы, заявка в один клик.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20dezclub.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://sanitex.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">12</span><picture><source srcset="images/portfolio/12-sanitex.webp" type="image/webp"><img src="images/portfolio/12-sanitex.jpg" data-fallback="images/portfolio/12-sanitex.jpg" alt="sanitex.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>sanitex.kz</h4><p>Дезинфекция в Алматы: обработка от насекомых и грызунов, вызов мастера.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20sanitex.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://moskit-setki.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">13</span><picture><source srcset="images/portfolio/13-moskit-setki.webp" type="image/webp"><img src="images/portfolio/13-moskit-setki.jpg" data-fallback="images/portfolio/13-moskit-setki.jpg" alt="moskit-setki.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>moskit-setki.kz</h4><p>Москитные сетки и окна: выбор города, каталог, заказ через WhatsApp.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20moskit-setki.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://pro-met-all.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">14</span><picture><source srcset="images/portfolio/14-prometall.webp" type="image/webp"><img src="images/portfolio/14-prometall.jpg" data-fallback="images/portfolio/14-prometall.jpg" alt="pro-met-all.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>pro-met-all.kz</h4><p>Изделия из металла в Астане: навесы, ворота, ковка, калькулятор расчёта и заявки.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20pro-met-all.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://www.astanajas.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">15</span><picture><source srcset="images/portfolio/15-astanajas.webp" type="image/webp"><img src="images/portfolio/15-astanajas.jpg" data-fallback="images/portfolio/15-astanajas.jpg" alt="astanajas.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>astanajas.kz</h4><p>Детская футбольная школа в Астане: программы, тренеры, галерея, запись на тренировку.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20astanajas.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://ventasgroup.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">16</span><picture><source srcset="images/portfolio/16-ventasgroup.webp" type="image/webp"><img src="images/portfolio/16-ventasgroup.jpg" data-fallback="images/portfolio/16-ventasgroup.jpg" alt="ventasgroup.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>ventasgroup.kz</h4><p>Аренда премиум-авто с водителем в Астане: каталог, цены по часам и дням, бронирование.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20ventasgroup.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://kaz-cold.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">17</span><picture><source srcset="images/portfolio/17-kaz-cold.webp" type="image/webp"><img src="images/portfolio/17-kaz-cold.jpg" data-fallback="images/portfolio/17-kaz-cold.jpg" alt="kaz-cold.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>kaz-cold.kz</h4><p>Ремонт холодильников и бытовой техники в Астане: частые поломки, вызов мастера.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20kaz-cold.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://service-master.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">18</span><picture><source srcset="images/portfolio/18-service-master.webp" type="image/webp"><img src="images/portfolio/18-service-master.jpg" data-fallback="images/portfolio/18-service-master.jpg" alt="service-master.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>service-master.kz</h4><p>Ремонт бытовой техники в Алматы: перечень услуг, гарантия, онлайн-заявка.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20service-master.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://manipuliator.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">19</span><picture><source srcset="images/portfolio/19-manipuliator.webp" type="image/webp"><img src="images/portfolio/19-manipuliator.jpg" data-fallback="images/portfolio/19-manipuliator.jpg" alt="manipuliator.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>manipuliator.kz</h4><p>Услуги манипулятора: погрузка и перевозка грузов, вызов техники через WhatsApp.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20manipuliator.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://autovishka.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">20</span><picture><source srcset="images/portfolio/20-autovishka.webp" type="image/webp"><img src="images/portfolio/20-autovishka.jpg" data-fallback="images/portfolio/20-autovishka.jpg" alt="autovishka.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>autovishka.kz</h4><p>Аренда автовышки: высотные работы, разная высота подъёма, заявка онлайн.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20autovishka.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://perevozz.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">21</span><picture><source srcset="images/portfolio/21-perevozz.webp" type="image/webp"><img src="images/portfolio/21-perevozz.jpg" data-fallback="images/portfolio/21-perevozz.jpg" alt="perevozz.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>perevozz.kz</h4><p>Грузоперевозки и переезды под ключ: подача машины, упаковка, грузчики.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20perevozz.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://astanaevak.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">22</span><picture><source srcset="images/portfolio/22-astanaevak.webp" type="image/webp"><img src="images/portfolio/22-astanaevak.jpg" data-fallback="images/portfolio/22-astanaevak.jpg" alt="astanaevak.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>astanaevak.kz</h4><p>Эвакуатор в Астане круглосуточно: быстрая подача, фиксированная цена, вызов в один клик.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20astanaevak.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://medvezhatnik.vercel.app/','_blank','noopener')">
+<div class="case-img"><span class="case-num">23</span><picture><source srcset="images/portfolio/23-medvezhatnik.webp" type="image/webp"><img src="images/portfolio/23-medvezhatnik.jpg" data-fallback="images/portfolio/23-medvezhatnik.jpg" alt="medvezhatnik.vercel.app — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>medvezhatnik.vercel.app</h4><p>Аварийное вскрытие замков в Астане: авто, двери, сейфы — выезд круглосуточно.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20medvezhatnik.vercel.app.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://tez-evaku.vercel.app/','_blank','noopener')">
+<div class="case-img"><span class="case-num">24</span><picture><source srcset="images/portfolio/24-tez-evaku.webp" type="image/webp"><img src="images/portfolio/24-tez-evaku.jpg" data-fallback="images/portfolio/24-tez-evaku.jpg" alt="tez-evaku.vercel.app — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>tez-evaku.vercel.app</h4><p>Служба эвакуатора: подача за 15–20 минут, фиксированная цена, вызов онлайн.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20tez-evaku.vercel.app.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://1999.kz/','_blank','noopener')">
+<div class="case-img"><span class="case-num">25</span><picture><source srcset="images/portfolio/25-1999.webp" type="image/webp"><img src="images/portfolio/25-1999.jpg" data-fallback="images/portfolio/25-1999.jpg" alt="1999.kz — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>1999.kz</h4><p>Вывоз мусора в Алматы: строительный, бытовой, крупногабаритный, грунт — подача техники за 1–2 часа.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%201999.kz.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://evakuator-aktobe.vercel.app/','_blank','noopener')">
+<div class="case-img"><span class="case-num">26</span><picture><source srcset="images/portfolio/26-evakuator-aktobe.webp" type="image/webp"><img src="images/portfolio/26-evakuator-aktobe.jpg" data-fallback="images/portfolio/26-evakuator-aktobe.jpg" alt="evakuator-aktobe.vercel.app — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>evakuator-aktobe.vercel.app</h4><p>Эвакуатор в Актобе: круглосуточная подача, город и трасса, вызов в один клик.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20evakuator-aktobe.vercel.app.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://manipulator-evakuator.vercel.app/','_blank','noopener')">
+<div class="case-img"><span class="case-num">27</span><picture><source srcset="images/portfolio/27-manipulator-evakuator.webp" type="image/webp"><img src="images/portfolio/27-manipulator-evakuator.jpg" data-fallback="images/portfolio/27-manipulator-evakuator.jpg" alt="manipulator-evakuator.vercel.app — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>manipulator-evakuator.vercel.app</h4><p>Манипулятор и эвакуатор в одном месте: перевозка техники, грузов и авто.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20manipulator-evakuator.vercel.app.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article><article class="card case-card" data-a data-d="3" onclick="window.open('https://manipulyator-three.vercel.app/','_blank','noopener')">
+<div class="case-img"><span class="case-num">28</span><picture><source srcset="images/portfolio/28-manipulyator-three.webp" type="image/webp"><img src="images/portfolio/28-manipulyator-three.jpg" data-fallback="images/portfolio/28-manipulyator-three.jpg" alt="manipulyator-three.vercel.app — сайт от Anuken" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+<div class="case-body"><h4>manipulyator-three.vercel.app</h4><p>Услуги манипулятора: подача техники, погрузка и доставка по городу и области.</p>
+<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> Открыть сайт</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20manipulyator-three.vercel.app.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" rel="noopener">Хочу такой же <i class="fab fa-whatsapp"></i></a></div></article></div>
+<div class="cases-more"><a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B6%D0%B5%20%D1%81%D0%B0%D0%B9%D1%82.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" rel="noopener" data-wa="Здравствуйте! Пишу с сайта Anuken. Посмотрел портфолио, хочу такой же сайт. Когда можно обсудить?" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> Хочу такой же сайт</a></div>
+</div></section>
 
-<section id="pricing" class="sec light"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="pr_l">Цены</div><h2 class="sec-title" data-t="sp_t">Стоимость разработки</h2><p class="sec-desc" data-t="sp_d">Прозрачно и без скрытых платежей. Оплата один раз за разработку — дальше сайт работает на вас.</p></div><div class="g2" id="sitesPr"></div></div></section>
+<section id="services" class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Услуги</div>
+<h2 class="sec-title">Что я делаю по сайтам</h2>
+<p class="sec-desc">У каждой услуги своя страница с подробным описанием, порядком работы и ответами на вопросы.</p></div>
+<div class="g2"><article class="card" data-a>
+<div class="card-icon"><i class="fas fa-file-lines"></i></div>
+<h4>Разработка лендинга</h4><p>Одностраничный сайт под одну услугу и одну цель — чтобы человек зашёл, за 30 секунд понял, что вы делаете, и написал вам в WhatsApp. Собираю вручную, без конструкторов, п…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Уникальный дизайн под вашу нишу, а не готовый шаблон</span></li><li><i class="fas fa-check"></i><span>Одинаково удобно на телефоне, планшете и компьютере</span></li><li><i class="fas fa-check"></i><span>Кнопки WhatsApp, Telegram и звонка на каждом экране</span></li><li><i class="fas fa-check"></i><span>Тексты и структура, которые ведут человека к заявке</span></li></ul>
+<a class="card-link" href="uslugi/landing.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="1">
+<div class="card-icon"><i class="fas fa-layer-group"></i></div>
+<h4>Сайт из нескольких страниц</h4><p>Компактный сайт, где у каждой вашей услуги есть собственная страница со своим адресом, заголовком и текстом. Именно так вас начинают находить в Google по десяткам запросо…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Отдельная страница под каждую услугу — со своим адресом и заголовком</span></li><li><i class="fas fa-check"></i><span>Единое меню и навигация, понятная с телефона</span></li><li><i class="fas fa-check"></i><span>Заголовки, описания и адреса страниц, подготовленные под поиск Google</span></li><li><i class="fas fa-check"></i><span>Карта сайта (sitemap) и файл robots — чтобы Google быстрее всё нашёл</span></li></ul>
+<a class="card-link" href="uslugi/multistranichnyj-sajt.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="2">
+<div class="card-icon"><i class="fas fa-sitemap"></i></div>
+<h4>Многостраничный сайт</h4><p>Большой сайт для компаний, у которых много услуг, направлений или городов. Каждое направление получает свой раздел, каждая услуга — свою страницу. Такой сайт со временем …</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Дерево сайта, согласованное до начала работы</span></li><li><i class="fas fa-check"></i><span>От 10 страниц с уникальными заголовками и текстами</span></li><li><i class="fas fa-check"></i><span>Каталог с фильтрами, если нужен</span></li><li><i class="fas fa-check"></i><span>Разделы по городам или направлениям</span></li></ul>
+<a class="card-link" href="uslugi/mnogostranichnyj-sajt.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="3">
+<div class="card-icon"><i class="fas fa-cart-shopping"></i></div>
+<h4>Интернет-магазин</h4><p>Каталог, фильтры, корзина и оформление заказа прямо в WhatsApp или Telegram. Без тяжёлых админок, без ежемесячных платежей за платформу и без комиссий с продаж.…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Каталог с разделами, фильтрами и поиском</span></li><li><i class="fas fa-check"></i><span>Карточки товаров с фото, описанием и ценой</span></li><li><i class="fas fa-check"></i><span>Корзина и оформление заказа в WhatsApp или Telegram</span></li><li><i class="fas fa-check"></i><span>Калькулятор стоимости под вашу формулу расчёта</span></li></ul>
+<a class="card-link" href="uslugi/internet-magazin.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="3">
+<div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+<h4>Дизайн сайта и Google Аналитика</h4><p>Дизайн, который не похож на шаблон, и подключённая Google Аналитика — бесплатный счётчик от Google, который показывает, сколько людей зашло на сайт, откуда они пришли и с…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Уникальный дизайн под вашу нишу и ваш бренд</span></li><li><i class="fas fa-check"></i><span>Согласование внешнего вида до начала разработки</span></li><li><i class="fas fa-check"></i><span>Работа с вашими фотографиями: обработка и сжатие</span></li><li><i class="fas fa-check"></i><span>Подключение Google Аналитики на все страницы</span></li></ul>
+<a class="card-link" href="uslugi/dizajn-i-analitika.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="3">
+<div class="card-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+<h4>Доработка и поддержка сайта</h4><p>Сайт уже есть, но он медленный, криво выглядит на телефоне или просто устарел. Разберу, что не так, покажу список проблем и исправлю — без полной переделки, если она не н…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Разбор сайта: список проблем понятным языком, без терминов</span></li><li><i class="fas fa-check"></i><span>Ускорение загрузки: сжатие фото, чистка лишнего, кэширование</span></li><li><i class="fas fa-check"></i><span>Исправление мобильной версии</span></li><li><i class="fas fa-check"></i><span>Починка форм и кнопок связи</span></li></ul>
+<a class="card-link" href="uslugi/dorabotka-sajta.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article></div>
+</div></section>
 
-<section id="cases" class="sec"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="cs_l">Портфолио</div><h2 class="sec-title" data-t="cs_t">Примеры работ</h2><p class="sec-desc" data-t="cs_d">Реальные проекты клиентов. Нажмите на карточку — сайт откроется в новой вкладке.</p></div><div class="g2" id="casesG"></div></div></section>
+<section class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Процесс</div><h2 class="sec-title">Как мы работаем</h2></div>
+<div class="g2"><div class="wf-card" data-a><div class="wf-num">01</div><div class="wf-icon"><i class="fas fa-magnifying-glass"></i></div><h4>Разбор</h4><p>Вы отвечаете на вопросы про услуги, город и клиентов. Собираю структуру сайта.</p></div><div class="wf-card" data-a data-d="1"><div class="wf-num">02</div><div class="wf-icon"><i class="fas fa-pen-ruler"></i></div><h4>Дизайн</h4><p>Показываю, как будет выглядеть сайт. Верстать начинаю после вашего согласия.</p></div><div class="wf-card" data-a data-d="2"><div class="wf-num">03</div><div class="wf-icon"><i class="fas fa-code"></i></div><h4>Разработка</h4><p>Пишу код вручную, оптимизирую все фотографии, проверяю на телефоне и ПК.</p></div><div class="wf-card" data-a data-d="3"><div class="wf-num">04</div><div class="wf-icon"><i class="fas fa-rocket"></i></div><h4>Запуск</h4><p>Домен, аналитика, мессенджеры, передача доступов. 7 дней правок бесплатно.</p></div></div>
+</div></section>
 
-<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="wf_l">Процесс</div><h2 class="sec-title" data-t="swf_t">Как мы работаем</h2></div><div class="g2" id="sitesWF"></div></div></section>
-
-<section id="faq" class="sec light"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">FAQ</div><h2 class="sec-title" data-t="fq_t">Частые вопросы</h2></div><div style="max-width:720px;margin:0 auto" id="sitesFQ"></div></div></section>
+<section id="faq" class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Вопросы</div><h2 class="sec-title">Частые вопросы</h2></div>
+<div style="max-width:760px;margin:0 auto"><div class="faq-item" data-a><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Сколько времени занимает разработка?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Одностраничный сайт — 1–2 дня. Сайт из 3–7 страниц — 2–5 дней. Большой сайт или интернет-магазин — 3–7 дней. Точный срок называю до начала работы.</div></div></div><div class="faq-item" data-a data-d="1"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Есть ли ежемесячная оплата?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Нет. Вы платите один раз за разработку. Для моих клиентов техподдержка, хостинг и Google Аналитика — бесплатно. Из расходов остаётся только домен, обычно 2000–5000 ₸ в год.</div></div></div><div class="faq-item" data-a data-d="2"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Можно ли менять содержимое после сдачи?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Да. Первые 7 дней правки бесплатны. Дальше мелкие правки для моих клиентов тоже бесплатны, крупные доработки — по договорённости.</div></div></div><div class="faq-item" data-a data-d="3"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Почему сайт должен быстро открываться?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Человек с мобильного интернета ждёт максимум 3 секунды и уходит. Если вы ведёте на сайт рекламу, за этот уход вы уже заплатили. Плюс Google продаёт клики дешевле тем, у кого сайт быстрее.</div></div></div><div class="faq-item" data-a data-d="3"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Что нужно, чтобы начать?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Напишите в WhatsApp или Telegram. Ответите на несколько вопросов про нишу, услуги и цены — пришлю структуру сайта и план работ.</div></div></div></div></div></section>
 </div>
-
-<!-- ══════ ADS ══════ -->
-<div class="page" id="page-ads">
-<section class="hero"><div class="hero-bg"><img id="heroBg2" src="images/hero-1.jpg" alt=""><div class="hero-overlay"></div></div><div class="container hero-content"><div class="hero-grid"><div>
-<h1 data-t-html="ads_h1">Вывожу бизнес<br>в <span class="tg">топ Google</span></h1>
-<p class="hero-text" data-t-html="ads_hp">Настраиваю рекламу в Google вручную — без шаблонов и автонастроек. Ваши объявления в топ 1–2 по целевым запросам. Подключаю аналитику GA4 для отслеживания заявок и звонков. Защита от фейковых кликов экономит тысячи тенге ежемесячно. <strong>10 лет опыта. Прозрачные отчёты.</strong></p>
-<div class="hero-trust">
-<div class="ht-item"><i class="fas fa-trophy"></i><div><div class="ht-label" data-t="at1">Топ 1–2</div><div class="ht-val" data-t="at1v">в Google</div></div></div>
-<div class="ht-item"><i class="fas fa-shield-alt"></i><div><div class="ht-label" data-t="at2">Защита</div><div class="ht-val" data-t="at2v">от фейк кликов</div></div></div>
-<div class="ht-item"><i class="fas fa-chart-line"></i><div><div class="ht-label" data-t="at3">Отчёты</div><div class="ht-val" data-t="at3v">еженедельно</div></div></div>
-<div class="ht-item"><i class="fas fa-headset"></i><div><div class="ht-label" data-t="t_con">Связь</div><div class="ht-val">WA / TG</div></div></div>
-</div>
-<div class="hero-btns"><a data-wa="Здравствуйте! Пишу с сайта Anuken. Интересует настройка Google Ads. Подскажите, пожалуйста, детали." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> <span data-t="btn_q">Получить расчёт</span></a><a href="#ads-pricing" class="btn btn-ghost" data-t="btn_tr">Смотреть тарифы</a></div>
+<div class="page" id="page-google-ads">
+<section class="hero" id="google-ads"><div class="hero-bg"><picture><source srcset="images/hero-2.webp" type="image/webp"><img src="images/hero-2.jpg" data-fallback="images/hero-2.jpg" alt="" width="1600" height="900" decoding="async" loading="lazy"></picture><div class="hero-overlay"></div></div>
+<div class="container hero-content"><div class="hero-grid"><div>
+<h1>Вывожу бизнес<br>в <span class="tg">верх Google</span></h1>
+<p class="hero-text">Настраиваю рекламу в Google вручную, без автоматических режимов, которые тратят бюджет вслепую. Ваше объявление стоит на первой–второй строке, когда человек ищет вашу услугу прямо сейчас. Плюс защита от конкурентов, которые нажимают на рекламу, чтобы слить ваш бюджет. <strong>5 лет опыта, понятные отчёты.</strong></p>
+<div class="hero-trust"><div class="ht-item"><i class="fas fa-trophy"></i><div><div class="ht-label">1–2 место</div><div class="ht-val">в результатах Google</div></div></div><div class="ht-item"><i class="fas fa-shield-halved"></i><div><div class="ht-label">Защита</div><div class="ht-val">от фейковых кликов</div></div></div><div class="ht-item"><i class="fas fa-file-lines"></i><div><div class="ht-label">Отчёты</div><div class="ht-val">раз в неделю</div></div></div><div class="ht-item"><i class="fas fa-headset"></i><div><div class="ht-label">Связь</div><div class="ht-val">WhatsApp / Telegram</div></div></div></div>
+<div class="hero-btns">
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D1%8B%20%D0%B2%20Google.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D0%B8." rel="noopener" data-wa="Здравствуйте! Пишу с сайта Anuken. Интересует настройка рекламы в Google. Подскажите детали." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> Получить расчёт</a>
+<a href="#otzyvy" class="btn btn-ghost">Смотреть отзывы</a></div>
 </div>
 <div class="hero-panel"><div class="hp-glow"></div><div class="hp-card">
-<div class="hp-eyebrow" data-t="hpa_e">Что вы получаете</div>
-<ul class="hp-list"><li><i class="fas fa-check"></i><span data-t="hpa_1">Позиции в топ 1–2 Google</span></li><li><i class="fas fa-check"></i><span data-t="hpa_2">Защиту бюджета от фейк кликов</span></li><li><i class="fas fa-check"></i><span data-t="hpa_3">Аналитику GA4 и цели</span></li><li><i class="fas fa-check"></i><span data-t="hpa_4">Прозрачные еженедельные отчёты</span></li></ul>
-<div class="hp-foot"><span class="v" data-t="hpa_fv">Топ 1–2</span><span class="l" data-t="hpa_fl">по целевым запросам</span></div></div></div>
+<div class="hp-eyebrow">Что вы получаете</div>
+<ul class="hp-list">
+<li><i class="fas fa-check"></i><span>Первую–вторую строку в Google</span></li>
+<li><i class="fas fa-check"></i><span>Защиту бюджета от фейковых кликов</span></li>
+<li><i class="fas fa-check"></i><span>Подсчёт заявок, а не только кликов</span></li>
+<li><i class="fas fa-check"></i><span>Отчёт понятным языком раз в неделю</span></li></ul>
+<div class="hp-foot"><span class="v">1–3</span><span class="l">дня до первых заявок</span></div></div></div>
 </div></div></section>
 
 <section class="sec light"><div class="container">
-<div class="sec-center" style="margin-bottom:34px" data-a><div class="sec-label" data-t="ab_l">Обо мне</div><h2 class="sec-title" data-t="aab_t">Почему доверяют рекламу мне</h2></div>
-<p class="about-lead" data-a data-t="aab_lead">10 лет в digital-маркетинге. Настраиваю Google Ads вручную под каждую нишу — никаких шаблонов и «умных» автокампаний, которые сливают бюджет. Вы получаете заявки и звонки, а не просто клики и красивые графики.</p>
+<div class="sec-center" style="margin-bottom:34px" data-a><div class="sec-label">Обо мне</div><h2 class="sec-title">Почему рекламу доверяют мне</h2></div>
+<p class="about-lead" data-a>5 лет настраиваю рекламу в Google для бизнеса в Астане и Алматы. Собираю кампании руками под каждую нишу — никаких автоматических режимов, которые показывают вашу рекламу кому попало. Вы получаете звонки и заявки, а не красивые графики.</p>
 <div class="prose-grid" data-a>
-<div class="prose-col"><h4 data-t="aabp1_t">Ручная настройка</h4><p data-t="aabp1_d">Собираю семантику под вашу услугу и регион, пишу продающие объявления, прорабатываю минус-слова. Кампания настраивается индивидуально, а не копируется по шаблону — поэтому вы платите за целевые запросы, а не за случайные клики.</p></div>
-<div class="prose-col"><h4 data-t="aabp2_t">Защита бюджета</h4><p data-t="aabp2_d">Подключаю собственную систему защиты от фейковых кликов: она вычисляет конкурентов по IP, блокирует их и возвращает деньги за скликанные показы. Один раз настроил — работает минимум полгода и экономит десятки тысяч тенге.</p></div>
-<div class="prose-col"><h4 data-t="aabp3_t">Прозрачные отчёты</h4><p data-t="aabp3_d">Подключаю Google Analytics 4, настраиваю цели и конверсии. Каждую неделю вы видите, сколько пришло заявок, откуда и по какой цене. Никаких «доверьтесь мне» — только цифры, которые можно проверить.</p></div>
+<div class="prose-col"><h4>Ручная настройка</h4><p>Собираю список запросов, по которым люди реально ищут вашу услугу в вашем городе, и список слов-исключений — фраз, по которым показываться не нужно. Пишу отдельное объявление под каждую группу запросов. В итоге вы платите за тех, кто действительно хочет заказать.</p></div>
+<div class="prose-col"><h4>Защита бюджета</h4><p>Подключаю свою систему защиты: она вычисляет конкурентов, которые нажимают на вашу рекламу, чтобы у вас быстрее кончились деньги, закрывает им показ и возвращает потраченное. Одна настройка работает минимум полгода.</p></div>
+<div class="prose-col"><h4>Понятные отчёты</h4><p>Ставлю счётчик Google Аналитики и настраиваю подсчёт заявок. Раз в неделю вы видите три цифры: сколько потрачено, сколько пришло обращений и во сколько обошлось одно. Без «доверьтесь мне» — только то, что можно проверить.</p></div>
 </div></div></section>
 
-<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="sv_l">Услуги</div><h2 class="sec-title" data-t="asv_t">Что входит в настройку</h2></div><div class="g2" id="adsSvc"></div></div></section>
+<section id="otzyvy" class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:26px" data-a><div class="sec-label">Отзывы</div>
+<h2 class="sec-title">Что говорят клиенты</h2>
+<p class="sec-desc">Живая переписка с клиентами по рекламе — без редактирования. Нажмите на скриншот, чтобы открыть его целиком.</p></div>
+<div class="rev-grid" data-a><div class="rev-item" data-full="images/reviews/otzyv-01.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 1">
+<picture><source srcset="images/reviews/otzyv-01.webp" type="image/webp"><img src="images/reviews/otzyv-01.jpg" data-fallback="images/reviews/otzyv-01.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 1" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-02.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 2">
+<picture><source srcset="images/reviews/otzyv-02.webp" type="image/webp"><img src="images/reviews/otzyv-02.jpg" data-fallback="images/reviews/otzyv-02.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 2" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-03.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 3">
+<picture><source srcset="images/reviews/otzyv-03.webp" type="image/webp"><img src="images/reviews/otzyv-03.jpg" data-fallback="images/reviews/otzyv-03.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 3" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-04.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 4">
+<picture><source srcset="images/reviews/otzyv-04.webp" type="image/webp"><img src="images/reviews/otzyv-04.jpg" data-fallback="images/reviews/otzyv-04.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 4" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-05.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 5">
+<picture><source srcset="images/reviews/otzyv-05.webp" type="image/webp"><img src="images/reviews/otzyv-05.jpg" data-fallback="images/reviews/otzyv-05.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 5" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-06.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 6">
+<picture><source srcset="images/reviews/otzyv-06.webp" type="image/webp"><img src="images/reviews/otzyv-06.jpg" data-fallback="images/reviews/otzyv-06.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 6" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-07.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 7">
+<picture><source srcset="images/reviews/otzyv-07.webp" type="image/webp"><img src="images/reviews/otzyv-07.jpg" data-fallback="images/reviews/otzyv-07.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 7" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-08.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 8">
+<picture><source srcset="images/reviews/otzyv-08.webp" type="image/webp"><img src="images/reviews/otzyv-08.jpg" data-fallback="images/reviews/otzyv-08.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 8" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-09.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 9">
+<picture><source srcset="images/reviews/otzyv-09.webp" type="image/webp"><img src="images/reviews/otzyv-09.jpg" data-fallback="images/reviews/otzyv-09.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 9" width="600" height="800" loading="lazy" decoding="async"></picture></div><div class="rev-item" data-full="images/reviews/otzyv-10.jpg" role="button" tabindex="0" aria-label="Отзыв клиента 10">
+<picture><source srcset="images/reviews/otzyv-10.webp" type="image/webp"><img src="images/reviews/otzyv-10.jpg" data-fallback="images/reviews/otzyv-10.jpg" alt="Отзыв клиента о настройке рекламы Google — скриншот 10" width="600" height="800" loading="lazy" decoding="async"></picture></div></div>
+<div class="sec-center" style="margin:38px 0 0" data-a><div class="sec-label">Голосом</div>
+<h3 class="sec-title" style="font-size:clamp(19px,3.6vw,28px)">Голосовые отзывы</h3></div>
+<div class="voice-grid"><div class="voice-card" data-a>
+<div class="voice-head"><div class="voice-ava"><i class="fas fa-microphone-lines"></i></div>
+<div><div class="voice-name">Голосовой отзыв №1</div><div class="voice-role">Клиент — аренда спецтехники, Алматы</div></div></div>
+<audio controls preload="none" src="audio/otzyv-golos-1.mp3">Ваш браузер не поддерживает аудио.</audio></div><div class="voice-card" data-a>
+<div class="voice-head"><div class="voice-ava"><i class="fas fa-microphone-lines"></i></div>
+<div><div class="voice-name">Голосовой отзыв №2</div><div class="voice-role">Клиент — служба дезинфекции, Астана</div></div></div>
+<audio controls preload="none" src="audio/otzyv-golos-2.mp3">Ваш браузер не поддерживает аудио.</audio></div></div>
+</div></section>
 
-<section id="ads-pricing" class="sec light"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="pr_l">Цены</div><h2 class="sec-title" data-t="ap_t">Стоимость Google Ads</h2><p class="sec-desc" data-t="ap_d">Оплата за настройку и защиту — прозрачно. Рекламный бюджет вы платите напрямую Google.</p></div><div class="g2" id="adsPr"></div></div></section>
+<section class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Услуги</div>
+<h2 class="sec-title">Что входит в работу по рекламе</h2>
+<p class="sec-desc">У каждой услуги своя страница с подробным разбором — как это устроено и что вы получаете.</p></div>
+<div class="g2"><article class="card" data-a>
+<div class="card-icon"><i class="fab fa-google"></i></div>
+<h4>Настройка рекламы в Google</h4><p>Настраиваю рекламу в Google так, чтобы ваше объявление стояло на первой–второй строке, когда человек прямо сейчас ищет вашу услугу. Всё вручную, без «умных» автоматически…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Сбор списка реальных поисковых запросов по вашей нише и городу</span></li><li><i class="fas fa-check"></i><span>Список слов-исключений — чтобы не платить за нецелевые нажатия</span></li><li><i class="fas fa-check"></i><span>Отдельные объявления под каждую группу запросов</span></li><li><i class="fas fa-check"></i><span>Вывод объявлений на первую–вторую позицию</span></li></ul>
+<a class="card-link" href="uslugi/google-ads-nastrojka.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="1">
+<div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+<h4>Защита от фейковых кликов</h4><p>Конкуренты нажимают на ваши объявления по десять раз в день, чтобы у вас быстрее кончился бюджет и реклама выключилась. Моя система вычисляет таких «посетителей» и закрыв…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Подключение системы отслеживания к вашему сайту и рекламному кабинету</span></li><li><i class="fas fa-check"></i><span>Проверка адресов и выявление конкурентов</span></li><li><i class="fas fa-check"></i><span>Автоматическая блокировка показа рекламы им</span></li><li><i class="fas fa-check"></i><span>Оформление возврата денег за недействительные нажатия</span></li></ul>
+<a class="card-link" href="uslugi/zashchita-ot-fejk-klikov.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="2">
+<div class="card-icon"><i class="fas fa-chart-line"></i></div>
+<h4>Аналитика и подсчёт заявок</h4><p>Реклама без подсчёта — это деньги вслепую. Настраиваю счётчик так, чтобы вы видели не только количество нажатий, а главное: сколько человек реально написали или позвонили…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Установка Google Аналитики на сайт</span></li><li><i class="fas fa-check"></i><span>Настройка подсчёта заявок: WhatsApp, Telegram, звонок, форма</span></li><li><i class="fas fa-check"></i><span>Связка рекламного кабинета и счётчика</span></li><li><i class="fas fa-check"></i><span>Настройка расчёта цены одной заявки</span></li></ul>
+<a class="card-link" href="uslugi/google-ads-analitika.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="3">
+<div class="card-icon"><i class="fas fa-arrows-rotate"></i></div>
+<h4>Ведение рекламы</h4><p>Настройка — это старт, а не финиш. Дальше реклама требует внимания: появляются новые запросы, конкуренты меняют ставки, что-то перестаёт приносить заявки. Веду кампании к…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Ежедневная проверка кампаний</span></li><li><i class="fas fa-check"></i><span>Пополнение списка слов-исключений по реальным запросам</span></li><li><i class="fas fa-check"></i><span>Контроль позиций и ставок</span></li><li><i class="fas fa-check"></i><span>Отключение запросов, которые не дают заявок</span></li></ul>
+<a class="card-link" href="uslugi/google-ads-vedenie.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article></div>
+</div></section>
 
-<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="wf_l">Процесс</div><h2 class="sec-title" data-t="awf_t">Как запускаем рекламу</h2></div><div class="g2" id="adsWF"></div></div></section>
+<section class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:26px" data-a><div class="sec-label">Подробно</div><h2 class="sec-title">Как устроена реклама в Google</h2></div>
+<div class="longread" data-a><h3>Где именно показывается ваша реклама</h3><p>Человек открывает Google и вводит запрос — например, «аренда автовышки Алматы». Над обычными результатами поиска показываются 3–4 строки с пометкой «Реклама». Это и есть Google Ads. Дальше первых результатов люди почти не листают, поэтому вся борьба идёт за эти строки.</p><p>Платите вы только за нажатие. Показали объявление тысяче человек, нажали двадцать — заплатили за двадцать. Стоимость одного нажатия зависит от ниши и города: где-то 60 ₸, где-то 1200 ₸.</p><h3>Почему у одних реклама работает, а у других «сливает бюджет»</h3><p>Причина почти всегда одна и та же — реклама показывается не тем людям. Google по умолчанию трактует запросы широко: вы платите за «аренда автовышки», а объявление показывается по запросам «автовышка купить бу», «работа на автовышке», «автовышка своими руками». Человек нажимает, вы платите, заявки нет.</p><p>Лечится это списком слов-исключений: фразами, по которым ваша реклама показываться не должна. Такой список я собираю до запуска и дополняю каждую неделю по отчёту о реальных запросах. Обычно уже после первой чистки цена заявки падает на четверть.</p><p>Вторая причина — автоматические кампании, которые Google активно предлагает при создании рекламы. Вы даёте бюджет, система сама решает, кому показывать. Для магазина с тысячами заказов это работает, для услуг в одном городе — почти всегда деньги на ветер.</p><h3>Из чего складывается моя работа</h3><ul><li>Разбор ниши: сколько людей в вашем городе ищут услугу и какой нужен бюджет</li><li>Сбор реальных поисковых запросов — обычно от 200 до 2000 фраз</li><li>Список слов-исключений, чтобы не платить за случайных людей</li><li>Отдельные объявления под каждую группу запросов</li><li>Настройка городов, времени показа и ставок</li><li>Подключение счётчика и подсчёт заявок, а не просто кликов</li><li>Защита от конкурентов, которые нажимают на вашу рекламу</li><li>Еженедельная чистка и отчёт понятным языком</li></ul><h3>Сколько это стоит и когда пойдут заявки</h3><p>Моя работа по настройке — 50 000 ₸. Бюджет на саму рекламу вы платите напрямую Google со своей карты: по услугам в Астане и Алматы это обычно 100 000–300 000 ₸ в месяц, но точную цифру я называю после разбора вашей ниши, до того как вы что-то оплатите.</p><p>Первые заявки обычно приходят в течение 1–3 дней после запуска. В этом главное отличие рекламы от продвижения в поиске: поиск даёт результат через месяцы, реклама — почти сразу.</p></div>
+<div style="max-width:820px;margin:26px auto 0" data-a><div class="svc-links"><a class="svc-link" href="uslugi/google-ads-nastrojka.html"><i class="fab fa-google"></i><span>Настройка рекламы в Google</span><i class="fas fa-arrow-right arr"></i></a><a class="svc-link" href="uslugi/zashchita-ot-fejk-klikov.html"><i class="fas fa-shield-halved"></i><span>Защита от фейковых кликов</span><i class="fas fa-arrow-right arr"></i></a><a class="svc-link" href="uslugi/google-ads-analitika.html"><i class="fas fa-chart-line"></i><span>Аналитика и подсчёт заявок</span><i class="fas fa-arrow-right arr"></i></a><a class="svc-link" href="uslugi/google-ads-vedenie.html"><i class="fas fa-arrows-rotate"></i><span>Ведение и донастройка</span><i class="fas fa-arrow-right arr"></i></a></div></div>
+</div></section>
 
-<section class="sec light"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">FAQ</div><h2 class="sec-title" data-t="fq_t">Частые вопросы</h2></div><div style="max-width:720px;margin:0 auto" id="adsFQ"></div></div></section>
+<section id="ads-pricing" class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Цены</div>
+<h2 class="sec-title">Стоимость работы по рекламе</h2>
+<p class="sec-desc">Это цена моей работы. Бюджет на саму рекламу вы платите напрямую Google со своей карты.</p></div>
+<div class="g2">
+<div class="card price-card" data-a>
+<div class="price-head"><div class="price-name">Настройка и вывод на 1–2 место</div><div class="price-sub">Запуск рекламы</div><div class="price-amount">50 000 ₸ / 105$</div></div>
+<ul class="card-list price-features"><li><i class="fas fa-check-circle"></i><span>Сбор запросов по вашей нише и городу</span></li><li><i class="fas fa-check-circle"></i><span>Список слов-исключений</span></li><li><i class="fas fa-check-circle"></i><span>Объявления под каждую группу запросов</span></li><li><i class="fas fa-check-circle"></i><span>Вывод на первую–вторую позицию</span></li><li><i class="fas fa-check-circle"></i><span>Подключение Google Аналитики</span></li></ul>
+<div class="price-note">Реклама настраивается вручную под вашу нишу и город. Счётчик аналитики подключаю бесплатно.</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D1%8B%20%D0%B2%20Google%20%D0%B7%D0%B0%2050%20000%20%E2%82%B8.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" style="margin-top:14px" rel="noopener">Заказать <i class="fab fa-whatsapp"></i></a></div>
+<div class="card price-card" data-a>
+<div class="price-head"><div class="price-name">Защита от фейковых кликов</div><div class="price-sub">Экономия бюджета</div><div class="price-amount">50 000 ₸ / 105$</div></div>
+<ul class="card-list price-features"><li><i class="fas fa-check-circle"></i><span>Выявление конкурентов по адресу устройства</span></li><li><i class="fas fa-check-circle"></i><span>Автоматическая блокировка показа</span></li><li><i class="fas fa-check-circle"></i><span>Возврат денег за недействительные нажатия</span></li><li><i class="fas fa-check-circle"></i><span>Наблюдение и пополнение списка</span></li></ul>
+<div class="price-note">Система находит тех, кто нажимает на вашу рекламу, чтобы слить бюджет, закрывает им показ и возвращает деньги. Одно подключение работает минимум полгода.</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%B0%20%D0%BE%D1%82%20%D1%84%D0%B5%D0%B9%D0%BA%D0%BE%D0%B2%D1%8B%D1%85%20%D0%BA%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%B7%D0%B0%2050%20000%20%E2%82%B8.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" style="margin-top:14px" rel="noopener">Заказать <i class="fab fa-whatsapp"></i></a></div>
+</div></div></section>
+
+<section class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Процесс</div><h2 class="sec-title">Как запускаем рекламу</h2></div>
+<div class="g2"><div class="wf-card" data-a><div class="wf-num">01</div><div class="wf-icon"><i class="fas fa-magnifying-glass"></i></div><h4>Разбор ниши</h4><p>Смотрю спрос в вашем городе и конкурентов. Говорю, какой нужен бюджет.</p></div><div class="wf-card" data-a data-d="1"><div class="wf-num">02</div><div class="wf-icon"><i class="fas fa-pen-ruler"></i></div><h4>Сбор запросов</h4><p>Собираю список запросов и список слов-исключений.</p></div><div class="wf-card" data-a data-d="2"><div class="wf-num">03</div><div class="wf-icon"><i class="fas fa-code"></i></div><h4>Настройка и запуск</h4><p>Создаю кампании, пишу объявления, подключаю счётчик и защиту от фейковых кликов.</p></div><div class="wf-card" data-a data-d="3"><div class="wf-num">04</div><div class="wf-icon"><i class="fas fa-rocket"></i></div><h4>Ведение</h4><p>Каждую неделю чищу лишнее, правлю ставки, присылаю отчёт.</p></div></div>
+</div></section>
+
+<section class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Вопросы</div><h2 class="sec-title">Частые вопросы</h2></div>
+<div style="max-width:760px;margin:0 auto"><div class="faq-item" data-a><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Сколько денег нужно на сам рекламный бюджет?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Зависит от ниши и города. По услугам в Астане и Алматы обычно 100 000–300 000 ₸ в месяц. Точную цифру называю после разбора ниши — до того, как вы что-то оплатите.</div></div></div><div class="faq-item" data-a data-d="1"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Как работает защита от фейковых кликов?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Система смотрит, с каких устройств нажимают на вашу рекламу. Если с одного адреса десять нажатий за день, нулевое время на сайте и ни одной заявки — это не клиент, а чаще всего конкурент. Такому адресу закрывается показ рекламы, а деньги за нажатия возвращаются на счёт.</div></div></div><div class="faq-item" data-a data-d="2"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Можно заказать только рекламу, без сайта?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Если сайт у вас уже есть — да, настрою рекламу на него, подключу счётчик и защиту. Если сайта нет, рекламу запускать некуда: человеку нужно куда-то прийти. Тогда сначала делаем сайт.</div></div></div><div class="faq-item" data-a data-d="3"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Через сколько будут первые заявки?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Обычно в течение 1–3 дней после запуска. Многое зависит от ниши, бюджета и города — прогноз показываю до старта.</div></div></div><div class="faq-item" data-a data-d="3"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Я плачу каждый месяц?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Настройка и защита оплачиваются один раз. Дальнейшее ведение — по договорённости, можно вести и самому: передам доступы и объясню, что смотреть.</div></div></div></div></div></section>
 </div>
-
-<!-- ══════ OLX ══════ -->
 <div class="page" id="page-olx">
-<section class="hero"><div class="hero-bg"><img id="heroBg3" src="images/hero-1.jpg" alt=""><div class="hero-overlay"></div></div><div class="container hero-content"><div class="hero-grid"><div>
-<h1 data-t-html="olx_h1">Продвигаю бизнес<br>на <span class="tg">OLX</span></h1>
-<p class="hero-text" data-t-html="olx_hp">Закрепляю ваши объявления в верхних позициях OLX и веду их каждый день. Вас видят первыми среди десятков конкурентов — звонки идут стабильно. <strong>Более 200 клиентов по Казахстану уже продвигаются этим способом.</strong></p>
-<div class="hero-trust">
-<div class="ht-item"><i class="fas fa-arrow-up"></i><div><div class="ht-label" data-t="ot1">Топ OLX</div><div class="ht-val" data-t="ot1v">3–6 объявлений</div></div></div>
-<div class="ht-item"><i class="fas fa-calendar-week"></i><div><div class="ht-label" data-t="ot2">Оплата</div><div class="ht-val" data-t="ot2v">раз в неделю</div></div></div>
-<div class="ht-item"><i class="fas fa-users"></i><div><div class="ht-label" data-t="ot3">200+</div><div class="ht-val" data-t="ot3v">клиентов по РК</div></div></div>
-<div class="ht-item"><i class="fas fa-headset"></i><div><div class="ht-label" data-t="t_con">Связь</div><div class="ht-val">WA / TG</div></div></div>
-</div>
-<div class="hero-btns"><a data-wa="Здравствуйте! Пишу с сайта Anuken. Интересует продвижение на OLX. Подскажите, пожалуйста, детали." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> <span data-t="btn_q">Получить расчёт</span></a><a href="#olx-pricing" class="btn btn-ghost" data-t="btn_tr">Смотреть тарифы</a></div>
+<section class="hero" id="olx"><div class="hero-bg"><picture><source srcset="images/hero-3.webp" type="image/webp"><img src="images/hero-3.jpg" data-fallback="images/hero-3.jpg" alt="" width="1600" height="900" decoding="async" loading="lazy"></picture><div class="hero-overlay"></div></div>
+<div class="container hero-content"><div class="hero-grid"><div>
+<h1>Продвигаю бизнес<br>на <span class="tg">OLX</span></h1>
+<p class="hero-text">Держу ваши объявления в верхних строчках OLX и веду их каждый день. Люди, которые ищут вашу услугу прямо сейчас, видят вас первым и звонят вам, а не тому, кто на третьей странице. <strong>5 лет опыта, более 200 клиентов по Казахстану.</strong></p>
+<div class="hero-trust"><div class="ht-item"><i class="fas fa-arrow-up"></i><div><div class="ht-label">Верх OLX</div><div class="ht-val">3–6 объявлений</div></div></div><div class="ht-item"><i class="fas fa-calendar-week"></i><div><div class="ht-label">Оплата</div><div class="ht-val">раз в неделю</div></div></div><div class="ht-item"><i class="fas fa-users"></i><div><div class="ht-label">200+</div><div class="ht-val">клиентов по РК</div></div></div><div class="ht-item"><i class="fas fa-headset"></i><div><div class="ht-label">Связь</div><div class="ht-val">WhatsApp / Telegram</div></div></div></div>
+<div class="hero-btns">
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20OLX.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D0%B8." rel="noopener" data-wa="Здравствуйте! Пишу с сайта Anuken. Интересует продвижение на OLX. Подскажите детали." onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-whatsapp"></i> Получить расчёт</a>
+<a href="#olx-pricing" class="btn btn-ghost">Смотреть тарифы</a></div>
 </div>
 <div class="hero-panel"><div class="hp-glow"></div><div class="hp-card">
-<div class="hp-eyebrow" data-t="hpo_e">Что вы получаете</div>
-<ul class="hp-list"><li><i class="fas fa-check"></i><span data-t="hpo_1">3–6 объявлений в топе OLX</span></li><li><i class="fas fa-check"></i><span data-t="hpo_2">Звонки каждый день</span></li><li><i class="fas fa-check"></i><span data-t="hpo_3">Удобную оплату раз в неделю</span></li><li><i class="fas fa-check"></i><span data-t="hpo_4">Ведение и обновление объявлений</span></li></ul>
-<div class="hp-foot"><span class="v">200+</span><span class="l" data-t="hpo_fl">клиентов по РК</span></div></div></div>
+<div class="hp-eyebrow">Что вы получаете</div>
+<ul class="hp-list">
+<li><i class="fas fa-check"></i><span>3–6 объявлений в верхних строках</span></li>
+<li><i class="fas fa-check"></i><span>Звонки каждый день</span></li>
+<li><i class="fas fa-check"></i><span>Оплату раз в неделю, без договоров</span></li>
+<li><i class="fas fa-check"></i><span>Ведение и обновление объявлений</span></li></ul>
+<div class="hp-foot"><span class="v">200+</span><span class="l">клиентов по Казахстану</span></div></div></div>
 </div></div></section>
 
 <section class="sec light"><div class="container">
-<div class="sec-center" style="margin-bottom:34px" data-a><div class="sec-label" data-t="ab_l">Обо мне</div><h2 class="sec-title" data-t="oab_t">Как я продвигаю на OLX</h2></div>
-<p class="about-lead" data-a data-t="oab_lead">OLX — это площадка, где люди уже ищут вашу услугу. Задача не просто разместить объявление, а закрепить его в топе и удержать там. Именно этим я и занимаюсь — стабильно, с оплатой раз в неделю.</p>
+<div class="sec-center" style="margin-bottom:34px" data-a><div class="sec-label">Обо мне</div><h2 class="sec-title">Как я продвигаю на OLX</h2></div>
+<p class="about-lead" data-a>OLX — площадка, где человек уже готов заказать: он открыл нужный раздел, смотрит первые десять объявлений и звонит по двум-трём. Задача не в том, чтобы разместиться, а в том, чтобы всё время оставаться наверху. Занимаюсь этим 5 лет, оплата — раз в неделю.</p>
 <div class="prose-grid" data-a>
-<div class="prose-col"><h4 data-t="oabp1_t">Закрепление в топе</h4><p data-t="oabp1_d">Ваши объявления держатся в верхних позициях OLX по целевым категориям всю неделю. Пользователь видит вас первым и звонит вам, а не конкуренту на второй странице выдачи.</p></div>
-<div class="prose-col"><h4 data-t="oabp2_t">Оформление и ведение</h4><p data-t="oabp2_d">Составляю продающие объявления — заголовки, тексты, фото, цены — и веду их: обновляю, поднимаю, слежу за позициями, чтобы они не проседали в выдаче со временем.</p></div>
-<div class="prose-col"><h4 data-t="oabp3_t">Проверено 200+ клиентами</h4><p data-t="oabp3_d">Более 200 бизнесов по Казахстану уже получают заявки через OLX этим методом. Часто это дешевле рекламы и даёт поток звонков буквально с первых дней.</p></div>
+<div class="prose-col"><h4>Верхние строки</h4><p>Ваши объявления держатся в верхних позициях OLX по нужным категориям всю неделю. Каждое новое объявление конкурента отодвигает ваше вниз, поэтому позиции я проверяю каждый день и поднимаю объявления обратно.</p></div>
+<div class="prose-col"><h4>Оформление и ведение</h4><p>Составляю объявления, по которым звонят: заголовок под то, что человек вводит в поиск, цена и срок подачи в первых строках, ваши реальные фотографии. Слабые объявления переписываю, сильные оставляю.</p></div>
+<div class="prose-col"><h4>Проверено 200+ клиентами</h4><p>Более 200 бизнесов по Казахстану получают заявки через OLX этим способом. Часто это дешевле рекламы и даёт звонки уже с первого-второго дня.</p></div>
 </div></div></section>
 
-<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="sv_l">Услуги</div><h2 class="sec-title" data-t="osv_t">Что я делаю на OLX</h2></div><div class="g2" id="olxSvc"></div></div></section>
+<section class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Услуги</div>
+<h2 class="sec-title">Что я делаю на OLX</h2>
+<p class="sec-desc">У каждой услуги своя страница с подробным описанием и ответами на вопросы.</p></div>
+<div class="g2"><article class="card" data-a>
+<div class="card-icon"><i class="fas fa-arrow-up-wide-short"></i></div>
+<h4>Продвижение объявлений в топ OLX</h4><p>Держу ваши объявления в верхних строчках OLX по нужным категориям и городам. Люди, которые ищут вашу услугу прямо сейчас, видят вас первым и звонят вам, а не тому, кто на…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>3 или 6 объявлений, закреплённых в верхних строчках OLX</span></li><li><i class="fas fa-check"></i><span>Подбор категорий и городов, где реально ищут вашу услугу</span></li><li><i class="fas fa-check"></i><span>Ежедневная проверка позиций</span></li><li><i class="fas fa-check"></i><span>Поднятие и обновление объявлений в течение недели</span></li></ul>
+<a class="card-link" href="uslugi/olx-prodvizhenie.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article><article class="card" data-a data-d="1">
+<div class="card-icon"><i class="fas fa-pen-to-square"></i></div>
+<h4>Оформление и ведение объявлений на OLX</h4><p>Попасть в верхние строки — половина дела. Вторая половина — чтобы из тех, кто увидел объявление, позвонили именно вам. За это отвечают заголовок, первые две строки текста…</p>
+<ul class="card-list"><li><i class="fas fa-check"></i><span>Составление объявлений с нуля: заголовок, текст, цена</span></li><li><i class="fas fa-check"></i><span>Подбор и подготовка фотографий, порядок показа</span></li><li><i class="fas fa-check"></i><span>Выбор правильной категории и города</span></li><li><i class="fas fa-check"></i><span>Обновление и поднятие объявлений в течение недели</span></li></ul>
+<a class="card-link" href="uslugi/olx-oformlenie.html">Подробно об услуге <i class="fas fa-arrow-right"></i></a></article></div>
+</div></section>
 
-<section id="olx-pricing" class="sec light"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="pr_l">Цены</div><h2 class="sec-title" data-t="op_t">Тарифы на OLX</h2><p class="sec-desc" data-t="op_d">Оплата раз в неделю. Вы платите за конкретное количество объявлений, закреплённых в топе.</p></div><div class="g2" id="olxPr"></div></div></section>
+<section class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:26px" data-a><div class="sec-label">Подробно</div><h2 class="sec-title">Как устроено продвижение на OLX</h2></div>
+<div class="longread" data-a><h3>Почему OLX даёт звонки быстрее рекламы</h3><p>На OLX человек приходит уже с готовым намерением заказать. Он не читает статьи и не сравнивает компании: открыл раздел «Спецтехника» или «Услуги», посмотрел первые 10–15 объявлений и позвонил по двум-трём. Дальше первой страницы почти никто не идёт.</p><p>Из этого следует всё остальное. Если вы в первой десятке — вам звонят каждый день. Если на пятой странице — вас как будто нет. Среднего состояния не бывает. И именно поэтому за верхние строки идёт постоянная борьба: каждое новое объявление конкурента отодвигает ваше вниз.</p><h3>Что значит «держать объявление в топе»</h3><p>Разово поднять объявление можно и самому — OLX предлагает для этого платные услуги. Проблема в том, что через несколько часов оно снова уезжает вниз, потому что конкуренты делают то же самое. Деньги потрачены, эффект — на полдня.</p><p>Моя работа в том, что я слежу за позициями каждый день и удерживаю ваши объявления наверху всю неделю: поднимаю, обновляю, меняю категорию или город, если там больше спроса. Плюс переписываю объявления, по которым мало звонков.</p><h3>Три или шесть объявлений</h3><ul><li>3 объявления — 60 000 ₸ в неделю. Подходит, когда услуга одна и город один</li><li>6 объявлений — 90 000 ₸ в неделю. Подходит, когда услуг несколько или вы работаете в двух-трёх городах</li><li>Категории подбираю я — по тому, где реально ищут вашу услугу</li><li>Оформление объявлений входит в цену, отдельно за тексты и фото платить не нужно</li><li>Остановиться можно в любой момент, никаких договоров на месяцы вперёд</li></ul><p>Шесть объявлений почти всегда дают больше, чем в два раза больше звонков по сравнению с тремя: каждое ловит свою категорию и свой запрос, и охват растёт быстрее, чем количество объявлений.</p><h3>Что должно быть в объявлении, чтобы по нему звонили</h3><p>В списке человек видит только фотографию, заголовок и цену — и по ним за секунду решает, открывать или листать дальше. Поэтому заголовок содержит ровно то, что человек искал, плюс город и зацепку: срок подачи, цену, что-то отличающее вас.</p><p>Частая ошибка — писать в заголовке название компании. На OLX никто не ищет компании, там ищут услугу. «ТОО СтройМастерГрупп» не даст ни одного звонка, «Аренда автовышки 22 м, подача за 40 минут, Алматы» — даст.</p><p>В тексте читают первые две-три строки, поэтому цена, район работы и срок подачи идут в начало. Фотографии — только ваши реальные: снимки с телефона работают лучше, чем красивые картинки из интернета, потому что им верят.</p></div>
+<div style="max-width:820px;margin:26px auto 0" data-a><div class="svc-links"><a class="svc-link" href="uslugi/olx-prodvizhenie.html"><i class="fas fa-arrow-up-wide-short"></i><span>Продвижение в топ OLX</span><i class="fas fa-arrow-right arr"></i></a><a class="svc-link" href="uslugi/olx-oformlenie.html"><i class="fas fa-pen-to-square"></i><span>Оформление объявлений</span><i class="fas fa-arrow-right arr"></i></a></div></div>
+</div></section>
 
-<section class="sec"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label" data-t="wf_l">Процесс</div><h2 class="sec-title" data-t="owf_t">Как продвигаем на OLX</h2></div><div class="g2" id="olxWF"></div></div></section>
+<section id="olx-pricing" class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Цены</div>
+<h2 class="sec-title">Тарифы на OLX</h2>
+<p class="sec-desc">Оплата раз в неделю. Вы платите за конкретное количество объявлений, закреплённых наверху. Остановиться можно в любой момент.</p></div>
+<div class="g2">
+<div class="card price-card" data-a>
+<div class="price-head"><div class="price-name">3 объявления в топе</div><div class="price-sub">Оплата раз в неделю</div><div class="price-amount">60 000 ₸ <span class="price-from" style="display:inline;text-transform:none;letter-spacing:0">/ неделя</span></div></div>
+<ul class="card-list price-features"><li><i class="fas fa-check-circle"></i><span>3 объявления закреплены наверху</span></li><li><i class="fas fa-check-circle"></i><span>Подбор нужных категорий</span></li><li><i class="fas fa-check-circle"></i><span>Ежедневная проверка позиций</span></li><li><i class="fas fa-check-circle"></i><span>Отчёт по звонкам</span></li></ul>
+<div class="price-note">Ваши объявления держатся в верхних строках всю неделю — вас находят первыми среди десятков конкурентов.</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20OLX%20%E2%80%94%203%20%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D1%82%D0%BE%D0%BF%D0%B5%20%2860%20000%20%E2%82%B8%20%D0%B2%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8E%29.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" style="margin-top:14px" rel="noopener">Заказать <i class="fab fa-whatsapp"></i></a></div>
+<div class="card price-card" data-a>
+<div class="price-head"><div class="price-name">6 объявлений в топе</div><div class="price-sub">Оплата раз в неделю</div><div class="price-amount">90 000 ₸ <span class="price-from" style="display:inline;text-transform:none;letter-spacing:0">/ неделя</span></div></div>
+<ul class="card-list price-features"><li><i class="fas fa-check-circle"></i><span>6 объявлений закреплены наверху</span></li><li><i class="fas fa-check-circle"></i><span>Больше категорий и городов</span></li><li><i class="fas fa-check-circle"></i><span>Составление и обновление текстов</span></li><li><i class="fas fa-check-circle"></i><span>Ведение и отчёт по звонкам</span></li></ul>
+<div class="price-note">Максимальный охват: каждое объявление ловит свою категорию. Оформление объявлений входит в цену.</div>
+<a href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Anuken.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20OLX%20%E2%80%94%206%20%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D1%82%D0%BE%D0%BF%D0%B5%20%2890%20000%20%E2%82%B8%20%D0%B2%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8E%29.%20%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%3F" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" style="margin-top:14px" rel="noopener">Заказать <i class="fab fa-whatsapp"></i></a></div>
+</div></div></section>
 
-<section class="sec light"><div class="container"><div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">FAQ</div><h2 class="sec-title" data-t="fq_t">Частые вопросы</h2></div><div style="max-width:720px;margin:0 auto" id="olxFQ"></div></div></section>
+<section class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Процесс</div><h2 class="sec-title">Как продвигаем на OLX</h2></div>
+<div class="g2"><div class="wf-card" data-a><div class="wf-num">01</div><div class="wf-icon"><i class="fas fa-magnifying-glass"></i></div><h4>Разбор ниши</h4><p>Смотрю вашу услугу, категории OLX и конкурентов в выдаче.</p></div><div class="wf-card" data-a data-d="1"><div class="wf-num">02</div><div class="wf-icon"><i class="fas fa-pen-ruler"></i></div><h4>Оформление</h4><p>Составляю заголовки, тексты и цены, подбираю фотографии и категории.</p></div><div class="wf-card" data-a data-d="2"><div class="wf-num">03</div><div class="wf-icon"><i class="fas fa-code"></i></div><h4>Закрепление</h4><p>Ставлю 3 или 6 объявлений в верхние строки.</p></div><div class="wf-card" data-a data-d="3"><div class="wf-num">04</div><div class="wf-icon"><i class="fas fa-rocket"></i></div><h4>Ведение</h4><p>Каждый день проверяю позиции, поднимаю и обновляю, отчитываюсь по звонкам.</p></div></div>
+</div></section>
+
+<section class="sec"><div class="container">
+<div class="sec-center" style="margin-bottom:30px" data-a><div class="sec-label">Вопросы</div><h2 class="sec-title">Частые вопросы</h2></div>
+<div style="max-width:760px;margin:0 auto"><div class="faq-item" data-a><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Как устроена оплата?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Раз в неделю. 60 000 ₸ — 3 объявления в топе, 90 000 ₸ — 6 объявлений. Остановиться можно в любой момент.</div></div></div><div class="faq-item" data-a data-d="1"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Что значит «объявление в топе»?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Ваши объявления держатся в верхних строчках выдачи OLX по нужным категориям. Человек видит их первыми и звонит вам, а не конкурентам ниже.</div></div></div><div class="faq-item" data-a data-d="2"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>А если у меня нет объявлений на OLX?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Составлю с нуля: заголовки, тексты, цены, подбор фотографий и категорий. Это входит в цену продвижения.</div></div></div><div class="faq-item" data-a data-d="3"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Объявления будут с моего аккаунта?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Да, с вашего. Все звонки идут напрямую вам.</div></div></div><div class="faq-item" data-a data-d="3"><button class="faq-q" onclick="togFAQ(this)" type="button"><span>Это точно работает?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><div class="faq-a-in">Более 200 бизнесов по Казахстану получают заявки этим способом. Если по вашей нише на OLX спроса нет — скажу сразу и не возьмусь.</div></div></div></div></div></section>
 </div>
+<div class="lb" id="lb" role="dialog" aria-label="Скриншот отзыва">
+<button class="lb-close" id="lbClose" aria-label="Закрыть"><i class="fas fa-times"></i></button>
+<button class="lb-prev" id="lbPrev" aria-label="Назад"><i class="fas fa-chevron-left"></i></button>
+<img id="lbImg" src="" alt="">
+<button class="lb-next" id="lbNext" aria-label="Вперёд"><i class="fas fa-chevron-right"></i></button>
+<div class="lb-count" id="lbCount"></div>
+</div>
+<footer class="footer"><div class="footer-glow"></div><div class="container" style="position:relative;z-index:1">
+<h2 class="footer-title">Готовы начать?</h2>
+<div class="footer-btns">
+<a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green" rel="noopener"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+<a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent" rel="noopener"><i class="fab fa-telegram-plane"></i> Telegram</a></div>
+<div class="footer-social">
+<a href="https://wa.me/77074534518" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://t.me/Anukenn" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a></div>
+<nav class="footer-nav"><a href="uslugi/landing.html">Лендинг (одностраничный сайт)</a><a href="uslugi/multistranichnyj-sajt.html">Сайт из 3–7 страниц</a><a href="uslugi/mnogostranichnyj-sajt.html">Многостраничный сайт (10+)</a><a href="uslugi/internet-magazin.html">Интернет-магазин</a><a href="uslugi/dizajn-i-analitika.html">Дизайн и аналитика</a><a href="uslugi/dorabotka-sajta.html">Доработка и поддержка</a><a href="uslugi/google-ads-nastrojka.html">Настройка рекламы в Google</a><a href="uslugi/zashchita-ot-fejk-klikov.html">Защита от фейковых кликов</a><a href="uslugi/google-ads-analitika.html">Аналитика и подсчёт заявок</a><a href="uslugi/google-ads-vedenie.html">Ведение и донастройка</a><a href="uslugi/olx-prodvizhenie.html">Продвижение в топ OLX</a><a href="uslugi/olx-oformlenie.html">Оформление объявлений</a></nav>
+<div class="footer-bot"><span>&copy; 2015–2026 Anuken</span><span>Астана · Алматы, Казахстан</span></div>
+</div></footer>
 
-<footer class="footer"><div class="footer-glow"></div><div class="container" style="position:relative;z-index:1"><h2 class="footer-title" data-t="ft_t">Готовы начать?</h2><div class="footer-btns"><a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-green"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/Anukenn" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent"><i class="fab fa-telegram-plane"></i> Telegram</a></div><div class="footer-social"><a href="https://www.tiktok.com/@anuken_devepoler" target="_blank"><i class="fab fa-tiktok"></i></a><a href="https://wa.me/77074534518" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="https://t.me/Anukenn" target="_blank"><i class="fab fa-telegram-plane"></i></a></div><div class="footer-bot"><span>&copy; 2015–2026 Anuken</span><span data-t="ft_city">Астана, Казахстан</span></div></div></footer>
-
-<script>
-/* hero bg rotator */
-(function(){
-const imgs=['images/hero-1.jpg','images/hero-2.jpg','images/hero-3.jpg','images/hero-4.jpg'];
-const last=localStorage.getItem('heroBgLast')||'';
-const pool=imgs.filter(s=>s!==last);
-const pick=pool.length?pool[Math.floor(Math.random()*pool.length)]:imgs[0];
-try{localStorage.setItem('heroBgLast',pick)}catch(e){}
-document.querySelectorAll('.hero-bg img').forEach(img=>{const test=new Image();test.onload=()=>{img.src=pick};test.onerror=()=>{};test.src=pick});
-})();
-
-/* build WhatsApp links with prefilled text */
-function buildWA(){document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/77074534518?text='+encodeURIComponent(a.getAttribute('data-wa'))})}
-
-/* ── PORTFOLIO ── */
-const P=[
-{title:"PROMETALL",url:"https://pro-met-all.kz/",img:"images/case-prometall.jpg",ru:"Многостраничный сайт по изделиям из металла в Астане: навесы, ворота, ковка, квиз-расчёт и заявки в WhatsApp.",en:"Multi-page metalwork site in Astana: canopies, gates, forging, quiz calculator, WhatsApp leads."},
-{title:"Astana Jas",url:"https://www.astanajas.kz/",img:"images/astanajas.jpg",ru:"Сайт детской футбольной школы в Астане: программы, тренеры, галерея, прайс и запись на тренировку.",en:"Kids football school in Astana: programs, coaches, gallery, pricing, sign-up."},
-{title:"Moskit Setki",url:"https://moskit-setki.kz/",img:"images/case-moskit.jpg",ru:"Сайт по москитным сеткам и окнам: выбор города, каталог, заявка в WhatsApp.",en:"Mosquito screens & windows site: city switch, catalog, WhatsApp orders."},
-{title:"DezClub",url:"https://dezclub.kz/",img:"images/case-dezclub.jpg",ru:"Служба дезинфекции и санобработки: услуги, отзывы, заявка в один клик.",en:"Pest control & disinfection: services, reviews, one-click request."},
-{title:"Sanitex",url:"https://sanitex.kz/",img:"images/case-sanitex.jpg",ru:"Дезинфекция в Алматы: обработка от насекомых и грызунов, вызов мастера.",en:"Disinfection in Almaty: pest & rodent control, master call-out."},
-{title:"Diz-Astana",url:"https://diz-astana.kz/",img:"images/case-diz-astana.jpg",ru:"Служба дезинфекции в Астане: уничтожение насекомых и грызунов, выезд в день обращения.",en:"Disinfection in Astana: pest control, same-day dispatch."},
-{title:"KAZ-COLD",url:"https://kaz-cold.kz/",img:"images/case-kaz-cold.jpg",ru:"Ремонт холодильников и бытовой техники в Астане: карточки поломок, вызов мастера в WhatsApp.",en:"Fridge & appliance repair in Astana: symptom cards, WhatsApp master call."},
-{title:"Service-Master",url:"https://service-master.kz/",img:"images/case-service-master.jpg",ru:"Ремонт бытовой техники в Алматы: перечень услуг, гарантия, онлайн-заявка.",en:"Appliance repair in Almaty: services, warranty, online request."},
-{title:"Arenda-Krana",url:"https://arenda-krana.kz/",img:"images/case-arenda-krana.jpg",ru:"Аренда автокрана: парк по грузоподъёмности, условия работы, расчёт стоимости.",en:"Crane rental: fleet by capacity, work terms, quote."},
-{title:"Autokran Almaty",url:"https://autokran-almaty.kz/",img:"images/case-autokran-almaty.jpg",ru:"Аренда автокранов в Алматы: краны 25–50 т, быстрая подача, заявка в WhatsApp.",en:"Crane rental in Almaty: 25–50 t, fast dispatch, WhatsApp request."},
-{title:"Manipuliator",url:"https://manipuliator.kz/",img:"images/case-manipuliator.jpg",ru:"Услуги манипулятора: погрузка и перевозка грузов, вызов техники через WhatsApp.",en:"Crane-manipulator service: loading & transport, WhatsApp booking."},
-{title:"Autovishka",url:"https://autovishka.kz/",img:"images/case-autovishka.jpg",ru:"Аренда автовышки: высотные работы, разные высоты подъёма, заявка онлайн.",en:"Aerial platform rental: height work, various reach, online request."},
-{title:"MegaPerevozki",url:"https://megaperevozki.kz/",img:"images/case-megaperevozki.jpg",ru:"Грузоперевозки и квартирные переезды: грузчики, транспорт, расчёт по объёму.",en:"Freight & home moving: loaders, vehicles, volume-based quote."},
-{title:"Perevozz",url:"https://perevozz.kz/",img:"images/case-perevozz.jpg",ru:"Грузоперевозки и переезды под ключ: подача машины, упаковка, грузчики.",en:"Turnkey freight & moving: dispatch, packing, loaders."},
-{title:"Astana Evak",url:"https://astanaevak.kz/",img:"images/case-astanaevak.jpg",ru:"Эвакуатор в Астане 24/7: быстрая подача, фиксированная цена, вызов в один клик.",en:"Tow truck in Astana 24/7: fast dispatch, fixed price, one-click call."},
-{title:"Ventas Group",url:"https://ventasgroup.kz/",img:"images/ventasgroup.jpg",ru:"Аренда премиум-авто с водителем в Астане: каталог, цены по часам и дням, бронирование.",en:"Premium car rental with driver in Astana: catalog, hourly/daily, booking."},
-{title:"QAZ Auto Rent",url:"https://qazautorent.kz/",img:"images/case-qazautorent.jpg",ru:"Прокат авто в Алматы: от эконом до VIP, KASKO, оплата Kaspi, поддержка 24/7.",en:"Car rental in Almaty: economy to VIP, Kaspi payment, 24/7 support."},
-{title:"Cleaning Almaty",url:"https://cleaning-almaty.com/",img:"images/case-cleaning-almaty.jpg",ru:"Клининговые услуги в Алматы: уборка квартир и офисов, прайс, запись онлайн.",en:"Cleaning services in Almaty: home & office, pricing, online booking."},
-{title:"Ocean Cleaning",url:"https://ocean-cleaning.kz/",img:"images/case-ocean-cleaning.jpg",ru:"Клининг для бизнеса и HoReCa в Алматы: услуги, договор, заявка в WhatsApp.",en:"B2B & HoReCa cleaning in Almaty: services, contract, WhatsApp request."},
-{title:"Медвежатник",url:"https://medvezhatnik.kz/",img:"images/case-medvezhatnik.jpg",ru:"Аварийное вскрытие замков в Астане: авто, двери, сейфы — выезд круглосуточно.",en:"Emergency lock opening in Astana: cars, doors, safes — 24/7."},
-{title:"1999.kz",url:"https://1999.kz/",img:"images/case-1999.jpg",ru:"Вывоз мусора в Алматы: строительный, бытовой, КГМ, грунт — подача техники за 1–2 часа.",en:"Waste removal in Almaty: construction, household, bulky, soil — dispatch in 1–2h."},
-{title:"2002.kz",url:"https://2002.kz/",img:"images/case-2002.jpg",ru:"Коммерческий сайт услуг под ключ: структура под заявки и вывод в поиск.",en:"Turnkey commercial services site: lead-focused structure and search visibility."}
-];
-
-/* ── PRICING ── */
-const SP=[
-{name:"Сайт под нишу",subK:"sp_sub",price:"50 000 ₸ / 100$",wa:"Здравствуйте! Пишу с сайта Anuken. Интересует разработка сайта под нишу (50 000 ₸). Когда можно обсудить?",feat:["sp_a","sp_b","sp_c","sp_d","sp_e","sp_f"],noteK:"sp_note"},
-{name:"Бесплатно",subK:"spf_sub",price:"0 ₸",priceK:"spf_price",featured:1,wa:"Здравствуйте! Пишу с сайта Anuken. Хочу заказать сайт и уточнить, что входит бесплатно для клиентов.",feat:["spf_a","spf_b","spf_c","spf_d"],noteK:"spf_note"}
-];
-const AP=[
-{nameK:"apc_n",subK:"apc_sub",price:"50 000 ₸ / 105$",wa:"Здравствуйте! Пишу с сайта Anuken. Интересует настройка Google Ads и вывод в топ 1–2 (50 000 ₸). Когда можно обсудить?",feat:["apc_a","apc_b","apc_c","apc_d","apc_e"],noteK:"apc_note"},
-{nameK:"apz_n",subK:"apz_sub",price:"50 000 ₸ / 105$",wa:"Здравствуйте! Пишу с сайта Anuken. Интересует защита от фейковых кликов (50 000 ₸). Когда можно обсудить?",feat:["apz_a","apz_b","apz_c","apz_d"],noteK:"apz_note"}
-];
-const OP=[
-{nameK:"op3_n",subK:"op_sub",price:"60 000 ₸",priceSufK:"op_week",wa:"Здравствуйте! Пишу с сайта Anuken. Интересует продвижение на OLX — 3 объявления в топе (60 000 ₸/нед). Когда можно обсудить?",feat:["op3_a","op3_b","op3_c","op3_d"],noteK:"op3_note"},
-{nameK:"op6_n",subK:"op_sub",price:"90 000 ₸",priceSufK:"op_week",featured:1,wa:"Здравствуйте! Пишу с сайта Anuken. Интересует продвижение на OLX — 6 объявлений в топе (90 000 ₸/нед). Когда можно обсудить?",feat:["op6_a","op6_b","op6_c","op6_d"],noteK:"op6_note"}
-];
-
-/* ── FAQ ── */
-const SFQ=[
-{rq:"Чем отличается лендинг, мультистраничник и многостраничник?",ra:"Лендинг — это одна страница под одну цель (заявку или звонок): весь путь клиента на одном экране-«свитке». Мультистраничник — компактный сайт из 3–7 связанных страниц, где под каждую услугу своя страница; больше охвата в поиске. Многостраничник — крупный сайт от 10 страниц с каталогом, разделами и глубокой навигацией для компаний с широким спектром услуг или товаров.",eq:"Landing vs multi-page vs large site?",ea:"A landing is one page for one goal (a lead or a call) — the whole journey on a single scroll. A multi-page is a compact 3–7 page site with a page per service, giving wider search reach. A large multi-page site is 10+ pages with a catalog, sections and deep navigation for companies with many services or products."},
-{rq:"Сколько времени занимает разработка?",ra:"Лендинг — 1–2 дня. Мультистраничник — 2–5 дней. Многостраничный сайт или интернет-магазин — 3–7 дней. Перед стартом вы получаете точные сроки под ваш проект.",eq:"How long does it take?",ea:"Landing — 1–2 days. Multi-page — 2–5 days. Large site or store — 3–7 days. You get exact timelines before we start."},
-{rq:"Есть ли ежемесячная оплата?",ra:"Нет. Вы платите один раз за разработку. Для моих клиентов техподдержка, хостинг и Google Analytics — бесплатно. Из расходов остаётся только домен — обычно 2000–5000 ₸ в год.",eq:"Any monthly fees?",ea:"No. One-time payment for development. For my clients, support, hosting and Google Analytics are free. Only the domain remains — usually 2000–5000 ₸/year."},
-{rq:"Можно менять контент после сдачи?",ra:"Да. Первые 7 дней после сдачи правки бесплатны. Дальше мелкие правки для моих клиентов тоже бесплатны, крупные доработки — по договорённости.",eq:"Can I edit content later?",ea:"Yes. First 7 days of edits are free. After that, small edits for my clients stay free; larger work is by agreement."},
-{rq:"Что нужно, чтобы начать?",ra:"Напишите в WhatsApp или Telegram. Ответите на несколько вопросов о нише, услугах и целях — и я пришлю структуру сайта и план работ.",eq:"How do we start?",ea:"Message me on WhatsApp or Telegram. Answer a few questions about your niche and goals — I'll send the site structure and a work plan."}
-];
-const AFQ=[
-{rq:"Сколько стоит сам рекламный бюджет?",ra:"Рекламный бюджет оплачивается отдельно напрямую Google. Мои 50 000 ₸ — это настройка кампаний и вывод в топ 1–2. Размер бюджета зависит от ниши и региона — рассчитаем индивидуально.",eq:"What about the ad budget?",ea:"The ad budget is paid separately to Google. My 50,000 ₸ covers setup and reaching top 1–2. Budget depends on your niche and region."},
-{rq:"Как работает защита от фейковых кликов?",ra:"Система определяет конкурентов по IP-адресу. Google видит, что у кликающего та же услуга — это доказательство скликивания. Защита автоматически блокирует его IP и компенсирует сумму за клик. Одно подключение работает минимум полгода.",eq:"How does click protection work?",ea:"The system detects competitors by IP. Google sees they run the same service — proof of fraud. It auto-blocks the IP and compensates the click cost. One setup works 6+ months."},
-{rq:"Можно заказать только рекламу без сайта?",ra:"Да. Если у вас уже есть сайт, я настрою Google Ads, подключу аналитику GA4 и защиту от фейковых кликов отдельно. Также могу оценить текущий сайт и предложить доработки.",eq:"Only ads without a site?",ea:"Yes. If you have a site, I'll set up Google Ads, GA4 and click protection separately. I can also review your current site."},
-{rq:"Через сколько дней будут заявки?",ra:"Обычно первые заявки приходят в течение 1–3 дней после запуска. Многое зависит от ниши, бюджета и региона — прогноз я показываю до старта.",eq:"When will leads come?",ea:"Usually within 1–3 days after launch. It depends on niche, budget and region — I show a forecast beforehand."}
-];
-const OFQ=[
-{rq:"Как устроена оплата на OLX?",ra:"Оплата раз в неделю. За 60 000 ₸ в неделю я закрепляю 3 ваших объявления в топе, за 90 000 ₸ — 6 объявлений. Вы всегда понимаете, за что платите, и можете остановиться в любой момент.",eq:"How does OLX payment work?",ea:"Payment is weekly. 60,000 ₸/week keeps 3 of your listings at the top; 90,000 ₸/week keeps 6. You always know what you pay for and can stop anytime."},
-{rq:"Что значит «объявление в топе»?",ra:"Ваши объявления держатся в верхних позициях выдачи OLX по целевым категориям. Пользователь видит их первыми и звонит вам, а не конкурентам ниже в списке.",eq:"What does 'top listing' mean?",ea:"Your listings stay in the top positions of OLX search in the right categories. Users see them first and call you instead of competitors below."},
-{rq:"Это правда работает?",ra:"Да. Более 200 клиентов по Казахстану уже получают заявки через OLX этим способом. Часто это дешевле рекламы и даёт стабильный поток звонков с первых дней.",eq:"Does it really work?",ea:"Yes. Over 200 clients across Kazakhstan already get leads via OLX this way. It's often cheaper than ads and brings a steady flow of calls from day one."}
-];
-
-/* ── SERVICES ── */
-const siteSvc=[
-{t:'ss1t',d:'ss1d',f:['ss1a','ss1b','ss1c','ss1d2'],icon:'fas fa-file'},
-{t:'ss2t',d:'ss2d',f:['ss2a','ss2b','ss2c','ss2d2'],icon:'fas fa-layer-group'},
-{t:'ss3t',d:'ss3d',f:['ss3a','ss3b','ss3c','ss3d2'],icon:'fas fa-sitemap'},
-{t:'ss4t',d:'ss4d',f:['ss4a','ss4b','ss4c','ss4d2'],icon:'fas fa-shopping-cart'},
-{t:'ss5t',d:'ss5d',f:['ss5a','ss5b','ss5c','ss5d2'],icon:'fas fa-chart-pie'},
-{t:'ss6t',d:'ss6d',f:['ss6a','ss6b','ss6c','ss6d2'],icon:'fas fa-tools'}
-];
-const adsSvc=[
-{t:'as1t',d:'as1d',f:['as1a','as1b','as1c','as1d2'],icon:'fab fa-google'},
-{t:'as2t',d:'as2d',f:['as2a','as2b','as2c','as2d2'],icon:'fas fa-chart-line'},
-{t:'as3t',d:'as3d',f:['as3a','as3b','as3c','as3d2'],icon:'fas fa-shield-alt'},
-{t:'as4t',d:'as4d',f:['as4a','as4b','as4c','as4d2'],icon:'fas fa-sync-alt'}
-];
-const olxSvc=[
-{t:'ox1t',d:'ox1d',f:['ox1a','ox1b','ox1c','ox1d2'],icon:'fas fa-arrow-up-wide-short'},
-{t:'ox2t',d:'ox2d',f:['ox2a','ox2b','ox2c','ox2d2'],icon:'fas fa-pen-to-square'}
-];
-
-const I={
-ru:{tab_sites:"Сайты",tab_ads:"Google Ads",tab_olx:"OLX",nav_about:"Обо мне",nav_pricing:"Цены",nav_cases:"Кейсы",nav_faq:"FAQ",
-sites_h1:'Создаю сайты,<br>которые <span class="tg">продают</span>',sites_hp:'Разрабатываю продающие сайты под ключ: продуманная структура, уникальный дизайн, чистый код, подключение аналитики и мессенджеров. Каждый сайт адаптивен — идеально выглядит на телефоне и компьютере. <strong>10 лет опыта. Без посредников и переплат.</strong>',
-ads_h1:'Вывожу бизнес<br>в <span class="tg">топ Google</span>',ads_hp:'Настраиваю рекламу в Google вручную — без шаблонов. Объявления в топ 1–2, аналитика GA4, защита от фейковых кликов. <strong>10 лет опыта. Прозрачные отчёты.</strong>',
-olx_h1:'Продвигаю бизнес<br>на <span class="tg">OLX</span>',olx_hp:'Закрепляю ваши объявления в верхних позициях OLX и веду их каждый день. Вас видят первыми — звонки идут стабильно. <strong>Более 200 клиентов по Казахстану уже продвигаются этим способом.</strong>',
-t_sp:"2–5 дней",t_spv:"срок сдачи",t_ad:"Адаптив",t_adv:"телефон + ПК",t_fix:"Правки",t_fixv:"7 дней бесплатно",t_con:"Связь",
-at1:"Топ 1–2",at1v:"в Google",at2:"Защита",at2v:"от фейк кликов",at3:"Отчёты",at3v:"еженедельно",
-ot1:"Топ OLX",ot1v:"3–6 объявлений",ot2:"Оплата",ot2v:"раз в неделю",ot3:"200+",ot3v:"клиентов по РК",
-hps_e:"Что вы получаете",hps_1:"Уникальный дизайн под вашу нишу",hps_2:"Адаптив: телефон и компьютер",hps_3:"Структуру, ведущую к заявке",hps_4:"Аналитику и кнопки WhatsApp",hps_fl:"дней до запуска",
-hpa_e:"Что вы получаете",hpa_1:"Позиции в топ 1–2 Google",hpa_2:"Защиту бюджета от фейк кликов",hpa_3:"Аналитику GA4 и цели",hpa_4:"Прозрачные еженедельные отчёты",hpa_fv:"Топ 1–2",hpa_fl:"по целевым запросам",
-hpo_e:"Что вы получаете",hpo_1:"3–6 объявлений в топе OLX",hpo_2:"Звонки каждый день",hpo_3:"Удобную оплату раз в неделю",hpo_4:"Ведение и обновление объявлений",hpo_fl:"клиентов по РК",
-btn_q:"Получить расчёт",btn_c:"Посмотреть кейсы",btn_tr:"Смотреть тарифы",btn_or:"Заказать",
-ab_l:"Обо мне",ab_t:"Один исполнитель — полный цикл",ab_lead:"Anuken — это один человек и полный цикл работ. Уже 10 лет я создаю сайты и привожу клиентов из интернета — без агентств, менеджеров и переплат. Вы общаетесь напрямую с тем, кто выполняет проект от первого экрана до первой заявки.",
-abp1_t:"Создание сайтов",abp1_d:"Собираю сайты вручную на чистом HTML, CSS и JavaScript — без конструкторов и тяжёлых шаблонов. Поэтому они быстро загружаются, корректно выглядят на любом экране и легко продвигаются. Структуру продумываю так, чтобы посетитель дошёл до заявки, а не просто посмотрел «красивую картинку».",
-abp2_t:"Продвижение в Google",abp2_d:"Настраиваю Google Ads так, чтобы ваши объявления стояли в топ 1–2 по целевым запросам. Собираю ключевые слова, прорабатываю минус-слова, подключаю аналитику и защиту от фейковых кликов. В отчётах прозрачно видно, за что вы платите и сколько стоит заявка.",
-abp3_t:"Продвижение на OLX",abp3_d:"Закрепляю ваши объявления в верхних позициях OLX и веду их каждый день — чтобы вас находили первыми и звонки шли стабильно. Более 200 клиентов по Казахстану уже получают заявки этим способом, часто дешевле, чем через рекламу.",
-aab_t:"Почему доверяют рекламу мне",aab_lead:"10 лет в digital-маркетинге. Настраиваю Google Ads вручную под каждую нишу — никаких шаблонов и «умных» автокампаний, которые сливают бюджет. Вы получаете заявки и звонки, а не просто клики и красивые графики.",
-aabp1_t:"Ручная настройка",aabp1_d:"Собираю семантику под вашу услугу и регион, пишу продающие объявления, прорабатываю минус-слова. Кампания настраивается индивидуально, а не копируется по шаблону — поэтому вы платите за целевые запросы, а не за случайные клики.",
-aabp2_t:"Защита бюджета",aabp2_d:"Подключаю собственную систему защиты от фейковых кликов: она вычисляет конкурентов по IP, блокирует их и возвращает деньги за скликанные показы. Один раз настроил — работает минимум полгода и экономит десятки тысяч тенге.",
-aabp3_t:"Прозрачные отчёты",aabp3_d:"Подключаю Google Analytics 4, настраиваю цели и конверсии. Каждую неделю вы видите, сколько пришло заявок, откуда и по какой цене. Никаких «доверьтесь мне» — только цифры, которые можно проверить.",
-oab_t:"Как я продвигаю на OLX",oab_lead:"OLX — это площадка, где люди уже ищут вашу услугу. Задача не просто разместить объявление, а закрепить его в топе и удержать там. Именно этим я и занимаюсь — стабильно, с оплатой раз в неделю.",
-oabp1_t:"Закрепление в топе",oabp1_d:"Ваши объявления держатся в верхних позициях OLX по целевым категориям всю неделю. Пользователь видит вас первым и звонит вам, а не конкуренту на второй странице выдачи.",
-oabp2_t:"Оформление и ведение",oabp2_d:"Составляю продающие объявления — заголовки, тексты, фото, цены — и веду их: обновляю, поднимаю, слежу за позициями, чтобы они не проседали в выдаче со временем.",
-oabp3_t:"Проверено 200+ клиентами",oabp3_d:"Более 200 бизнесов по Казахстану уже получают заявки через OLX этим методом. Часто это дешевле рекламы и даёт поток звонков буквально с первых дней.",
-sv_l:"Услуги",sv_t:"Что я делаю",asv_t:"Что входит в настройку",osv_t:"Что я делаю на OLX",
-ss1t:"Лендинг",ss1d:"Одностраничный сайт под одну цель — заявку или звонок. Весь путь клиента на одном экране: оффер, выгоды, доверие, форма.",ss1a:"Одна страница — одна цель",ss1b:"Быстрая загрузка",ss1c:"Адаптив: телефон + ПК",ss1d2:"Кнопки WhatsApp и звонок",
-ss2t:"Мультистраничник",ss2d:"Компактный сайт из 3–7 связанных страниц — отдельная страница под каждую услугу. Больше охвата в поиске и удобная навигация.",ss2a:"Страница под каждую услугу",ss2b:"Единая навигация",ss2c:"Больше запросов в Google",ss2d2:"Продуманная SEO-структура",
-ss3t:"Многостраничник",ss3d:"Крупный сайт от 10 страниц: каталог, разделы, глубокая навигация. Для компаний с широким спектром услуг или товаров.",ss3a:"10+ страниц",ss3b:"Каталог и разделы",ss3c:"Глубокая структура",ss3d2:"Готовность к масштабированию",
-ss4t:"Интернет-магазин",ss4d:"Каталог, корзина, калькулятор и оформление заказа прямо в WhatsApp или Telegram — без сложных админок.",ss4a:"Каталог с фильтрами",ss4b:"Корзина и калькулятор",ss4c:"Заказ в мессенджеры",ss4d2:"Готов к росту",
-ss5t:"Дизайн и аналитика",ss5d:"Уникальный дизайн под ваш бренд плюс подключение Google Analytics 4 — видно, откуда приходят заявки.",ss5a:"Индивидуальный дизайн",ss5b:"Google Analytics 4",ss5c:"Цели и конверсии",ss5d2:"Отслеживание заявок",
-ss6t:"Техподдержка",ss6d:"Уже есть сайт? Ускорю, исправлю ошибки, обновлю дизайн, добавлю блоки. Сопровождение после запуска.",ss6a:"Правки кода и дизайна",ss6b:"Ускорение загрузки",ss6c:"Новые блоки и разделы",ss6d2:"Обновление контента",
-as1t:"Поисковая реклама",as1d:"Кампании в Google Search: объявления в топ 1–2 по вашим целевым запросам.",as1a:"Сбор семантики",as1b:"Минус-слова",as1c:"Топ 1–2 позиции",as1d2:"Продающие тексты",
-as2t:"Аналитика GA4",as2d:"Отслеживание заявок и звонков. Видно, откуда пришёл каждый клиент и сколько стоила заявка.",as2a:"Настройка GA4",as2b:"Цели и события",as2c:"Еженедельные отчёты",as2d2:"Воронки конверсий",
-as3t:"Защита от фейк кликов",as3d:"Определяет конкурентов по IP. Google видит их услугу — доказательство скликивания. Блокировка и компенсация.",as3a:"Определение по IP",as3b:"Автоблокировка",as3c:"Компенсация за клик",as3d2:"Мониторинг 24/7",
-as4t:"Оптимизация",as4d:"Мониторинг, A/B-тесты объявлений, корректировка ставок и минус-слов ради снижения цены заявки.",as4a:"A/B-тесты",as4b:"Корректировка ставок",as4c:"Отчёты по расходам",as4d2:"Снижение цены заявки",
-ox1t:"Продвижение в топ",ox1d:"Закрепляю ваши объявления в верхних позициях OLX по целевым категориям — вас видят первыми, звонки идут стабильно.",ox1a:"Закрепление в топе",ox1b:"Целевые категории",ox1c:"Стабильные просмотры",ox1d2:"Больше звонков",
-ox2t:"Оформление и ведение",ox2d:"Составляю продающие объявления — заголовки, тексты, фото, цены — и веду их, чтобы они не проседали в выдаче.",ox2a:"Продающие заголовки",ox2b:"Тексты и фото",ox2c:"Актуальные цены",ox2d2:"Ведение и обновление",
-pr_l:"Цены",sp_t:"Стоимость разработки",sp_d:"Прозрачно и без скрытых платежей. Оплата один раз за разработку — дальше сайт работает на вас.",ap_t:"Стоимость Google Ads",ap_d:"Оплата за настройку и защиту — прозрачно. Рекламный бюджет вы платите напрямую Google.",op_t:"Тарифы на OLX",op_d:"Оплата раз в неделю. Вы платите за конкретное количество объявлений, закреплённых в топе.",p_from:"под ключ",op_week:"/ неделя",spf_price:"Бесплатно",
-sp_sub:"Разработка под ключ",sp_a:"Уникальный дизайн под нишу",sp_b:"Адаптив: телефон + ПК",sp_c:"Структура под заявки",sp_d:"Подключение WhatsApp и звонков",sp_e:"SEO-оптимизация и мета-теги",sp_f:"Готовность к рекламе",sp_note:"Собираю сайт вручную на чистом коде — без конструкторов и шаблонов. Продуманная структура ведёт посетителя к заявке, а не просто радует глаз.",
-spf_sub:"Для моих клиентов",spf_a:"Техподдержка сайта",spf_b:"Хостинг",spf_c:"Google Analytics",spf_d:"Мелкие правки",spf_note:"Заказали у меня сайт — техподдержка, хостинг и аналитика бесплатны. Вы платите один раз за разработку и не думаете о ежемесячных счетах.",
-apc_n:"Настройка и топ 1–2",apc_sub:"Запуск рекламы",apc_a:"Сбор ключевых слов",apc_b:"Проработка минус-слов",apc_c:"Продающие объявления",apc_d:"Вывод в топ 1–2",apc_e:"Подключение GA4",apc_note:"Реклама настраивается вручную под вашу нишу и регион. Объявления встают в топ 1–2 Google по целевым запросам — вы платите только за реальных клиентов. Google Analytics подключаю бесплатно.",
-apz_n:"Защита от фейк кликов",apz_sub:"Экономия бюджета",apz_a:"Определение конкурентов по IP",apz_b:"Автоблокировка IP",apz_c:"Компенсация за клик",apz_d:"Мониторинг 24/7",apz_note:"Система вычисляет конкурентов, которые скликивают бюджет, — Google видит их услугу как доказательство. IP блокируется, деньги за клик возвращаются. Одно подключение работает минимум полгода.",
-op3_n:"3 объявления в топе",op_sub:"Оплата раз в неделю",op3_a:"3 объявления закреплены вверху",op3_b:"Целевые категории",op3_c:"Стабильные просмотры",op3_d:"Отчёт по звонкам",op3_note:"Ваши объявления держатся в верхних позициях OLX всю неделю — вас находят первыми среди десятков конкурентов.",
-op6_n:"6 объявлений в топе",op6_a:"6 объявлений закреплены вверху",op6_b:"Больше категорий и городов",op6_c:"Максимум просмотров",op6_d:"Ведение и обновление",op6_note:"Более 200 клиентов по Казахстану уже продвигаются через OLX. 6 закреплённых объявлений — максимальный поток обращений.",
-cs_l:"Портфолио",cs_t:"Примеры работ",cs_d:"Реальные проекты клиентов. Нажмите на карточку — сайт откроется в новой вкладке.",cs_open:"Открыть сайт",
-wf_l:"Процесс",swf_t:"Как мы работаем",awf_t:"Как запускаем рекламу",owf_t:"Как продвигаем на OLX",
-sw1t:"Анализ",sw1d:"Вы отвечаете на вопросы о нише и целях — я собираю структуру, которая ведёт к заявкам.",sw2t:"Дизайн",sw2d:"Утверждаете внешний вид — разработка начинается только после вашего согласия.",sw3t:"Разработка",sw3d:"Быстрый адаптивный сайт на чистом HTML/CSS/JS. Без конструкторов и шаблонов.",sw4t:"Запуск",sw4d:"Публикация, домен, проверка на всех устройствах, передача доступов.",
-aw1t:"Аудит ниши",aw1d:"Изучаю нишу и конкурентов, собираю семантическое ядро, анализирую спрос.",aw2t:"Настройка",aw2d:"Создаю кампании, пишу объявления, прорабатываю минус-слова, настраиваю цели.",aw3t:"Запуск + защита",aw3d:"Запускаю рекламу и подключаю защиту от фейковых кликов. Мониторинг с первого дня.",aw4t:"Оптимизация",aw4d:"Ежедневный мониторинг, A/B-тесты, корректировка ставок. Еженедельные отчёты.",
-ow1t:"Аудит объявлений",ow1d:"Смотрю вашу нишу и категории OLX, оцениваю спрос и конкурентов в выдаче.",ow2t:"Оформление",ow2d:"Составляю продающие объявления: заголовки, тексты, фото, цены под целевые категории.",ow3t:"Закрепление в топе",ow3d:"Ставлю 3 или 6 объявлений в верхние позиции OLX, чтобы вас видели первыми.",ow4t:"Ведение",ow4d:"Обновляю и поднимаю объявления, слежу за позициями, отчитываюсь по звонкам.",
-fq_t:"Частые вопросы",ft_t:"Готовы начать?",ft_city:"Астана, Казахстан"},
-en:{tab_sites:"Websites",tab_ads:"Google Ads",tab_olx:"OLX",nav_about:"About",nav_pricing:"Pricing",nav_cases:"Cases",nav_faq:"FAQ",
-sites_h1:'I build websites<br>that <span class="tg">convert</span>',sites_hp:'Turnkey converting websites: planned structure, unique design, clean code, analytics and messenger integration. Every site is responsive. <strong>10 years exp. No middlemen.</strong>',
-ads_h1:'I bring business<br>to <span class="tg">Google\'s top</span>',ads_hp:'Manual Google Ads setup — no templates. Top 1–2 positions, GA4 analytics, fake click protection. <strong>10 years exp. Transparent reports.</strong>',
-olx_h1:'I promote business<br>on <span class="tg">OLX</span>',olx_hp:'I keep your listings in the top positions of OLX and manage them daily. You get seen first — calls come in steadily. <strong>200+ clients across Kazakhstan already use this.</strong>',
-t_sp:"2–5 days",t_spv:"timeline",t_ad:"Responsive",t_adv:"mobile + PC",t_fix:"Edits",t_fixv:"7 days free",t_con:"Contact",
-at1:"Top 1–2",at1v:"in Google",at2:"Protection",at2v:"fake click guard",at3:"Reports",at3v:"weekly",
-ot1:"OLX top",ot1v:"3–6 listings",ot2:"Payment",ot2v:"weekly",ot3:"200+",ot3v:"clients in KZ",
-hps_e:"What you get",hps_1:"Unique design for your niche",hps_2:"Responsive: phone and PC",hps_3:"A structure that drives leads",hps_4:"Analytics and WhatsApp buttons",hps_fl:"days to launch",
-hpa_e:"What you get",hpa_1:"Top 1–2 positions in Google",hpa_2:"Budget protected from fake clicks",hpa_3:"GA4 analytics and goals",hpa_4:"Transparent weekly reports",hpa_fv:"Top 1–2",hpa_fl:"for target queries",
-hpo_e:"What you get",hpo_1:"3–6 listings at the OLX top",hpo_2:"Calls every day",hpo_3:"Convenient weekly payment",hpo_4:"Listing management & updates",hpo_fl:"clients in KZ",
-btn_q:"Get a quote",btn_c:"View cases",btn_tr:"View pricing",btn_or:"Order",
-ab_l:"About",ab_t:"One specialist — full cycle",ab_lead:"Anuken is one person and a full cycle of work. For 10 years I've built websites and brought clients from the internet — no agencies, no managers, no markups. You talk directly to the one doing the project, from the first screen to the first lead.",
-abp1_t:"Building websites",abp1_d:"I hand-build sites in clean HTML, CSS and JavaScript — no builders or heavy templates. They load fast, look right on any screen and are easy to promote. The structure is designed to lead a visitor to a request, not just to look pretty.",
-abp2_t:"Google promotion",abp2_d:"I set up Google Ads so your ads sit in the top 1–2 for target queries. I gather keywords, work through negatives, connect analytics and fake-click protection. Reports clearly show what you pay for and the cost per lead.",
-abp3_t:"OLX promotion",abp3_d:"I lock your listings into the top of OLX and manage them daily so you get found first and calls come steadily. 200+ clients across Kazakhstan already get leads this way — often cheaper than ads.",
-aab_t:"Why clients trust me with ads",aab_lead:"10 years in digital marketing. I set up Google Ads manually for each niche — no templates or 'smart' auto-campaigns that burn budget. You get leads and calls, not just clicks and pretty charts.",
-aabp1_t:"Manual setup",aabp1_d:"I collect keywords for your service and region, write converting ads, work through negatives. Each campaign is built individually, not copied — so you pay for target queries, not random clicks.",
-aabp2_t:"Budget protection",aabp2_d:"I connect my own fake-click protection: it detects competitors by IP, blocks them and refunds the cost of fraudulent clicks. Set once — works 6+ months and saves tens of thousands of tenge.",
-aabp3_t:"Transparent reports",aabp3_d:"I connect Google Analytics 4 and set up goals and conversions. Every week you see how many leads came in, from where and at what cost. No 'trust me' — just verifiable numbers.",
-oab_t:"How I promote on OLX",oab_lead:"OLX is where people already search for your service. The goal isn't just to post a listing but to pin it to the top and keep it there. That's exactly what I do — steadily, with weekly payment.",
-oabp1_t:"Top placement",oabp1_d:"Your listings stay in OLX's top positions in the right categories all week. Users see you first and call you, not a competitor on page two.",
-oabp2_t:"Copy & management",oabp2_d:"I write converting listings — titles, copy, photos, prices — and manage them: refreshing, bumping and watching positions so they don't slip over time.",
-oabp3_t:"Proven by 200+ clients",oabp3_d:"Over 200 businesses across Kazakhstan already get leads through OLX this way. It's often cheaper than ads and delivers calls from the very first days.",
-sv_l:"Services",sv_t:"What I do",asv_t:"What's included",osv_t:"What I do on OLX",
-ss1t:"Landing",ss1d:"A single page for one goal — a lead or a call. The whole journey on one screen: offer, benefits, trust, form.",ss1a:"One page — one goal",ss1b:"Fast loading",ss1c:"Responsive: phone + PC",ss1d2:"WhatsApp & call buttons",
-ss2t:"Multi-page",ss2d:"A compact 3–7 page site — a page per service. Wider search reach and easy navigation.",ss2a:"A page per service",ss2b:"Unified navigation",ss2c:"More queries in Google",ss2d2:"Thought-out SEO structure",
-ss3t:"Large site",ss3d:"A big 10+ page site: catalog, sections, deep navigation. For companies with many services or products.",ss3a:"10+ pages",ss3b:"Catalog and sections",ss3c:"Deep structure",ss3d2:"Ready to scale",
-ss4t:"E-commerce",ss4d:"Catalog, cart, calculator and checkout straight to WhatsApp or Telegram — no complex admin panels.",ss4a:"Catalog with filters",ss4b:"Cart & calculator",ss4c:"Messenger orders",ss4d2:"Ready to grow",
-ss5t:"Design & analytics",ss5d:"Unique design for your brand plus Google Analytics 4 — you see where leads come from.",ss5a:"Custom design",ss5b:"Google Analytics 4",ss5c:"Goals & conversions",ss5d2:"Lead tracking",
-ss6t:"Support",ss6d:"Already have a site? I'll speed it up, fix bugs, refresh design, add blocks. Ongoing support after launch.",ss6a:"Code & design edits",ss6b:"Speed optimization",ss6c:"New blocks & sections",ss6d2:"Content updates",
-as1t:"Search advertising",as1d:"Google Search campaigns: ads in top 1–2 for your target queries.",as1a:"Keyword research",as1b:"Negative keywords",as1c:"Top 1–2 positions",as1d2:"Converting ad copy",
-as2t:"GA4 analytics",as2d:"Tracking of leads and calls. See where each client came from and the cost per lead.",as2a:"GA4 setup",as2b:"Goals & events",as2c:"Weekly reports",as2d2:"Conversion funnels",
-as3t:"Fake click protection",as3d:"Detects competitors by IP. Google sees their service — proof of fraud. Blocking and compensation.",as3a:"Detection by IP",as3b:"Auto-blocking",as3c:"Click compensation",as3d2:"24/7 monitoring",
-as4t:"Optimization",as4d:"Monitoring, A/B tests, bid and negative adjustments to lower cost per lead.",as4a:"A/B testing",as4b:"Bid adjustments",as4c:"Cost reports",as4d2:"Lower cost per lead",
-ox1t:"Top placement",ox1d:"I keep your listings in the top OLX positions for target categories — you get seen first, calls come steadily.",ox1a:"Pinned to the top",ox1b:"Target categories",ox1c:"Steady views",ox1d2:"More calls",
-ox2t:"Copy & management",ox2d:"I write converting listings — titles, copy, photos, prices — and manage them so they don't slip in search.",ox2a:"Converting titles",ox2b:"Copy and photos",ox2c:"Up-to-date prices",ox2d2:"Management & updates",
-pr_l:"Pricing",sp_t:"Development pricing",sp_d:"Transparent, no hidden fees. Pay once for development — then the site works for you.",ap_t:"Google Ads pricing",ap_d:"Pay for setup and protection — transparently. The ad budget you pay directly to Google.",op_t:"OLX pricing",op_d:"Weekly payment. You pay for a set number of listings pinned to the top.",p_from:"turnkey",op_week:"/ week",spf_price:"Free",
-sp_sub:"Turnkey build",sp_a:"Unique design for your niche",sp_b:"Responsive: phone + PC",sp_c:"Lead-focused structure",sp_d:"WhatsApp & calls connected",sp_e:"SEO & meta tags",sp_f:"Ready for advertising",sp_note:"I hand-build the site in clean code — no builders or templates. A thought-out structure leads the visitor to a request, not just pleases the eye.",
-spf_sub:"For my clients",spf_a:"Site support",spf_b:"Hosting",spf_c:"Google Analytics",spf_d:"Small edits",spf_note:"Order a site from me and support, hosting and analytics are free. You pay once for development and never worry about monthly bills.",
-apc_n:"Setup & top 1–2",apc_sub:"Ad launch",apc_a:"Keyword research",apc_b:"Negative keywords",apc_c:"Converting ads",apc_d:"Reaching top 1–2",apc_e:"GA4 integration",apc_note:"Ads are set up manually for your niche and region. They reach Google's top 1–2 for target queries — you pay only for real clients. I connect Google Analytics for free.",
-apz_n:"Fake click protection",apz_sub:"Budget savings",apz_a:"Detect competitors by IP",apz_b:"Auto IP blocking",apz_c:"Click compensation",apz_d:"24/7 monitoring",apz_note:"The system detects competitors draining your budget — Google sees their service as proof. The IP is blocked and click costs are refunded. One setup works 6+ months.",
-op3_n:"3 listings at the top",op_sub:"Weekly payment",op3_a:"3 listings pinned on top",op3_b:"Target categories",op3_c:"Steady views",op3_d:"Call report",op3_note:"Your listings stay in the top OLX positions all week — you're found first among dozens of competitors.",
-op6_n:"6 listings at the top",op6_a:"6 listings pinned on top",op6_b:"More categories & cities",op6_c:"Maximum views",op6_d:"Management & updates",op6_note:"200+ clients across Kazakhstan already promote via OLX. 6 pinned listings mean the maximum flow of enquiries.",
-cs_l:"Portfolio",cs_t:"Work examples",cs_d:"Real client projects. Tap a card — the site opens in a new tab.",cs_open:"Open site",
-wf_l:"Process",swf_t:"How we work",awf_t:"How we launch ads",owf_t:"How we promote on OLX",
-sw1t:"Discovery",sw1d:"You answer questions about niche and goals — I build a structure that drives leads.",sw2t:"Design",sw2d:"You approve the look — development starts only after your confirmation.",sw3t:"Development",sw3d:"A fast responsive site in clean HTML/CSS/JS. No builders or templates.",sw4t:"Launch",sw4d:"Publishing, domain, testing on all devices, access handover.",
-aw1t:"Niche audit",aw1d:"Study the niche and competitors, collect keywords, analyze demand.",aw2t:"Setup",aw2d:"Create campaigns, write ads, work through negatives, set up goals.",aw3t:"Launch + protection",aw3d:"Launch ads and connect fake-click protection. Monitoring from day one.",aw4t:"Optimization",aw4d:"Daily monitoring, A/B tests, bid adjustments. Weekly reports.",
-ow1t:"Listing audit",ow1d:"I study your niche and OLX categories, assess demand and competitors in search.",ow2t:"Copywriting",ow2d:"I write converting listings: titles, copy, photos, prices for target categories.",ow3t:"Top placement",ow3d:"I place 3 or 6 listings in the top OLX positions so you're seen first.",ow4t:"Management",ow4d:"I refresh and bump listings, watch positions and report on calls.",
-fq_t:"FAQ",ft_t:"Ready to start?",ft_city:"Astana, Kazakhstan"}
-};
-
-let lang=localStorage.getItem('siteLang')||'ru';
-const t=k=>I[lang]?.[k]||I.ru[k]||k;
-
-function mkSvc(id,items){document.getElementById(id).innerHTML=items.map((s,i)=>`<div class="card" data-a ${i?`data-d="${Math.min(i,3)}"`:''}>
-<div class="card-icon"><i class="${s.icon}"></i></div>
-<h4>${t(s.t)}</h4><p>${t(s.d)}</p>
-<ul class="card-list">${s.f.map(f=>`<li><i class="fas fa-check"></i><span>${t(f)}</span></li>`).join('')}</ul></div>`).join('')}
-
-function mkPr(id,items){document.getElementById(id).innerHTML=items.map((p,i)=>{
-const nm=p.name||t(p.nameK);const sb=p.sub||t(p.subK||'');
-const amount=p.priceK?t(p.priceK):(p.price+(p.priceSufK?' <span class="price-from" style="display:inline;text-transform:none;letter-spacing:0">'+t(p.priceSufK)+'</span>':''));
-const fromLine=p.priceSufK||p.priceK?'':`<div class="price-from">${t('p_from')}</div>`;
-const note=p.noteK?`<div class="price-note">${t(p.noteK)}</div>`:'';
-return`<div class="card price-card ${p.featured?'featured':''}" data-a ${i?`data-d="${i}"`:''}>
-<div class="price-head"><div class="price-name">${nm}</div><div class="price-sub">${sb}</div><div class="price-amount">${amount}</div>${fromLine}</div>
-<ul class="card-list price-features">${p.feat.map(f=>`<li><i class="fas fa-check-circle"></i><span>${t(f)}</span></li>`).join('')}</ul>${note}
-<a href="https://wa.me/77074534518?text=${encodeURIComponent(p.wa)}" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-w" style="margin-top:14px">${t('btn_or')} <i class="fab fa-whatsapp"></i></a></div>`}).join('')}
-
-function mkCases(){document.getElementById('casesG').innerHTML=P.map((p,i)=>`<div class="card case-card" data-a ${i>1?`data-d="${Math.min(i-1,3)}"`:''} onclick="window.open('${p.url}','_blank','noopener')">
-<div class="case-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.opacity=0"></div>
-<div class="case-body"><h4>${p.title}</h4><p>${p[lang]||p.ru}</p>
-<div class="case-open"><i class="fas fa-arrow-up-right-from-square"></i> ${t('cs_open')}</div>
-<a href="https://wa.me/77074534518?text=${encodeURIComponent('Здравствуйте! Пишу с сайта Anuken. Хочу сайт как '+p.title+'. Когда можно обсудить?')}" onclick="event.stopPropagation();return gtag_report_conversion(this.href);" class="btn btn-accent btn-w">${t('btn_or')} <i class="fab fa-whatsapp"></i></a></div></div>`).join('')}
-
-function mkWF(id,items){const ic=['fa-search','fa-pen-ruler','fa-code','fa-rocket'];
-document.getElementById(id).innerHTML=items.map((w,i)=>`<div class="wf-card" data-a ${i?`data-d="${i}"`:''}>
-<div class="wf-num">0${i+1}</div><div class="wf-icon"><i class="fas ${w.ic||ic[i]}"></i></div>
-<h4>${t(w.t)}</h4><p>${t(w.d)}</p></div>`).join('')}
-
-function mkFAQ(faqs,id){document.getElementById(id).innerHTML=faqs.map((f,i)=>`<div class="faq-item" data-a ${i?`data-d="${Math.min(i,3)}"`:''}>
-<div class="faq-q" onclick="togFAQ(this)"><span>${lang==='en'?f.eq:f.rq}</span><i class="fas fa-chevron-down"></i></div>
-<div class="faq-a"><div class="faq-a-in">${lang==='en'?f.ea:f.ra}</div></div></div>`).join('')}
-
-function applyI18n(){document.documentElement.lang=lang;
-document.querySelectorAll('[data-t]').forEach(e=>{const v=I[lang]?.[e.getAttribute('data-t')];if(v!==undefined)e.textContent=v});
-document.querySelectorAll('[data-t-html]').forEach(e=>{const v=I[lang]?.[e.getAttribute('data-t-html')];if(v!==undefined)e.innerHTML=v});
-document.querySelectorAll('.ltg').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang))}
-
-function renderAll(){applyI18n();buildWA();
-mkSvc('sitesSvc',siteSvc);mkSvc('adsSvc',adsSvc);mkSvc('olxSvc',olxSvc);
-mkPr('sitesPr',SP);mkPr('adsPr',AP);mkPr('olxPr',OP);mkCases();
-mkWF('sitesWF',[{t:'sw1t',d:'sw1d'},{t:'sw2t',d:'sw2d'},{t:'sw3t',d:'sw3d'},{t:'sw4t',d:'sw4d'}]);
-mkWF('adsWF',[{t:'aw1t',d:'aw1d'},{t:'aw2t',d:'aw2d'},{t:'aw3t',d:'aw3d'},{t:'aw4t',d:'aw4d'}]);
-mkWF('olxWF',[{t:'ow1t',d:'ow1d',ic:'fa-magnifying-glass-chart'},{t:'ow2t',d:'ow2d',ic:'fa-pen-to-square'},{t:'ow3t',d:'ow3d',ic:'fa-arrow-up'},{t:'ow4t',d:'ow4d',ic:'fa-rotate'}]);
-mkFAQ(SFQ,'sitesFQ');mkFAQ(AFQ,'adsFQ');mkFAQ(OFQ,'olxFQ');initA()}
-
-let cur='sites';
-function switchPg(pg){if(pg===cur)return;cur=pg;document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+pg).classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===pg));window.scrollTo({top:0,behavior:'smooth'});setTimeout(initA,100)}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b){e.preventDefault();switchPg(b.dataset.page);if(document.getElementById('mmenu').classList.contains('open'))closeMM()}});
-window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
-let mmO=false;function closeMM(){mmO=false;document.getElementById('mmenu').classList.remove('open');document.getElementById('menuBtn').innerHTML='<i class="fas fa-bars"></i>';document.body.style.overflow=''}
-document.getElementById('menuBtn').addEventListener('click',()=>{mmO=!mmO;document.getElementById('mmenu').classList.toggle('open',mmO);document.getElementById('menuBtn').innerHTML=mmO?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';document.body.style.overflow=mmO?'hidden':''});
-document.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click',closeMM));
-document.addEventListener('click',e=>{const b=e.target.closest('.ltg');if(b){const nl=b.dataset.lang;if(nl&&nl!==lang){lang=nl;localStorage.setItem('siteLang',lang);renderAll()}}});
-function togFAQ(el){const it=el.parentElement;const was=it.classList.contains('open');it.closest('[id]')?.querySelectorAll('.faq-item').forEach(f=>{f.classList.remove('open');f.querySelector('.faq-a').style.maxHeight='0'});if(!was){it.classList.add('open');const a=it.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}}
-function initA(){const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('[data-a]:not(.vis)').forEach(el=>obs.observe(el))}
-renderAll();
-</script>
+<div class="fabs">
+<button class="fab fab-up" id="fabUp" aria-label="Наверх"><i class="fas fa-chevron-up"></i></button>
+<a class="fab fab-tg" href="https://t.me/Anukenn" target="_blank" rel="noopener" aria-label="Telegram" onclick="return gtag_report_conversion(this.href);"><i class="fab fa-telegram-plane"></i></a>
+<a class="fab fab-wa" href="https://wa.me/77074534518" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="return gtag_report_conversion(this.href);"><i class="fab fa-whatsapp"></i></a>
+</div>
+<script src="assets/app.js" defer></script>
 </body>
 </html>
+<nav class="dock" id="dock" aria-label="Разделы"><a href="#sajty" data-page="sajty" class="active"><i class="fas fa-desktop"></i>Сайты</a><a href="#google-ads" data-page="google-ads" class=""><i class="fab fa-google"></i>Google Ads</a><a href="#olx" data-page="olx" class=""><i class="fas fa-bullhorn"></i>OLX</a></nav>
+<script>
+(function(){
+var order=['sajty','google-ads','olx'];
+var cur='sajty', prev=null;
+function show(pg,push){
+  if(!pg||order.indexOf(pg)<0||pg===cur)return;
+  prev=cur;cur=pg;
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.getElementById('page-'+pg).classList.add('active');
+  document.querySelectorAll('#dock a').forEach(function(a){a.classList.toggle('active',a.dataset.page===pg)});
+  window.scrollTo({top:0,behavior:'auto'});
+  if(push)history.pushState({pg:pg},'','#'+pg);
+  if(window.anukenShowBack)window.anukenShowBack(true);
+  if(window.anukenScanImages)window.anukenScanImages();
+  if(window.initA)window.initA();
+}
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest('#dock a[data-page], .mm-link[href*="#"]');
+  if(!a)return;
+  var pg=a.dataset.page;
+  if(!pg){var h=a.getAttribute('href')||'';var m=h.split('#')[1];if(order.indexOf(m)>=0)pg=m;}
+  if(!pg)return;
+  ev.preventDefault();
+  show(pg,true);
+  if(window.anukenCloseMenu)window.anukenCloseMenu();
+});
+window.addEventListener('popstate',function(){
+  var h=(location.hash||'').replace('#','');
+  if(order.indexOf(h)>=0)show(h,false);
+});
+var start=(location.hash||'').replace('#','');
+if(order.indexOf(start)>=0&&start!=='sajty'){show(start,false);if(window.anukenShowBack)window.anukenShowBack(false);}
+var bb=document.getElementById('btnBack');
+if(bb)bb.addEventListener('click',function(ev){
+  if(prev){ev.stopImmediatePropagation();var p=prev;prev=null;show(p,true);window.anukenShowBack(false);}
+},true);
+})();
+</script>
