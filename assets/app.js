@@ -104,9 +104,10 @@ function initBack(){
   var ref=document.referrer;
   var sameHost=false;
   try{sameHost=ref&&new URL(ref).host===location.host}catch(e){}
-  if(!document.body.hasAttribute('data-tabs')&&(sameHost||window.history.length>1))b.classList.add('show');
+  var canBack=sameHost&&window.history.length>1;
+  if(!document.body.hasAttribute('data-tabs')&&canBack)b.classList.add('show');
   b.addEventListener('click',function(){
-    if(sameHost&&window.history.length>1){window.history.back()}
+    if(canBack){window.history.back()}
     else{window.location.href=b.getAttribute('data-home')||'/'}
   });
 }
@@ -183,7 +184,11 @@ function initMenu(){
     document.body.style.overflow=v?'hidden':'';
   }
   btn.addEventListener('click',function(){set(!open)});
+  var x=document.getElementById('mmClose');
+  if(x)x.addEventListener('click',function(){set(false)});
+  m.addEventListener('click',function(ev){if(ev.target===m)set(false)});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+  document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&open)set(false)});
   window.anukenCloseMenu=function(){set(false)};
 }
 
