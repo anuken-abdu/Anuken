@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#13303D">
+<title>Проверка скорости сайта — бесплатно, за 30 секунд | Anuken</title>
+<meta name="description" content="Проверьте, за сколько секунд открывается ваш сайт. Покажу вес страницы, самые тяжёлые файлы и что нужно исправить. Данные от Google, без регистрации.">
+<link rel="canonical" href="https://anuken.kz/skorost.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anuken">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://anuken.kz/skorost.html">
+<meta property="og:title" content="Проверка скорости сайта — бесплатно, за 30 секунд | Anuken">
+<meta property="og:description" content="Проверьте, за сколько секунд открывается ваш сайт. Покажу вес страницы, самые тяжёлые файлы и что нужно исправить. Данные от Google, без регистрации.">
+<meta property="og:image" content="https://anuken.kz/images/og-banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<!-- шрифты: подключаем заранее, показываем текст сразу -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap"></noscript>
+
+<!-- иконки: не блокируют показ страницы -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+<!-- главная картинка грузится в первую очередь -->
+<link rel="preload" as="image" href="images/hero-4.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/style.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18411027476"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','AW-18411027476');
+
+/* ── ЯРЛЫКИ КОНВЕРСИЙ ──────────────────────────────────────────────
+   Создай в Google Ads три действия-конверсии и впиши сюда их ярлыки.
+   Ярлык — это то, что идёт ПОСЛЕ слэша в строке вида
+   AW-18411027476/AbCdEfGh12345, например: AbCdEfGh12345
+   Пока поле пустое — событие просто не отправляется, сайт работает как обычно.
+------------------------------------------------------------------- */
+var ANUKEN_CONV={wa:'M4HBCNiOgOgcEJT4h8tE',tg:'',tel:''};
+
+function gtag_report_conversion(url,type){
+  var t=ANUKEN_CONV[type||'wa'];
+  if(t){gtag('event','conversion',{'send_to':'AW-18411027476/'+t});}
+  return true;
+}
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Проверка скорости сайта", "url": "https://anuken.kz/skorost.html", "applicationCategory": "DeveloperApplication", "operatingSystem": "Любой браузер", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KZT"}, "description": "Бесплатная проверка скорости загрузки сайта через сервис Google: вес страницы, самые тяжёлые файлы и что с этим делать.", "publisher": {"@id": "https://anuken.kz/#anuken"}}</script>
+</head>
+<body>
+<div class="bgfx"><div class="b b1"></div><div class="b b2"></div><div class="gridbg"></div></div>
+
+<header class="hdr" id="hdr"><div class="container"><div class="hdr-row">
+<a href="index.html" class="brand" style="font-weight:800;letter-spacing:.16em;font-size:14px;color:#fff">ANUKEN</a>
+<nav class="hdr-nav" style="display:none;gap:22px;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.62)"><a href="index.html#about">Обо мне</a><a href="index.html#portfolio">Портфолио</a><a href="index.html#services">Услуги</a><a href="index.html#faq">Вопросы</a></nav>
+<div class="hdr-right">
+<a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm hdr-cta" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<button class="menu-btn" id="menuBtn" aria-label="Меню" aria-expanded="false"><i class="fas fa-bars"></i></button>
+</div></div></div></header>
+<style>@media(min-width:900px){.hdr-nav{display:flex!important}.hdr-nav a:hover{color:#CFA384}}</style>
+
+<div class="mmenu" id="mmenu">
+<button class="mm-close" id="mmClose" aria-label="Закрыть меню"><i class="fas fa-times"></i> ЗАКРЫТЬ</button>
+<a href="index.html#about" class="mm-link">Обо мне</a><a href="index.html#portfolio" class="mm-link">Портфолио</a><a href="index.html#services" class="mm-link">Услуги</a><a href="index.html#faq" class="mm-link">Вопросы</a>
+<a href="index.html#sajty" class="mm-link">Сайты</a>
+<a href="index.html#google-ads" class="mm-link">Google Ads</a>
+<a href="index.html#olx" class="mm-link">OLX</a>
+</div>
+
+<style>.lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:10px}
+.block{background:var(--card);border:1px solid var(--border);padding:16px;margin-bottom:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+input[type=url],input[type=text]{background:var(--bg2);border:1px solid var(--border);color:#fff;
+padding:13px 13px;font-family:inherit;font-size:15px;flex:1;min-width:0}
+.tbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:13px;
+padding:14px 24px;background:var(--accent);color:#101418;border:none;font-family:inherit;cursor:pointer;transition:background .2s}
+.tbtn:hover{background:var(--accent2)}
+.tbtn:disabled{opacity:.45;cursor:default}
+.tbtn-g{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.24)}
+.tbtn-g:hover{background:rgba(255,255,255,.06)}
+.tbtn-w{background:#1FA855;color:#fff}
+.tbtn-w:hover{background:#1a934a}
+.seg{display:flex;border:1px solid var(--border);overflow:hidden}
+.seg button{padding:10px 16px;font-size:12.5px;font-weight:700;color:var(--text3);background:none;
+border:none;font-family:inherit;cursor:pointer;transition:background .2s,color .2s}
+.seg button.on{background:var(--accent);color:#101418}
+.hint{font-size:11.5px;color:var(--text3);margin-top:9px;line-height:1.55}
+.err{color:#E8846B;font-size:13px;line-height:1.6}
+
+.loading{display:none;padding:26px 16px;text-align:center}
+.loading.on{display:block}
+.loading b{display:block;color:#fff;font-size:15px;margin-bottom:6px}
+.loading span{font-size:12.5px;color:var(--text2)}
+.spin{width:34px;height:34px;border:3px solid rgba(255,255,255,.12);border-top-color:var(--accent);
+border-radius:50%;margin:0 auto 14px;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+#out{display:none}
+.verdict{padding:20px 18px;border-left:4px solid var(--accent);background:rgba(207,163,132,.09);margin-bottom:12px}
+.verdict.bad{border-color:#E8846B;background:rgba(232,132,107,.1)}
+.verdict.mid{border-color:#E8C46B;background:rgba(232,196,107,.09)}
+.verdict.good{border-color:#7ED9A0;background:rgba(126,217,160,.09)}
+.verdict h3{font-size:clamp(17px,4vw,22px);font-weight:800;color:#fff;margin-bottom:7px;letter-spacing:-.01em}
+.verdict p{font-size:13.5px;line-height:1.65;color:var(--text)}
+.sec.light .verdict h3{color:var(--ink)}
+.sec.light .verdict p{color:var(--slate)}
+
+.score{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.ring{width:88px;height:88px;flex-shrink:0;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring i{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+font-style:normal;font-weight:800;font-size:25px;color:#fff}
+.score-t b{display:block;font-size:15px;color:#fff;font-weight:700;margin-bottom:3px}
+.score-t span{font-size:12.5px;color:var(--text2);line-height:1.5}
+
+.mets{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+@media(min-width:640px){.mets{grid-template-columns:repeat(4,1fr)}}
+.met{background:var(--card);padding:14px 12px}
+.met b{display:block;font-size:19px;font-weight:800;color:#fff;line-height:1.2}
+.met span{font-size:11px;color:var(--text3);line-height:1.35;display:block;margin-top:4px}
+.met.w b{color:#E8C46B}
+.met.e b{color:#E8846B}
+
+#toolbox table{width:100%;border-collapse:collapse;font-size:12.5px}
+#toolbox th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);
+padding:8px 6px;border-bottom:1px solid var(--border);font-weight:700}
+#toolbox td{padding:9px 6px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:middle}
+#toolbox td.f{color:#fff;word-break:break-all;max-width:210px;font-size:11.5px}
+.wt{color:#E8846B;font-weight:700;white-space:nowrap}
+#toolbox{padding-top:34px;position:relative;z-index:2}</style>
+<section class="hero hero-sm"><div class="hero-bg"><picture><source srcset="images/hero-4.webp" type="image/webp"><img src="images/hero-4.jpg" data-fallback="images/hero-4.jpg" alt="" width="1600" height="900" decoding="async" fetchpriority="high"></picture><div class="hero-overlay"></div></div>
+<div class="container hero-content"><div style="max-width:760px">
+<div class="crumbs"><a href="index.html">Главная</a><i class="fas fa-chevron-right"></i><span>Проверка скорости</span></div>
+<h1>Проверка скорости сайта</h1>
+<p class="hero-text">Введите адрес — покажу, за сколько секунд открывается сайт, сколько он весит,
+какие файлы тянут его вниз и что с этим делать. <strong>Данные берутся напрямую у Google</strong>,
+регистрация не нужна.</p>
+</div></div></section>
+
+<section class="sec" id="toolbox"><div class="container" style="max-width:840px">
+<div class="block">
+  <div class="lbl">Адрес сайта</div>
+  <div class="row">
+    <input type="url" id="url" placeholder="example.kz" autocomplete="off" inputmode="url">
+  </div>
+  <div class="row" style="margin-top:10px;justify-content:space-between">
+    <div class="seg" id="seg">
+      <button data-s="mobile" class="on">Телефон</button>
+      <button data-s="desktop">Компьютер</button>
+    </div>
+    <button class="tbtn" id="go">Проверить</button>
+  </div>
+  <p class="hint">Проверка идёт через официальный сервис Google и занимает 20–40 секунд.
+  Телефон проверяем в первую очередь: с него приходит 70–80% посетителей, и именно там
+  тяжёлый сайт теряет людей.</p>
+  <div id="err" style="margin-top:10px"></div>
+</div>
+
+<div class="block loading" id="load">
+  <div class="spin"></div>
+  <b>Google загружает ваш сайт</b>
+  <span id="loadTxt">Обычно это 20–40 секунд. Не закрывайте страницу.</span>
+</div>
+
+<div id="out">
+  <div class="verdict" id="verdict"></div>
+
+  <div class="block">
+    <div class="lbl">Оценка Google</div>
+    <div class="score">
+      <div class="ring">
+        <svg width="88" height="88" viewBox="0 0 88 88">
+          <circle cx="44" cy="44" r="38" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="8"></circle>
+          <circle id="arc" cx="44" cy="44" r="38" fill="none" stroke="#7ED9A0" stroke-width="8"
+                  stroke-dasharray="239" stroke-dashoffset="239" stroke-linecap="butt"></circle>
+        </svg>
+        <i id="scoreN">—</i>
+      </div>
+      <div class="score-t">
+        <b id="scoreL">—</b>
+        <span id="scoreD"></span>
+      </div>
+    </div>
+    <div class="mets" id="mets"></div>
+  </div>
+
+  <div class="block" id="heavyBlock" style="display:none">
+    <div class="lbl">Самые тяжёлые файлы</div>
+    <div style="overflow-x:auto">
+      <table><thead><tr><th>Файл</th><th>Вес</th></tr></thead><tbody id="heavy"></tbody></table>
+    </div>
+    <p class="hint">Почти всегда сверху этого списка стоят фотографии. Их можно сжать
+    в 10–50 раз без потери качества — <a href="szhatie.html" style="color:var(--accent2)">вот инструмент</a>.</p>
+  </div>
+
+  <div class="block">
+    <div class="lbl">Что делать дальше</div>
+    <div id="advice" style="font-size:13.5px;line-height:1.7;color:var(--text)"></div>
+    <div class="row" style="margin-top:16px">
+      <a class="tbtn tbtn-w" id="wa" target="_blank" rel="noopener">Прислать этот отчёт мне</a>
+      <button class="tbtn tbtn-g" id="again">Проверить другой сайт</button>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section class="sec light"><div class="container">
+<div class="sec-center" style="margin-bottom:26px" data-a><div class="sec-label">Как это читать</div>
+<h2 class="sec-title">Что означают цифры</h2></div>
+<div class="longread" data-a><h3>Оценка от 0 до 100</h3><p>Это общая отметка Google за скорость. Ниже 50 — сайт грузится долго, и часть посетителей уходит, не дождавшись. От 50 до 90 — терпимо на хорошем интернете, но заметно тормозит с телефона. Выше 90 — всё в порядке.</p><p>Проверять имеет смысл прежде всего мобильную версию: с телефона приходит 70–80% людей, и именно там разница между быстрым и медленным сайтом решает, останется человек или нет.</p><h3>Время до главной картинки</h3><p>Самый честный показатель. Это момент, когда человек видит на экране что-то осмысленное, а не белый лист. Норма — до 2,5 секунды. После 4 секунд большинство закрывает вкладку.</p><p>Если вы ведёте на сайт рекламу, за каждый такой уход вы уже заплатили Google. При цене клика 500 ₸ и сотне заходов в день медленный сайт стоит вам десятков тысяч тенге в месяц просто так.</p><h3>Вес страницы</h3><p>Сколько данных браузер скачивает, чтобы показать сайт. Нормально — до 1,5 МБ. Часто встречается 8–15 МБ, и почти всегда это фотографии, загруженные прямо с телефона без сжатия.</p><ul><li>До 1,5 МБ — хорошо</li><li>1,5–3 МБ — терпимо, но есть что убрать</li><li>Больше 3 МБ — сайт заметно тормозит</li><li>Больше 8 МБ — с мобильного интернета сайт почти не открывается</li></ul><p>В списке тяжёлых файлов сверху обычно стоят картинки с именами вида IMG_0431.jpg — это снимки прямо с камеры, по 3–5 МБ каждый. Их можно сжать в десятки раз без потери качества.</p><h3>Что делать с результатом</h3><p>Если дело в картинках — это чинится за час и без переделки сайта. Сожмите их и залейте обратно с теми же именами. Если сайт собран на конструкторе и тянет десятки лишних скриптов, ускорить его можно лишь частично — тут честнее считать, во сколько обойдётся новый.</p><p>Могу посмотреть сам и сказать, что именно у вас — напишите в WhatsApp, это бесплатно.</p></div>
+<div class="sec-center" style="margin-top:30px" data-a>
+<a href="szhatie.html" class="btn btn-accent">Сжать фотографии для сайта</a></div>
+</div></section>
+<footer class="footer"><div class="footer-glow"></div><div class="container" style="position:relative;z-index:1">
+<h2 class="footer-title">Anuken</h2>
+<div class="footer-social">
+<a href="https://wa.me/77074534518" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://t.me/Anukenn" target="_blank" rel="noopener" aria-label="Telegram" onclick="return gtag_report_conversion(this.href,'tg');"><i class="fab fa-telegram-plane"></i></a></div>
+<nav class="footer-nav"><a href="uslugi/landing.html">Лендинг (одностраничный сайт)</a><a href="uslugi/multistranichnyj-sajt.html">Сайт из 3–7 страниц</a><a href="uslugi/mnogostranichnyj-sajt.html">Многостраничный сайт (10+)</a><a href="uslugi/internet-magazin.html">Интернет-магазин</a><a href="uslugi/dizajn-i-analitika.html">Дизайн и аналитика</a><a href="uslugi/dorabotka-sajta.html">Доработка и поддержка</a><a href="uslugi/google-ads-nastrojka.html">Настройка рекламы в Google</a><a href="uslugi/zashchita-ot-fejk-klikov.html">Защита от фейковых кликов</a><a href="uslugi/google-ads-analitika.html">Аналитика и подсчёт заявок</a><a href="uslugi/google-ads-vedenie.html">Ведение и донастройка</a><a href="uslugi/olx-prodvizhenie.html">Продвижение в топ OLX</a><a href="uslugi/olx-oformlenie.html">Оформление объявлений</a></nav>
+<div class="footer-bot"><span>&copy; 2015–2026 Anuken</span><span>Астана · Алматы, Казахстан</span></div>
+</div></footer>
+
+<div class="hotbar">
+<button class="hot hot-back" id="btnBack" data-home="index.html" aria-label="Назад"><i class="fas fa-circle-arrow-left"></i></button>
+<button class="hot hot-up" id="fabUp" aria-label="Наверх"><i class="fas fa-circle-chevron-up"></i></button>
+<a class="hot hot-tg" href="https://t.me/Anukenn" target="_blank" rel="noopener" aria-label="Telegram" onclick="return gtag_report_conversion(this.href,'tg');"><i class="fab fa-telegram"></i></a>
+<a class="hot hot-wa" href="https://wa.me/77074534518" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="return gtag_report_conversion(this.href);"><i class="fab fa-whatsapp"></i></a>
+</div>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
+<nav class="dock" id="dock" aria-label="Разделы"><a href="#sajty" data-page="sajty" class="">Сайты</a><a href="#google-ads" data-page="google-ads" class="">Google Ads</a><a href="#olx" data-page="olx" class="">OLX</a></nav><script>
+'use strict';
+/* ── Ключ API (необязательно) ─────────────────────────────────────
+   Без ключа сервис работает, но при частых проверках Google может
+   временно отказать. Бесплатный ключ берётся здесь:
+   https://developers.google.com/speed/docs/insights/v5/get-started
+   Полученный ключ впишите в кавычки ниже.
+------------------------------------------------------------------ */
+var PSI_KEY='';
+var WA='77074534518';
+var strategy='mobile', busy=false, last=null;
+
+var $=function(id){return document.getElementById(id)};
+var seg=$('seg');
+seg.addEventListener('click',function(e){
+  var b=e.target.closest('button[data-s]'); if(!b)return;
+  strategy=b.dataset.s;
+  [].forEach.call(seg.children,function(c){c.classList.toggle('on',c===b)});
+});
+
+function norm(v){
+  v=(v||'').trim();
+  if(!v)return '';
+  if(!/^https?:\/\//i.test(v))v='https://'+v;
+  try{ var u=new URL(v); if(!u.hostname||u.hostname.indexOf('.')<0)return ''; return u.href }
+  catch(e){ return '' }
+}
+function mb(b){
+  if(b==null)return '—';
+  return b<1024?b+' Б':b<1048576?Math.round(b/1024)+' КБ':(b/1048576).toFixed(1)+' МБ';
+}
+function sec(ms){ return ms==null?'—':(ms/1000).toFixed(1).replace('.',',')+' с' }
+function shortUrl(u){
+  try{ var x=new URL(u); var p=x.pathname.split('/').pop()||x.hostname; return decodeURIComponent(p).slice(0,42) }
+  catch(e){ return String(u).slice(0,42) }
+}
+
+var timer=null;
+function startLoad(){
+  $('load').classList.add('on'); $('out').style.display='none'; $('err').innerHTML='';
+  var t=0, msgs=['Обычно это 20–40 секунд. Не закрывайте страницу.',
+                 'Google открывает сайт и замеряет время до первой картинки…',
+                 'Считает вес страницы и находит тяжёлые файлы…',
+                 'Почти готово, собираем отчёт…'];
+  timer=setInterval(function(){ t++; $('loadTxt').textContent=msgs[Math.min(t,msgs.length-1)] },9000);
+}
+function stopLoad(){ $('load').classList.remove('on'); clearInterval(timer) }
+
+async function run(){
+  if(busy)return;
+  var u=norm($('url').value);
+  if(!u){ $('err').innerHTML='<div class="err">Проверьте адрес — нужно что-то вроде example.kz</div>'; return }
+  busy=true; $('go').disabled=true; startLoad();
+  var api='https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url='+encodeURIComponent(u)+
+          '&strategy='+strategy+'&category=performance'+(PSI_KEY?'&key='+PSI_KEY:'');
+  try{
+    var r=await fetch(api);
+    var d=await r.json();
+    if(d.error){
+      var m=d.error.message||'';
+      if(/quota|rate|429/i.test(m)) throw new Error('Google временно ограничил проверки. Подождите минуту и попробуйте снова.');
+      if(/Unable to (process|fetch)|FAILED_DOCUMENT_REQUEST|DNS/i.test(m)) throw new Error('Не удалось открыть сайт. Проверьте адрес — возможно, сайт недоступен или закрыт паролем.');
+      throw new Error(m.slice(0,180));
+    }
+    if(!d.lighthouseResult) throw new Error('Google не вернул результат. Попробуйте ещё раз.');
+    show(d,u);
+  }catch(e){
+    $('err').innerHTML='<div class="err">'+(e.message||'Не удалось выполнить проверку.')+'</div>';
+  }
+  stopLoad(); busy=false; $('go').disabled=false;
+}
+
+function show(d,u){
+  var L=d.lighthouseResult, A=L.audits||{};
+  var score=Math.round(((L.categories&&L.categories.performance&&L.categories.performance.score)||0)*100);
+  var lcp=A['largest-contentful-paint']&&A['largest-contentful-paint'].numericValue;
+  var fcp=A['first-contentful-paint']&&A['first-contentful-paint'].numericValue;
+  var cls=A['cumulative-layout-shift']&&A['cumulative-layout-shift'].numericValue;
+  var total=A['total-byte-weight']&&A['total-byte-weight'].numericValue;
+
+  var imgBytes=null, imgCount=0;
+  var rs=A['resource-summary']&&A['resource-summary'].details&&A['resource-summary'].details.items;
+  if(rs)rs.forEach(function(i){ if(i.resourceType==='image'){imgBytes=i.transferSize;imgCount=i.requestCount} });
+
+  var save=0;
+  ['modern-image-formats','uses-optimized-images','uses-responsive-images'].forEach(function(k){
+    var a=A[k]; if(a&&a.details&&a.details.overallSavingsBytes) save+=a.details.overallSavingsBytes;
+  });
+
+  // круг
+  var arc=$('arc'), col = score>=90?'#7ED9A0':score>=50?'#E8C46B':'#E8846B';
+  arc.setAttribute('stroke',col);
+  arc.setAttribute('stroke-dashoffset', String(239 - 239*score/100));
+  $('scoreN').textContent=score;
+  $('scoreL').textContent = score>=90?'Хорошо':score>=50?'Средне':'Плохо';
+  $('scoreD').textContent = score>=90?'Сайт открывается быстро, менять почти нечего.'
+    : score>=50?'Сайт заметно тормозит на мобильном интернете.'
+    : 'Сайт грузится долго — большая часть посетителей уходит, не дождавшись.';
+
+  // показатели
+  function cls_(v,a,b){ return v==null?'':v<=a?'':v<=b?' w':' e' }
+  $('mets').innerHTML=
+   '<div class="met'+cls_(lcp,2500,4000)+'"><b>'+sec(lcp)+'</b><span>пока появится главная картинка</span></div>'+
+   '<div class="met'+cls_(fcp,1800,3000)+'"><b>'+sec(fcp)+'</b><span>пока появится первый текст</span></div>'+
+   '<div class="met'+cls_(total,1600000,3000000)+'"><b>'+mb(total)+'</b><span>весит страница целиком</span></div>'+
+   '<div class="met'+cls_(imgBytes,800000,2000000)+'"><b>'+mb(imgBytes)+'</b><span>из них картинки'+(imgCount?' ('+imgCount+' шт.)':'')+'</span></div>';
+
+  // вердикт
+  var v=$('verdict'); v.className='verdict '+(score>=90?'good':score>=50?'mid':'bad');
+  var head, text;
+  if(score>=90){
+    head='Сайт быстрый';
+    text='Оценка '+score+' из 100. Страница весит '+mb(total)+', главная картинка появляется через '+sec(lcp)+'. Здесь всё в порядке — если и улучшать, то не со скорости.';
+  }else{
+    head = score>=50 ? 'Сайт можно ускорить примерно вдвое' : 'Сайт грузится слишком долго';
+    text='Оценка '+score+' из 100. Страница весит '+mb(total)+
+      (imgBytes?', из них '+mb(imgBytes)+' — картинки':'')+
+      '. Главная картинка появляется через '+sec(lcp)+', а человек с мобильного интернета ждёт максимум 3 секунды.'+
+      (save>200000?' Только на сжатии фотографий можно убрать '+mb(save)+'.':'');
+  }
+  v.innerHTML='<h3>'+head+'</h3><p>'+text+'</p>';
+
+  // тяжёлые файлы
+  var items=(A['total-byte-weight']&&A['total-byte-weight'].details&&A['total-byte-weight'].details.items)||[];
+  var tb=$('heavy'); tb.innerHTML='';
+  items.slice(0,7).forEach(function(i){
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td class="f">'+shortUrl(i.url)+'</td><td class="wt">'+mb(i.totalBytes)+'</td>';
+    tb.appendChild(tr);
+  });
+  $('heavyBlock').style.display=items.length?'block':'none';
+
+  // советы
+  var tips=[];
+  if(imgBytes>600000) tips.push('Сжать фотографии — это почти всегда главная причина. Обычно вес падает в 10–50 раз, и ничего переделывать не нужно.');
+  if(save>200000) tips.push('Перевести картинки в формат WebP — он весит в три-пять раз меньше при том же качестве.');
+  if(lcp>4000) tips.push('Загружать фон первого экрана в приоритете, а остальные картинки — по мере прокрутки.');
+  if(cls>0.1) tips.push('Задать картинкам размеры в коде, чтобы страница не прыгала во время загрузки.');
+  if(total>3000000) tips.push('Убрать лишние подключённые шрифты и скрипты — на конструкторах их обычно десятки.');
+  if(!tips.length) tips.push('Ничего срочного. Можно заняться содержимым сайта и рекламой.');
+  $('advice').innerHTML=tips.map(function(t){return '• '+t}).join('<br>');
+
+  var msg='Здравствуйте! Проверил сайт '+u+' через ваш инструмент. Оценка '+score+
+          ' из 100, страница весит '+mb(total)+', главная картинка появляется через '+sec(lcp)+
+          '. Что можно сделать?';
+  $('wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+
+  last=u;
+  $('out').style.display='block';
+  $('out').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+$('go').onclick=run;
+$('url').addEventListener('keydown',function(e){ if(e.key==='Enter')run() });
+$('again').onclick=function(){
+  $('out').style.display='none'; $('url').value=''; $('url').focus();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+</script>
