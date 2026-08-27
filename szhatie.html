@@ -78,27 +78,34 @@ function gtag_report_conversion(url,type){
 <a href="index.html#olx" class="mm-link">OLX</a>
 </div>
 
-<style>.wrap{max-width:820px;margin:0 auto}
-h1{font-size:clamp(20px,5vw,28px);font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:4px}
-.sub{color:var(--t2);font-size:13px;margin-bottom:20px}
+<style>.lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:10px}
 .block{background:var(--card);border:1px solid var(--border);padding:16px;margin-bottom:12px}
-.lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);font-weight:700;margin-bottom:10px}
-.presets{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-@media(min-width:620px){.presets{grid-template-columns:repeat(3,1fr)}}
-.preset{padding:12px;border:1px solid var(--border);background:rgba(255,255,255,.03);text-align:left;
-transition:border-color .2s,background .2s;color:var(--t)}
-.preset:hover{border-color:rgba(207,163,132,.5)}
-.preset.on{background:var(--accent);color:#101418;border-color:var(--accent)}
-.preset b{display:block;font-size:13px;font-weight:700}
-.preset span{font-size:11px;opacity:.7}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-input[type=number],input[type=text]{background:var(--bg2);border:1px solid var(--border);color:#fff;
-padding:9px 11px;font-family:inherit;font-size:14px;width:100px}
-input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}
-.drop{border:2px dashed rgba(255,255,255,.18);padding:34px 16px;text-align:center;transition:border-color .2s,background .2s;cursor:pointer}
+select,input[type=number],input[type=text]{background:var(--bg2);border:1px solid var(--border);color:#fff;
+padding:11px 12px;font-family:inherit;font-size:14px}
+select{width:100%;appearance:none;-webkit-appearance:none;
+background-image:linear-gradient(45deg,transparent 50%,var(--accent) 50%),linear-gradient(135deg,var(--accent) 50%,transparent 50%);
+background-position:calc(100% - 18px) 50%,calc(100% - 12px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;
+padding-right:38px}
+select optgroup{background:var(--bg2);color:var(--accent2);font-weight:700}
+select option{background:var(--bg2);color:#fff;font-weight:400}
+input[type=number]{width:92px}
+input[type=range]{flex:1;min-width:130px;accent-color:var(--accent)}
+.spec{margin-top:10px;font-size:12px;color:var(--text2);display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.tag{background:rgba(207,163,132,.14);border:1px solid rgba(207,163,132,.3);color:var(--accent2);
+padding:3px 9px;font-size:11px;font-weight:700}
+details{background:var(--card);border:1px solid var(--border);margin-bottom:12px}
+details>summary{padding:14px 16px;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--text2);
+list-style:none;display:flex;justify-content:space-between;align-items:center}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"+";color:var(--accent);font-size:17px}
+details[open]>summary::after{content:"–"}
+details>summary:hover{color:#fff}
+.dbody{padding:0 16px 16px}
+.drop{border:2px dashed rgba(255,255,255,.18);padding:32px 16px;text-align:center;transition:border-color .2s,background .2s;cursor:pointer}
 .drop.over{border-color:var(--accent);background:rgba(207,163,132,.07)}
 .drop b{display:block;font-size:15px;color:#fff;margin-bottom:4px}
-.drop span{font-size:12.5px;color:var(--t2)}
+.drop span{font-size:12.5px;color:var(--text2)}
 .tbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:13px;
 padding:13px 22px;background:var(--accent);color:#101418;border:none;font-family:inherit;cursor:pointer;transition:background .2s}
 .tbtn:hover{background:var(--accent2)}
@@ -106,25 +113,28 @@ padding:13px 22px;background:var(--accent);color:#101418;border:none;font-family
 .tbtn-g{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.24)}
 .tbtn-g:hover{background:rgba(255,255,255,.06)}
 #toolbox table{width:100%;border-collapse:collapse;font-size:12.5px}
-#toolbox th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);
+#toolbox th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);
 padding:8px 6px;border-bottom:1px solid var(--border);font-weight:700}
 #toolbox td{padding:9px 6px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:middle}
-#toolbox td.name{color:#fff;word-break:break-all;max-width:200px}
-.old{color:var(--t3);text-decoration:line-through}
+#toolbox td.name{color:#fff;word-break:break-all;max-width:190px}
+.old{color:var(--text3);text-decoration:line-through}
 .new{color:#7ED9A0;font-weight:700}
-.thumb{width:52px;height:33px;object-fit:cover;border:1px solid var(--border);display:block}
-.total{position:fixed;left:0;right:0;bottom:calc(var(--dock) + env(safe-area-inset-bottom));background:rgba(11,32,41,.97);backdrop-filter:blur(12px);
+.thumb{width:52px;height:33px;object-fit:cover;border:1px solid var(--border);display:block;background:#0E2833}
+.total{position:fixed;left:0;right:0;bottom:calc(var(--dock) + env(safe-area-inset-bottom));
+background:rgba(11,32,41,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
 border-top:1px solid var(--border);padding:12px 16px;z-index:108}
 .total-in{max-width:820px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.stat{font-size:12.5px;color:var(--t2)}
+.stat{font-size:12.5px;color:var(--text2)}
 .stat b{color:#fff;font-size:15px}
-.hint{font-size:11.5px;color:var(--t3);margin-top:8px;line-height:1.5}
+.hint{font-size:11.5px;color:var(--text3);margin-top:8px;line-height:1.5}
 .err{color:#E8846B;font-size:12px;margin-top:6px}
 .bar{height:3px;background:rgba(255,255,255,.08);margin-top:12px;display:none}
 .bar.on{display:block}
 .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}
-body.has-tool .hotbar{bottom:calc(var(--dock) + 104px + env(safe-area-inset-bottom))}
+.chk{font-size:12.5px;display:flex;gap:8px;align-items:center;cursor:pointer;color:var(--text)}
+.chk input{accent-color:var(--accent);width:16px;height:16px;flex-shrink:0}
 #toolbox{padding-top:34px;position:relative;z-index:109}
+body.has-tool .hotbar{bottom:calc(var(--dock) + 104px + env(safe-area-inset-bottom))}
 @media(max-width:560px){
 .total-in{gap:9px}
 .total .row{width:100%;display:flex;gap:9px}
@@ -143,40 +153,59 @@ body.has-tool .hotbar{bottom:calc(var(--dock) + 104px + env(safe-area-inset-bott
 <section class="sec" id="toolbox"><div class="container" style="max-width:840px">
 <div class="block">
   <div class="lbl">1. Что готовим</div>
-  <div class="presets" id="presets"></div>
-  <div class="row" style="margin-top:12px" id="customRow">
-    <span style="font-size:12.5px;color:var(--t2)">Свой размер:</span>
-    <input type="number" id="cw" value="640" min="50" max="4000"> ×
-    <input type="number" id="ch" value="400" min="50" max="4000">
+  <select id="preset"></select>
+  <div class="row" id="customRow" style="margin-top:11px;display:none">
+    <span style="font-size:12.5px;color:var(--text2)">Размер:</span>
+    <input type="number" id="cw" value="640" min="16" max="6000"> ×
+    <input type="number" id="ch" value="400" min="16" max="6000">
   </div>
+  <div class="spec" id="spec"></div>
 </div>
 
-<div class="block">
-  <div class="lbl">2. Качество</div>
-  <div class="row">
-    <input type="range" id="q" min="50" max="92" value="76">
-    <span id="qv" style="font-weight:700;color:#fff;min-width:34px">76</span>
+<details>
+  <summary>Настроить вручную</summary>
+  <div class="dbody">
+    <div class="lbl" style="margin-top:4px">Качество</div>
+    <div class="row">
+      <input type="range" id="q" min="45" max="95" value="76">
+      <span id="qv" style="font-weight:700;color:#fff;min-width:30px">76</span>
+    </div>
+    <p class="hint">Подставляется автоматически под категорию. Фотографиям хватает 76,
+    документам и скриншотам с текстом нужно 85–88.</p>
+
+    <div class="lbl" style="margin-top:16px">Как подгонять под размер</div>
+    <div class="row">
+      <label class="chk"><input type="radio" name="mode" value="cover" checked> обрезать по центру</label>
+      <label class="chk"><input type="radio" name="mode" value="fit"> вписать целиком</label>
+    </div>
+    <p class="hint">Обрезка — для фотографий, кадр заполняется полностью. Вписать —
+    для документов, схем и логотипов, где нельзя терять края.</p>
+
+    <div class="lbl" style="margin-top:16px">Формат</div>
+    <div class="row">
+      <label class="chk"><input type="radio" name="fmt" value="jpg" checked> JPG</label>
+      <label class="chk"><input type="radio" name="fmt" value="png"> PNG (прозрачный фон)</label>
+      <label class="chk"><input type="checkbox" id="webp" checked> плюс webp</label>
+    </div>
+    <p class="hint">PNG нужен только логотипам и иконкам с прозрачностью — фотографии
+    в нём весят в десять раз больше.</p>
   </div>
-  <div class="row" style="margin-top:12px">
-    <label style="font-size:12.5px;display:flex;gap:7px;align-items:center;cursor:pointer">
-      <input type="checkbox" id="webp" checked style="accent-color:var(--accent);width:16px;height:16px"> делать webp-версии</label>
+</details>
+
+<details>
+  <summary>Переименовать файлы</summary>
+  <div class="dbody">
+    <div class="row" style="margin-top:4px">
+      <input type="text" id="prefix" placeholder="напр. otzyv-" style="width:150px">
+      <label class="chk"><input type="checkbox" id="num"> нумеровать 01, 02, 03…</label>
+    </div>
+    <p class="hint">Оставь пустым — имена сохранятся как есть. Заполни, если нужна серия
+    вида otzyv-01.jpg, otzyv-02.jpg.</p>
   </div>
-  <p class="hint">76 — оптимально для фотографий. Ниже 65 появятся квадратики на градиентах.</p>
-</div>
+</details>
 
 <div class="block">
-  <div class="lbl">3. Имена файлов</div>
-  <div class="row">
-    <input type="text" id="prefix" placeholder="напр. otzyv-" style="width:150px">
-    <label style="font-size:12.5px;display:flex;gap:7px;align-items:center;cursor:pointer">
-      <input type="checkbox" id="num" style="accent-color:var(--accent);width:16px;height:16px"> нумеровать 01, 02, 03…</label>
-  </div>
-  <p class="hint">Оставь пустым — имена сохранятся как есть. Заполни, если нужна серия
-  вида otzyv-01.jpg, otzyv-02.jpg.</p>
-</div>
-
-<div class="block">
-  <div class="lbl">4. Файлы</div>
+  <div class="lbl">2. Файлы</div>
   <div class="drop" id="drop">
     <b>Нажми или перетащи фото</b>
     <span>jpg, png, webp — сколько угодно за раз</span>
@@ -190,11 +219,10 @@ body.has-tool .hotbar{bottom:calc(var(--dock) + 104px + env(safe-area-inset-bott
   <div class="lbl">Результат</div>
   <div style="overflow-x:auto">
   <table id="res">
-    <thead><tr><th></th><th>Файл</th><th>Было</th><th>Стало</th><th>webp</th></tr></thead>
+    <thead><tr><th></th><th>Файл</th><th>Размер</th><th>Было</th><th>Стало</th><th>webp</th></tr></thead>
     <tbody></tbody>
   </table>
   </div>
-</div>
 </div>
 
 <div class="total" id="total" style="display:none">
@@ -205,6 +233,7 @@ body.has-tool .hotbar{bottom:calc(var(--dock) + 104px + env(safe-area-inset-bott
       <button class="tbtn" id="dl">Скачать архивом</button>
     </div>
   </div>
+</div>
 </div></section>
 
 <section class="sec light"><div class="container">
@@ -232,91 +261,143 @@ body.has-tool .hotbar{bottom:calc(var(--dock) + 104px + env(safe-area-inset-bott
 </html>
 <nav class="dock" id="dock" aria-label="Разделы"><a href="#sajty" data-page="sajty" class="">Сайты</a><a href="#google-ads" data-page="google-ads" class="">Google Ads</a><a href="#olx" data-page="olx" class="">OLX</a></nav><script>
 'use strict';
-var PRESETS=[
- {id:'port', n:'Портфолио', s:'640 × 400', w:640, h:400},
- {id:'rev',  n:'Отзывы',    s:'600 × 800', w:600, h:800},
- {id:'hero', n:'Фон экрана',s:'1600 × 900',w:1600,h:900},
- {id:'heroM',n:'Фон моб.',  s:'900 × 1400',w:900, h:1400},
- {id:'og',   n:'Превью ссылки',s:'1200 × 630',w:1200,h:630},
- {id:'own',  n:'Свой размер',s:'указать ниже',w:0,h:0}
+/* w, h, режим, формат, качество */
+var P=[
+ ['Сайт',[
+  ['port','Карточка портфолио или каталога',640,400,'cover','jpg',76],
+  ['gal','Галерея работ',1000,750,'cover','jpg',78],
+  ['ba','Фото «до и после»',800,600,'cover','jpg',78],
+  ['hero','Фон первого экрана',1600,900,'cover','jpg',74],
+  ['heroM','Фон первого экрана для телефона',900,1400,'cover','jpg',74],
+  ['slide','Широкий баннер-слайдер',1920,700,'cover','jpg',74],
+  ['og','Превью ссылки в мессенджерах',1200,630,'cover','jpg',78]]],
+ ['Товары',[
+  ['prod','Товар в каталоге',800,800,'cover','jpg',78],
+  ['prodBig','Товар крупным планом',1200,1200,'cover','jpg',80],
+  ['olx','Фото для объявления на OLX',1200,900,'cover','jpg',80]]],
+ ['Люди и отзывы',[
+  ['ava','Аватар, фото мастера',400,400,'cover','jpg',80],
+  ['emp','Сотрудник для «о компании»',600,750,'cover','jpg',78],
+  ['rev','Скриншот отзыва',600,800,'cover','jpg',78]]],
+ ['Соцсети',[
+  ['ig','Пост в Instagram',1080,1080,'cover','jpg',80],
+  ['story','Сторис, статус в WhatsApp',1080,1920,'cover','jpg',80],
+  ['tg','Аватар канала в Telegram',512,512,'cover','jpg',82],
+  ['gbp','Фото для Google Профиля',1200,900,'cover','jpg',80]]],
+ ['Документы и логотипы',[
+  ['doc','Сертификат, лицензия, документ',1000,1400,'fit','jpg',86],
+  ['scr','Скриншот прайса или переписки',1200,1200,'fit','jpg',88],
+  ['logo','Логотип с прозрачным фоном',512,512,'fit','png',92],
+  ['fav','Иконка сайта',180,180,'fit','png',92]]],
+ ['Другое',[
+  ['own','Свой размер',640,400,'cover','jpg',76]]]
 ];
-var cur='port', items=[], zip=null;
+var MAP={}, cur=null, items=[];
 
-var pres=document.getElementById('presets');
-PRESETS.forEach(function(p){
-  var b=document.createElement('button');
-  b.className='preset'+(p.id===cur?' on':'');
-  b.dataset.id=p.id;
-  b.innerHTML='<b>'+p.n+'</b><span>'+p.s+'</span>';
-  b.onclick=function(){
-    cur=p.id;
-    [].forEach.call(pres.children,function(c){c.classList.toggle('on',c.dataset.id===cur)});
-    document.getElementById('customRow').style.opacity = cur==='own'?'1':'.4';
-  };
-  pres.appendChild(b);
+var sel=document.getElementById('preset');
+P.forEach(function(g){
+  var og=document.createElement('optgroup'); og.label=g[0];
+  g[1].forEach(function(p){
+    MAP[p[0]]={id:p[0],n:p[1],w:p[2],h:p[3],mode:p[4],fmt:p[5],q:p[6]};
+    var o=document.createElement('option'); o.value=p[0];
+    o.textContent=p[1]+(p[0]==='own'?'':'  ·  '+p[2]+'×'+p[3]);
+    og.appendChild(o);
+  });
+  sel.appendChild(og);
 });
-document.getElementById('customRow').style.opacity='.4';
 
 var q=document.getElementById('q'), qv=document.getElementById('qv');
-q.oninput=function(){qv.textContent=q.value};
+var cw=document.getElementById('cw'), ch=document.getElementById('ch');
+function setMode(v){ (document.querySelector('input[name=mode][value="'+v+'"]')||{}).checked=true }
+function getMode(){ return (document.querySelector('input[name=mode]:checked')||{}).value||'cover' }
+function setFmt(v){ (document.querySelector('input[name=fmt][value="'+v+'"]')||{}).checked=true }
+function getFmt(){ return (document.querySelector('input[name=fmt]:checked')||{}).value||'jpg' }
 
-function target(){
-  if(cur==='own'){
-    return {w:Math.max(50,+document.getElementById('cw').value||640),
-            h:Math.max(50,+document.getElementById('ch').value||400)};
-  }
-  var p=PRESETS.filter(function(x){return x.id===cur})[0];
-  return {w:p.w,h:p.h};
+function apply(id){
+  cur=MAP[id];
+  document.getElementById('customRow').style.display = id==='own'?'flex':'none';
+  if(id!=='own'){ cw.value=cur.w; ch.value=cur.h; }
+  q.value=cur.q; qv.textContent=cur.q;
+  setMode(cur.mode); setFmt(cur.fmt);
+  spec();
 }
+function target(){
+  return {w:Math.max(16,+cw.value||640), h:Math.max(16,+ch.value||400)};
+}
+function spec(){
+  var t=target();
+  document.getElementById('spec').innerHTML=
+    '<span class="tag">'+t.w+' × '+t.h+'</span>'+
+    '<span class="tag">'+(getMode()==='cover'?'обрезка по центру':'вписать целиком')+'</span>'+
+    '<span class="tag">'+getFmt().toUpperCase()+(document.getElementById('webp').checked?' + webp':'')+'</span>'+
+    '<span class="tag">качество '+q.value+'</span>';
+}
+sel.onchange=function(){apply(sel.value)};
+q.oninput=function(){qv.textContent=q.value;spec()};
+[cw,ch].forEach(function(el){el.oninput=spec});
+document.querySelectorAll('input[name=mode],input[name=fmt],#webp').forEach(function(el){el.onchange=spec});
+apply('port');
+
 function kb(n){return n<1024?n+' Б':(n/1024)<1024?Math.round(n/1024)+' КБ':(n/1048576).toFixed(1)+' МБ'}
 
-function coverCrop(img,tw,th){
-  var r=Math.max(tw/img.width, th/img.height);
-  var sw=Math.round(img.width*r), sh=Math.round(img.height*r);
-  var c=document.createElement('canvas'); c.width=tw; c.height=th;
-  var x=c.getContext('2d');
-  x.imageSmoothingEnabled=true; x.imageSmoothingQuality='high';
-  x.drawImage(img, Math.round((sw-tw)/-2), Math.round((sh-th)/-2), sw, sh);
+function draw(img,tw,th,mode,transparent){
+  var c=document.createElement('canvas'), x;
+  if(mode==='fit'){
+    var r=Math.min(tw/img.width, th/img.height, 1);
+    c.width=Math.max(1,Math.round(img.width*r)); c.height=Math.max(1,Math.round(img.height*r));
+    x=c.getContext('2d'); x.imageSmoothingEnabled=true; x.imageSmoothingQuality='high';
+    if(!transparent){x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height)}
+    x.drawImage(img,0,0,c.width,c.height);
+  }else{
+    var k=Math.max(tw/img.width, th/img.height);
+    var sw=Math.round(img.width*k), sh=Math.round(img.height*k);
+    c.width=tw; c.height=th;
+    x=c.getContext('2d'); x.imageSmoothingEnabled=true; x.imageSmoothingQuality='high';
+    if(!transparent){x.fillStyle='#fff';x.fillRect(0,0,tw,th)}
+    x.drawImage(img, Math.round((sw-tw)/-2), Math.round((sh-th)/-2), sw, sh);
+  }
   return c;
 }
-function toBlob(canvas,type,quality){
-  return new Promise(function(res){canvas.toBlob(function(b){res(b)},type,quality)});
+function toBlob(c,type,quality){
+  return new Promise(function(res){c.toBlob(function(b){res(b)},type,quality)});
 }
 function readImg(file){
   return new Promise(function(res,rej){
-    var url=URL.createObjectURL(file);
-    var img=new Image();
+    var url=URL.createObjectURL(file), img=new Image();
     img.onload=function(){URL.revokeObjectURL(url);res(img)};
     img.onerror=function(){URL.revokeObjectURL(url);rej(new Error('не читается'))};
     img.src=url;
   });
 }
 
-var bar=document.getElementById('bar'), barI=bar.querySelector('i');
-var errBox=document.getElementById('err');
+var bar=document.getElementById('bar'), barI=bar.querySelector('i'), errBox=document.getElementById('err');
 
 async function handle(files){
   errBox.textContent='';
   var list=[].slice.call(files).filter(function(f){return /^image\//.test(f.type)});
   if(!list.length){errBox.innerHTML='<div class="err">Это не изображения.</div>';return}
-  var t=target(), quality=+q.value/100, wantWebp=document.getElementById('webp').checked;
+  var t=target(), mode=getMode(), fmt=getFmt(), quality=+q.value/100;
+  var wantWebp=document.getElementById('webp').checked;
   var prefix=document.getElementById('prefix').value.trim();
   var doNum=document.getElementById('num').checked;
+  var mime = fmt==='png' ? 'image/png' : 'image/jpeg';
+  var ext  = fmt==='png' ? '.png' : '.jpg';
   bar.classList.add('on');
   for(var i=0;i<list.length;i++){
     var f=list[i];
     barI.style.width=Math.round((i/list.length)*100)+'%';
     try{
       var img=await readImg(f);
-      var c=coverCrop(img,t.w,t.h);
-      var jb=await toBlob(c,'image/jpeg',quality);
+      var c=draw(img,t.w,t.h,mode,fmt==='png');
+      var main=await toBlob(c,mime,fmt==='png'?undefined:quality);
       var wb=wantWebp?await toBlob(c,'image/webp',Math.max(.5,quality-.02)):null;
       var base=f.name.replace(/\.[^.]+$/,'');
       if(prefix||doNum){
         var idx=items.length+1;
         base=(prefix||'')+(doNum?String(idx).padStart(2,'0'):base);
       }
-      items.push({base:base, jpg:jb, webp:wb, old:f.size, thumb:c.toDataURL('image/jpeg',.5)});
+      items.push({base:base, ext:ext, main:main, webp:wb, old:f.size,
+                  dim:c.width+'×'+c.height, thumb:c.toDataURL('image/jpeg',.5)});
     }catch(e){
       errBox.innerHTML+='<div class="err">'+f.name+' — не удалось обработать</div>';
     }
@@ -327,16 +408,16 @@ async function handle(files){
 }
 
 function render(){
-  var tb=document.querySelector('#res tbody');
-  tb.innerHTML='';
+  var tb=document.querySelector('#res tbody'); tb.innerHTML='';
   var oldT=0,newT=0,webpT=0;
   items.forEach(function(it){
-    oldT+=it.old; newT+=it.jpg.size; if(it.webp)webpT+=it.webp.size;
+    oldT+=it.old; newT+=it.main.size; if(it.webp)webpT+=it.webp.size;
     var tr=document.createElement('tr');
     tr.innerHTML='<td><img class="thumb" src="'+it.thumb+'" alt=""></td>'+
-      '<td class="name">'+it.base+'.jpg</td>'+
+      '<td class="name">'+it.base+it.ext+'</td>'+
+      '<td style="color:var(--text3)">'+it.dim+'</td>'+
       '<td class="old">'+kb(it.old)+'</td>'+
-      '<td class="new">'+kb(it.jpg.size)+'</td>'+
+      '<td class="new">'+kb(it.main.size)+'</td>'+
       '<td>'+(it.webp?kb(it.webp.size):'—')+'</td>';
     tb.appendChild(tr);
   });
@@ -352,29 +433,32 @@ var drop=document.getElementById('drop'), fileInput=document.getElementById('fil
 drop.onclick=function(){fileInput.click()};
 fileInput.onchange=function(){handle(fileInput.files);fileInput.value=''};
 ['dragenter','dragover'].forEach(function(e){
-  drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.add('over')});
-});
+  drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.add('over')})});
 ['dragleave','drop'].forEach(function(e){
-  drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.remove('over')});
-});
+  drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.remove('over')})});
 drop.addEventListener('drop',function(ev){handle(ev.dataTransfer.files)});
-
 document.getElementById('clear').onclick=function(){items=[];render();errBox.textContent=''};
 
+function save(blob,name){
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download=name;
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1000);
+}
 document.getElementById('dl').onclick=async function(){
   if(!items.length)return;
   var btn=this; btn.disabled=true; btn.textContent='Собираю…';
   try{
     if(typeof JSZip==='undefined'){
-      errBox.innerHTML='<div class="err">Архиватор не загрузился (нет интернета) — сохраняю файлы по одному.</div>';
+      errBox.innerHTML='<div class="err">Архиватор не загрузился — сохраняю файлы по одному.</div>';
       items.forEach(function(it){
-        save(it.jpg,it.base+'.jpg');
+        save(it.main,it.base+it.ext);
         if(it.webp)save(it.webp,it.base+'.webp');
       });
     }else{
       var z=new JSZip();
       items.forEach(function(it){
-        z.file(it.base+'.jpg',it.jpg);
+        z.file(it.base+it.ext,it.main);
         if(it.webp)z.file(it.base+'.webp',it.webp);
       });
       var blob=await z.generateAsync({type:'blob'});
@@ -385,10 +469,4 @@ document.getElementById('dl').onclick=async function(){
   }
   btn.disabled=false; btn.textContent='Скачать архивом';
 };
-function save(blob,name){
-  var a=document.createElement('a');
-  a.href=URL.createObjectURL(blob); a.download=name;
-  document.body.appendChild(a); a.click();
-  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1000);
-}
 </script>
