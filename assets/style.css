@@ -161,8 +161,10 @@ font-size:16px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,2
 .mm-card{display:flex;align-items:center;gap:14px;padding:15px;border:1px solid var(--border);
 background:rgba(255,255,255,.03);margin-bottom:8px;transition:border-color .22s,background .22s,transform .22s}
 .mm-card:hover,.mm-card:active{border-color:rgba(207,163,132,.55);background:rgba(207,163,132,.08);transform:translateY(-2px)}
-.mm-ico{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
-font-size:17px;color:var(--accent);background:rgba(207,163,132,.13);border:1px solid rgba(207,163,132,.3)}
+.mm-ico{width:46px;height:46px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+font-size:18px;color:var(--accent);background:rgba(207,163,132,.13);border:1px solid rgba(207,163,132,.3);overflow:hidden}
+.mm-ico img{width:26px;height:26px;object-fit:contain;opacity:0;transition:opacity .3s}
+.mm-ico img.loaded{opacity:1}
 .mm-card div{flex:1;min-width:0}
 .mm-card b{display:block;font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
 .mm-card span{display:block;font-size:11.5px;color:var(--text2);line-height:1.45}
