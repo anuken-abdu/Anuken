@@ -20,7 +20,7 @@ images/
   favicon.png                  иконка во вкладке
   ico-szhatie.png              иконка в меню
   ico-skorost.png              иконка в меню
-  portfolio/                   28 скриншотов сайтов
+  portfolio/                   30 скриншотов сайтов
   reviews/                     4 скриншота отзывов
 audio/                         6 голосовых отзывов
 ```
@@ -53,7 +53,7 @@ audio/                         6 голосовых отзывов
 Иконки меню одноцветные — сайт перекрашивает их в белый через CSS.
 Если иконки цветные, в `assets/style.css` найди `filter:brightness(0) invert(1)` и удали строку.
 
-## 3. Портфолио — 28 файлов
+## 3. Портфолио — 30 файлов
 
 Скриншот главной страницы каждого сайта. Формат **640×400** (16:10), JPG + WebP, до 60 КБ.
 Порядок в таблице = порядок карточек на сайте.
@@ -88,6 +88,8 @@ audio/                         6 голосовых отзывов
 | 26 | `images/portfolio/26-evakuator-aktobe.jpg` | evakuator-aktobe.vercel.app |
 | 27 | `images/portfolio/27-manipulator-evakuator.jpg` | manipulator-evakuator.vercel.app |
 | 28 | `images/portfolio/28-manipulyator-three.jpg` | manipulyator-three.vercel.app |
+| 29 | `images/portfolio/29-sardar.jpg` | sardar-security.kz |
+| 30 | `images/portfolio/30-remont-ast.jpg` | remont-ast.kz |
 
 Отдельно: `22-astanaevak.jpg` используется дважды — как карточка портфолио
 и как демо-картинка в секции «Сборка сайта за 5 дней» на главной.
