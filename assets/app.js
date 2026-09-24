@@ -101,16 +101,21 @@ function onScroll(){
 function initBack(){
   var b=document.getElementById('btnBack');
   if(!b)return;
-  var ref=document.referrer;
-  var sameHost=false;
-  try{sameHost=ref&&new URL(ref).host===location.host}catch(e){}
-  var canBack=sameHost&&window.history.length>1;
-  if(!document.body.hasAttribute('data-tabs')&&canBack)b.classList.add('show');
+  var home=b.getAttribute('data-home')||'/';
+  // На страницах с вкладками (главная) кнопкой управляет скрипт страницы.
+  if(!document.body.hasAttribute('data-tabs'))b.classList.add('show');
   b.addEventListener('click',function(){
-    if(canBack){window.history.back()}
-    else{window.location.href=b.getAttribute('data-home')||'/'}
+    var here=location.href;
+    if(window.history.length>1){
+      window.history.back();
+      // если история пустая или ведёт на другой сайт — уходим на главную
+      setTimeout(function(){ if(location.href===here)window.location.href=home },350);
+    }else{
+      window.location.href=home;
+    }
   });
 }
+
 window.anukenShowBack=function(show){
   var b=document.getElementById('btnBack');
   if(b)b.classList.toggle('show',!!show);
@@ -192,6 +197,59 @@ function initMenu(){
   window.anukenCloseMenu=function(){set(false)};
 }
 
+/* ── выпадающие списки в шапке (ПК) ── */
+function initDrops(){
+  var drops=document.querySelectorAll('.hdrop');
+  if(!drops.length)return;
+  var canHover=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function closeAll(except){
+    drops.forEach(function(d){ if(d!==except)d.classList.remove('open') });
+  }
+  drops.forEach(function(d){
+    var btn=d.querySelector('.hdrop-btn');
+    if(!btn)return;
+    btn.addEventListener('click',function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      var was=d.classList.contains('open');
+      closeAll();
+      // на мыши наведение уже открыло список — клик его не закрывает
+      var open = canHover ? true : !was;
+      d.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+    if(canHover){
+      d.addEventListener('mouseenter',function(){ closeAll(d); d.classList.add('open') });
+      d.addEventListener('mouseleave',function(){ d.classList.remove('open') });
+    }
+  });
+  document.addEventListener('click',function(){ closeAll() });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeAll() });
+}
+
+/* ── приветствие голосом ── */
+function initGreet(){
+  var box=document.getElementById('greet'); if(!box)return;
+  var au=document.getElementById('greetAudio');
+  var btns=box.querySelectorAll('.greet-lang');
+  var play=document.getElementById('greetPlay');
+  function setLang(b){
+    btns.forEach(function(x){ x.classList.toggle('on',x===b) });
+    au.pause(); au.src=b.getAttribute('data-src'); au.load();
+    setIcon(false);
+  }
+  function setIcon(p){
+    play.innerHTML = p ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+    play.setAttribute('aria-label', p?'Пауза':'Слушать приветствие');
+  }
+  btns.forEach(function(b){ b.addEventListener('click',function(){ setLang(b) }) });
+  play.addEventListener('click',function(){
+    if(au.paused){ au.play().catch(function(){}) } else { au.pause() }
+  });
+  au.addEventListener('play',function(){ setIcon(true) });
+  au.addEventListener('pause',function(){ setIcon(false) });
+  au.addEventListener('ended',function(){ setIcon(false) });
+}
+
 /* ── старт ── */
 function boot(){
   hdr=document.getElementById('hdr');
@@ -200,7 +258,7 @@ function boot(){
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll,{passive:true});
   onScroll();
-  initBack();initMenu();initAudio();
+  initBack();initMenu();initAudio();initDrops();initGreet();
   window.buildWA();scanImages();window.initA();
   window.anukenInitLightbox();
 }
