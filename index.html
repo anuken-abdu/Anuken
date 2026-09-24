@@ -63,12 +63,12 @@ function gtag_report_conversion(url,type){
 
 <header class="hdr" id="hdr"><div class="container"><div class="hdr-row">
 <a href="index.html" class="brand" style="font-weight:800;letter-spacing:.16em;font-size:14px;color:#fff">ANUKEN</a>
-<nav class="hdr-nav" style="display:none;gap:22px;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.62)"><a href="#about">Обо мне</a><a href="#sborka">Сборка сайта</a><a href="#portfolio">Портфолио</a><a href="#services">Услуги</a><a href="#faq">Вопросы</a></nav>
+<nav class="hdr-nav"><a href="#about">Обо мне</a><a href="#sborka">Сборка</a><a href="#portfolio">Портфолио</a><div class="hdrop"><button type="button" class="hdrop-btn" aria-expanded="false">Услуги <i class="fas fa-chevron-down"></i></button><div class="hdrop-panel wide"><div class="hdrop-lbl">Сайты</div><div class="wide-col"><a href="uslugi/landing.html"><i class="fas fa-file-lines"></i><span>Лендинг</span></a><a href="uslugi/multistranichnyj-sajt.html"><i class="fas fa-layer-group"></i><span>Сайт из 3–7 страниц</span></a><a href="uslugi/mnogostranichnyj-sajt.html"><i class="fas fa-sitemap"></i><span>Многостраничный сайт</span></a></div><div class="wide-col"><a href="uslugi/internet-magazin.html"><i class="fas fa-cart-shopping"></i><span>Интернет-магазин</span></a><a href="uslugi/dizajn-i-analitika.html"><i class="fas fa-chart-pie"></i><span>Дизайн и аналитика</span></a><a href="uslugi/dorabotka-sajta.html"><i class="fas fa-screwdriver-wrench"></i><span>Доработка и поддержка</span></a></div><div class="hdrop-lbl">Google Ads и OLX</div><div class="wide-col"><a href="uslugi/google-ads-nastrojka.html"><i class="fab fa-google"></i><span>Настройка рекламы</span></a><a href="uslugi/zashchita-ot-fejk-klikov.html"><i class="fas fa-shield-halved"></i><span>Защита от фейк-кликов</span></a><a href="uslugi/google-ads-analitika.html"><i class="fas fa-chart-line"></i><span>Аналитика и заявки</span></a><a href="uslugi/google-ads-vedenie.html"><i class="fas fa-arrows-rotate"></i><span>Ведение рекламы</span></a></div><div class="wide-col"><a href="uslugi/olx-prodvizhenie.html"><i class="fas fa-arrow-up-wide-short"></i><span>Продвижение в топ OLX</span></a><a href="uslugi/olx-oformlenie.html"><i class="fas fa-pen-to-square"></i><span>Оформление объявлений</span></a></div></div></div><div class="hdrop"><button type="button" class="hdrop-btn" aria-expanded="false">Инструменты <i class="fas fa-chevron-down"></i></button><div class="hdrop-panel"><a href="szhatie.html"><i class="fas fa-compress"></i><span>Сжатие фото<small>Уменьшает вес картинок в 10–50 раз</small></span></a><a href="skorost.html"><i class="fas fa-gauge-high"></i><span>Проверка скорости<small>За сколько открывается сайт</small></span></a></div></div><a href="#faq">Вопросы</a></nav>
 <div class="hdr-right">
+<div class="langsw"><a href="index.html" class="on">РУС</a><a href="index-kz.html" class="">ҚАЗ</a></div>
 <a href="https://wa.me/77074534518" onclick="return gtag_report_conversion(this.href);" class="btn btn-accent btn-sm hdr-cta" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 <button class="menu-btn" id="menuBtn" aria-label="Меню" aria-expanded="false"><i class="fas fa-bars"></i></button>
 </div></div></div></header>
-<style>@media(min-width:900px){.hdr-nav{display:flex!important}.hdr-nav a:hover{color:#CFA384}}</style>
 
 <div class="mmenu" id="mmenu">
   <div class="mm-top">
@@ -76,6 +76,7 @@ function gtag_report_conversion(url,type){
     <button class="mm-close" id="mmClose" aria-label="Закрыть меню"><i class="fas fa-times"></i> ЗАКРЫТЬ</button>
   </div>
   <div class="mm-scroll">
+    <div class="mm-langs"><a href="index.html" class="on">РУССКИЙ</a><a href="index-kz.html" class="">ҚАЗАҚША</a></div>
     <div class="mm-lbl">Разделы</div>
     <div class="mm-tiles"><a href="#sajty" class="mm-tile mm-link"><i class="fas fa-desktop"></i><span>Сайты</span></a><a href="#google-ads" class="mm-tile mm-link"><i class="fab fa-google"></i><span>Google Ads</span></a><a href="#olx" class="mm-tile mm-link"><i class="fas fa-bullhorn"></i><span>OLX</span></a></div>
     <div class="mm-lbl">Страницы</div>
@@ -104,6 +105,24 @@ function gtag_report_conversion(url,type){
 <li><i class="fas fa-check"></i><span>Быструю загрузку и кнопки WhatsApp</span></li></ul>
 <div class="hp-foot"><span class="v">2–5</span><span class="l">дней до запуска</span></div></div></div>
 </div></div></section>
+
+
+<section id="privet" class="sec" style="padding-top:34px;padding-bottom:0">
+<div class="container">
+<div class="greet" id="greet" data-a>
+  <button class="greet-play" id="greetPlay" aria-label="Слушать приветствие"><i class="fas fa-play"></i></button>
+  <div class="greet-mid">
+    <div class="greet-t">Приветствие голосом</div>
+    <div class="greet-s">Коротко о том, чем я занимаюсь</div>
+  </div>
+  <div class="greet-langs">
+    <button type="button" class="greet-lang on" data-src="audio/privetstvie-ru.mp3">РУС</button>
+    <button type="button" class="greet-lang" data-src="audio/privetstvie-kz.mp3">ҚАЗ</button>
+  </div>
+  <audio id="greetAudio" preload="none" src="audio/privetstvie-ru.mp3"></audio>
+</div>
+</div>
+</section>
 
 <section id="about" class="sec light"><div class="container">
 <div class="sec-center" style="margin-bottom:34px" data-a><div class="sec-label">Обо мне</div><h2 class="sec-title">Один исполнитель — весь цикл работ</h2></div>
