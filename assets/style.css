@@ -564,3 +564,9 @@ color:var(--text3);border:1px solid var(--border);transition:background .2s,colo
 .greet-mid{flex:1 1 140px}
 .greet-langs{width:100%;order:3}
 .greet-lang{flex:1;text-align:center}}
+
+/* ── добавлено: сетка на три карточки (тарифы OLX). Существующие стили не затронуты. */
+.g3{display:grid;gap:10px;grid-template-columns:1fr;align-items:stretch}
+.g3>*{min-width:0}
+@media(min-width:700px){.g3{grid-template-columns:1fr 1fr;gap:16px}}
+@media(min-width:1000px){.g3{grid-template-columns:repeat(3,1fr)}}
