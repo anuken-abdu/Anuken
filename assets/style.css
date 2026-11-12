@@ -564,3 +564,13 @@ color:var(--text3);border:1px solid var(--border);transition:background .2s,colo
 .greet-mid{flex:1 1 140px}
 .greet-langs{width:100%;order:3}
 .greet-lang{flex:1;text-align:center}}
+
+/* ── портфолио: четыре колонки во всю ширину, с полями по краям ── */
+.container-wide{max-width:1920px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container-wide{padding:0 28px}}
+@media(min-width:1280px){.container-wide{padding:0 40px}}
+.case-grid{display:grid;gap:10px;grid-template-columns:1fr;align-items:stretch}
+.case-grid>*{min-width:0}
+@media(min-width:560px){.case-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(min-width:1024px){.case-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:1280px){.case-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
